@@ -15,6 +15,6 @@ pip3 install mkdocs
 # Extract API docs from source to markdown files
 # pydocmd simple ambianic++ ambianic.pipeline++ ambianic.pipeline.ai++ \
 #  ambianic.pipeline.avsource++ ambianic.webapp++ > "$WORKDIR/docs/docs-md/raw-python-api.md"
-cd $WORKDIR/docs
-mkdocs build -f "$WORKDIR/docs/mkdocs.yml"
+cd $WORKDIR
+mkdocs build -f "$WORKDIR/mkdocs.yml"
 # mkdocs gh-deploy
