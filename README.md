@@ -2,3 +2,5 @@
 
 # ambianic-docs
 Ambianic Technical Documentation
+
+Published at [Ambianic Documentation](https://ambianic.github.io/ambianic-docs/)
