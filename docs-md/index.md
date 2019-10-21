@@ -2,6 +2,7 @@
 [![Ambianic logo](https://avatars2.githubusercontent.com/u/52052162?s=200&v=4)](https://ambianic.ai)
 
 # Project mission
+
 ## Helpful AI for Home and Business Automation
 
 Ambianic is an Open Source AI platform that puts local control and privacy
