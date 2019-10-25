@@ -16,7 +16,7 @@ What's the root cause for Ambianic.ai to exist? Below is a
 [5 Whys](https://en.wikipedia.org/wiki/Five_whys) diagram that
 tries to answer this key question objectively.
 
-[![Ambianic 5 Whys](assets/ambianic-5whys.svg)](https://www.lucidchart.com/invitations/accept/5e0e2084-0d50-499b-afa3-7bea9f82d1f9)
+[![Ambianic 5 Whys](assets/diagrams/ambianic-5whys.svg)](https://www.lucidchart.com/invitations/accept/5e0e2084-0d50-499b-afa3-7bea9f82d1f9)
 
 Needless to say there are
 subjective reasons which are equally if not more influential for the existence
@@ -28,7 +28,7 @@ via open source AI.
 Ambianic's roadmap is inspired by user stories and community feedback.
 The following diagram illustrates an example user journey.
 
-[![Ambianic example user journey](assets/ambianic-example-user-journey.svg)](https://www.lucidchart.com/invitations/accept/b350d806-3c50-46cb-a39a-98b766f1c4af)
+[![Ambianic example user journey](assets/diagrams/ambianic-example-user-journey.svg)](https://www.lucidchart.com/invitations/accept/b350d806-3c50-46cb-a39a-98b766f1c4af)
 
 
 User journeys help us align on the bigger picture and segue into  
@@ -55,7 +55,7 @@ Users interact with the system in two phases:
 
 The following diagram illustrates the high level user - system interactions.
 
-[![Ambianic User - System Interactions](assets/ambianic-user-system-interactions.svg)](https://www.lucidchart.com/invitations/accept/78d403ce-ebf5-45b3-a4c3-8b89679b0667)
+[![Ambianic User - System Interactions](assets/diagrams/ambianic-user-system-interactions.svg)](https://www.lucidchart.com/invitations/accept/78d403ce-ebf5-45b3-a4c3-8b89679b0667)
 
 # User Interface Flow
 
@@ -65,20 +65,25 @@ The User Interface is centered around three main activities:
 2. Design flows to automatically observe sensors and make helpful recommendations.
 3. Review event timeline, alerts and actionable recommendations.
 
-The Ambianic UI is architected as an Offline-First PWA
-(Progressive Web Application). It does not assume that the user has constant
-broadband internet access when she needs to interact with Ambianic local data
- and devices. We anticipate a range of real world scenarios
-with low bandwidth or no-Internet access at all when the use may need to
- review Ambianic alerts, timeline data, edit flows and configure Edge devices.
+Ambianic UI is an Offline-First
+[PWA](https://en.wikipedia.org/wiki/Progressive_web_applications)
+(Progressive Web Application).
+PWAs work in any browser, but "app-like" with features such as being
+independent of connectivity, install to home screen, and push messaging depend
+on browser support.
 
-It stores data locally on the client device (mobile or desktop) and,
+Ambianic UI does not assume that the user has constant
+broadband internet access. Its built to handle a range of real world scenarios
+with low bandwidth or no-Internet access at all when the user may need to
+ review Ambianic alerts, events timeline, edit flows and configure edge devices.
+
+Ambianic UI stores data locally on the client device (mobile or desktop) and,
 when there’s a network connection,
 syncs data to the user's Ambianic server and resolves any data conflicts.
 When possible it communicates directly with local Ambianic Edge devices
 minimizing network routing overhead.
 
-[![Ambianic User Interface Flow](assets/ambianic-user-flow.svg)](https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=ambianic-user-flow#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1BgeZn_ZX6VTag2fA2HLtwJQIqYhFi6LI%26export%3Ddownload)
+[![Ambianic User Interface Flow](assets/diagrams/ambianic-user-flow.svg)](https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=ambianic-user-flow#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1BgeZn_ZX6VTag2fA2HLtwJQIqYhFi6LI%26export%3Ddownload)
 
 # Project Status
 

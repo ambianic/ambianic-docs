@@ -38,6 +38,10 @@
         <script src="{{ 'js/flowchart.js'|url }}"></script>
         <script src="{{ 'js/jquery-plugin.js'|url }}"></script>
         <!-- end flowchart js -->
+        <!-- mermaid js -->
+        <script src="https://unpkg.com/mermaid@8.4.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+        <!-- end mermaid js -->
         {%- if config.theme.highlightjs %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         {%- for lang in config.theme.hljs_languages %}

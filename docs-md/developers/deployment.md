@@ -1,5 +1,9 @@
 
 # Deployment Scenarios
 
-1. [Edge deployment](edge-deployment.md)
-1. [Cloud deployment](cloud-deployment.md)
+1. [Minimal deployment](edge-deployment.md)
+   - Reference Architecture   
+2. [Scaling deployments](cloud-deployment.md)
+   - Scaling Up
+   - Scaling Out
+   - Reference Architecture
