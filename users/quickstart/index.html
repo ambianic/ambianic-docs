@@ -160,7 +160,7 @@
         <ul class="nav flex-column bs-sidenav">
             <li class="nav-item main"><a href="#quick-start">Quick Start</a></li>
                 <li class="nav-item">
-                    <a href="#configuration" class="nav-link">Configuration</a>
+                    <a href="#ambianic-deployment" class="nav-link">Ambianic Deployment</a>
                 </li>
         </ul>
     </div>
@@ -197,63 +197,283 @@ $(".diagram").flowchart();
 </script>
 
 <p><br/></p>
-<h2 id="configuration">Configuration</h2>
-<p>Here is the corresponding configuration section in <code>config.yaml</code> for the pipeline above:</p>
-<pre><code class="yaml">pipelines:
-  # sequence of piped operations for use in daytime front door watch
-  daytime_front_door_watch:
-    - source: *src_front_door_cam
-    - detect_objects: # run ai inference on the input data
-        &lt;&lt;: *tfm_image_detection
-        confidence_threshold: 0.8
-    - save_detections: # save samples from the inference results
-        output_directory: *object_detect_dir
-        positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence threshold
-        idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
-    - detect_faces: # run ai inference on the samples from the previous element output
-        &lt;&lt;: *tfm_face_detection
-        confidence_threshold: 0.8
-    - save_detections: # save samples from the inference results
-        output_directory: *face_detect_dir
-        positive_interval: 2
-        idle_interval: 600
+<h2 id="ambianic-deployment">Ambianic Deployment</h2>
+<p>Ambianic has two major deployment components: Ambianic Edge and Ambianic UI.</p>
+<h3 id="ambanic-edge-deployment">Ambanic Edge Deployment</h3>
+<p>The easiest way to deploy Ambianic Edge is via its
+<a href="https://hub.docker.com/r/ambianic/ambianic-edge">Docker distribution</a>.</p>
+<p>The recommended deployment platform for Ambianic Edge is
+<a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/">Raspberry Pi 4 with 4GB RAM and 32GB SD card</a>.
+The docker image is availbale for ARM and x86 architectures so it can be deployed
+on most modern machines and operating systems.</p>
+<p>To deploy on a Raspberry Pi 4, you will need a recent
+<a href="https://www.raspberrypi.org/documentation/setup/">Raspbian install</a> with
+<a href="https://www.freecodecamp.org/news/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef/">Docker on it</a>.</p>
+<p>You can install and run the image in the default pi user space on Raspbian.</p>
+<h4 id="configuration">Configuration</h4>
+<p>Before starting the image, you will need to designate a workspace directory with an initial <code>config.yaml</code> file in it.
+For example, the directory could be named <code>/opt/ambianid-edge.workspace</code>.</p>
+<p>Here is an example <code>config.xml</code> file</p>
+<pre><code class="YAML">######################################
+#  Ambianic main configuration file  #
+######################################
+version: '1.0.10'
+
+# path to the data directory
+data_dir: &amp;data_dir ./data
+
+# Set logging level to one of DEBUG, INFO, WARNING, ERROR
+logging:
+  file: ./data/ambianic-log.txt
+  level: DEBUG
+
+# Pipeline event timeline configuration
+timeline:
+  event_log: ./data/timeline-event-log.yaml
+
+# Cameras and other input data sources
+# Using Home Assistant conventions to ease upcoming integration
+sources:
+  front_door_camera: &amp;src_front_door_cam
+    uri: *secret_uri_front_door_camera
+    # type: video, audio, or auto
+    type: video
+    live: true
+  entry_area_camera: &amp;src_entry_area_cam
+    uri: *secret_uri_entry_area_camera
+    type: video
+    # live: is this a live source or a recording
+    # when live is True, the AVSource element will try to reconnect
+    # if the stream is interrupted due to network disruption or another reason.
+    live: true
+  # recorded front door cam feed for quick testing
+  # recorded_cam_feed: &amp;src_recorded_cam_feed
+  #  uri: file:///workspace/tests/pipeline/avsource/test2-cam-person1.mkv
+  #  type: video
+
+
+  ai_models:
+  #  image_classification:
+  #    tf_graph:
+  #    labels:
+    image_detection: &amp;tfm_image_detection
+      model:
+        tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
+        edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite
+      labels: /opt/ambianic-edge/ai_models/coco_labels.txt
+    face_detection: &amp;tfm_face_detection
+      model:
+        tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
+        edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_face_quant_postprocess_edgetpu.tflite
+      labels: /opt/ambianic-edge/ai_models/coco_labels.txt
+      top_k: 2
+
+  # A named pipeline defines an ordered sequence of operations
+  # such as reading from a data source, AI model inference, saving samples and others.
+  pipelines:
+    # sequence of piped operations for use in daytime front door watch
+    front_door_watch:
+      - source: *src_front_door_cam
+      - detect_objects: # run ai inference on the input data
+         &lt;&lt;: *tfm_image_detection
+         confidence_threshold: 0.8
+      - save_detections: # save samples from the inference results
+         positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence threshold
+         idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
+      - detect_faces: # run ai inference on the samples from the previous element output
+         &lt;&lt;: *tfm_face_detection
+         confidence_threshold: 0.8
+      - save_detections: # save samples from the inference results
+         positive_interval: 2
+         idle_interval: 600
+
+    # sequence of piped operations for use in daytime front door watch
+    entry_area_watch:
+      - source: *src_entry_area_cam
+      # - mask: svg # apply a mask to the input data
+      - detect_objects: # run ai inference on the input data
+          &lt;&lt;: *tfm_image_detection
+          confidence_threshold: 0.8
+      - save_detections: # save samples from the inference results
+          positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence thresho$
+          idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
+      - detect_faces: # run ai inference on the samples from the previous element output
+          &lt;&lt;: *tfm_face_detection
+          confidence_threshold: 0.8
+      - save_detections: # save samples from the inference results
+          positive_interval: 2
+          idle_interval: 600
 
 </code></pre>
 
 <p>In the configuration excerpt above, there are a few references to variables
-defined elsewhere in the YAML file. <code>*src_front_door_cam</code> is the only
-reference that you have to understand and configure in order
-to get Ambianic working with your own camera (or other source of video feed).</p>
+defined elsewhere in the YAML file. <code>*src_front_door_cam</code> and
+<code>*src_entry_area_cam</code> are the only
+references that you have to understand and configure in order
+to get Ambianic Edge working with your own cameras (or other source of video feed).</p>
 <p>Here is the definition of this variable reference that you will find in config.yaml:</p>
-<pre><code class="yaml">sources:
-  front_door_camera: &amp;src_front_door_cam
-    uri: *secret_uri_front_door_camera
-    type: video
-</code></pre>
-
-<p>The key parameter here is <code>uri</code>. We recommended that you store the value
+<p>Since camera URIs often contain credentials, we recommended that you store these values
 in <code>secrets.yaml</code> which needs to be located in the same directory as
-<code>config.yaml</code>.</p>
-<p>A valid entry in <code>secretes.yaml</code> for a camera URI, would look like this:</p>
+<code>config.yaml</code>. Ambianid Edge will automatically look for and if available
+prepend <code>secrets.yaml</code> to <code>config.yaml</code>. The idea here is that you can share
+ <code>config.yaml</code> with others without compromising privacy sensitive parameters.</p>
+<p>An example valid entry in <code>secretes.yaml</code> for a camera URI, would look like this:</p>
 <pre><code class="yaml">secret_uri_front_door_camera: &amp;secret_uri_front_door_camera 'rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101'
 # add more secret entries as regular yaml mappings
 </code></pre>
 
-<p>Assuming you are familiar with yaml syntax, the rest of the configuration
-settings can be left with their default values.</p>
-<p>Once you specify the URI of your camera, you can navigate to the Ambianic
-working directory and start the server with:</p>
-<pre><code class="sh">./ambianic-start.sh
+<p>The rest of the configuration settings can be left with their default values for now.</p>
+<p>Notice that each pipeline definition starts with a media source. You can add and remove
+pipelines to match your home setup.</p>
+<p>Once you specify the URI of your camera(s), you can start the Docker image.</p>
+<h4 id="starting-ambianic-edge">Starting Ambianic Edge</h4>
+<p>Here is an example startup line for Ambianic Edge. We will go over each parameter below:</p>
+<pre><code class="sh"># test if coral usb stick is available
+USB_DIR=/dev/bus/usb
+
+
+if [ -d &quot;$USB_DIR&quot; ]; then
+  USB_ARG=&quot;--device $USB_DIR&quot;
+else
+  USB_ARG=&quot;&quot;
+fi
+
+# check if there is an image update
+docker pull ambianic/ambianic-edge:latest
+# run latest image
+docker run -it --rm \
+  --name ambianic-edge \
+  --mount type=bind,source=&quot;/opt/workspace&quot;,target=/workspace \
+  --publish 8778:8778 \
+  $USB_ARG \
+  ambianic/ambianic:latest
 </code></pre>
 
-<p>You can find object and face detections stored in the <code>./data</code>
-directory by default. Respectively under <code>./data/objects</code> and <code>./data/faces</code> .</p></div>
+<p>Let's review the start script above line by line:</p>
+<pre><code class="sh"># test if coral usb stick is available
+USB_DIR=/dev/bus/usb
+
+
+if [ -d &quot;$USB_DIR&quot; ]; then
+  USB_ARG=&quot;--device $USB_DIR&quot;
+else
+  USB_ARG=&quot;&quot;
+fi
+
+</code></pre>
+
+<p>Ambianic Edge is able to automatically detect and use the
+<a href="https://coral.withgoogle.com/">Google Coral EdgeTPU</a> for AI inference.
+Coral is a powerful USB stick that can speed up inference 5-10 times. However AI inference is only part of
+all the functions that execute in an Ambianic Edge pipeline. Video decoding and formatting
+also takes substantial amount of processing time. Overall we've seen Coral to improve
+performance 30-50% on a realistic Raspberry Pi 4 deploymeny with multiple simultaneous pipelines
+pulling images from multiple cameras and processing these images with multiple inference models.</p>
+<p>If you don't have a Coral device available, no need to worry for now. Raspberry Pi 4 is powerful enough
+to handle multiple simultaneous camera sourced pipelines with approximately 1-2 frames per second (fps).
+An objects or person of interest would normally show up in one of your cameras for at leastd one second,
+which is enough time to be registered and processed by Ambianic Edge on a plain RPI4.</p>
+<p>Let's look at the other docker image start parameters:</p>
+<pre><code class="sh">docker pull ambianic/ambianic-edge:latest
+</code></pre>
+
+<p>This line ensures that we fetch the latest available Ambianic Edge image. There are weekly semanctic releases
+with fixes and new updates. Generally this should work for most deployments. Occasionally there may be
+new releases with breaking changes. Its important to keep an eye on the release notes and make any configuration
+adjustments if necessary.</p>
+<pre><code class="sh">--name ambianic-edge \
+</code></pre>
+
+<p>This parameter just gives a local friendly name of the container that will show up in a docker container listing instead of a cryptic hash tag.</p>
+<pre><code class="sh">--mount type=bind,source=&quot;/opt/workspace&quot;,target=/workspace \
+</code></pre>
+
+<p>This parameter tells Docker to bind your prepared workspace with <code>config.yaml</code> to the image internal <code>/workspace</code> directory. In addition to finding <code>config.yaml</code>, the image will use the workspace directory to write log and data files such as images with object detections.</p>
+<pre><code class="sh">$USB_ARG \
+</code></pre>
+
+<p>This is the dynamic parameter which is empty if Coral is not found on the USB bus. Otherwise it tells Docker
+to let Ambianic Edge access Coral on the usb bus.</p>
+<pre><code class="sh">  --publish 8778:8778 \
+</code></pre>
+
+<p>This parameter exposes port 8778 where the Ambianic Edge REST API is available.</p>
+<pre><code class="sh">ambianic/ambianic:latest
+</code></pre>
+
+<p>The final parameter points to the latest Ambianic Edge image that Docker will execute.</p>
+<p>If you use Docker Compose for a more convenient management of multiple docker images, here is a configuration section
+that you can place in your <code>docker-compose.yaml</code></p>
+<pre><code class="YAML">ambianic:
+    container_name: ambianic
+    restart: unless-stopped
+    privileged: true
+    image: ambianic/ambianic-edge:latest
+    volumes:
+      # - /dev/bus/usb:/dev/bus/usb
+      - /opt/ambianic-edge.prod:/workspace
+    ports:
+      - 8778:8778
+    restart: on-failure
+    healthcheck:
+      test: [&quot;CMD&quot;, &quot;curl&quot;, &quot;-sI&quot;, &quot;http://127.0.0.1:8778/&quot;]
+      interval: 300s
+      timeout: 1s
+      retries: 10
+</code></pre>
+
+<p>Notice the line with the usb parameter. It would be commented out if there is no Coral attached to your RPI.</p>
+<h3 id="ambanic-ui-deployment">Ambanic UI Deployment</h3>
+<p><a href="https://github.com/ambianic/ambianic-ui">Ambianic UI</a> is a prorgressive web application (PWA) that provides you with a friendly access to Ambianic Edge device data. For example you can see a timeline view with
+notable events around your home organized chronologically or by importance. Below is an example
+timeline screenshot.</p>
+<p><img alt="Timeline" src="../../assets/images/timeline-screen.png" /></p>
+<h4 id="public-ambanic-ui-app">Public Ambanic UI app</h4>
+<p>You can access the public app at <a href="https://ui.ambianic.ai/">https://ui.ambianic.ai/</a></p>
+<pre><code class="Notice">Due to PWA security requirements it is currently not possible to connect directly from the public app to your local Ambianic Edge device.
+</code></pre>
+
+<p>One solution is to setup a secure connection to your Ambinic Edge device via Dynamic DNS and Open SSH tunnel. However this is an
+<a href="https://tinkerman.cat/post/secure-remote-access-to-your-iot-devices/">involved process</a> that could take a few hours of your time.</p>
+<p>There is an alternative solution via WebRTC that only takes a few moments to setup. We are working on it for the next Ambianic UI release.</p>
+<p>In the meanwhile, you can install Ambianic UI on a local machine - either the same one where Ambianic Edge runs or any other machine that runs on the same LAN. Here is how:</p>
+<h4 id="local-deployment-of-ambianic-ui">Local deployment of Ambianic UI</h4>
+<p>Ambianic UI is distributed as a Node JS npm package.
+https://www.npmjs.com/package/ambianic-ui</p>
+<p>If you are familiar with Node JS, you can install and run ambianic-ui from its npm distribution.</p>
+<p>Otherwise, you can follow these steps:</p>
+<h5 id="clone-source-repository">Clone source repository</h5>
+<pre><code>git clone https://github.com/ambianic/ambianic-ui.git
+cd ambianic-ui
+</code></pre>
+
+<h5 id="install-dependencies">Install dependencies</h5>
+<pre><code>npm install
+</code></pre>
+
+<h5 id="compiles-and-hot-reloads-for-development">Compiles and hot-reloads for development</h5>
+<pre><code>npm run serve
+</code></pre>
+
+<p>After a few moments you should see a message in your terminal window similar to this:</p>
+<pre><code class="sh">App running at:
+- Local:   http://localhost:8080/
+- Network: http://192.168.86.246:8080/
+</code></pre>
+
+<p>Now you can access the app from your browser.</p>
+<p>The home screen looks like this:</p>
+<p><img alt="Home screen" src="../../assets/images/home-screen.png" /></p>
+<p>Go to the Settings page to point the UI to the host name of your Ambianic Edge device. You can test the connection to be sure that all is fine. Then navigate to the Timeline page to see detections from your cameras.</p>
+<p><img alt="Home screen" src="../../assets/images/settings-screen.png" /></p>
+<p>If you experience problems with your initial setup, feel free to <a href="https://github.com/ambianic">open an issue</a> on github.</p></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
-                <p>Ambianic.ai (2019)</p>
+                <p>Ambianic.ai &copy; 2019-2020</p>
+            <p>Last update : 2019-11-23 19:05:14</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
