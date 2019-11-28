@@ -56,7 +56,7 @@ You can install and run the image in the default pi user space on Raspbian.
 Before starting the image, you will need to designate a workspace directory with an initial `config.yaml` file in it.
 For example, the directory could be named `/opt/ambianid-edge.workspace`.
 
-Here is an example `config.xml` file
+Here is an example `config.yaml` file
 
 ```YAML
 ######################################
@@ -223,7 +223,7 @@ Ambianic Edge is able to automatically detect and use the
 Coral is a powerful USB stick that can speed up inference 5-10 times. However AI inference is only part of
 all the functions that execute in an Ambianic Edge pipeline. Video decoding and formatting
 also takes substantial amount of processing time. Overall we've seen Coral to improve
-performance 30-50% on a realistic Raspberry Pi 4 deploymeny with multiple simultaneous pipelines
+performance 30-50% on a realistic Raspberry Pi 4 deployment with multiple simultaneous pipelines
 pulling images from multiple cameras and processing these images with multiple inference models.
 
 If you don't have a Coral device available, no need to worry for now. Raspberry Pi 4 is powerful enough
