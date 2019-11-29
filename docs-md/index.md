@@ -1,21 +1,17 @@
 
 [![Ambianic logo](https://avatars2.githubusercontent.com/u/52052162?s=200&v=4)](https://ambianic.ai)
 
-# Project mission
+# Helpful AI for Home and Business Automation
 
-## Helpful AI for Home and Business Automation
-
-Ambianic is an Open Source AI platform that puts local control and privacy
-first. It enables users to run and train custom AI models
-without compromising privacy and without sharing data with cloud providers.
+Ambianic's mission is to make our homes and workspaces a little cozier. Ambianic is an Open Source Ambient Intelligence platform that puts local control and privacy first. It enables users to train and share custom AI models without compromising privacy.
 
 [View on Github](https://github.com/ambianic/ambianic-core)
 
-# Why?
+## The 5 Whys
 
 What's the root cause for Ambianic.ai to exist? Below is a
 [5 Whys](https://en.wikipedia.org/wiki/Five_whys) diagram that
-tries to answer this key question objectively.
+tries to provide objective answers:
 
 [![Ambianic 5 Whys](assets/diagrams/ambianic-5whys.svg)](https://www.lucidchart.com/invitations/accept/5e0e2084-0d50-499b-afa3-7bea9f82d1f9)
 
@@ -24,7 +20,7 @@ subjective reasons which are equally if not more influential for the existence
 of this project such as basic human excitement to serve a bigger purpose
 via open source AI.
 
-# User Journey
+## User Journey
 
 Ambianic's roadmap is inspired by user stories and community feedback.
 The following diagram illustrates an example user journey.
@@ -32,7 +28,7 @@ The following diagram illustrates an example user journey.
 [![Ambianic example user journey](assets/diagrams/ambianic-example-user-journey.svg)](https://www.lucidchart.com/invitations/accept/b350d806-3c50-46cb-a39a-98b766f1c4af)
 
 
-User journeys help us align on the bigger picture and segue into  
+User journeys help us align on the bigger picture and segue into
 agile development constructs such as user stories and sprints.
 More user journeys will be added over time as the project evolves. Some of the
 candidate topics include:
@@ -47,7 +43,7 @@ candidate topics include:
     - Make sure that a factory floor position is not left unattended for more than 15 minutes.
     - Recognize presence of unauthorized people in a restricted access work area.
 
-# User - System Interactions
+## User - System Interactions
 
 Users interact with the system in two phases:
 
@@ -58,7 +54,7 @@ The following diagram illustrates the high level user - system interactions.
 
 [![Ambianic User - System Interactions](assets/diagrams/ambianic-user-system-interactions.svg)](https://www.lucidchart.com/invitations/accept/78d403ce-ebf5-45b3-a4c3-8b89679b0667)
 
-# User Interface Flow
+## User Interface Flow
 
 The User Interface is centered around three main activities:
 
@@ -86,13 +82,13 @@ minimizing network routing overhead.
 
 [![Ambianic User Interface Flow](assets/diagrams/ambianic-user-flow.svg)](https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=ambianic-user-flow#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1BgeZn_ZX6VTag2fA2HLtwJQIqYhFi6LI%26export%3Ddownload)
 
-# Project Status
+## Project Status
 
 At this time, Ambianic is in active early formation stages. Design and implementation decisions are made daily with focus on advancing the project to an initial stable version as soon as possible.
 
 If you are willing to take the risk that comes with early stage code and are able to dive deep into Python, Javascript, Gstreamer, and Tensorflow code, then please keep reading. Otherwise you can register to [watch for new releases](https://github.com/ambianic/ambianic-core). We will notify you as soon as a stable release is out.
 
-# Product Design Goals
+## Product Design Goals
 
 Our goal is to build a product that is useful out of the box:
 
@@ -102,13 +98,9 @@ Our goal is to build a product that is useful out of the box:
  - No coding required to get started
  - Decomposable and hackable for open source developers
 
-# Run in Development Mode
+# Quick Start
 
-If you would like to try the current development version, follow these steps:
-
-1. Clone this git repository.
-2. `./ambianic-start.sh`
-3. Study `config.yaml` and go from there.
+If you would like to try the latest version, follow the steps in the [Quick Start Guide](users/quickstart.md).
 
 # Contributors
 If you are interested in becoming a contributor to the project, please read the [Contributing](legal/CONTRIBUTING.md) page and follow the steps. Looking forward to hearing from you!
