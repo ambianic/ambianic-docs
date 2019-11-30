@@ -92,9 +92,13 @@ Our goal is to build a product that is useful out of the box:
  - No coding required to get started
  - Decomposable and hackable for open source developers
 
-# Quick Start
+## Quick Start
 
 If you would like to try the latest version, follow the steps in the [Quick Start Guide](users/quickstart.md).
 
-# Contributors
+## Community Support
+
+If you have questions, ideas or cool projects you'd like to share with the Ambianic team and community, please use the [Ambianic Spectrum channels](https://spectrum.chat/ambianic?tab=posts).
+
+## Contributors
 If you are interested in becoming a contributor to the project, please read the [Contributing](legal/CONTRIBUTING.md) page and follow the steps. Looking forward to hearing from you!
