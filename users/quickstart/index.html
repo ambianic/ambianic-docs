@@ -158,7 +158,7 @@
 
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
-            <li class="nav-item main"><a href="#5-minutes-quick-start">5 Minutes Quick Start</a></li>
+            <li class="nav-item main"><a href="#5-minutes-quick-start-guide">5 Minutes Quick Start Guide</a></li>
                 <li class="nav-item">
                     <a href="#ambianic-deployment" class="nav-link">Ambianic Deployment</a>
                 </li>
@@ -176,40 +176,12 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="5-minutes-quick-start">5 Minutes Quick Start</h1>
-<p>Ambianic's main goal is to provide helpful and actionable suggestions
-in the context of home and business automation.
-The main unit of work is the Ambianic pipeline.
-The following diagram illustrates an example pipeline that takes as input
-a security camera video stream and
-outputs object and face detections.</p>
-<div class="diagram">
-st=>start: Video Source
-op_obj=>operation: Object Detection AI
-op_sav1=>parallel: Storage Element
-io1=>inputoutput: save object detections to file
-op_face=>operation: Face Detection AI
-op_sav2=>parallel: Storage Element
-io2=>inputoutput: save face detections to file
-e=>end: Output to other pipelines
-
-st->op_obj
-op_obj(bottom)->op_sav1
-op_sav1(path1, bottom)->op_face
-op_sav1(path2, right)->io1
-op_face(bottom)->op_sav2
-op_sav2(path1, bottom)->e
-op_sav2(path2, right)->io2
-</div>
-
-<script>
-$(".diagram").flowchart();
-</script>
-
-<p><br/></p>
+<h1 id="5-minutes-quick-start-guide">5 Minutes Quick Start Guide</h1>
+<p>Ambianic's goal is to provide helpful and actionable suggestions
+in the context of home and business automation.</p>
 <h2 id="ambianic-deployment">Ambianic Deployment</h2>
 <p>Ambianic has two major components: Ambianic UI and Ambianic Edge.</p>
-<p>Ambianic UI is pre-deplyed and readily available at
+<p>Ambianic UI is pre-deployed and readily available at
 <a href="https://ui.ambianic.ai">https://ui.ambianic.ai</a>.</p>
 <p>If you are familiar with Docker you will be able to install Ambianic Edge in less
 than 5 minutes.</p>
@@ -254,7 +226,7 @@ timeline screenshot.</p>
 <p><img alt="Connected" src="../../assets/images/connected-screen.png" /></p>
 <p>Congratulations! Your Ambianic instance is now up and running!</p>
 <h2 id="configuration">Configuration</h2>
-<p>You are now read to configure input sources (e.g. cameras) for Ambianic to observe and apply AI inference to.
+<p>You are now ready to configure Ambianic: pipelines, input sources and AI models.
 <a href="../configure/">Learn more</a>.</p>
 <p>Once you configure Ambianic Edge, you should be able to see timeline view like the one above.</p>
 <p>The pairing information is persisted on your Ambianic UI client device and you can now access Ambianic Edge from anywhere remotely! The connection is direct and encrypted end-to-end.</p>
@@ -266,7 +238,7 @@ timeline screenshot.</p>
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-02-03 23:51:02</p>
+            <p>Last update : 2020-02-04 17:47:17</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
