@@ -1,43 +1,14 @@
 
-# 5 Minutes Quick Start
+# 5 Minutes Quick Start Guide
 
-Ambianic's main goal is to provide helpful and actionable suggestions
+Ambianic's goal is to provide helpful and actionable suggestions
 in the context of home and business automation.
-The main unit of work is the Ambianic pipeline.
-The following diagram illustrates an example pipeline that takes as input
-a security camera video stream and
-outputs object and face detections.
-
-<div class="diagram">
-st=>start: Video Source
-op_obj=>operation: Object Detection AI
-op_sav1=>parallel: Storage Element
-io1=>inputoutput: save object detections to file
-op_face=>operation: Face Detection AI
-op_sav2=>parallel: Storage Element
-io2=>inputoutput: save face detections to file
-e=>end: Output to other pipelines
-
-st->op_obj
-op_obj(bottom)->op_sav1
-op_sav1(path1, bottom)->op_face
-op_sav1(path2, right)->io1
-op_face(bottom)->op_sav2
-op_sav2(path1, bottom)->e
-op_sav2(path2, right)->io2
-</div>
-
-<script>
-$(".diagram").flowchart();
-</script>
-
-<br/>
 
 ## Ambianic Deployment
 
 Ambianic has two major components: Ambianic UI and Ambianic Edge.
 
-Ambianic UI is pre-deplyed and readily available at
+Ambianic UI is pre-deployed and readily available at
 [https://ui.ambianic.ai](https://ui.ambianic.ai).
 
 If you are familiar with Docker you will be able to install Ambianic Edge in less
@@ -106,7 +77,7 @@ Congratulations! Your Ambianic instance is now up and running!
 
 ## Configuration
 
-You are now read to configure input sources (e.g. cameras) for Ambianic to observe and apply AI inference to.
+You are now ready to configure Ambianic: pipelines, input sources and AI models.
 [Learn more](configure.md).
 
 Once you configure Ambianic Edge, you should be able to see timeline view like the one above.
