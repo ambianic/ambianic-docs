@@ -160,7 +160,10 @@
         <ul class="nav flex-column bs-sidenav">
             <li class="nav-item main"><a href="#5-minute-quick-start">5 Minute Quick Start</a></li>
                 <li class="nav-item">
-                    <a href="#ambianic-deployment" class="nav-link">Ambianic Deployment</a>
+                    <a href="#ambanic-edge" class="nav-link">Ambanic Edge</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#ambanic-ui" class="nav-link">Ambanic UI</a>
                 </li>
                 <li class="nav-item">
                     <a href="#pairing-ambanic-ui-with-ambianic-edge" class="nav-link">Pairing Ambanic UI with Ambianic Edge</a>
@@ -179,13 +182,12 @@
 <h1 id="5-minute-quick-start">5 Minute Quick Start</h1>
 <p>Ambianic's goal is to provide helpful and actionable suggestions
 in the context of home and business automation.</p>
-<h2 id="ambianic-deployment">Ambianic Deployment</h2>
 <p>Ambianic has two major components: Ambianic UI and Ambianic Edge.</p>
 <p>Ambianic UI is pre-deployed and readily available at
 <a href="https://ui.ambianic.ai">https://ui.ambianic.ai</a>.</p>
 <p>If you are familiar with Docker you will be able to install Ambianic Edge in less
 than 5 minutes.</p>
-<h3 id="ambanic-edge-deployment">Ambanic Edge Deployment</h3>
+<h2 id="ambanic-edge">Ambanic Edge</h2>
 <p>Ambianic Edge is
 <a href="https://hub.docker.com/r/ambianic/ambianic-edge">available</a> as a docker image for ARM and x86 architectures so it can be deployed
 on most modern machines and operating systems.</p>
@@ -195,7 +197,7 @@ on most modern machines and operating systems.</p>
 <a href="https://www.raspberrypi.org/documentation/setup/">Raspbian install</a> with
 <a href="https://www.freecodecamp.org/news/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef/">Docker on it</a>.
 You can install and run the image in the default pi user space on Raspbian.</p>
-<h4 id="starting-ambianic-edge">Starting Ambianic Edge</h4>
+<h3 id="starting-ambianic-edge">Starting Ambianic Edge</h3>
 <pre><code class="sh"># check if there is an image update
 docker pull ambianic/ambianic-edge
 # run latest image
@@ -209,7 +211,7 @@ docker run -it --rm  --name ambianic-edge \
 </code></pre>
 
 <p>The first time you start Ambianic Edge it may take a minute or two. You will then see an error message that configuration file could not be found. Worry not. We will address that in due course. Let's get the base system running first. Then we will come back to configuration settings.</p>
-<h3 id="ambanic-ui">Ambanic UI</h3>
+<h2 id="ambanic-ui">Ambanic UI</h2>
 <p><a href="https://ui.ambianic.ai/">Ambianic UI</a> is a
 modern prorgressive web application (PWA) that provides Plug-and-Play pairing and remote access
 to an Ambianic Edge device.</p>
@@ -239,7 +241,7 @@ timeline screenshot.</p>
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-02-05 13:32:40</p>
+            <p>Last update : 2020-02-05 13:34:58</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
