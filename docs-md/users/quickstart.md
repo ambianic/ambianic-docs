@@ -1,5 +1,5 @@
 
-# 5 Minutes Quick Start Guide
+# 5 Minute Quick Start
 
 Ambianic's goal is to provide helpful and actionable suggestions
 in the context of home and business automation.
