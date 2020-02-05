@@ -4,8 +4,6 @@
 Ambianic's goal is to provide helpful and actionable suggestions
 in the context of home and business automation.
 
-## Ambianic Deployment
-
 Ambianic has two major components: Ambianic UI and Ambianic Edge.
 
 Ambianic UI is pre-deployed and readily available at
@@ -14,7 +12,7 @@ Ambianic UI is pre-deployed and readily available at
 If you are familiar with Docker you will be able to install Ambianic Edge in less
 than 5 minutes.
 
-### Ambanic Edge Deployment
+## Ambanic Edge
 
 Ambianic Edge is
 [available](https://hub.docker.com/r/ambianic/ambianic-edge) as a docker image for ARM and x86 architectures so it can be deployed
@@ -28,7 +26,7 @@ To deploy on a Raspberry Pi 4, you will need a recent
 [Docker on it](https://www.freecodecamp.org/news/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef/).
 You can install and run the image in the default pi user space on Raspbian.
 
-#### Starting Ambianic Edge
+### Starting Ambianic Edge
 
 
 ```sh
@@ -47,7 +45,7 @@ docker stop ambianic-edge
 
 The first time you start Ambianic Edge it may take a minute or two. You will then see an error message that configuration file could not be found. Worry not. We will address that in due course. Let's get the base system running first. Then we will come back to configuration settings.
 
-### Ambanic UI
+## Ambanic UI
 
 [Ambianic UI](https://ui.ambianic.ai/) is a
 modern prorgressive web application (PWA) that provides Plug-and-Play pairing and remote access
