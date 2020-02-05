@@ -6,11 +6,7 @@ in the context of home and business automation.
 
 Ambianic has two major components: Ambianic UI and Ambianic Edge.
 
-Ambianic UI is pre-deployed and readily available at
-[https://ui.ambianic.ai](https://ui.ambianic.ai).
-
-If you are familiar with Docker you will be able to install Ambianic Edge in less
-than 5 minutes.
+Ambianic UI is pre-deployed and readily available at [https://ui.ambianic.ai](https://ui.ambianic.ai). If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes. Let's go step by step.
 
 ## Ambanic Edge
 
