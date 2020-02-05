@@ -45,6 +45,8 @@ You can stop the image with CTRL+C or
 docker stop ambianic-edge
 ```
 
+The first time you start Ambianic Edge it may take a minute or two. You will then see an error message that configuration file could not be found. Worry not. We will address that in due course. Let's get the base system running first. Then we will come back to configuration settings.
+
 ### Ambanic UI
 
 [Ambianic UI](https://ui.ambianic.ai/) is a
