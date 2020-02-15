@@ -163,11 +163,11 @@ secret_uri_front_door_camera: &secret_uri_front_door_camera 'rtsp://user:pass@19
 
 First, check your camera manufacturer's documentation whether it support RTSP. Most IP cameras do, but not all.
 
-You can use a tool such as ONVIF Device Manager to auto discover your IP camera and show you its RTSP URI. Here is a [quick How-To](http://help.angelcam.com/en/articles/372646-how-to-find-a-rtsp-address-for-an-onvif-compatible-camera-nvr-dvr). A more detailed post on this tool is also available [step-by-step blog post](https://learncctv.com/onvif-device-manager/).
+You can use a tool such as ONVIF Device Manager to auto discover your IP camera and show you its RTSP URI. Here is a [quick How-To](http://help.angelcam.com/en/articles/372646-how-to-find-a-rtsp-address-for-an-onvif-compatible-camera-nvr-dvr). A more detailed post on this tool is also [available here](https://learncctv.com/onvif-device-manager/).
 
-Your camera manufacturer will likely have an online resource describing how to determine its RTSP address. It would look something like [this one from Reolink](https://reolink.com/wp-content/uploads/2017/01/Reolink-CGI-command-v1.61.pdf).
+Your camera manufacturer will likely have an online resource describing how to determine its RTSP address. It would look something like [this one](https://reolink.com/wp-content/uploads/2017/01/Reolink-CGI-command-v1.61.pdf).
 
-There is also an online [community directory](https://security.world/rtsp/) where you can search for the RTSP URI of many camera brands.
+There is also an [online directory](https://security.world/rtsp/) where you can search for the RTSP URI of many camera brands.
 
 We are working on a camera Plug-and-Play feature in Ambianic to make it easier to discover and connect to your cameras. Keep an eye for release news.
 
