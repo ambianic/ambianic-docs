@@ -5,9 +5,8 @@ nav:
     - Home: index.md
     - User Guide:
       - Quick Start: users/quickstart.md
+      - Configuration: users/configure.md
       - FAQ: users/faq.md
-      - Installing: users/install.md
-      - Configuring: users/configure.md
       - Web UI: users/webui.md
       - Mobile UI: users/mobileui.md
       - AI Apps: users/ai-apps.md
