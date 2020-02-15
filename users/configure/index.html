@@ -323,6 +323,13 @@ prepend <code>secrets.yaml</code> to <code>config.yaml</code>. The idea here is 
 # add more secret entries as regular yaml mappings
 </code></pre>
 
+<h3 id="how-to-find-the-rtsp-uri-for-your-camera">How to find the RTSP URI for your camera</h3>
+<p>First, check your camera manufacturer's documentation whether it support RTSP. Most IP cameras do, but not all.</p>
+<p>You can use a tool such as ONVIF Device Manager to auto discover your IP camera and show you its RTSP URI. Here is a <a href="http://help.angelcam.com/en/articles/372646-how-to-find-a-rtsp-address-for-an-onvif-compatible-camera-nvr-dvr">quick How-To</a>. A more detailed post on this tool is also available <a href="https://learncctv.com/onvif-device-manager/">step-by-step blog post</a>.</p>
+<p>Your camera manufacturer will likely have an online resource describing how to determine its RTSP address. It would look something like <a href="https://reolink.com/wp-content/uploads/2017/01/Reolink-CGI-command-v1.61.pdf">this one from Reolink</a>.</p>
+<p>There is also an online <a href="https://security.world/rtsp/">community directory</a> where you can search for the RTSP URI of many camera brands.</p>
+<p>We are working on a camera Plug-and-Play feature in Ambianic to make it easier to discover and connect to your cameras. Keep an eye for release news.</p>
+<h3 id="other-ambianic-edge-configuration-settings">Other Ambianic Edge configuration settings</h3>
 <p>The rest of the configuration settings can be left with their default values for now.</p>
 <p>Notice that each pipeline definition starts with a media source. You can add and remove
 pipelines to match your home setup.</p>
@@ -403,7 +410,7 @@ cd ambianic-ui
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-02-12 21:51:20</p>
+            <p>Last update : 2020-02-15 17:10:35</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
