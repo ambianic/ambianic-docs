@@ -359,25 +359,35 @@ which is enough time to be registered and processed by Ambianic Edge on a plain 
 <p>If you use Docker Compose for a more convenient management of multiple docker images,
 here is a configuration section
 that you can place in your <code>docker-compose.yaml</code></p>
-<pre><code class="YAML">services:
+<pre><code class="YAML">version: &quot;3.7&quot;
+services:
   ambianic-edge:
     container_name: ambianic-edge
     restart: unless-stopped
     privileged: true
     image: ambianic/ambianic-edge:latest
+    # command: /workspace/ambianic-run2.sh
     network_mode: &quot;host&quot;
     volumes:
-      # - /dev/bus/usb:/dev/bus/usb
+    #  - /dev/bus/usb:/dev/bus/usb
       - /opt/ambianic-edge.prod:/workspace
+    # ports:
+    #  - 8778:8778
     restart: on-failure
     healthcheck:
       test: [&quot;CMD&quot;, &quot;curl&quot;, &quot;-sI&quot;, &quot;http://127.0.0.1:8778/&quot;]
       interval: 300s
-      timeout: 1s
+      timeout: 3s
       retries: 10
+    logging:
+      driver: &quot;json-file&quot;
+      options:
+        max-size: &quot;10m&quot;
+        max-file: &quot;10&quot;      
+
 </code></pre>
 
-<p>Notice the line with the usb parameter. It would be uncommented if there is a Coral attached to your RPI.</p>
+<p>Notice the line with the usb parameter. Uncomment it if there is a Google Coral TPU Accelerator attached to your RPI.</p>
 <h2 id="local-deployment-of-ambanic-ui">Local Deployment of Ambanic UI</h2>
 <p>Ambianic UI is available for FREE at <a href="https://ai.ambianic.ui">ui.ambianic.ai</a>.
 Its designed to be easy to use with Plug-and-play connectivity to Ambianic Edge.
@@ -414,7 +424,7 @@ cd ambianic-ui
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-02-21 17:24:46</p>
+            <p>Last update : 2020-02-21 17:27:08</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
