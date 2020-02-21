@@ -224,25 +224,35 @@ here is a configuration section
 that you can place in your `docker-compose.yaml`
 
 ```YAML
+version: "3.7"
 services:
   ambianic-edge:
     container_name: ambianic-edge
     restart: unless-stopped
     privileged: true
     image: ambianic/ambianic-edge:latest
+    # command: /workspace/ambianic-run2.sh
     network_mode: "host"
     volumes:
-      # - /dev/bus/usb:/dev/bus/usb
+    #  - /dev/bus/usb:/dev/bus/usb
       - /opt/ambianic-edge.prod:/workspace
+    # ports:
+    #  - 8778:8778
     restart: on-failure
     healthcheck:
       test: ["CMD", "curl", "-sI", "http://127.0.0.1:8778/"]
       interval: 300s
-      timeout: 1s
+      timeout: 3s
       retries: 10
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"      
+      
 ```
 
-Notice the line with the usb parameter. It would be uncommented if there is a Coral attached to your RPI.
+Notice the line with the usb parameter. Uncomment it if there is a Google Coral TPU Accelerator attached to your RPI.
 
 ## Local Deployment of Ambanic UI
 
