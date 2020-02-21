@@ -42,9 +42,8 @@ Create a `config.yaml` file in the workspace directory of the
 Ambianic Edge docker image.
 For example, the directory could be named `/opt/ambianid-edge.workspace`.
 
-You can use as a starting point this
-[template](https://github.com/ambianic/ambianic-edge/blob/master/config.yaml)
-and modify to fit your needs.
+You can [use this starting config.yaml template](https://gist.github.com/ivelin/1d1c885a25ad45bf8a3262653944b82c)
+and modify it to fit your environment. Read further about the parameters and format of the config file.
 
 Let's take an example `config.yaml` file and walk through it:
 
@@ -141,25 +140,30 @@ sources:
 
 ```
 
-In the configuration excerpt above, there are a few references to variables
-defined elsewhere in the YAML file. `*src_front_door_cam` and
-`*src_entry_area_cam` are the only
-references that you have to understand and configure in order
-to get Ambianic Edge working with your own cameras (or other source of video feed).
+The only parameter you have to change in order to see a populated timeline in the UI is the source uri. In the section below:
+```
+  front_door_camera: &src_front_door_cam
+    uri: *secret_uri_front_door_camera
+```
+ 
+ Replace `*secret_uri_front_door_camera` with your camera RTSP URI. For example:
 
-Since camera URIs often contain credentials, we recommended that you store these values
-in `secrets.yaml` which needs to be located in the same directory as
-`config.yaml`. Ambianic Edge will automatically look for and if available
-prepend `secrets.yaml` to `config.yaml`. The idea here is that you can share
- `config.yaml` with others without compromising privacy sensitive parameters.
-
-An example valid entry in `secretes.yaml` for a camera URI, would look like this:
-```yaml
-secret_uri_front_door_camera: &secret_uri_front_door_camera 'rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101'
-# add more secret entries as regular yaml mappings
+```
+  front_door_camera: &src_front_door_cam
+    uri: rtsp://admin:password@192.168.1.99/media/video1 
 ```
 
+Make sure that this exact camera RTSP URI produces a video feed. You can [test that](https://www.unifore.net/ip-video-surveillance/how-to-play-rtsp-video-stream-of-ip-cameras-on-vlc-player-quicktime-player.html) with a tool like [VLC](https://www.videolan.org/).
+
+Now save the file and restart the docker image. Within a few moments you should be able to see a populated timeline in the UI with fresh images from your camera and some object, people and face detections if there are any to detect.
+
+You can reference the [Quick Start Guide](quickstart.md) for instructions on starting and stopping the Ambianic Edge docker image.
+
 ### How to find the RTSP URI for your camera
+
+If you don't have experience configuring surveillance cameras, it can be tricky to find the RTSP URI. We are working on a camera Plug-and-Play feature in Ambianic to make it easier to discover and connect to your cameras. Keep an eye for release news. 
+
+In the meanwhile, you have several options:
 
 First, check your camera manufacturer's documentation whether it support RTSP. Most IP cameras do, but not all.
 
@@ -169,18 +173,29 @@ Your camera manufacturer will likely have an online resource describing how to d
 
 There is also an [online directory](https://security.world/rtsp/) where you can search for the RTSP URI of many camera brands.
 
-We are working on a camera Plug-and-Play feature in Ambianic to make it easier to discover and connect to your cameras. Keep an eye for release news.
+### Storing sensitive config information in secrets.yaml
+
+In the configuration example, there are a few references to variables
+defined elsewhere in the YAML file. You can use standard [YAML anchors and aliases](https://yaml.org/refcard.html) for that.
+
+Notice that `*src_front_door_cam` and
+`*src_entry_area_cam` are the YAML aliases(references) that do not appear elsewhere in config.yaml. 
+They are actually picked up from an optional file located in the same directory: `secrets.yaml`.
+
+Since camera URIs often contain credentials, we recommend that you store such values
+in `secrets.yaml`. Ambianic Edge will automatically look for and if available
+prepend `secrets.yaml` to `config.yaml`. That way you can share
+ `config.yaml` with others without compromising privacy sensitive parameters.
+
+An example valid entry in `secretes.yaml` for a camera URI, would look like this:
+```yaml
+secret_uri_front_door_camera: &secret_uri_front_door_camera 'rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101'
+# add more secret entries as regular yaml mappings
+```
 
 ### Other Ambianic Edge configuration settings
 
-The rest of the configuration settings can be left with their default values for now.
-
-Notice that each pipeline definition starts with a media source. You can add and remove
-pipelines to match your home setup.
-
-Once you specify the URI of your camera(s), you can start the Docker image.
-You can reference the [Quick Start Guide](quickstart.md) for information on starting and
-stopping the Ambianic Edge docker image.
+The rest of the configuration settings are for developers and contributors. If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. Otherwise leave them as they are.
 
 ## Using AI Accelerator
 
