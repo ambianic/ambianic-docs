@@ -74,9 +74,10 @@ Congratulations! Your Ambianic instance is now up and running!
 ## Configuration
 
 You are now ready to configure Ambianic: pipelines, input sources and AI models.
-[Learn more](configure.md).
 
-Once you configure Ambianic Edge, you should be able to see timeline view like the one above.
+Read on: [Configuring Ambianic Edge](configure.md).
+
+Once you configure Ambianic Edge and restart the docker image, you should be able to see timeline view like the one above.
 
 The pairing information is persisted on your Ambianic UI client device and you can now access Ambianic Edge from anywhere remotely! The connection is direct and encrypted end-to-end.
 
