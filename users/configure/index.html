@@ -208,9 +208,8 @@ $(".diagram").flowchart();
 <p>Create a <code>config.yaml</code> file in the workspace directory of the
 Ambianic Edge docker image.
 For example, the directory could be named <code>/opt/ambianid-edge.workspace</code>.</p>
-<p>You can use as a starting point this
-<a href="https://github.com/ambianic/ambianic-edge/blob/master/config.yaml">template</a>
-and modify to fit your needs.</p>
+<p>You can <a href="https://gist.github.com/ivelin/1d1c885a25ad45bf8a3262653944b82c">use this starting config.yaml template</a>
+and modify it to fit your environment. Read further about the parameters and format of the config file.</p>
 <p>Let's take an example <code>config.yaml</code> file and walk through it:</p>
 <pre><code class="YAML">######################################
 #  Ambianic main configuration file  #
@@ -304,34 +303,43 @@ sources:
 
 </code></pre>
 
-<p>In the configuration excerpt above, there are a few references to variables
-defined elsewhere in the YAML file. <code>*src_front_door_cam</code> and
-<code>*src_entry_area_cam</code> are the only
-references that you have to understand and configure in order
-to get Ambianic Edge working with your own cameras (or other source of video feed).</p>
-<p>Since camera URIs often contain credentials, we recommended that you store these values
-in <code>secrets.yaml</code> which needs to be located in the same directory as
-<code>config.yaml</code>. Ambianic Edge will automatically look for and if available
-prepend <code>secrets.yaml</code> to <code>config.yaml</code>. The idea here is that you can share
+<p>The only parameter you have to change in order to see a populated timeline in the UI is the source uri. In the section below:</p>
+<pre><code>  front_door_camera: &amp;src_front_door_cam
+    uri: *secret_uri_front_door_camera
+</code></pre>
+
+<p>Replace <code>*secret_uri_front_door_camera</code> with your camera RTSP URI. For example:</p>
+<pre><code>  front_door_camera: &amp;src_front_door_cam
+    uri: rtsp://admin:password@192.168.1.99/media/video1 
+</code></pre>
+
+<p>Make sure that this exact camera RTSP URI produces a video feed. You can <a href="https://www.unifore.net/ip-video-surveillance/how-to-play-rtsp-video-stream-of-ip-cameras-on-vlc-player-quicktime-player.html">test that</a> with a tool like <a href="https://www.videolan.org/">VLC</a>.</p>
+<p>Now save the file and restart the docker image. Within a few moments you should be able to see a populated timeline in the UI with fresh images from your camera and some object, people and face detections if there are any to detect.</p>
+<p>You can reference the <a href="../quickstart/">Quick Start Guide</a> for instructions on starting and stopping the Ambianic Edge docker image.</p>
+<h3 id="how-to-find-the-rtsp-uri-for-your-camera">How to find the RTSP URI for your camera</h3>
+<p>If you don't have experience configuring surveillance cameras, it can be tricky to find the RTSP URI. We are working on a camera Plug-and-Play feature in Ambianic to make it easier to discover and connect to your cameras. Keep an eye for release news. </p>
+<p>In the meanwhile, you have several options:</p>
+<p>First, check your camera manufacturer's documentation whether it support RTSP. Most IP cameras do, but not all.</p>
+<p>You can use a tool such as ONVIF Device Manager to auto discover your IP camera and show you its RTSP URI. Here is a <a href="http://help.angelcam.com/en/articles/372646-how-to-find-a-rtsp-address-for-an-onvif-compatible-camera-nvr-dvr">quick How-To</a>. A more detailed post on this tool is also <a href="https://learncctv.com/onvif-device-manager/">available here</a>.</p>
+<p>Your camera manufacturer will likely have an online resource describing how to determine its RTSP address. It would look something like <a href="https://reolink.com/wp-content/uploads/2017/01/Reolink-CGI-command-v1.61.pdf">this one</a>.</p>
+<p>There is also an <a href="https://security.world/rtsp/">online directory</a> where you can search for the RTSP URI of many camera brands.</p>
+<h3 id="storing-sensitive-config-information-in-secretsyaml">Storing sensitive config information in secrets.yaml</h3>
+<p>In the configuration example, there are a few references to variables
+defined elsewhere in the YAML file. You can use standard <a href="https://yaml.org/refcard.html">YAML anchors and aliases</a> for that.</p>
+<p>Notice that <code>*src_front_door_cam</code> and
+<code>*src_entry_area_cam</code> are the YAML aliases(references) that do not appear elsewhere in config.yaml. 
+They are actually picked up from an optional file located in the same directory: <code>secrets.yaml</code>.</p>
+<p>Since camera URIs often contain credentials, we recommend that you store such values
+in <code>secrets.yaml</code>. Ambianic Edge will automatically look for and if available
+prepend <code>secrets.yaml</code> to <code>config.yaml</code>. That way you can share
  <code>config.yaml</code> with others without compromising privacy sensitive parameters.</p>
 <p>An example valid entry in <code>secretes.yaml</code> for a camera URI, would look like this:</p>
 <pre><code class="yaml">secret_uri_front_door_camera: &amp;secret_uri_front_door_camera 'rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101'
 # add more secret entries as regular yaml mappings
 </code></pre>
 
-<h3 id="how-to-find-the-rtsp-uri-for-your-camera">How to find the RTSP URI for your camera</h3>
-<p>First, check your camera manufacturer's documentation whether it support RTSP. Most IP cameras do, but not all.</p>
-<p>You can use a tool such as ONVIF Device Manager to auto discover your IP camera and show you its RTSP URI. Here is a <a href="http://help.angelcam.com/en/articles/372646-how-to-find-a-rtsp-address-for-an-onvif-compatible-camera-nvr-dvr">quick How-To</a>. A more detailed post on this tool is also <a href="https://learncctv.com/onvif-device-manager/">available here</a>.</p>
-<p>Your camera manufacturer will likely have an online resource describing how to determine its RTSP address. It would look something like <a href="https://reolink.com/wp-content/uploads/2017/01/Reolink-CGI-command-v1.61.pdf">this one</a>.</p>
-<p>There is also an <a href="https://security.world/rtsp/">online directory</a> where you can search for the RTSP URI of many camera brands.</p>
-<p>We are working on a camera Plug-and-Play feature in Ambianic to make it easier to discover and connect to your cameras. Keep an eye for release news.</p>
 <h3 id="other-ambianic-edge-configuration-settings">Other Ambianic Edge configuration settings</h3>
-<p>The rest of the configuration settings can be left with their default values for now.</p>
-<p>Notice that each pipeline definition starts with a media source. You can add and remove
-pipelines to match your home setup.</p>
-<p>Once you specify the URI of your camera(s), you can start the Docker image.
-You can reference the <a href="../quickstart/">Quick Start Guide</a> for information on starting and
-stopping the Ambianic Edge docker image.</p>
+<p>The rest of the configuration settings are for developers and contributors. If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. Otherwise leave them as they are.</p>
 <h2 id="using-ai-accelerator">Using AI Accelerator</h2>
 <p>Ambianic Edge will use the <a href="https://coral.ai/">Google Coral TPU</a> accelerator if one is available on the system.</p>
 <p>Let's assume that you have a USB attached Coral running on <code>/dev/bus/usb</code>.
@@ -406,7 +414,7 @@ cd ambianic-ui
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-02-21 16:53:54</p>
+            <p>Last update : 2020-02-21 17:24:46</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
