@@ -311,9 +311,11 @@ sources:
 <p>Replace <code>*secret_uri_front_door_camera</code> with your camera RTSP URI. For example:</p>
 <pre><code>  front_door_camera: &amp;src_front_door_cam
     uri: rtsp://admin:password@192.168.1.99/media/video1 
+    live: true    
 </code></pre>
 
 <p>Make sure that this exact camera RTSP URI produces a video feed. You can <a href="https://www.unifore.net/ip-video-surveillance/how-to-play-rtsp-video-stream-of-ip-cameras-on-vlc-player-quicktime-player.html">test that</a> with a tool like <a href="https://www.videolan.org/">VLC</a>.</p>
+<p>The parameter <code>live: true</code> indicates that this is a continuous stream without a predetermined end. Therefore Ambianic Edge should do whatever it can to continuously pull media and recover from interruptions caused by network or other glitches.</p>
 <p>Now save the file and restart the docker image. Within a few moments you should be able to see a populated timeline in the UI with fresh images from your camera and some object, people and face detections if there are any to detect.</p>
 <p>You can reference the <a href="../quickstart/">Quick Start Guide</a> for instructions on starting and stopping the Ambianic Edge docker image.</p>
 <h3 id="how-to-find-the-rtsp-uri-for-your-camera">How to find the RTSP URI for your camera</h3>
@@ -323,6 +325,15 @@ sources:
 <p>You can use a tool such as ONVIF Device Manager to auto discover your IP camera and show you its RTSP URI. Here is a <a href="http://help.angelcam.com/en/articles/372646-how-to-find-a-rtsp-address-for-an-onvif-compatible-camera-nvr-dvr">quick How-To</a>. A more detailed post on this tool is also <a href="https://learncctv.com/onvif-device-manager/">available here</a>.</p>
 <p>Your camera manufacturer will likely have an online resource describing how to determine its RTSP address. It would look something like <a href="https://reolink.com/wp-content/uploads/2017/01/Reolink-CGI-command-v1.61.pdf">this one</a>.</p>
 <p>There is also an <a href="https://security.world/rtsp/">online directory</a> where you can search for the RTSP URI of many camera brands.</p>
+<h3 id="using-still-image-source-instead-of-rtsp-stream-for-your-camera-uri"><a href="#still-image-source">Using still image source instead of RTSP stream for your camera URI</a></h3>
+<p>In many cases processing 1 frame per second is sufficient frequency to detect interesting events in your environment. It is usually more CPU and network resource efficient to use a still image source instead of live RTSP stream for 1fps.</p>
+<p>All you have to do to use a still image source from your camera is to locate the specific image URI using techniques similar to the ones you use to find the RTSP URI. Then replace the value in the corresponding <code>source</code> section of the <code>config.yaml</code> file. Here is what it would look like:</p>
+<pre><code>  front_door_camera: &amp;src_front_door_cam
+    uri: http://192.168.86.29/cgi-bin/api.cgi?cmd=Snap&amp;channel=0&amp;rs=wuuPhkmUCeI9WG7C&amp;user=admin&amp;password=******
+    live: true
+</code></pre>
+
+<p>In the example above the URI points to a still jpg sample from the camera. Ambianic Edge will continuously poll this URI approximately once per second (1fps).</p>
 <h3 id="storing-sensitive-config-information-in-secretsyaml">Storing sensitive config information in secrets.yaml</h3>
 <p>In the configuration example, there are a few references to variables
 defined elsewhere in the YAML file. You can use standard <a href="https://yaml.org/refcard.html">YAML anchors and aliases</a> for that.</p>
@@ -424,7 +435,7 @@ cd ambianic-ui
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-02-25 18:59:59</p>
+            <p>Last update : 2020-02-28 18:23:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
