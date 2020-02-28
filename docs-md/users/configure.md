@@ -151,9 +151,12 @@ The only parameter you have to change in order to see a populated timeline in th
 ```
   front_door_camera: &src_front_door_cam
     uri: rtsp://admin:password@192.168.1.99/media/video1 
+    live: true    
 ```
 
 Make sure that this exact camera RTSP URI produces a video feed. You can [test that](https://www.unifore.net/ip-video-surveillance/how-to-play-rtsp-video-stream-of-ip-cameras-on-vlc-player-quicktime-player.html) with a tool like [VLC](https://www.videolan.org/).
+
+The parameter `live: true` indicates that this is a continuous stream without a predetermined end. Therefore Ambianic Edge should do whatever it can to continuously pull media and recover from interruptions caused by network or other glitches.
 
 Now save the file and restart the docker image. Within a few moments you should be able to see a populated timeline in the UI with fresh images from your camera and some object, people and face detections if there are any to detect.
 
@@ -172,6 +175,20 @@ You can use a tool such as ONVIF Device Manager to auto discover your IP camera 
 Your camera manufacturer will likely have an online resource describing how to determine its RTSP address. It would look something like [this one](https://reolink.com/wp-content/uploads/2017/01/Reolink-CGI-command-v1.61.pdf).
 
 There is also an [online directory](https://security.world/rtsp/) where you can search for the RTSP URI of many camera brands.
+
+### [Using still image source instead of RTSP stream for your camera URI](#still-image-source)
+
+In many cases processing 1 frame per second is sufficient frequency to detect interesting events in your environment. It is usually more CPU and network resource efficient to use a still image source instead of live RTSP stream for 1fps.
+
+All you have to do to use a still image source from your camera is to locate the specific image URI using techniques similar to the ones you use to find the RTSP URI. Then replace the value in the corresponding `source` section of the `config.yaml` file. Here is what it would look like:
+
+```
+  front_door_camera: &src_front_door_cam
+    uri: http://192.168.86.29/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=admin&password=******
+    live: true
+```
+
+In the example above the URI points to a still jpg sample from the camera. Ambianic Edge will continuously poll this URI approximately once per second (1fps).
 
 ### Storing sensitive config information in secrets.yaml
 
