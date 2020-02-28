@@ -176,7 +176,7 @@ Your camera manufacturer will likely have an online resource describing how to d
 
 There is also an [online directory](https://security.world/rtsp/) where you can search for the RTSP URI of many camera brands.
 
-### Using still image source instead of RTSP stream for your camera URI [ ](#still-image-source)
+### Using still image source instead of RTSP stream for your camera URI
 
 In many cases processing 1 frame per second is sufficient frequency to detect interesting events in your environment. It is usually more CPU and network resource efficient to use a still image source instead of live RTSP stream for 1fps.
 
