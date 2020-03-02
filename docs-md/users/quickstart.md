@@ -84,3 +84,7 @@ The pairing information is persisted on your Ambianic UI client device and you c
 ## Troubleshooting
 
 If you experience problems with your initial setup and you can't find a good solution online, feel free to engage the team on [Twitter](https://twitter.com/ambianicai) or [open a github issue](https://github.com/ambianic).
+
+## Supporting the project
+
+If you find value in this project, consider supporting its future success. See the [sustainability](https://docs.ambianic.ai/#sustainability) section.
