@@ -114,5 +114,5 @@ If you are interested in becoming a contributor to the project, please read the 
 * By design, there are no other direct or indirect sources of funding that compromise the core values of the project.
 * The project [roadmap is open](https://github.com/orgs/ambianic/projects/1) to community feedback and input. 
 * As we reach new levels of regular sponsors, we run a community survey to prioritize the next big roadmap feature.
-* If you are using the project on a daily basis at home, consider investing in its future success either with your time as a contributor or with a small coffee cup [donation](https://github.com/sponsors/ambianic). Thank you!
-* If you don't like the direction the project is going and your voice is not heard, cancel your support, fork the code and go in a direction that works for you. Such is the power of open source software. Keeps everyone honest and humble.
+* If you are using the project on a daily basis at home, consider investing in its future success either with your time as a contributor or with a small coffee cup [donation](https://github.com/sponsors/ambianic). Thank you! :pray:
+* If you don't like the direction the project is going and your voice is not heard, cancel your support, fork the code and go in a direction that works for you. Such is the balancing power :cop: of open source software. Keeps everyone honest and humble :relieved:. 
