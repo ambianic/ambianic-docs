@@ -15,7 +15,8 @@ Ambianic Edge is
 on most modern machines and operating systems.
 
 The reference test system is:
-[Raspberry Pi 4 with 4GB RAM and 32GB SD card](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/).
+[Raspberry Pi 4 with 4GB RAM and 32GB SD card](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/). 
+_Although docker images are [available](https://hub.docker.com/r/ambianic/ambianic-edge/tags) for most common ARM and x86 machines._
 
 To deploy on a Raspberry Pi 4, you will need a recent
 [Raspbian install](https://www.raspberrypi.org/documentation/setup/) with
