@@ -192,22 +192,13 @@ on most modern machines and operating systems.</p>
 <em>Although docker images are <a href="https://hub.docker.com/r/ambianic/ambianic-edge/tags">available</a> for most common ARM and x86 machines.</em></p>
 <p>To deploy on a Raspberry Pi 4, you will need a recent
 <a href="https://www.raspberrypi.org/documentation/setup/">Raspbian install</a> with
-<a href="https://www.freecodecamp.org/news/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef/">Docker on it</a>.
+<a href="https://www.freecodecamp.org/news/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef/">Docker</a>
+and <a href="https://docs.docker.com/compose/">Docker Compose</a> on it.
 You can install and run the image in the default pi user space on Raspbian.</p>
 <h3 id="starting-ambianic-edge">Starting Ambianic Edge</h3>
-<pre><code class="sh"># check if there is an image update
-docker pull ambianic/ambianic-edge
-# run latest image
-docker run -it --rm  --name ambianic-edge \
-  --mount type=bind,source=$PWD,target=/workspace \
-  --net=host ambianic/ambianic-edge
-</code></pre>
-
-<p>You can stop the image with CTRL+C or</p>
-<pre><code>docker stop ambianic-edge
-</code></pre>
-
-<p>The first time you start Ambianic Edge it may take a minute or two. You will then see an error message that configuration file could not be found. Worry not. We will address that in due course. Let's get the base system running first. Then we will come back to configuration settings.</p>
+<p>Here is a default <a href="https://gist.github.com/ivelin/3891a7b5d61a12d6a1b9f652b6d53dce">docker-compose.yaml</a> file that you can start with. 
+It takes care of monitoring the health of Ambianic Edge, restarting when necessary and also graceful automatic updates when new versions are available on Docker Hub.</p>
+<p><em>Note: The very first time you start Ambianic Edge it may take a minute or two. You will then see an error message that configuration file could not be found. Worry not. We will address that in due course. Let's get the base system running first. Then we will come back to configuration settings.</em></p>
 <h2 id="ambanic-ui">Ambanic UI</h2>
 <p><a href="https://ui.ambianic.ai/">Ambianic UI</a> is a
 modern prorgressive web application (PWA) that provides Plug-and-Play pairing and remote access
@@ -240,7 +231,7 @@ timeline screenshot.</p>
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-04-16 15:35:33</p>
+            <p>Last update : 2020-04-22 23:16:45</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
