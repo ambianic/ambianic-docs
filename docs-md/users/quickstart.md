@@ -27,7 +27,7 @@ You can install and run the image in the default pi user space on Raspbian.
 ### Starting Ambianic Edge
 
 Here is a default [docker-compose.yaml](https://gist.github.com/ivelin/3891a7b5d61a12d6a1b9f652b6d53dce) file that you can start with. 
-It takes care of monitoring the health of Ambianic Edge, restarting when necessary and also graceful automatic updates when new versions are available on Docker Hub.
+It takes care of monitoring the health of Ambianic Edge, restarting when necessary and also graceful automatic updates to the latest release within 5 minutes.
 
 _Note: The very first time you start Ambianic Edge it may take a minute or two. You will then see an error message that configuration file could not be found. Worry not. We will address that in due course. Let's get the base system running first. Then we will come back to configuration settings._
 
