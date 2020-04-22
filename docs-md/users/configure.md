@@ -234,43 +234,6 @@ It comfortably handles 3 simultaneous HD camera sourced pipelines with approxima
 An objects or person of interest would normally show up in one of your cameras for at least one second,
 which is enough time to be registered and processed by Ambianic Edge on a plain RPI4.
 
-## Using Docker Compose
-
-If you use Docker Compose for a more convenient management of multiple docker images,
-here is a configuration section
-that you can place in your `docker-compose.yaml`
-
-```YAML
-version: "3.7"
-services:
-  ambianic-edge:
-    container_name: ambianic-edge
-    restart: unless-stopped
-    privileged: true
-    image: ambianic/ambianic-edge:latest
-    # command: /workspace/ambianic-run2.sh
-    network_mode: "host"
-    volumes:
-    #  - /dev/bus/usb:/dev/bus/usb
-      - /opt/ambianic-edge.prod:/workspace
-    # ports:
-    #  - 8778:8778
-    restart: on-failure
-    healthcheck:
-      test: ["CMD", "curl", "-sI", "http://127.0.0.1:8778/"]
-      interval: 300s
-      timeout: 3s
-      retries: 10
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "10m"
-        max-file: "10"      
-      
-```
-
-Notice the line with the usb parameter. Uncomment it if there is a Google Coral TPU Accelerator attached to your RPI.
-
 ## Local Deployment of Ambanic UI
 
 Ambianic UI is available for FREE at [ui.ambianic.ai](https://ai.ambianic.ui).
