@@ -350,10 +350,7 @@ prepend <code>secrets.yaml</code> to <code>config.yaml</code>. That way you can 
 <p>The rest of the configuration settings are for developers and contributors. If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. Otherwise leave them as they are.</p>
 <h2 id="using-ai-accelerator">Using AI Accelerator</h2>
 <p>Ambianic Edge will use the <a href="https://coral.ai/">Google Coral TPU</a> accelerator if one is available on the system.</p>
-<p>Let's assume that you have a USB attached Coral running on <code>/dev/bus/usb</code>.
-In order for Ambianic Edge to see it, add the following parameter
-to the docker image start line:
-<code>--device /dev/bus/usb</code></p>
+<p><em>Note: The default docker compose configuration for Ambianic Edge checks whether a USB attached Coral is running on <code>/dev/bus/usb</code>. You may need to adjust that if the TPU is attached to a different file system directory.</em></p>
 <p>Coral is a powerful TPU that can speed up inference 5-10 times. However AI inference is only part of
 all the functions that execute in an Ambianic Edge pipeline. Video decoding and formatting
 also takes substantial amount of processing time. Overall we've seen Coral to improve
@@ -399,7 +396,7 @@ cd ambianic-ui
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-04-22 23:19:32</p>
+            <p>Last update : 2020-04-22 23:23:01</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
