@@ -218,10 +218,7 @@ The rest of the configuration settings are for developers and contributors. If y
 
 Ambianic Edge will use the [Google Coral TPU](https://coral.ai/) accelerator if one is available on the system.
 
-Let's assume that you have a USB attached Coral running on `/dev/bus/usb`.
-In order for Ambianic Edge to see it, add the following parameter
-to the docker image start line:
-`--device /dev/bus/usb`
+_Note: The default docker compose configuration for Ambianic Edge checks whether a USB attached Coral is running on `/dev/bus/usb`. You may need to adjust that if the TPU is attached to a different file system directory._
 
 Coral is a powerful TPU that can speed up inference 5-10 times. However AI inference is only part of
 all the functions that execute in an Ambianic Edge pipeline. Video decoding and formatting
