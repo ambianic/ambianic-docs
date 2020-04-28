@@ -141,14 +141,14 @@ sources:
 ```
 
 The only parameter you have to change in order to see a populated timeline in the UI is the source uri. In the section below:
-```
+```yaml
   front_door_camera: &src_front_door_cam
     uri: *secret_uri_front_door_camera
 ```
  
  Replace `*secret_uri_front_door_camera` with your camera still image snapshot URI (recommended). For example:
  
- ```
+```yaml
   front_door_camera: &src_front_door_cam
     uri: http://192.168.86.29/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=admin&password=******
     type: image
@@ -157,7 +157,7 @@ The only parameter you have to change in order to see a populated timeline in th
 
 Or you can alternatively plug-in the camera video streaming RTSP URI. For example:
 
-```
+```yaml
   front_door_camera: &src_front_door_cam
     uri: rtsp://admin:password@192.168.1.99/media/video1 
     type: video
