@@ -159,6 +159,12 @@
                     <a href="#pipeline-configuration" class="nav-link">Pipeline Configuration</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#cameras" class="nav-link">Cameras</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sensitive-config-information" class="nav-link">Sensitive config information</a>
+                </li>
+                <li class="nav-item">
                     <a href="#using-ai-accelerator" class="nav-link">Using AI Accelerator</a>
                 </li>
                 <li class="nav-item">
@@ -315,23 +321,29 @@ sources:
 <p>The parameter <code>live: true</code> indicates that this is a continuous stream without a predetermined end. Therefore Ambianic Edge should do whatever it can to continuously pull media and recover from interruptions caused by network or other glitches.</p>
 <p>Now save the file and restart the docker image. Within a few moments you should be able to see a populated timeline in the UI with fresh images from your camera and some object, people and face detections if there are any to detect.</p>
 <p>You can reference the <a href="../quickstart/">Quick Start Guide</a> for instructions on starting and stopping the Ambianic Edge docker image.</p>
-<h3 id="how-to-find-the-rtsp-uri-for-your-camera">How to find the RTSP URI for your camera</h3>
-<p>If you don't have experience configuring surveillance cameras, it can be tricky to find the RTSP URI. We are working on a camera Plug-and-Play feature in Ambianic to make it easier to discover and connect to your cameras. Keep an eye for release news. </p>
+<h2 id="cameras">Cameras</h2>
+<p>Cameras are some of the most common sources of input data for Ambianic.ai pipelines.</p>
+<p>Ambianic.ai is typically connected to IP Network cameras, but you can also connect a local embedded web cam or USB connected camera.</p>
+<h3 id="connecting-a-local-web-usb-camera">Connecting a local Web USB camera</h3>
+<p>Ambianic.ai needs a valid URI to connect to. This requires running an app that captures video from your local camera and streams it over HTTP or RTSP. VLC is one of the most popular and easy to use apps for that. 
+<a href="https://espressolive.com/blog/how-to-webcast-in-vlc-media-player/">Here is how</a> you can turn your local webcam into an IP streaming camera. The streaming URL shared by VLC is the input source URI for the Ambianic.ai configuration file.</p>
+<h3 id="how-to-find-the-uri-for-your-camera">How to find the URI for your camera</h3>
+<p>If you don't have experience configuring surveillance cameras, it can be tricky to find the URI. We are working on a camera Plug-and-Play feature in Ambianic to make it easier to discover and connect to your cameras. Keep an eye for release news. </p>
 <p>In the meanwhile, you have several options:</p>
-<p>First, check your camera manufacturer's documentation whether it support RTSP. Most IP cameras do, but not all.</p>
-<p>You can use a tool such as ONVIF Device Manager to auto discover your IP camera and show you its RTSP URI. Here is a <a href="http://help.angelcam.com/en/articles/372646-how-to-find-a-rtsp-address-for-an-onvif-compatible-camera-nvr-dvr">quick How-To</a>. A more detailed post on this tool is also <a href="https://learncctv.com/onvif-device-manager/">available here</a>.</p>
+<p>First, check your camera manufacturer's documentation whether it supports still image URL over HTTP or video streaming over RTSP. Most IP cameras do, but not all. If your camera is ONVIF standard conformant, then you will have access to HTTP camera images and RTSP video stream. You can use the <a href="https://www.onvif.org/conformant-products/">ONVIF Search Tool</a> to check if your camera is listed as conformant.</p>
+<p>You can then use a tool such as ONVIF Device Manager to auto discover your IP camera and show you its RTSP and HTTP URI. Here is a <a href="http://help.angelcam.com/en/articles/372646-how-to-find-a-rtsp-address-for-an-onvif-compatible-camera-nvr-dvr">quick How-To</a>. A more detailed post on this tool is also <a href="https://learncctv.com/onvif-device-manager/">available here</a>.</p>
 <p>Your camera manufacturer will likely have an online resource describing how to determine its RTSP address. It would look something like <a href="https://reolink.com/wp-content/uploads/2017/01/Reolink-CGI-command-v1.61.pdf">this one</a>.</p>
 <p>There is also an <a href="https://security.world/rtsp/">online directory</a> where you can search for the RTSP URI of many camera brands.</p>
 <h3 id="using-still-image-source-instead-of-rtsp-stream-for-your-camera-uri">Using still image source instead of RTSP stream for your camera URI</h3>
 <p>In many cases processing 1 frame per second is sufficient frequency to detect interesting events in your environment. It is usually more CPU and network resource efficient to use a still image source instead of live RTSP stream for 1fps.</p>
-<p>All you have to do to use a still image source from your camera is to locate the specific image URI using techniques similar to the ones you use to find the RTSP URI. Then replace the value in the corresponding <code>source</code> section of the <code>config.yaml</code> file. Here is what it would look like:</p>
+<p>All you have to do to use a still image source from your camera is to locate the specific image URI as described above and plug it in the corresponding <code>source</code> section of the <code>config.yaml</code> file. Here is what it would look like:</p>
 <pre><code>  front_door_camera: &amp;src_front_door_cam
     uri: http://192.168.86.29/cgi-bin/api.cgi?cmd=Snap&amp;channel=0&amp;rs=wuuPhkmUCeI9WG7C&amp;user=admin&amp;password=******
     live: true
 </code></pre>
 
 <p>In the example above the URI points to a still jpg sample from the camera. Ambianic Edge will continuously poll this URI approximately once per second (1fps).</p>
-<h3 id="storing-sensitive-config-information-in-secretsyaml">Storing sensitive config information in secrets.yaml</h3>
+<h2 id="sensitive-config-information">Sensitive config information</h2>
 <p>In the configuration example, there are a few references to variables
 defined elsewhere in the YAML file. You can use standard <a href="https://yaml.org/refcard.html">YAML anchors and aliases</a> for that.</p>
 <p>Notice that <code>*src_front_door_cam</code> and
@@ -396,7 +408,7 @@ cd ambianic-ui
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-04-27 15:15:55</p>
+            <p>Last update : 2020-04-28 18:56:01</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
