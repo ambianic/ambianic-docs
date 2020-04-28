@@ -146,15 +146,28 @@ The only parameter you have to change in order to see a populated timeline in th
     uri: *secret_uri_front_door_camera
 ```
  
- Replace `*secret_uri_front_door_camera` with your camera RTSP URI. For example:
+ Replace `*secret_uri_front_door_camera` with your camera still image snapshot URI (recommended). For example:
+ 
+ ```
+  front_door_camera: &src_front_door_cam
+    uri: http://192.168.86.29/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=admin&password=******
+    type: image
+    live: true
+```
+Or you can alternatively plug-in the camera video streaming RTSP URI. For example:
 
 ```
   front_door_camera: &src_front_door_cam
     uri: rtsp://admin:password@192.168.1.99/media/video1 
+    type: video
     live: true    
 ```
 
-Make sure that this exact camera RTSP URI produces a video feed. You can [test that](https://www.unifore.net/ip-video-surveillance/how-to-play-rtsp-video-stream-of-ip-cameras-on-vlc-player-quicktime-player.html) with a tool like [VLC](https://www.videolan.org/).
+Only use RTSP if you run high end hardware and use AI inference in your pipelines that needs video and/or audio data instead of still images.
+
+Make sure that the HTTP URI points to a valid image. You can test by simply putting the URI in your web browser. You should see a current snapshot of live camera capture.
+
+If you choose to use an RTSP URI, then you can [test that](https://www.unifore.net/ip-video-surveillance/how-to-play-rtsp-video-stream-of-ip-cameras-on-vlc-player-quicktime-player.html) with a tool like [VLC](https://www.videolan.org/).
 
 The parameter `live: true` indicates that this is a continuous stream without a predetermined end. Therefore Ambianic Edge should do whatever it can to continuously pull media and recover from interruptions caused by network or other glitches.
 
