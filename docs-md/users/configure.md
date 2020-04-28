@@ -154,6 +154,7 @@ The only parameter you have to change in order to see a populated timeline in th
     type: image
     live: true
 ```
+
 Or you can alternatively plug-in the camera video streaming RTSP URI. For example:
 
 ```
