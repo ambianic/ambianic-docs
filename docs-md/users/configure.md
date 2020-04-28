@@ -187,15 +187,16 @@ Your camera manufacturer will likely have an online resource describing how to d
 
 There is also an [online directory](https://security.world/rtsp/) where you can search for the RTSP URI of many camera brands.
 
-### Using still image source instead of RTSP stream for your camera URI
+### Using still image source instead of a video stream for your camera URI
 
-In many cases processing 1 frame per second is sufficient frequency to detect interesting events in your environment. It is usually more CPU and network resource efficient to use a still image source instead of live RTSP stream for 1fps.
+In many cases processing 1 frame per second is sufficient frequency to detect interesting events in your environment. It is usually more CPU and network resource efficient to use a still image source instead of live RTSP stream for 1fps. This approach allows Ambianic.ai Edge to pull from the camera another image snapshot when it is ready as opposed to streaming which pushes constantly media updates that Edge may or may not be ready to process.
 
 All you have to do to use a still image source from your camera is to locate the specific image URI as described above and plug it in the corresponding `source` section of the `config.yaml` file. Here is what it would look like:
 
 ```
   front_door_camera: &src_front_door_cam
     uri: http://192.168.86.29/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=admin&password=******
+    type: image
     live: true
 ```
 
