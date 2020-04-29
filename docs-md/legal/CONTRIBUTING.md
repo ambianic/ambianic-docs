@@ -48,6 +48,11 @@ use GitHub pull requests for this purpose. Consult
 [GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
 information on using pull requests.
 
+## Semantic Releases
+
+Ambianic.ai adheres to the [Semantic Release conventions](https://semantic-release.gitbook.io/semantic-release/).
+All package releases (to npm, pypi, docker) are completely automated in the Continuous Integration and Deployment scripts, which trigger on every Pull Request and commit to a project `master` branch.
+
 ## Community Guidelines
 
 This project follows [Google's Open Source Community
