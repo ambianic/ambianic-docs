@@ -23,6 +23,6 @@ To simplify the flow, a basic sequence diagram showing the flow inside the diffe
 ![Sequence Diagram][sequence]
 
 
-[connected]: ../assets/images/edge-connected.PNG
-[searching]: ../assets/images/edge-searching.PNG
+[connected]: ../assets/images/connected-screen.PNG
+[searching]: ../assets/images/pairing-screen.PNG
 [sequence]: ../assets/images/connection-sequence.PNG
