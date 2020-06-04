@@ -3,26 +3,30 @@
 This just describes the flow inside Ambianic-UI, how it connects to Edge
 and creates an Edge Room for secure communication
 
-In ChooseEdgeConnection, the user will choose to either connect to a local network or using the Room ID they got from a person which they can connect to.
+Upon starting the Web UI, it will automatically start searching for an Edge in your own local network. 
 
-EdgeConnect will load, but until the backend have authenticated, it will just
-show a loading bar.
+<img src="../assets/images/home-screen.png" />
 
-![Edge Searching][searching]
+Either press `VIEW TIMELINE` to see the data from your own Edge, or if press `SETTINGS` if you wish to connect to someone else's Edge (remote connection) or see details about your own Edge. 
 
-In the backend, the choise the user made will arrive in pnp.js, in the function `discoverRemotePeerId` which will check if there was a Room ID supplied. If there was, just return that RoomID and head on with connection to Edge in `actions [PEER_AUTHENTICATE]`.
+If you are not connected to a network, you will see a card showing that the UI is looking for an Edge on your local network.
 
-Once connection is established, EdgeConnect will show that we are connected to a certain room.
+<img src="../assets/images/pairing-screen.png" />
 
-![Edge Connected][connected]
+Once connected, it will change to:
 
-Once connected, the user can click `Disconnect` which will remove the PeerID making sure the website forgets the Edge ID.
+<img src="../assets/images/ambianic-connection-details.png" width='350' height='350' />
 
-To simplify the flow, a basic sequence diagram showing the flow inside the different files for future debugging and improvement.
+If you don't want to be connected to your own netwrok, for example you want to connect to your parents Edge, you can scroll down to `Pair with Remote Ambianic Edge device` and enter the PeerJS ID you get *from* them.
 
-![Sequence Diagram][sequence]
+<img src="../assets/images/ambianic-remote-connect.png" width='850' height='275' />
 
+Enter the Peer JS ID in the input field and press `PAIR REMOTELY`. 
 
-[connected]: ../assets/images/connected-screen.PNG
-[searching]: ../assets/images/pairing-screen.PNG
-[sequence]: ../assets/images/connection-sequence.PNG
+Once connected, click on the link `Timeline` to see the Edge's data.
+
+When done, go back to `Settings` and use `DISCOVER ON LOCAL NETWORK`
+
+<img src="../assets/images/ambianic-local-connection.png" width='850' height='200' />
+
+This will make sure you get disconnected from the remote Edge and connect back to your own Edge.

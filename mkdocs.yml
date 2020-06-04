@@ -18,6 +18,7 @@ nav:
       - Integrations: developers/integration.md
       - Writing PLugins: developers/writing-plugins-overview.md
       - Deployment Scenarios: developers/deployment.md
+      - Remote / Local connection: developers/edge-connection.md
       - Contributing: legal/CONTRIBUTING.md
 theme:
     name: mkdocs
