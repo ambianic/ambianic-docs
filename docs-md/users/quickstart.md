@@ -20,27 +20,16 @@ _Although docker images are [available](https://hub.docker.com/r/ambianic/ambian
 
 To deploy on a Raspberry Pi 4, you will need a recent
 [Raspbian install](https://www.raspberrypi.org/documentation/setup/) with
-[Docker on it](https://www.freecodecamp.org/news/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef/).
+[Docker](https://www.freecodecamp.org/news/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef/)
+and [Docker Compose](https://docs.docker.com/compose/) on it.
 You can install and run the image in the default pi user space on Raspbian.
 
 ### Starting Ambianic Edge
 
+Here is a default [docker-compose.yaml](https://gist.github.com/ivelin/3891a7b5d61a12d6a1b9f652b6d53dce) file that you can start with. 
+It takes care of monitoring the health of Ambianic Edge, restarting when necessary and also graceful automatic updates to the latest release within 5 minutes.
 
-```sh
-# check if there is an image update
-docker pull ambianic/ambianic-edge
-# run latest image
-docker run -it --rm  --name ambianic-edge \
-  --mount type=bind,source=$PWD,target=/workspace \
-  --net=host ambianic/ambianic-edge
-```
-
-You can stop the image with CTRL+C or
-```
-docker stop ambianic-edge
-```
-
-The first time you start Ambianic Edge it may take a minute or two. You will then see an error message that configuration file could not be found. Worry not. We will address that in due course. Let's get the base system running first. Then we will come back to configuration settings.
+_Note: The very first time you start Ambianic Edge it may take a minute or two. You will then see an error message that configuration file could not be found. Worry not. We will address that in due course. Let's get the base system running first. Then we will come back to configuration settings._
 
 ## Ambanic UI
 

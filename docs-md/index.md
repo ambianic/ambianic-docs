@@ -111,12 +111,29 @@ If you have questions, ideas or cool projects you'd like to share with the Ambia
 ## Contributors
 If you are interested in becoming a contributor to the project, please read the [Contributing](legal/CONTRIBUTING.md) page and follow the steps. Looking forward to hearing from you!
 
-## Sustainability
+## Sustainability 🌱
 
 * Ambianic is 100% Open Source and funded by its user community.
 * 100% Open Source ensures full transparency, privacy and user data ownership.
 * By design, there are no other direct or indirect sources of funding that compromise the core values of the project.
 * The project [roadmap is open](https://github.com/orgs/ambianic/projects/1) to community feedback and input. 
 * As we reach new levels of regular sponsors, we run a community survey to prioritize the next big roadmap feature.
-* If you are using the project on a daily basis at home, consider investing in its future success either with your time as a contributor or with a small coffee cup [donation](https://github.com/sponsors/ambianic). Thank you! :pray:
-* If you don't like the direction the project is going and your voice is not heard, cancel your support, fork the code and go in a direction that works for you. Such is the balancing power :cop: of open source software. Keeps everyone honest and humble :relieved:. 
+* If you are using the project on a daily basis at home, consider investing in its future success either with your time as a contributor or with a small coffee cup [donation](https://github.com/sponsors/ambianic). Thank you! 🙏
+* If you don't like the direction the project is going and your voice is not heard, cancel your support, fork the code and go in a direction that works for you. Such is the balancing power 👮 of open source software. Keeps everyone honest and humble 😌. 
+
+
+## Responsibilty 📎
+
+Ambianic does not currently operate within a trusted third party network for installation and setup purposes. The Ambianic product is currently a standalone open sourced asset and no liability can be assumed for any decision taken from an individual or group seeking to utilise its benefits. 
+
+Nonetheless, potential and actual users of the system, both direct and indirect, could bear in mind the following advice from Ambianic:
+
+1. Conduct proper research on the utility of the product
+2. Set clear goals for product functionality 
+3. Try to understand the product's benefits and limitations
+4. In the event of uncertainty please use professional level skills for installation and system setup projects
+5. Beware of any 'too good to be true' offers from marketeers offering services that relate to this product
+
+Ambianic has been designed to enable a do-it-yourself project although it is recognised that one person's "easy" level of technical expertise is another person's "headache". For anyone attempting their own independent installation project a certain level of knowledge relating to computer software and hardware is assumed as necessary. 
+
+Ambianic is currently an open source asset offered in the spirit of beneficial assistance to help those in need or the families and / or those close to those in need. Any use of Ambianic is done so entirely at the risk of the user/s or user/s' representatives (expressed or deemed) and no responsibility for any adverse consequences through system usage can be assumed by Ambianic.
