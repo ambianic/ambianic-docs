@@ -12,7 +12,7 @@ nav:
       - AI Apps: users/ai-apps.md
       - How To: users/howto.md
       - Support: users/support.md
-      - Remote / Local connection: developers/edge-connection.md
+      - Remote and Local pairing: developers/edge-connection.md
     - Developer Guide:
       - Architecture: developers/architecture.md
       - APIs: developers/api.md
