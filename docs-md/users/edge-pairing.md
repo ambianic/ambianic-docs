@@ -1,13 +1,10 @@
-# This is an overview in how the connection stream is running in the UI to Edge
+# This is an overview of the connection flow between Ambianic UI and Ambianic Edge
 
-This just describes the flow inside Ambianic-UI, how it connects to Edge
-and creates an Edge Room for secure communication
-
-Upon starting the Web UI, it will automatically start searching for an Edge in your own local network. 
+Upon starting the Ambianic Web UI, it will automatically start searching for an Ambianic Edge on your own local network. 
 
 <img src="../assets/images/home-screen.png" />
 
-Either press `VIEW TIMELINE` to see the data from your own Edge, or if press `SETTINGS` if you wish to connect to someone else's Edge (remote connection) or see details about your own Edge. 
+Either press `VIEW TIMELINE` to see the data from your own Edge, or press `SETTINGS` if you wish to connect to someone else's Edge (remote connection) or see details about your own Edge. 
 
 If you are not connected to a network, you will see a card showing that the UI is looking for an Edge on your local network.
 
@@ -29,4 +26,4 @@ When done, go back to `Settings` and use `DISCOVER ON LOCAL NETWORK`
 
 <img src="../assets/images/ambianic-local-connection.png" width='850' height='200' />
 
-This will make sure you get disconnected from the remote Edge and connect back to your own Edge.
+This will make sure you get disconnected from the remote Edge and connect back to your own local network Edge.
