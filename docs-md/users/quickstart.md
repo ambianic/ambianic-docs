@@ -24,6 +24,18 @@ To deploy on a Raspberry Pi 4, you will need a recent
 and [Docker Compose](https://docs.docker.com/compose/) on it.
 You can install and run the image in the default pi user space on Raspbian.
 
+## _Quick Start_
+On a RaspberryPi running the Buster version of Raspbian, run the following commands to setup the Ambianic Edge software.
+
+```
+sudo apt update -qq -y && sudo apt upgrade -qq -y && sudo apt install -qq -y docker-compose
+mkdir ambianic
+cd ambianic
+wget 'https://gist.githubusercontent.com/ivelin/3891a7b5d61a12d6a1b9f652b6d53dce/raw/452658c6372f3ebf631e8e1c8567507d74e6e922/docker-compose.yaml'
+sed -i 's/version: "3.7"/version: "3.3"/' docker-compose.yaml
+docker-compose up -d
+```
+
 ### Starting Ambianic Edge
 
 Here is a default [docker-compose.yaml](https://gist.github.com/ivelin/3891a7b5d61a12d6a1b9f652b6d53dce) file that you can start with. 
