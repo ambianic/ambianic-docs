@@ -21,8 +21,10 @@ _Although docker images are [available](https://hub.docker.com/r/ambianic/ambian
 To deploy on a Raspberry Pi 4, you will need a recent
 [Raspbian install](https://www.raspberrypi.org/documentation/setup/) with
 [Docker](https://www.freecodecamp.org/news/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef/)
-and [Docker Compose](https://docs.docker.com/compose/) on it.
+and [Docker Compose](https://docs.docker.com/compose/) on it. 
 You can install and run the image in the default pi user space on Raspbian.
+
+Feel free to use [this shell script](https://gist.github.com/muka/725e07f26b8ac5f3e4f03bce5f2e8b45) provided by Luca Capra that installs Docker and Docker Compose on a Raspberry Pi system (or another Debian flavored Linux) and runs a minimal Ambianic Edge configuration.
 
 ### Starting Ambianic Edge
 
