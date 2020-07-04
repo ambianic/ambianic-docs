@@ -230,7 +230,7 @@ in `secrets.yaml`. Ambianic Edge will automatically look for and if available
 prepend `secrets.yaml` to `config.yaml`. That way you can share
  `config.yaml` with others without compromising privacy sensitive parameters.
 
-An example valid entry in `secretes.yaml` for a camera URI, would look like this:
+An example valid entry in `secrets.yaml` for a camera URI, would look like this:
 ```yaml
 secret_uri_front_door_camera: &secret_uri_front_door_camera 'rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101'
 # add more secret entries as regular yaml mappings
