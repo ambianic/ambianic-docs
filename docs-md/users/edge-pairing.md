@@ -2,13 +2,13 @@
 
 Upon starting the Ambianic Web UI, it will automatically start searching for an Ambianic Edge on your own local network. 
 
-<img src="../assets/images/home-screen.png" />
+<img src="../../assets/images/home-screen.png" />
 
 Either press `VIEW TIMELINE` to see the data from your own Edge, or press `SETTINGS` if you wish to connect to someone else's Edge (remote connection) or see details about your own Edge. 
 
 If you are not connected to a network, you will see a card showing that the UI is looking for an Edge on your local network.
 
-<img src="../assets/images/pairing-screen.png" />
+<img src="../../assets/images/pairing-screen.png" />
 
 Once connected, it will change to:
 
