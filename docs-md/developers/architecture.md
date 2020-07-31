@@ -77,5 +77,6 @@ pipelines:
         idle_interval: 600
 ```
 
+## Architectural Decomposition
 
-![uncached image](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/plantuml/plantuml-server/master/src/main/webapp/resource/test2diagrams.txt)
+The [following slides](https://docs.google.com/presentation/d/1VBDBpVR1ujHoi1g6NeFYiy7r9xflfYXNJ0jg6izEX7g/edit?usp=sharing) provide an alternative perspective on the Ambianic Edge architecture.
