@@ -6,19 +6,19 @@ nav:
     - User Guide:
       - Quick Start: users/quickstart.md
       - Configuration: users/configure.md
-      - FAQ: users/faq.md
-      - Web UI: users/webui.md
-      - Mobile UI: users/mobileui.md
-      - AI Apps: users/ai-apps.md
-      - How To: users/howto.md
-      - Support: users/support.md
+#      - FAQ: users/faq.md
+#      - Web UI: users/webui.md
+#      - Mobile UI: users/mobileui.md
+#      - AI Apps: users/ai-apps.md
+#      - How To: users/howto.md
+#      - Support: users/support.md
       - Remote / Local connection: users/edge-pairing.md
     - Developer Guide:
       - Architecture: developers/architecture.md
-      - APIs: developers/api.md
-      - Integrations: developers/integration.md
-      - Writing PLugins: developers/writing-plugins-overview.md
-      - Deployment Scenarios: developers/deployment.md
+#      - APIs: developers/api.md
+#      - Integrations: developers/integration.md
+#      - Writing PLugins: developers/writing-plugins-overview.md
+#      - Deployment Scenarios: developers/deployment.md
       - Contributing: legal/CONTRIBUTING.md
 theme:
     name: mkdocs
