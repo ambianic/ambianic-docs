@@ -198,12 +198,19 @@ timeline:
 # Cameras and other input data sources
 # Using Home Assistant conventions to ease upcoming integration
 sources:
-  front_door_camera: &amp;src_front_door_cam
+
+  # example for a local camera device (linux based)
+  webcam: 
+    uri: /dev/video0
+    type: video
+    live: true
+
+  front_door_camera: 
     uri: *secret_uri_front_door_camera
     # type: video, audio, or auto
     type: video
     live: true
-  entry_area_camera: &amp;src_entry_area_cam
+  entry_area_camera: 
     uri: *secret_uri_entry_area_camera
     type: video
     # live: is this a live source or a recording
@@ -211,7 +218,7 @@ sources:
     # if the stream is interrupted due to network disruption or another reason.
     live: true
   # recorded front door cam feed for quick testing
-  # recorded_cam_feed: &amp;src_recorded_cam_feed
+  # recorded_cam_feed:
   #  uri: file:///workspace/tests/pipeline/avsource/test2-cam-person1.mkv
   #  type: video
 
@@ -220,12 +227,12 @@ sources:
   #  image_classification:
   #    tf_graph:
   #    labels:
-    image_detection: &amp;tfm_image_detection
+    image_detection: 
       model:
         tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
         edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite
       labels: /opt/ambianic-edge/ai_models/coco_labels.txt
-    face_detection: &amp;tfm_face_detection
+    face_detection: 
       model:
         tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
         edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_face_quant_postprocess_edgetpu.tflite
@@ -237,15 +244,15 @@ sources:
   pipelines:
     # sequence of piped operations for use in daytime front door watch
     front_door_watch:
-      - source: *src_front_door_cam
+      - source: front_door_cam
       - detect_objects: # run ai inference on the input data
-         &lt;&lt;: *tfm_image_detection
+         ai_model: image_detection
          confidence_threshold: 0.8
       - save_detections: # save samples from the inference results
          positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence threshold
          idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
       - detect_faces: # run ai inference on the samples from the previous element output
-         &lt;&lt;: *tfm_face_detection
+         ai_model: face_detection
          confidence_threshold: 0.8
       - save_detections: # save samples from the inference results
          positive_interval: 2
@@ -253,16 +260,16 @@ sources:
 
     # sequence of piped operations for use in daytime front door watch
     entry_area_watch:
-      - source: *src_entry_area_cam
+      - source: entry_area_cam
       # - mask: svg # apply a mask to the input data
       - detect_objects: # run ai inference on the input data
-          &lt;&lt;: *tfm_image_detection
+          ai_model: image_detection
           confidence_threshold: 0.8
       - save_detections: # save samples from the inference results
           positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence thresho$
           idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
       - detect_faces: # run ai inference on the samples from the previous element output
-          &lt;&lt;: *tfm_face_detection
+          ai_model: face_detection
           confidence_threshold: 0.8
       - save_detections: # save samples from the inference results
           positive_interval: 2
@@ -271,22 +278,22 @@ sources:
 </code></pre>
 
 <p>The only parameter you have to change in order to see a populated timeline in the UI is the source uri. In the section below:</p>
-<pre><code class="yaml">  front_door_camera: &amp;src_front_door_cam
+<pre><code class="yaml">  front_door_camera:
     uri: *secret_uri_front_door_camera
 </code></pre>
 
 <p>Replace <code>*secret_uri_front_door_camera</code> with your camera still image snapshot URI (recommended). For example:</p>
-<pre><code class="yaml">  front_door_camera: &amp;src_front_door_cam
+<pre><code class="yaml">  front_door_camera:
     uri: http://192.168.86.29/cgi-bin/api.cgi?cmd=Snap&amp;channel=0&amp;rs=wuuPhkmUCeI9WG7C&amp;user=admin&amp;password=******
     type: image
     live: true
 </code></pre>
 
 <p>Or you can alternatively plug-in the camera video streaming RTSP URI. For example:</p>
-<pre><code class="yaml">  front_door_camera: &amp;src_front_door_cam
+<pre><code class="yaml">  front_door_camera:
     uri: rtsp://admin:password@192.168.1.99/media/video1 
     type: video
-    live: true    
+    live: true
 </code></pre>
 
 <p>Only use RTSP if you run high end hardware and use AI inference in your pipelines that needs video and/or audio data instead of still images.</p>
@@ -299,7 +306,21 @@ sources:
 <p>Cameras are some of the most common sources of input data for Ambianic.ai pipelines.</p>
 <p>Ambianic.ai is typically connected to IP Network cameras, but you can also connect a local embedded web cam or USB connected camera.</p>
 <h3 id="connecting-a-local-web-usb-camera">Connecting a local Web USB camera</h3>
-<p>Ambianic.ai needs a valid URI to connect to. This requires running an app that captures video from your local camera and streams it over HTTP or RTSP. VLC is one of the most popular and easy to use apps for that. 
+<p>A laptop camera or USB camera on linux can be used just providing a working reference to the video device, eg. <code>/dev/video0</code></p>
+<p>To use a Pi Camera connected to the camera connector on the Raspberry Pi (usually available in the middle of the board) you need to enable the V4L2 kernel module</p>
+<pre><code class="sh">  # enable pi camera as /dev/video*
+  echo &quot;bcm2835-v4l2&quot; | sudo tee -a /etc/modules
+  sudo modprobe bcm2835-v4l2    
+</code></pre>
+
+<p>Once identified the correct video device (for example that you can open it with VLC player) update your configuration to point to the right source</p>
+<pre><code class="yaml">  webcam: 
+    uri: /dev/video0
+    type: video
+    live: true
+</code></pre>
+
+<p>Another option is to stream your local camera over HTTP or RTSP. VLC is one of the most popular and easy to use apps for that. 
 <a href="https://espressolive.com/blog/how-to-webcast-in-vlc-media-player/">Here is how</a> you can turn your local webcam into an IP streaming camera. The streaming URL shared by VLC is the input source URI for the Ambianic.ai configuration file.</p>
 <h3 id="how-to-find-the-uri-for-your-camera">How to find the URI for your camera</h3>
 <p>If you don't have experience configuring surveillance cameras, it can be tricky to find the URI. We are working on a camera Plug-and-Play feature in Ambianic to make it easier to discover and connect to your cameras. Keep an eye for release news. </p>
@@ -311,7 +332,7 @@ sources:
 <h3 id="using-still-image-source-instead-of-a-video-stream-for-your-camera-uri">Using still image source instead of a video stream for your camera URI</h3>
 <p>In many cases processing 1 frame per second is sufficient frequency to detect interesting events in your environment. It is usually more CPU and network resource efficient to use a still image source instead of live RTSP stream for 1fps. This approach allows Ambianic.ai Edge to pull from the camera another image snapshot when it is ready as opposed to streaming which pushes constantly media updates that Edge may or may not be ready to process.</p>
 <p>All you have to do to use a still image source from your camera is to locate the specific image URI as described above and plug it in the corresponding <code>source</code> section of the <code>config.yaml</code> file. Here is what it would look like:</p>
-<pre><code>  front_door_camera: &amp;src_front_door_cam
+<pre><code class="yaml">  front_door_camera: 
     uri: http://192.168.86.29/cgi-bin/api.cgi?cmd=Snap&amp;channel=0&amp;rs=wuuPhkmUCeI9WG7C&amp;user=admin&amp;password=******
     type: image
     live: true
@@ -383,7 +404,7 @@ cd ambianic-ui
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-08-05 17:24:44.095724+00:00</p>
+            <p>Last update : 2020-08-08 13:36:55.256025+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
