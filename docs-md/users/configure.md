@@ -201,11 +201,18 @@ To use a Pi Camera connected to the camera connector on the Raspberry Pi (usuall
   sudo modprobe bcm2835-v4l2    
 ```
 
+Ensure also your setup provides enough GPU memory to the camera to work. In `/boot/config.txt` add
+
+```
+start_x=1
+gpu_mem=256
+```
+
 Once identified the correct video device (for example that you can open it with VLC player) update your configuration to point to the right source
 
 ```yaml
   webcam: 
-    uri: /dev/video0
+    uri: file:///dev/video0
     type: video
     live: true
 ```
