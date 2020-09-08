@@ -97,7 +97,7 @@ sources:
   #  image_classification:
   #    tf_graph:
   #    labels:
-    image_detection: 
+    object_detection: 
       model:
         tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
         edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite
@@ -116,7 +116,7 @@ sources:
     front_door_watch:
       - source: front_door_cam
       - detect_objects: # run ai inference on the input data
-         ai_model: image_detection
+         ai_model: object_detection
          confidence_threshold: 0.8
       - save_detections: # save samples from the inference results
          positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence threshold
@@ -133,7 +133,7 @@ sources:
       - source: entry_area_cam
       # - mask: svg # apply a mask to the input data
       - detect_objects: # run ai inference on the input data
-          ai_model: image_detection
+          ai_model: object_detection
           confidence_threshold: 0.8
       - save_detections: # save samples from the inference results
           positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence thresho$
