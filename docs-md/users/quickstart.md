@@ -24,14 +24,27 @@ To deploy on a Raspberry Pi 4, you will need a recent
 and [Docker Compose](https://docs.docker.com/compose/) on it. 
 You can install and run the image in the default pi user space on Raspbian.
 
-Feel free to use [this shell script](https://gist.github.com/muka/725e07f26b8ac5f3e4f03bce5f2e8b45) provided by Luca Capra that installs Docker and Docker Compose on a Raspberry Pi system (or another Debian flavored Linux) and runs a minimal Ambianic Edge configuration.
+### Installer for Raspberry OS and Debian-like linux
 
-### Starting Ambianic Edge
+We have a commodity script that will take care of installing and setting up your system. Run this line to setup 
 
-Here is a default [docker-compose.yaml](https://gist.github.com/ivelin/3891a7b5d61a12d6a1b9f652b6d53dce) file that you can start with. 
-It takes care of monitoring the health of Ambianic Edge, restarting when necessary and also graceful automatic updates to the latest release within 5 minutes.
+```sh
+wget -qO - https://raw.githubusercontent.com/ambianic/ambianic-quickstart/master/installer.sh | sh
+```
 
-_Note: The very first time you start Ambianic Edge it may take a minute or two. You will then see an error message that configuration file could not be found. Worry not. We will address that in due course. Let's get the base system running first. Then we will come back to configuration settings._
+After the setup you can find the installation under `/opt/ambianic` where you can find the configuration files and the data directory (under `/opt/ambianic/data`).
+
+Ambianic Pipeline configuration will be under `/etc/ambianic`.
+
+### The Ambianic Edge CLI
+
+The installer will start the service for you. To manage the runtime you can use the `ambianic` command line. A few example
+
+- Start, Stop or Restart with `ambianic [ start | stop | restart ]`
+- View the instance status with `ambianic status`
+- View logs with `ambianic logs`
+- Open the UI (if you system has a GUI) with `ambianic ui`
+- Upgrade the installation with `ambianic upgrade`
 
 ## Ambanic UI
 
