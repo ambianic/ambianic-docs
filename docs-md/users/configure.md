@@ -42,7 +42,7 @@ Create a `config.yaml` file in the workspace directory of the
 Ambianic Edge docker image.
 For example, the directory could be named `/opt/ambianid-edge.workspace`.
 
-You can [use this starting config.yaml template](https://gist.github.com/ivelin/1d1c885a25ad45bf8a3262653944b82c)
+You can [use this starting config.yaml template](https://raw.githubusercontent.com/ambianic/ambianic-quickstart/master/config.yaml)
 and modify it to fit your environment. Read further about the parameters and format of the config file.
 
 Let's take an example `config.yaml` file and walk through it:
@@ -54,6 +54,7 @@ Let's take an example `config.yaml` file and walk through it:
 version: '1.2.4'
 
 # path to the data directory
+# ./data is relative to the container runtime. Do not change it if you are unsure.
 data_dir: &data_dir ./data
 
 # Set logging level to one of DEBUG, INFO, WARNING, ERROR
@@ -72,6 +73,11 @@ sources:
   # example for a local camera device (linux based)
   webcam: 
     uri: /dev/video0
+    type: video
+    live: true
+
+  picamera: 
+    uri: picamera
     type: video
     live: true
 
@@ -193,22 +199,42 @@ Ambianic.ai is typically connected to IP Network cameras, but you can also conne
 
 A laptop camera or USB camera on linux can be used just providing a working reference to the video device, eg. `/dev/video0`
 
-To use a Pi Camera connected to the camera connector on the Raspberry Pi (usually available in the middle of the board) you need to enable the V4L2 kernel module
+
+### Connecting a Picamera
+
+To use a Picamera connected to the camera connector on the Raspberry Pi (usually available in the middle of the board)
+
+Ensure also your setup have the camera enabled and provides enough GPU memory for processing frames. The following script will take care of it for you:
 
 ```sh
-  # enable pi camera as /dev/video*
-  echo "bcm2835-v4l2" | sudo tee -a /etc/modules
-  sudo modprobe bcm2835-v4l2    
+
+# Enable camera
+sudo raspi-config nonint do_camera 1
+
+# Allocate GPU to camera:
+if ! grep -Fq "gpu_mem=" /boot/config.txt; then
+  echo "gpu_mem=256" | sudo tee -a /boot/config.txt
+fi
 ```
 
-Once identified the correct video device (for example that you can open it with VLC player) update your configuration to point to the right source
+In a tipical setup your `/boot/config.txt` should contain something like this at the end
+
+```ini
+[all]
+start_x=1
+gpu_mem=256
+```
+
+Then update your configuration to point to the right source
 
 ```yaml
-  webcam: 
-    uri: /dev/video0
+  picamera: 
+    uri: picamera
     type: video
     live: true
 ```
+
+### Connecting over HTTP or RTSP
 
 Another option is to stream your local camera over HTTP or RTSP. VLC is one of the most popular and easy to use apps for that. 
 [Here is how](https://espressolive.com/blog/how-to-webcast-in-vlc-media-player/) you can turn your local webcam into an IP streaming camera. The streaming URL shared by VLC is the input source URI for the Ambianic.ai configuration file.
