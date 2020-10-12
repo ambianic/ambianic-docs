@@ -159,11 +159,21 @@ on most modern machines and operating systems.</p>
 <a href="https://www.freecodecamp.org/news/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef/">Docker</a>
 and <a href="https://docs.docker.com/compose/">Docker Compose</a> on it. 
 You can install and run the image in the default pi user space on Raspbian.</p>
-<p>Feel free to use <a href="https://gist.github.com/muka/725e07f26b8ac5f3e4f03bce5f2e8b45">this shell script</a> provided by Luca Capra that installs Docker and Docker Compose on a Raspberry Pi system (or another Debian flavored Linux) and runs a minimal Ambianic Edge configuration.</p>
-<h3 id="starting-ambianic-edge">Starting Ambianic Edge</h3>
-<p>Here is a default <a href="https://gist.github.com/ivelin/3891a7b5d61a12d6a1b9f652b6d53dce">docker-compose.yaml</a> file that you can start with. 
-It takes care of monitoring the health of Ambianic Edge, restarting when necessary and also graceful automatic updates to the latest release within 5 minutes.</p>
-<p><em>Note: The very first time you start Ambianic Edge it may take a minute or two. You will then see an error message that configuration file could not be found. Worry not. We will address that in due course. Let's get the base system running first. Then we will come back to configuration settings.</em></p>
+<h3 id="installer-for-raspberry-os-and-debian-like-linux">Installer for Raspberry OS and Debian-like linux</h3>
+<p>We have a commodity script that will take care of installing and setting up your system. Run this line to setup </p>
+<pre><code class="language-sh">wget -qO - https://raw.githubusercontent.com/ambianic/ambianic-quickstart/master/installer.sh | sh
+</code></pre>
+<p>After the setup you can find the installation under <code>/opt/ambianic</code> where you can find the configuration files and the data directory (under <code>/opt/ambianic/data</code>).</p>
+<p>Ambianic Pipeline configuration will be under <code>/etc/ambianic</code>.</p>
+<h3 id="the-ambianic-edge-cli">The Ambianic Edge CLI</h3>
+<p>The installer will start the service for you. To manage the runtime you can use the <code>ambianic</code> command line. A few example</p>
+<ul>
+<li>Start, Stop or Restart with <code>ambianic [ start | stop | restart ]</code></li>
+<li>View the instance status with <code>ambianic status</code></li>
+<li>View logs with <code>ambianic logs</code></li>
+<li>Open the UI (if you system has a GUI) with <code>ambianic ui</code></li>
+<li>Upgrade the installation with <code>ambianic upgrade</code></li>
+</ul>
 <h2 id="ambanic-ui">Ambanic UI</h2>
 <p><a href="https://ui.ambianic.ai/">Ambianic UI</a> is a
 modern prorgressive web application (PWA) that provides Plug-and-Play pairing and remote access
@@ -196,7 +206,7 @@ timeline screenshot.</p>
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-09-08 19:18:50.557662+00:00</p>
+            <p>Last update : 2020-10-12 19:04:34.718089+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
