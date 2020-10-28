@@ -57,3 +57,7 @@ All package releases (to npm, pypi, docker) are completely automated in the Cont
 
 This project follows [Google's Open Source Community
 Guidelines](https://opensource.google.com/conduct/).
+
+## Setup Your Development Environment
+
+Now that you are familiar with the contribution guidelines, you are ready to start coding. Follow [this guide to set up your dev environment](../developers/development-environment.md).
