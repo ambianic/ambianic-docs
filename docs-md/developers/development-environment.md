@@ -72,6 +72,10 @@ Move to `/workspace` directory where the local code is mounted with
 
 `cd /workspace/`
 
+### Starting a development instance
+
+Run `./src/run-dev.sh` to start the development instance of Ambianic.ai from the container. 
+
 ### Running tests
 
 To run the test use 
@@ -81,6 +85,8 @@ To run the test use
 The command will install the required dependencies and scan the  `./tests` folder to execute all the tests found.
 
 When developing is common to narrow the scope of testing to the componentes we are working  on. We can use the pytest commmand directly for that purpose, follows a list of handy command that can be used  during development.
+
+_Note_ ensure to run `./tests/run-tests.sh` at least once to have the python dependencies installed!
 
 ```sh
 # run all the tests
