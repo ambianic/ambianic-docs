@@ -86,6 +86,10 @@ Once you configure Ambianic Edge and restart the docker image, you should be abl
 
 The pairing information is persisted on your Ambianic UI client device and you can now access Ambianic Edge from anywhere remotely! The connection is direct and encrypted end-to-end.
 
+## Development
+
+If you want to contribute to the code read how to [setup a development environment](../developers/development-environment.md)
+
 ## Troubleshooting
 
 If you experience problems with your initial setup and you can't find a good solution online, feel free to engage the team on [Twitter](https://twitter.com/ambianicai) or [open a github issue](https://github.com/ambianic).

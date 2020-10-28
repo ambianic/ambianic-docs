@@ -3,26 +3,32 @@
 
 This page decribes how to setup a development environment for Ambianic.ai
 
+## About forking
+
+If you plan to push your code you can fork the code and work from your local copy of the project.
+
+For example, once you identify a project you want to contribute go to Github and hit the __Fork__ button. This will create a copy of the codebase under your account.
+
+Now go to the __Code__ button and copy the repository URI. 
+
+As an example using the git CLI you can run something like (change username and project name first!)
+
+```sh
+git clone https://github.com/<your username>/<project>.git
+```
+
+or you can use any other git client.
+
+
 ## Edge
 
 To setup the  environment for the Edge you need as prerequisites:
 
+- a *nix machine also in VM
 - docker
 - git
 
-Start by forking the repository and cloning it
-
-Go to https://github.com/ambianic/ambianic-edge and hit the __Fork__ button. This will create a copy of the `ambianic-edge` codebase under your account.
-
-Now go to the __Code__ button and copy the repository URI. 
-
-As an example using the git CLI you can run (change your username first!)
-
-```sh
-git clone https://github.com/<your username>/ambianic-edge.git
-```
-
-but you can use any other git client.
+Clone or fork the repository at https://github.com/ambianic/ambianic-edge
 
 Now open a terminal and move to the `ambianic-edge` folder.
 
@@ -45,9 +51,9 @@ You should see something like that
 ++ cd .
 ++ pwd
 ++ basename ./ambianic-debug.sh
-+ MY_PATH=/home/l/git/github.com/ambianicai/ambianic-edge/ambianic-debug.sh
-++ dirname /home/l/git/github.com/ambianicai/ambianic-edge/ambianic-debug.sh
-+ MY_DIR=/home/l/git/github.com/ambianicai/ambianic-edge
++ MY_PATH=/home/user/ambianic-edge/ambianic-debug.sh
+++ dirname /home/user/ambianic-edge/ambianic-debug.sh
++ MY_DIR=/home/user/ambianic-edge
 + USB_DIR=/dev/bus/usb
 + VIDEO_0=/dev/video0
 + '[' -d /dev/bus/usb ']'
@@ -61,12 +67,12 @@ dev: Pulling from ambianic/ambianic-edge
 Digest: sha256:1b95614012f7a12abd5604471d81ec2b6dbda6d4aa1a622e69ef1605f9ff6004
 Status: Image is up to date for ambianic/ambianic-edge:dev
 docker.io/ambianic/ambianic-edge:dev
-+ docker run -it --rm --name ambianic-edge-dev --mount type=bind,source=/home/l/git/github.com/ambianicai/ambianic-edge,target=/workspace --privileged --net=host --device /dev/video0 --device /dev/bus/usb ambianic/ambianic-edge:dev
++ docker run -it --rm --name ambianic-edge-dev --mount type=bind,source=/home/user/ambianic-edge,target=/workspace --privileged --net=host --device /dev/video0 --device /dev/bus/usb ambianic/ambianic-edge:dev
 ```
 
 The shell will show up 
 
-`root@alf:/opt/ambianic-edge#`
+`root@pc:/opt/ambianic-edge#`
 
 Move to `/workspace` directory where the local code is mounted with 
 
