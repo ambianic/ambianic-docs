@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Architecture - Ambianic Documentation</title>
+        <title>Development Environment - Ambianic Documentation</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -68,12 +68,12 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Developer Guide <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Architecture</a>
+    <a href="../architecture/" class="dropdown-item">Architecture</a>
 </li>
                                     
 <li>
@@ -90,17 +90,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../users/edge-pairing/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../../legal/CONTRIBUTING/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/developers/architecture.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/developers/development-environment.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -118,98 +108,108 @@
 
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
-            <li class="nav-item main"><a href="#ambianic-high-level-architecture">Ambianic High Level Architecture</a></li>
+            <li class="nav-item main"><a href="#development-environment">Development Environment</a></li>
                 <li class="nav-item">
-                    <a href="#configuration" class="nav-link">Configuration</a>
+                    <a href="#about-forking" class="nav-link">About forking</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#architectural-decomposition" class="nav-link">Architectural Decomposition</a>
+                    <a href="#edge" class="nav-link">Edge</a>
                 </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="ambianic-high-level-architecture">Ambianic High Level Architecture</h1>
-<ol>
-<li>Pipelines</li>
-<li>Pipe Elements</li>
-<li>Sources</li>
-<li>Outputs</li>
-<li>Connecting Pipelines</li>
-<li>Integrations</li>
-</ol>
-<p>Ambianic's main goal is to observe the environment and provide helpful
-suggestions in the context of home and business automation. The user has
-complete ownership and control of Ambianic's input sensors, AI inference flows
-and processed data storage. All logic executes on user's own edge devices and
-data is stored only on these devices with optional backup on
- a user designated server.</p>
-<p>The main unit of work is the Ambianic pipeline which executes in the runtime of
-Ambianic Edge devices.
-The following diagram illustrates an example pipeline which takes as input
-a video stream URI source such as a surveillance camera and
-outputs object detections to a local directory.</p>
-<div class="diagram">
-st=>start: Video Source
-op_obj=>operation: Object Detection AI
-op_sav1=>parallel: Storage Element
-io1=>inputoutput: save object detections to file
-op_face=>operation: Face Detection AI
-op_sav2=>parallel: Storage Element
-io2=>inputoutput: save face detections to file
-e=>end: Output to other pipelines
-
-st->op_obj
-op_obj(bottom)->op_sav1
-op_sav1(path1, bottom)->op_face
-op_sav1(path2, right)->io1
-op_face(bottom)->op_sav2
-op_sav2(path1, bottom)->e
-op_sav2(path2, right)->io2
-</div>
-
-<script>
-$(".diagram").flowchart();
-</script>
-
-<p><br/></p>
-<h2 id="configuration">Configuration</h2>
-<p>Here is the corresponding configuration section for the pipeline above
-(normally located in <code>config.yaml</code>):</p>
-<pre><code class="language-yaml">pipelines:
-  daytime_front_door_watch:
-    - source: rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101
-    - detect_objects: # run ai inference on the input data
-        model:
-          tflite: ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
-          edgetpu: ai_models/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite
-        labels: ai_models/coco_labels.txt
-        confidence_threshold: 0.8
-    - save_detections: # save samples from the inference results
-        output_directory: ./data/detections/front-door/objects
-        positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence threshold
-        idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
-    - detect_faces: # run ai inference on the samples from the previous element output
-        model:
-          tflite: ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
-          edgetpu: ai_models/mobilenet_ssd_v2_face_quant_postprocess_edgetpu.tflite
-        labels: ai_models/coco_labels.txt
-        confidence_threshold: 0.8
-    - save_detections: # save samples from the inference results
-        output_directory: ./data/detections/front-door/faces
-        positive_interval: 2
-        idle_interval: 600
+<h1 id="development-environment">Development Environment</h1>
+<p>This page decribes how to setup a development environment for Ambianic.ai</p>
+<h2 id="about-forking">About forking</h2>
+<p>If you plan to push your code you can fork the code and work from your local copy of the project.</p>
+<p>For example, once you identify a project you want to contribute go to Github and hit the <strong>Fork</strong> button. This will create a copy of the codebase under your account.</p>
+<p>Now go to the <strong>Code</strong> button and copy the repository URI. </p>
+<p>As an example using the git CLI you can run something like (change username and project name first!)</p>
+<pre><code class="language-sh">git clone https://github.com/&lt;your username&gt;/&lt;project&gt;.git
 </code></pre>
-<h2 id="architectural-decomposition">Architectural Decomposition</h2>
-<p>The <a href="https://docs.google.com/presentation/d/1VBDBpVR1ujHoi1g6NeFYiy7r9xflfYXNJ0jg6izEX7g/edit?usp=sharing">following slides</a> provide an alternative perspective on the Ambianic Edge architecture.</p></div>
+<p>or you can use any other git client.</p>
+<h2 id="edge">Edge</h2>
+<p>To setup the  environment for the Edge you need as prerequisites:</p>
+<ul>
+<li>a *nix machine also in VM</li>
+<li>docker</li>
+<li>git</li>
+</ul>
+<p>Clone or fork the repository at https://github.com/ambianic/ambianic-edge</p>
+<p>Now open a terminal and move to the <code>ambianic-edge</code> folder.</p>
+<h3 id="start-the-development-environment">Start the development environment</h3>
+<p>To start the development container run</p>
+<pre><code class="language-sh">./ambianic-debug.sh
+</code></pre>
+<p>This command will download the most up to date version of the base container and mount your local directory into it. Once the setup is completed, you will have a shell prompt from inside the container.</p>
+<p>You should see something like that</p>
+<p><code>$ ./ambianic-debug.sh</code></p>
+<pre><code class="language-sh">+++ dirname ./ambianic-debug.sh
+++ cd .
+++ pwd
+++ basename ./ambianic-debug.sh
++ MY_PATH=/home/user/ambianic-edge/ambianic-debug.sh
+++ dirname /home/user/ambianic-edge/ambianic-debug.sh
++ MY_DIR=/home/user/ambianic-edge
++ USB_DIR=/dev/bus/usb
++ VIDEO_0=/dev/video0
++ '[' -d /dev/bus/usb ']'
++ USB_ARG='--device /dev/bus/usb'
++ VC_SHARED_LIB=
++ grep -s -q 'Raspberry Pi' /proc/cpuinfo
++ '[' -e /dev/video0 ']'
++ VIDEO_ARG='--device /dev/video0'
++ docker pull ambianic/ambianic-edge:dev
+dev: Pulling from ambianic/ambianic-edge
+Digest: sha256:1b95614012f7a12abd5604471d81ec2b6dbda6d4aa1a622e69ef1605f9ff6004
+Status: Image is up to date for ambianic/ambianic-edge:dev
+docker.io/ambianic/ambianic-edge:dev
++ docker run -it --rm --name ambianic-edge-dev --mount type=bind,source=/home/user/ambianic-edge,target=/workspace --privileged --net=host --device /dev/video0 --device /dev/bus/usb ambianic/ambianic-edge:dev
+</code></pre>
+<p>The shell will show up </p>
+<p><code>root@pc:/opt/ambianic-edge#</code></p>
+<p>Move to <code>/workspace</code> directory where the local code is mounted with </p>
+<p><code>cd /workspace/</code></p>
+<h3 id="starting-a-development-instance">Starting a development instance</h3>
+<p>Run <code>./src/run-dev.sh</code> to start the development instance of Ambianic.ai from the container. </p>
+<h3 id="running-tests">Running tests</h3>
+<p>To run the test use </p>
+<p><code>./tests/run-tests.sh</code></p>
+<p>The command will install the required dependencies and scan the  <code>./tests</code> folder to execute all the tests found.</p>
+<p>When developing is common to narrow the scope of testing to the componentes we are working  on. We can use the pytest commmand directly for that purpose, follows a list of handy command that can be used  during development.</p>
+<p><em>Note</em> ensure to run <code>./tests/run-tests.sh</code> at least once to have the python dependencies installed!</p>
+<pre><code class="language-sh"># run all the tests
+python3 -m pytest tests/
+
+# run only tests found from a specific file
+python3 -m pytest tests/pipeline/ai/test_fall_detect.py 
+
+# run test by name (will match the function name)
+python3 -m pytest tests/ -k test_bad_sample_good_sample
+
+# run test by name match (will match the function name, also patially)
+python3 -m pytest tests/ -k test_bad_sample_good_sample
+# with just a part of it
+python3 -m pytest tests/ -k bad_sample_good
+
+# control CLI log level
+python3 -m pytest tests/ --log-cli-level DEBUG
+
+</code></pre>
+<h3 id="debugging-with-an-ide">Debugging with an IDE</h3>
+<p>This section contains suggestions to setup a proper development environment for better productivity. Feel free to share yours!</p>
+<h4 id="ms-vs-code">MS VS Code</h4>
+<p>vscode offers a plugin  called <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers</a>  that allow to  connect to a container running on a local (or remote) machine.</p>
+<p>This is particularly handy when one needs to use the debugger to inspect the runtime. It can also be used to develop on the raspberry PI from your own PC.</p></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-10-28 21:17:44.115264+00:00</p>
+            <p>Last update : 2020-10-28 21:17:44.121283+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
