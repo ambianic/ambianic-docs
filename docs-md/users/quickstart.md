@@ -1,7 +1,7 @@
 
 # 5 Minute Quick Start
 
-Ambianic's goal is to provide helpful and actionable suggestions
+Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence project. Ambianic's goal is to provide helpful and actionable suggestions
 in the context of home and business automation.
 
 Ambianic has two major components: Ambianic UI and Ambianic Edge.
