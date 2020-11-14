@@ -55,7 +55,7 @@ version: '1.2.4'
 
 # path to the data directory
 # ./data is relative to the container runtime. Do not change it if you are unsure.
-data_dir: &data_dir ./data
+data_dir: ./data
 
 # Set logging level to one of DEBUG, INFO, WARNING, ERROR
 logging:
@@ -80,14 +80,9 @@ sources:
     uri: picamera
     type: video
     live: true
-
+    
   front_door_camera: 
-    uri: *secret_uri_front_door_camera
-    # type: video, audio, or auto
-    type: video
-    live: true
-  entry_area_camera: 
-    uri: *secret_uri_entry_area_camera
+    uri: <your camera>
     type: video
     # live: is this a live source or a recording
     # when live is True, the AVSource element will try to reconnect
@@ -120,7 +115,7 @@ sources:
   pipelines:
     # sequence of piped operations for use in daytime front door watch
     front_door_watch:
-      - source: front_door_cam
+      - source: front_door_camera
       - detect_objects: # run ai inference on the input data
          ai_model: object_detection
          confidence_threshold: 0.8
@@ -134,32 +129,15 @@ sources:
          positive_interval: 2
          idle_interval: 600
 
-    # sequence of piped operations for use in daytime front door watch
-    entry_area_watch:
-      - source: entry_area_cam
-      # - mask: svg # apply a mask to the input data
-      - detect_objects: # run ai inference on the input data
-          ai_model: object_detection
-          confidence_threshold: 0.8
-      - save_detections: # save samples from the inference results
-          positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence thresho$
-          idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
-      - detect_faces: # run ai inference on the samples from the previous element output
-          ai_model: face_detection
-          confidence_threshold: 0.8
-      - save_detections: # save samples from the inference results
-          positive_interval: 2
-          idle_interval: 600
-
 ```
 
 The only parameter you have to change in order to see a populated timeline in the UI is the source uri. In the section below:
 ```yaml
   front_door_camera:
-    uri: *secret_uri_front_door_camera
+    uri: <your camera>
 ```
  
- Replace `*secret_uri_front_door_camera` with your camera still image snapshot URI (recommended). For example:
+ Replace `<your camera>` with your camera still image snapshot URI (recommended). For example:
  
 ```yaml
   front_door_camera:
@@ -195,10 +173,11 @@ Cameras are some of the most common sources of input data for Ambianic.ai pipeli
 
 Ambianic.ai is typically connected to IP Network cameras, but you can also connect a local embedded web cam or USB connected camera.
 
+You can set `uri` to a local path such as `/dev/video0` to use a working usb webcam or `picamera` in case you have a picamera connected to Raspbery Pi connector.
+
 ### Connecting a local Web USB camera
 
-A laptop camera or USB camera on linux can be used just providing a working reference to the video device, eg. `/dev/video0`
-
+A laptop camera or USB camera on linux or mac can be used just providing a working reference to the video device, eg. `/dev/video0`
 
 ### Connecting a Picamera
 
