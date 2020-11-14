@@ -268,26 +268,6 @@ All you have to do to use a still image source from your camera is to locate the
 
 In the example above the URI points to a still jpg sample from the camera. Ambianic Edge will continuously poll this URI approximately once per second (1fps).
 
-## Sensitive config information
-
-In the configuration example, there are a few references to variables
-defined elsewhere in the YAML file. You can use standard [YAML anchors and aliases](https://yaml.org/refcard.html) for that.
-
-Notice that `*src_front_door_cam` and
-`*src_entry_area_cam` are the YAML aliases(references) that do not appear elsewhere in config.yaml. 
-They are actually picked up from an optional file located in the same directory: `secrets.yaml`.
-
-Since camera URIs often contain credentials, we recommend that you store such values
-in `secrets.yaml`. Ambianic Edge will automatically look for and if available
-prepend `secrets.yaml` to `config.yaml`. That way you can share
- `config.yaml` with others without compromising privacy sensitive parameters.
-
-An example valid entry in `secrets.yaml` for a camera URI, would look like this:
-```yaml
-secret_uri_front_door_camera: &secret_uri_front_door_camera 'rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101'
-# add more secret entries as regular yaml mappings
-```
-
 ### Other Ambianic Edge configuration settings
 
 The rest of the configuration settings are for developers and contributors. If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. Otherwise leave them as they are.
