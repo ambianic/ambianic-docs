@@ -5,10 +5,10 @@
  
  
 <a href="https://landscape.lfai.foundation/format=card-mode&selected=ambianic">
-  <img src="https://github.com/lfai/artwork/raw/master/lfaidata-assets/lf-member/associate/lf_mem_asso.png"  height="100" style="display:inline;vertical-align:middle;padding:2%">   
+  <img src="https://github.com/lfai/artwork/raw/master/lfaidata-assets/lf-member/associate/lf_mem_asso.png"  height="200" style="display:inline;vertical-align:middle;padding:2%">   
 </a>
 <a href="https://twitter.com/TensorFlow/status/1291071490062983172?s=20">
-  <img src="https://pbs.twimg.com/profile_banners/1195860619284664320/1596827858/1500x500"  height="100" style="display:inline;vertical-align:middle;padding:2%">   
+  <img src="https://pbs.twimg.com/profile_banners/1195860619284664320/1596827858/1500x500"  height="200" style="display:inline;vertical-align:middle;padding:2%">   
 </a>
 
 # Helpful AI for Home and Business Automation
