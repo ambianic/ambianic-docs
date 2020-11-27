@@ -153,14 +153,16 @@
 
 <h1 id="quick-start-guide">Quick Start Guide</h1>
 <p>Ambianic is an <a href="https://blog.ambianic.ai/2020/11/05/awards.html">award winning</a> ambient intelligence platform. Ambianic's goal is to provide helpful and actionable suggestions in the context of home and business automation.</p>
-<p>Ambianic has two major components: Ambianic UI (user front-end) and Ambianic Edge (sensor device).</p>
 <h2 id="recommended-install">Recommended Install</h2>
-<p>The simplest way to get started is to follow these steps:
-- Assemble an <a href="https://github.com/ambianic/ambianic-box">Ambianic Box</a>
-- Flash on SD Card the <a href="https://github.com/ambianic/ambianic-rpi-image">Ambianic OS Image</a>
-- <a href="#ambianic-ui">Connect to the box</a> via Ambianic UI.</p>
+<p>The simplest way to get started is to follow these steps:</p>
+<ul>
+<li>Assemble an <a href="https://github.com/ambianic/ambianic-box">Ambianic Box</a></li>
+<li>Flash on SD Card the <a href="https://github.com/ambianic/ambianic-rpi-image">Ambianic OS Image</a></li>
+<li><a href="#ambianic-ui">Connect to the box</a> via Ambianic UI.</li>
+</ul>
 <p>If you prefer an alternative hosting platform for Ambianic Edge, keep reading about the more advanced installation options.</p>
 <h2 id="alternative-install-via-docker">Alternative install via Docker</h2>
+<p>Ambianic has two major components: Ambianic UI (user front-end) and Ambianic Edge (sensor device).</p>
 <p>Ambianic UI is pre-deployed and readily available at <a href="https://ui.ambianic.ai">https://ui.ambianic.ai</a>. If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes. Let's go step by step.</p>
 <h2 id="ambanic-edge">Ambanic Edge</h2>
 <p>Ambianic Edge is
@@ -181,7 +183,7 @@ You can install and run the image in the default pi user space on Raspbian.</p>
 <p>After the setup you can find the installation under <code>/opt/ambianic</code> where you can find the configuration files and the data directory (under <code>/opt/ambianic/data</code>).</p>
 <p>Ambianic Pipeline configuration will be under <code>/etc/ambianic</code>.</p>
 <h3 id="the-ambianic-edge-cli">The Ambianic Edge CLI</h3>
-<p>The installer will start the service for you. To manage the runtime you can use the <code>ambianic</code> command line. A few example</p>
+<p>The installer will start the service for you. To manage the runtime you can use the <code>ambianic</code> command line. A few examples:</p>
 <ul>
 <li>Start, Stop or Restart with <code>ambianic [ start | stop | restart ]</code></li>
 <li>View the instance status with <code>ambianic status</code></li>
@@ -205,7 +207,7 @@ timeline screenshot.</p>
 <p><img alt="Pairing" src="../../assets/images/pairing-screen.png" /></p>
 <p>After a few moments, pairing will conclude and you will see the unique identifier of your Ambianic Edge device.</p>
 <p><img alt="Connected" src="../../assets/images/connected-screen.png" /></p>
-<p>If you used the recommended install via Ambianic Box, you can now head to the Timeline view and you will be able to see an image of what is in front of the Ambianic Box. The box is pre-configured to detect a set of 20+ objects and people. Detections will show in your timeline.</p>
+<p>If you used the recommended install via Ambianic Box, you can now head to the Timeline view and you will be able to see an image of what is in front of the Ambianic Box. The box is pre-configured to detect people and over 20 kinds of objects. Detections will show in your timeline.</p>
 <p>Congratulations! Your Ambianic instance is now up and running!</p>
 <p>When you are ready to explore more advanced capabilities, continue to the next section.</p>
 <h2 id="configuration">Configuration</h2>
@@ -225,7 +227,7 @@ timeline screenshot.</p>
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-11-27 22:14:31.676211+00:00</p>
+            <p>Last update : 2020-11-27 22:19:10.408444+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
