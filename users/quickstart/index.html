@@ -118,7 +118,13 @@
 
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
-            <li class="nav-item main"><a href="#5-minute-quick-start">5 Minute Quick Start</a></li>
+            <li class="nav-item main"><a href="#quick-start-guide">Quick Start Guide</a></li>
+                <li class="nav-item">
+                    <a href="#simplest-and-recommended-install" class="nav-link">Simplest and Recommended Install</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#advanced-install-via-docker" class="nav-link">Advanced install via Docker</a>
+                </li>
                 <li class="nav-item">
                     <a href="#ambanic-edge" class="nav-link">Ambanic Edge</a>
                 </li>
@@ -145,10 +151,16 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="5-minute-quick-start">5 Minute Quick Start</h1>
-<p>Ambianic is an <a href="https://blog.ambianic.ai/2020/11/05/awards.html">award winning</a> ambient intelligence project. Ambianic's goal is to provide helpful and actionable suggestions
-in the context of home and business automation.</p>
-<p>Ambianic has two major components: Ambianic UI and Ambianic Edge.</p>
+<h1 id="quick-start-guide">Quick Start Guide</h1>
+<p>Ambianic is an <a href="https://blog.ambianic.ai/2020/11/05/awards.html">award winning</a> ambient intelligence platform. Ambianic's goal is to provide helpful and actionable suggestions in the context of home and business automation.</p>
+<p>Ambianic has two major components: Ambianic UI (user front-end) and Ambianic Edge (sensor device).</p>
+<h2 id="simplest-and-recommended-install">Simplest and Recommended Install</h2>
+<p>The simplest way to get started is to follow these steps:
+* Assemble an <a href="https://github.com/ambianic/ambianic-box">Ambianic Box</a>
+* Flash on SD Card the <a href="https://github.com/ambianic/ambianic-rpi-image">Ambianic OS Image</a>
+* <a href="#ambianic-ui">Connect to the box</a> via Ambianic UI.</p>
+<p>If you prefer an alternative hosting platform for Ambianic Edge, keep reading about the more advanced installation options.</p>
+<h2 id="advanced-install-via-docker">Advanced install via Docker</h2>
 <p>Ambianic UI is pre-deployed and readily available at <a href="https://ui.ambianic.ai">https://ui.ambianic.ai</a>. If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes. Let's go step by step.</p>
 <h2 id="ambanic-edge">Ambanic Edge</h2>
 <p>Ambianic Edge is
@@ -193,7 +205,9 @@ timeline screenshot.</p>
 <p><img alt="Pairing" src="../../assets/images/pairing-screen.png" /></p>
 <p>After a few moments, pairing will conclude and you will see the unique identifier of your Ambianic Edge device.</p>
 <p><img alt="Connected" src="../../assets/images/connected-screen.png" /></p>
+<p>If you used the recommended install via Ambianic Box, you can now head to the Timeline view and you will be able to see an image of what is in front of the Ambianic Box. The box is pre-configured to detect a set of 20+ objects and people. Detections will show in your timeline.</p>
 <p>Congratulations! Your Ambianic instance is now up and running!</p>
+<p>When you are ready to explore more advanced capabilities, continue to the next section.</p>
 <h2 id="configuration">Configuration</h2>
 <p>You are now ready to configure Ambianic: pipelines, input sources and AI models.</p>
 <p>Read on: <a href="../configure/">Configuring Ambianic Edge</a>.</p>
@@ -204,14 +218,14 @@ timeline screenshot.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>If you experience problems with your initial setup and you can't find a good solution online, feel free to engage the team on <a href="https://twitter.com/ambianicai">Twitter</a> or <a href="https://github.com/ambianic">open a github issue</a>.</p>
 <h2 id="supporting-the-project">Supporting the project</h2>
-<p>If you find value in this project, consider supporting its future success. See the <a href="https://docs.ambianic.ai/#sustainability">sustainability</a> section.</p></div>
+<p>If you find value in this project, consider supporting its future success. See the <a href="#sustainability">sustainability</a> section.</p></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-11-14 01:47:17.979336+00:00</p>
+            <p>Last update : 2020-11-27 22:09:00.149035+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
