@@ -112,3 +112,4 @@ If you experience problems with your initial setup and you can't find a good sol
 ## Supporting the project
 
 If you find value in this project, consider supporting its future success. See the [sustainability](#sustainability) section.
+ 
