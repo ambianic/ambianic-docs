@@ -57,7 +57,7 @@ The installer will start the service for you. To manage the runtime you can use 
 - Open the UI (if you system has a GUI) with `ambianic ui`
 - Upgrade the installation with `ambianic upgrade`
 
-## Ambanic UI
+## Ambianic UI
 
 [Ambianic UI](https://ui.ambianic.ai/) is a
 modern prorgressive web application (PWA) that provides Plug-and-Play pairing and remote access
