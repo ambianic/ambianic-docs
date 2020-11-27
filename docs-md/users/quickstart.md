@@ -5,16 +5,16 @@ Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) 
 
 Ambianic has two major components: Ambianic UI (user front-end) and Ambianic Edge (sensor device).
 
-## Simplest and Recommended Install
+## Recommended Install
 
 The simplest way to get started is to follow these steps:
-* Assemble an [Ambianic Box](https://github.com/ambianic/ambianic-box)
-* Flash on SD Card the [Ambianic OS Image](https://github.com/ambianic/ambianic-rpi-image)
-* [Connect to the box](#ambianic-ui) via Ambianic UI.
+- Assemble an [Ambianic Box](https://github.com/ambianic/ambianic-box)
+- Flash on SD Card the [Ambianic OS Image](https://github.com/ambianic/ambianic-rpi-image)
+- [Connect to the box](#ambianic-ui) via Ambianic UI.
 
 If you prefer an alternative hosting platform for Ambianic Edge, keep reading about the more advanced installation options.
 
-## Advanced install via Docker
+## Alternative install via Docker
 
 Ambianic UI is pre-deployed and readily available at [https://ui.ambianic.ai](https://ui.ambianic.ai). If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes. Let's go step by step.
 
