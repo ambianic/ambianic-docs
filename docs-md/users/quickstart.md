@@ -3,11 +3,10 @@
 
 Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence platform. Ambianic's goal is to provide helpful and actionable suggestions in the context of home and business automation.
 
-Ambianic has two major components: Ambianic UI (user front-end) and Ambianic Edge (sensor device).
-
 ## Recommended Install
 
 The simplest way to get started is to follow these steps:
+
 - Assemble an [Ambianic Box](https://github.com/ambianic/ambianic-box)
 - Flash on SD Card the [Ambianic OS Image](https://github.com/ambianic/ambianic-rpi-image)
 - [Connect to the box](#ambianic-ui) via Ambianic UI.
@@ -15,6 +14,8 @@ The simplest way to get started is to follow these steps:
 If you prefer an alternative hosting platform for Ambianic Edge, keep reading about the more advanced installation options.
 
 ## Alternative install via Docker
+
+Ambianic has two major components: Ambianic UI (user front-end) and Ambianic Edge (sensor device).
 
 Ambianic UI is pre-deployed and readily available at [https://ui.ambianic.ai](https://ui.ambianic.ai). If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes. Let's go step by step.
 
@@ -48,7 +49,7 @@ Ambianic Pipeline configuration will be under `/etc/ambianic`.
 
 ### The Ambianic Edge CLI
 
-The installer will start the service for you. To manage the runtime you can use the `ambianic` command line. A few example
+The installer will start the service for you. To manage the runtime you can use the `ambianic` command line. A few examples:
 
 - Start, Stop or Restart with `ambianic [ start | stop | restart ]`
 - View the instance status with `ambianic status`
@@ -84,7 +85,7 @@ After a few moments, pairing will conclude and you will see the unique identifie
 
 ![Connected](../assets/images/connected-screen.png)
 
-If you used the recommended install via Ambianic Box, you can now head to the Timeline view and you will be able to see an image of what is in front of the Ambianic Box. The box is pre-configured to detect a set of 20+ objects and people. Detections will show in your timeline.
+If you used the recommended install via Ambianic Box, you can now head to the Timeline view and you will be able to see an image of what is in front of the Ambianic Box. The box is pre-configured to detect people and over 20 kinds of objects. Detections will show in your timeline.
 
 Congratulations! Your Ambianic instance is now up and running!
 
