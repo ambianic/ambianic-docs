@@ -7,9 +7,9 @@ Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) 
 
 The simplest way to get started is to follow these steps:
 
-- Assemble an [Ambianic Box](https://github.com/ambianic/ambianic-box)
-- Flash on SD Card the [Ambianic OS Image](https://github.com/ambianic/ambianic-rpi-image)
-- [Connect to the box](#ambianic-ui) via Ambianic UI.
+- [Assemble an Ambianic Box](https://github.com/ambianic/ambianic-box)
+- [Flash on SD Card the Ambianic OS Image](https://github.com/ambianic/ambianic-rpi-image)
+- [Connect to the box via Ambianic UI](#ambianic-ui).
 
 If you prefer an alternative hosting platform for Ambianic Edge, keep reading about the more advanced installation options.
 
