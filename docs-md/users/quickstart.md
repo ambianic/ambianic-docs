@@ -1,10 +1,20 @@
 
-# 5 Minute Quick Start
+# Quick Start Guide
 
-Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence project. Ambianic's goal is to provide helpful and actionable suggestions
-in the context of home and business automation.
+Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence platform. Ambianic's goal is to provide helpful and actionable suggestions in the context of home and business automation.
 
-Ambianic has two major components: Ambianic UI and Ambianic Edge.
+Ambianic has two major components: Ambianic UI (user front-end) and Ambianic Edge (sensor device).
+
+## Simplest and Recommended Install
+
+The simplest way to get started is to follow these steps:
+* Assemble an [Ambianic Box](https://github.com/ambianic/ambianic-box)
+* Flash on SD Card the [Ambianic OS Image](https://github.com/ambianic/ambianic-rpi-image)
+* [Connect to the box](#ambianic-ui) via Ambianic UI.
+
+If you prefer an alternative hosting platform for Ambianic Edge, keep reading about the more advanced installation options.
+
+## Advanced install via Docker
 
 Ambianic UI is pre-deployed and readily available at [https://ui.ambianic.ai](https://ui.ambianic.ai). If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes. Let's go step by step.
 
@@ -74,7 +84,11 @@ After a few moments, pairing will conclude and you will see the unique identifie
 
 ![Connected](../assets/images/connected-screen.png)
 
+If you used the recommended install via Ambianic Box, you can now head to the Timeline view and you will be able to see an image of what is in front of the Ambianic Box. The box is pre-configured to detect a set of 20+ objects and people. Detections will show in your timeline.
+
 Congratulations! Your Ambianic instance is now up and running!
+
+When you are ready to explore more advanced capabilities, continue to the next section.
 
 ## Configuration
 
@@ -96,4 +110,4 @@ If you experience problems with your initial setup and you can't find a good sol
 
 ## Supporting the project
 
-If you find value in this project, consider supporting its future success. See the [sustainability](https://docs.ambianic.ai/#sustainability) section.
+If you find value in this project, consider supporting its future success. See the [sustainability](#sustainability) section.
