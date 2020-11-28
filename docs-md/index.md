@@ -48,6 +48,7 @@ More user journeys will be added over time as the project evolves. Some of the
 candidate topics include:
 
 - **Home Automation**
+    - Assist with remote family home care by detecting falls.
     - Turn traditional door locks into smart locks with Face Recognition.
     - Alert parents if a crying toddler is left unattended for more than 15 minutes.
     - Raise an alert if a baby is seated near a car door without child lock enabled while in motion.
@@ -100,11 +101,10 @@ minimizing network routing overhead.
 
 Our goal is to build a product that is useful out of the box:
 
- - Less than 15 minutes setup time
- - Less than $55 in hardware costs
-   + Primary platform: Raspberry Pi 4 B, 4GB RAM, 32GB SDRAM
- - No coding required to get started
- - Decomposable and hackable for open source developers
+- [x] Less than $55 in hardware costs. Get [Ambianic Box](https://github.com/ambianic/ambianic-box).
+- [x] Less than 15 minutes setup time. Get [RPI Image](https://github.com/ambianic/ambianic-rpi-image).
+- [x] No coding required to get started. Just follow the [Quick Start Guide](https://docs.ambianic.ai/users/quickstart/).
+- [x] Decomposable and hackable for DYI and Open Source developers. [Setup Your Dev Environment](https://docs.ambianic.ai/developers/development-environment/)
 
 ## Quick Start
 
