@@ -101,7 +101,7 @@ minimizing network routing overhead.
 Our goal is to build a product that is useful out of the box:
 
  - Less than 15 minutes setup time
- - Less than $75 in hardware costs
+ - Less than $55 in hardware costs
    + Primary platform: Raspberry Pi 4 B, 4GB RAM, 32GB SDRAM
  - No coding required to get started
  - Decomposable and hackable for open source developers
