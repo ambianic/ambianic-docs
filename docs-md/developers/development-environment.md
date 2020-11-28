@@ -118,6 +118,12 @@ python3 -m pytest tests/ --log-cli-level DEBUG
 
 This section contains suggestions to setup a proper development environment for better productivity. Feel free to share yours!
 
+### Gitpod
+
+Gitpod is an All-in-browser Continuous Development Environment with user experience similar to VS Code, but running in a virtual cloud container instead of your local machine. Try it out:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ambianic/ambianic-edge)
+
 #### MS VS Code
 
 vscode offers a plugin  called [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)  that allow to  connect to a container running on a local (or remote) machine.
