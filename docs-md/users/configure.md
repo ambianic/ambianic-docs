@@ -124,6 +124,11 @@ sources:
       - detect_objects: # run ai inference on the input data
          ai_model: object_detection
          confidence_threshold: 0.8
+         # Watch for any of the labels listed below. The labels must be from the model trained label set.
+         # If no labels are listed, then watch for all model trained labels.
+         label_filter:
+          - person
+          - car
       - save_detections: # save samples from the inference results
          positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence threshold
          idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
