@@ -46,7 +46,7 @@ The text of this license is available under the Creative Commons Attribution-Sha
 All submissions, including submissions by project members, require review. We
 use GitHub pull requests for this purpose. Consult
 [GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
-information on using pull requests.
+information on using pull requests. To expedite the review process, lease [keep PRs scoped down](https://www.netlify.com/blog/2020/03/31/how-to-scope-down-prs/) and [linked to specific issues](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue) they intend to close. 
 
 ## Semantic Releases
 
