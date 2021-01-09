@@ -185,16 +185,15 @@ and modify it to fit your environment. Read further about the parameters and for
 <pre><code class="language-YAML">######################################
 #  Ambianic main configuration file  #
 ######################################
-version: '1.2.4'
+version: '2020.12.11'
 
 # path to the data directory
-# ./data is relative to the container runtime. Do not change it if you are unsure.
-data_dir: &amp;data_dir ./data
+data_dir: ./data
 
 # Set logging level to one of DEBUG, INFO, WARNING, ERROR
 logging:
   file: ./data/ambianic-log.txt
-  level: DEBUG
+  level: INFO
 
 # Pipeline event timeline configuration
 timeline:
@@ -204,91 +203,64 @@ timeline:
 # Using Home Assistant conventions to ease upcoming integration
 sources:
 
-  # example for a local camera device (linux based)
-  webcam: 
-    uri: /dev/video0
-    type: video
-    live: true
-
-  picamera: 
+  # direct support for raspberry picamera
+  picamera:
     uri: picamera
     type: video
     live: true
 
-  front_door_camera: 
-    uri: *secret_uri_front_door_camera
-    # type: video, audio, or auto
+  # local video device integration example
+  webcam:
+    uri: /dev/video0
     type: video
     live: true
-  entry_area_camera: 
-    uri: *secret_uri_entry_area_camera
-    type: video
-    # live: is this a live source or a recording
-    # when live is True, the AVSource element will try to reconnect
-    # if the stream is interrupted due to network disruption or another reason.
-    live: true
-  # recorded front door cam feed for quick testing
-  # recorded_cam_feed:
-  #  uri: file:///workspace/tests/pipeline/avsource/test2-cam-person1.mkv
-  #  type: video
 
+  recorded_cam_feed:
+    uri: file:///workspace/tests/pipeline/avsource/test2-cam-person1.mkv
+#    type: video
+#    live: true
 
-  ai_models:
-  #  image_classification:
-  #    tf_graph:
-  #    labels:
-    object_detection: 
-      model:
-        tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
-        edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite
-      labels: /opt/ambianic-edge/ai_models/coco_labels.txt
-    face_detection: 
-      model:
-        tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
-        edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_face_quant_postprocess_edgetpu.tflite
-      labels: /opt/ambianic-edge/ai_models/coco_labels.txt
-      top_k: 2
+ai_models:
+  image_detection:
+    model:
+      tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
+      edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite
+    labels: /opt/ambianic-edge/ai_models/coco_labels.txt
+  face_detection:
+    model:
+      tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_face_quant_postprocess.tflite
+      edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_face_quant_postprocess_edgetpu.tflite
+    labels: /opt/ambianic-edge/ai_models/coco_labels.txt
+    top_k: 2
+  fall_detection:
+    model:
+      tflite: /opt/ambianic-edge/ai_models/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite
+      edgetpu: /opt/ambianic-edge/ai_models/posenet_mobilenet_v1_075_721_1281_quant_decoder_edgetpu.tflite
+    labels: /opt/ambianic-edge/ai_models/pose_labels.txt
 
-  # A named pipeline defines an ordered sequence of operations
-  # such as reading from a data source, AI model inference, saving samples and others.
-  pipelines:
-    # sequence of piped operations for use in daytime front door watch
-    front_door_watch:
-      - source: front_door_cam
-      - detect_objects: # run ai inference on the input data
-         ai_model: object_detection
-         confidence_threshold: 0.8
-         # Watch for any of the labels listed below. The labels must be from the model trained label set.
-         # If no labels are listed, then watch for all model trained labels.
-         label_filter:
+# A named pipeline defines an ordered sequence of operations
+# such as reading from a data source, AI model inference, saving samples and others.
+pipelines:
+   # Pipeline names could be descriptive, e.g. front_door_watch or entry_room_watch.
+   area_watch:
+     - source: picamera
+     - detect_objects: # run ai inference on the input data
+        ai_model: image_detection
+        confidence_threshold: 0.6
+        # Watch for any of the labels listed below. The labels must be from the model trained label set.
+        # If no labels are listed, then watch for all model trained labels.
+        label_filter:
           - person
           - car
-      - save_detections: # save samples from the inference results
-         positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence threshold
-         idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
-      - detect_faces: # run ai inference on the samples from the previous element output
-         ai_model: face_detection
-         confidence_threshold: 0.8
-      - save_detections: # save samples from the inference results
-         positive_interval: 2
-         idle_interval: 600
-
-    # sequence of piped operations for use in daytime front door watch
-    entry_area_watch:
-      - source: entry_area_cam
-      # - mask: svg # apply a mask to the input data
-      - detect_objects: # run ai inference on the input data
-          ai_model: object_detection
-          confidence_threshold: 0.8
-      - save_detections: # save samples from the inference results
-          positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence thresho$
-          idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
-      - detect_faces: # run ai inference on the samples from the previous element output
-          ai_model: face_detection
-          confidence_threshold: 0.8
-      - save_detections: # save samples from the inference results
-          positive_interval: 2
-          idle_interval: 600
+     - save_detections: # save samples from the inference results
+        positive_interval: 300 # how often (in seconds) to save samples with ANY results above the confidence threshold
+        idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
+     - detect_falls: # look for falls
+        ai_model: fall_detection
+        confidence_threshold: 0.6
+     - save_detections: # save samples from the inference results
+        positive_interval: 10
+        idle_interval: 600000
 
 </code></pre>
 <p>The only parameter you have to change in order to see a populated timeline in the UI is the source uri. In the section below:</p>
@@ -420,7 +392,7 @@ cd ambianic-ui
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2020-12-05 00:25:43.531713+00:00</p>
+            <p>Last update : 2021-01-09 00:03:15.931740+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
