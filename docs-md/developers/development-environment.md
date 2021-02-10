@@ -124,6 +124,8 @@ Gitpod is an All-in-browser Continuous Development Environment with user experie
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ambianic/ambianic-edge)
 
+You can apply for a for a Free Prodessional Open Source License [here](https://www.gitpod.io/docs/professional-open-source/). 
+
 #### MS VS Code
 
 vscode offers a plugin  called [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)  that allow to  connect to a container running on a local (or remote) machine.
