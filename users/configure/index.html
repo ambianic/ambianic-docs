@@ -138,6 +138,9 @@
                 <li class="nav-item">
                     <a href="#local-deployment-of-ambanic-ui" class="nav-link">Local Deployment of Ambanic UI</a>
                 </li>
+                <li class="nav-item">
+                    <a href="#configuration-questions" class="nav-link">Configuration Questions</a>
+                </li>
         </ul>
     </div>
 </div></div>
@@ -194,6 +197,19 @@ data_dir: ./data
 logging:
   file: ./data/ambianic-log.txt
   level: INFO
+
+# Notifications provider configuration
+# see https://github.com/caronc/apprise#popular-notification-services for syntax examples
+# notifications:
+#   catch_all_email:
+#     include_attachments: true
+#     providers:
+#       - mailto://userid:pass@domain.com
+#   alert_fall:
+#     providers:
+#       - mailto://userid:pass@domain.com
+#       - json://hostname/a/path/to/post/to
+
 
 # Pipeline event timeline configuration
 timeline:
@@ -261,6 +277,9 @@ pipelines:
      - save_detections: # save samples from the inference results
         positive_interval: 10
         idle_interval: 600000
+#        notify: # notify a thirdy party service
+#          providers:
+#            - alert_fall        
 
 </code></pre>
 <p>The only parameter you have to change in order to see a populated timeline in the UI is the source uri. In the section below:</p>
@@ -346,6 +365,38 @@ prepend <code>secrets.yaml</code> to <code>config.yaml</code>. That way you can 
 <pre><code class="language-yaml">secret_uri_front_door_camera: &amp;secret_uri_front_door_camera 'rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101'
 # add more secret entries as regular yaml mappings
 </code></pre>
+<h3 id="notification-settings">Notification settings</h3>
+<p>Ambianic edge can be configured to instantly alerts users when a detection occurs. Notifications are a feature of the <code>save_detections</code> element. 
+Every time a timeline event is saved along with its contextual data, a notification can be fired to a number of supported channels such as email, sms, or a local 
+smart home hub.</p>
+<p>Notification providers are first configured at a system level using the following syntax:</p>
+<pre><code>notifications:
+  catch_all_email:
+    include_attachments: true
+    providers:
+      - mailto://userid:pass@domain.com
+  alert_fall:
+    providers:
+      - mailto://userid:pass@domain.com
+      - json://hostname/a/path/to/post/to
+</code></pre>
+<p>Notice that the <code>catch_all_email</code> provider template uses the <code>include_attachments</code> attribute. Email notifications to this provider will include timeline event attachments such as captured images. On the other hand the <code>alert_fall</code> does not use the <code>include_attachments</code> attribute. Notifications sent through this provider will include the essential event information, but no attachments. In order to include attachments via <code>alert_fall</code> , just add the <code>include_attachments: true</code> element.</p>
+<p>For a full list of supported providers and config syntax, take a look at the <a href="https://github.com/caronc/apprise#popular-notification-services">official apprise documentation</a>. Apprise is a great notifications library that ambianic edge uses and sponsors.</p>
+<p>Once the system level notification providers are configured, they can be referenced within <code>save_detection</code> elements as in the following example:</p>
+<pre><code>pipelines:
+   # Pipeline names could be descriptive, e.g. front_door_watch or entry_room_watch.
+   area_watch:
+     ...
+     - detect_falls: # look for falls
+     ...
+     - save_detections: # save samples from the inference results
+        positive_interval: 10
+        idle_interval: 600000
+        notify: # notify a thirdy party service
+          providers:
+            - alert_fall        
+</code></pre>
+<p>Each time a detection event is saved, a corresponding notification will be instantly fired.</p>
 <h3 id="other-ambianic-edge-configuration-settings">Other Ambianic Edge configuration settings</h3>
 <p>The rest of the configuration settings are for developers and contributors. If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. Otherwise leave them as they are.</p>
 <h2 id="using-ai-accelerator">Using AI Accelerator</h2>
@@ -385,14 +436,16 @@ cd ambianic-ui
 - Local:   http://localhost:8080/
 - Network: http://192.168.86.246:8080/
 </code></pre>
-<p>Now you can access the app from your browser.</p></div>
+<p>Now you can access the app from your browser.</p>
+<h2 id="configuration-questions">Configuration Questions</h2>
+<p>If you are having difficulties with configuration settings, feel free to ask your question in the <a href="https://github.com/ambianic/ambianic-edge/discussions">community discussion forum</a> or our <a href="https://ambianicai.slack.com/join/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ#/">public slack channel</a>.</p></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2021-02-12 03:49:06.695108+00:00</p>
+            <p>Last update : 2021-02-14 20:33:42.015747+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
