@@ -127,10 +127,13 @@
                     <a href="#pipeline-configuration" class="nav-link">Pipeline Configuration</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#camera-source-configuration" class="nav-link">Camera Source Configuration</a>
+                    <a href="#camera-configuration" class="nav-link">Camera Configuration</a>
                 </li>
                 <li class="nav-item">
                     <a href="#sensitive-config-information" class="nav-link">Sensitive config information</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#notification-settings" class="nav-link">Notification settings</a>
                 </li>
                 <li class="nav-item">
                     <a href="#using-ai-accelerator" class="nav-link">Using AI Accelerator</a>
@@ -304,7 +307,7 @@ pipelines:
 <p>The parameter <code>live: true</code> indicates that this is a continuous stream without a predetermined end. Therefore Ambianic Edge should do whatever it can to continuously pull media and recover from interruptions caused by network or other glitches.</p>
 <p>Now save the file and restart the docker image. Within a few moments you should be able to see a populated timeline in the UI with fresh images from your camera and some object, people and face detections if there are any to detect.</p>
 <p>You can reference the <a href="../quickstart/">Quick Start Guide</a> for instructions on starting and stopping the Ambianic Edge docker image.</p>
-<h2 id="camera-source-configuration">Camera Source Configuration</h2>
+<h2 id="camera-configuration">Camera Configuration</h2>
 <p>Cameras are some of the most common sources of input data for Ambianic.ai pipelines.</p>
 <p>Ambianic.ai is typically connected to IP Network cameras, but you can also connect a local embedded web cam or USB connected camera.</p>
 <h3 id="connecting-a-local-web-usb-camera">Connecting a local Web USB camera</h3>
@@ -365,7 +368,7 @@ prepend <code>secrets.yaml</code> to <code>config.yaml</code>. That way you can 
 <pre><code class="language-yaml">secret_uri_front_door_camera: &amp;secret_uri_front_door_camera 'rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101'
 # add more secret entries as regular yaml mappings
 </code></pre>
-<h3 id="notification-settings">Notification settings</h3>
+<h2 id="notification-settings">Notification settings</h2>
 <p>Ambianic edge can be configured to instantly alerts users when a detection occurs. Notifications are a feature of the <code>save_detections</code> element. 
 Every time a timeline event is saved along with its contextual data, a notification can be fired to a number of supported channels such as email, sms, or a local 
 smart home hub.</p>
@@ -397,7 +400,7 @@ smart home hub.</p>
             - alert_fall        
 </code></pre>
 <p>Each time a detection event is saved, a corresponding notification will be instantly fired.</p>
-<h3 id="other-ambianic-edge-configuration-settings">Other Ambianic Edge configuration settings</h3>
+<h3 id="other-configuration-settings">Other configuration settings</h3>
 <p>The rest of the configuration settings are for developers and contributors. If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. Otherwise leave them as they are.</p>
 <h2 id="using-ai-accelerator">Using AI Accelerator</h2>
 <p>Ambianic Edge will use the <a href="https://coral.ai/">Google Coral TPU</a> accelerator if one is available on the system.</p>
@@ -445,7 +448,7 @@ cd ambianic-ui
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2021-02-14 20:35:52.940701+00:00</p>
+            <p>Last update : 2021-02-14 20:40:05.134751+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
