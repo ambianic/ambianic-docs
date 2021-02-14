@@ -182,7 +182,7 @@ Now save the file and restart the docker image. Within a few moments you should 
 
 You can reference the [Quick Start Guide](quickstart.md) for instructions on starting and stopping the Ambianic Edge docker image.
 
-## Cameras
+## Camera Source Configuration
 
 Cameras are some of the most common sources of input data for Ambianic.ai pipelines.
 
