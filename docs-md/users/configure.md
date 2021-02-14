@@ -61,6 +61,19 @@ logging:
   file: ./data/ambianic-log.txt
   level: INFO
 
+# Notifications provider configuration
+# see https://github.com/caronc/apprise#popular-notification-services for syntax examples
+# notifications:
+#   catch_all_email:
+#     include_attachments: true
+#     providers:
+#       - mailto://userid:pass@domain.com
+#   alert_fall:
+#     providers:
+#       - mailto://userid:pass@domain.com
+#       - json://hostname/a/path/to/post/to
+
+
 # Pipeline event timeline configuration
 timeline:
   event_log: ./data/timeline-event-log.yaml
@@ -127,6 +140,9 @@ pipelines:
      - save_detections: # save samples from the inference results
         positive_interval: 10
         idle_interval: 600000
+#        notify: # notify a thirdy party service
+#          providers:
+#            - alert_fall        
 
 ```
 
@@ -265,6 +281,50 @@ secret_uri_front_door_camera: &secret_uri_front_door_camera 'rtsp://user:pass@19
 # add more secret entries as regular yaml mappings
 ```
 
+### Notification settings
+
+Ambianic edge can be configured to instantly alerts users when a detection occurs. Notifications are a feature of the `save_detections` element. 
+Every time a timeline event is saved along with its contextual data, a notification can be fired to a number of supported channels such as email, sms, or a local 
+smart home hub.
+
+Notification providers are first configured at a system level using the following syntax:
+
+```
+notifications:
+  catch_all_email:
+    include_attachments: true
+    providers:
+      - mailto://userid:pass@domain.com
+  alert_fall:
+    providers:
+      - mailto://userid:pass@domain.com
+      - json://hostname/a/path/to/post/to
+```
+
+Notice that the `catch_all_email` provider template uses the `include_attachments` attribute. Email notifications to this provider will include timeline event attachments such as captured images. On the other hand the `alert_fall` does not use the `include_attachments` attribute. Notifications sent through this provider will include the essential event information, but no attachments. In order to include attachments via `alert_fall` , just add the `include_attachments: true` element.
+
+For a full list of supported providers and config syntax, take a look at the [official apprise documentation](https://github.com/caronc/apprise#popular-notification-services). Apprise is a great notifications library that ambianic edge uses and sponsors.
+
+Once the system level notification providers are configured, they can be referenced within `save_detection` elements as in the following example:
+
+```
+pipelines:
+   # Pipeline names could be descriptive, e.g. front_door_watch or entry_room_watch.
+   area_watch:
+     ...
+     - detect_falls: # look for falls
+     ...
+     - save_detections: # save samples from the inference results
+        positive_interval: 10
+        idle_interval: 600000
+        notify: # notify a thirdy party service
+          providers:
+            - alert_fall        
+```
+
+Each time a detection event is saved, a corresponding notification will be instantly fired.
+
+
 ### Other Ambianic Edge configuration settings
 
 The rest of the configuration settings are for developers and contributors. If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. Otherwise leave them as they are.
@@ -326,3 +386,9 @@ App running at:
 - Network: http://192.168.86.246:8080/
 ```
 Now you can access the app from your browser.
+
+
+
+## Configuration Questions
+
+If you are having difficulties with configuration settings, feel free to ask your question in the [community discussion forum](https://github.com/ambianic/ambianic-edge/discussions) or our [public slack channel](https://ambianicai.slack.com/join/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ#/).
