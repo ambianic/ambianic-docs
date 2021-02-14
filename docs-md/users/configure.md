@@ -182,7 +182,7 @@ Now save the file and restart the docker image. Within a few moments you should 
 
 You can reference the [Quick Start Guide](quickstart.md) for instructions on starting and stopping the Ambianic Edge docker image.
 
-## Camera Source Configuration
+## Camera Configuration
 
 Cameras are some of the most common sources of input data for Ambianic.ai pipelines.
 
@@ -281,7 +281,7 @@ secret_uri_front_door_camera: &secret_uri_front_door_camera 'rtsp://user:pass@19
 # add more secret entries as regular yaml mappings
 ```
 
-### Notification settings
+## Notification settings
 
 Ambianic edge can be configured to instantly alerts users when a detection occurs. Notifications are a feature of the `save_detections` element. 
 Every time a timeline event is saved along with its contextual data, a notification can be fired to a number of supported channels such as email, sms, or a local 
@@ -325,7 +325,7 @@ pipelines:
 Each time a detection event is saved, a corresponding notification will be instantly fired.
 
 
-### Other Ambianic Edge configuration settings
+### Other configuration settings
 
 The rest of the configuration settings are for developers and contributors. If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. Otherwise leave them as they are.
 
