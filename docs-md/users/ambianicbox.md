@@ -2,7 +2,7 @@
 
 [![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
 
-Ambianic Box is the recommended enclosure for DYI installations of Ambianic Edge.
+Ambianic Box is the recommended enclosure for DIY (do-it-yourself) installations of Ambianic Edge.
 
 <img src="https://github.com/ambianic/ambianic-box/raw/main/ambianic_box_rendering.png" height="400"/>
 
