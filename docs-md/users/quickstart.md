@@ -15,9 +15,9 @@ Ambianic Edge needs to be installed and run on a device located in the home or o
 
 The simplest way to get started is to follow these steps:
 
-- Assemble an Ambianic Box ( [step by step slides](https://docs.google.com/presentation/d/1c2Wt52JPmUs0BP-XSc2Seeb-17KDfzI1omAuMwRDAhU/edit#slide=id.p2), video(coming soon), [source code](https://github.com/ambianic/ambianic-box))
-- Connect the Ambianic Box to your local WiFi network ([here is how](https://github.com/ambianic/ambianic-rpi-image#first-boot--network-setup))
-- From a device thats connected on your local WiFi network go to [https://ui.ambianic.ai](https://ui.ambianic.ai) and follow the app install instructions.
+- [Assemble an Ambianic Box](ambianicbox.md)
+- [Connect the Ambianic Box to your local WiFi network](https://github.com/ambianic/ambianic-rpi-image#first-boot--network-setup)
+- From your mobile or dekstop device **connected to your local WiFi network** go to [https://ui.ambianic.ai](https://ui.ambianic.ai) and follow the app install instructions.
 
 
 If you prefer an alternative hosting platform for your Ambianic Edge device, keep reading about more advanced installation options.
