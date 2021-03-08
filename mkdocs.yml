@@ -5,7 +5,7 @@ nav:
     - Home: index.md
     - User Guide:
       - Quick Start: users/quickstart.md
-      - Assemble an Ambianic Box: users/ambianicbox.md
+      - Ambianic Box: users/ambianicbox.md
       - Configuration: users/configure.md
 #      - FAQ: users/faq.md
 #      - Web UI: users/webui.md
