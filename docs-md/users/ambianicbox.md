@@ -31,8 +31,6 @@ If you don't have a 3D printer handy for the box enclosure, you can use an onlin
 
 # How to Assemble an Ambianic Box
 
-Step by step slides are [availble here](https://docs.google.com/presentation/d/1c2Wt52JPmUs0BP-XSc2Seeb-17KDfzI1omAuMwRDAhU/edit#slide=id.p2).
-
 
 <style>
   .responsive-google-slides {
@@ -61,3 +59,5 @@ Step by step slides are [availble here](https://docs.google.com/presentation/d/1
 Ambianic Box can stand up on a flat surface or it can be mounted. For wall mount, there are several options. The box has two  openings on the back side that can be attached to wall mount hooks. Alternatively if you don't feel like drilling into your wall, the box is light enough to mount via two sided mounting tape such as [this one](https://www.amazon.com/gp/product/B07LFRN1K8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1).
 
 ---
+
+The step by step slides are also [availble here](https://docs.google.com/presentation/d/1c2Wt52JPmUs0BP-XSc2Seeb-17KDfzI1omAuMwRDAhU/edit#slide=id.p2).
