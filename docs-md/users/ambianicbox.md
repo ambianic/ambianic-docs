@@ -1,4 +1,4 @@
-# Assemble an Ambianic Box
+# Ambianic Box
 
 [![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
 
@@ -6,7 +6,7 @@ Ambianic Box is the recommended enclosure for DYI installations of Ambianic Edge
 
 <img src="https://github.com/ambianic/ambianic-box/raw/main/ambianic_box_rendering.png" height="400"/>
 
-You can 3D Print an Ambianic Box at home (here is the source) or order a 3D print online through a service such as [craftcloud3d.com](https://craftcloud3d.com/configuration/c7faee7e-ec06-41ed-822c-4092bdf1d28d) or [makexyz.com](https://www.makexyz.com/).
+You can 3D Print an Ambianic Box at home ([here is the source](https://github.com/ambianic/ambianic-box)) or order a 3D print online through a service such as [craftcloud3d.com](https://craftcloud3d.com/configuration/c7faee7e-ec06-41ed-822c-4092bdf1d28d) or [makexyz.com](https://www.makexyz.com/).
 
 # Components
 
@@ -28,12 +28,6 @@ If you don't have a 3D printer handy for the box enclosure, you can use an onlin
 
 ---
 
----
-**Wall Mount Note**
-
-Ambianic Box can stand up on a flat surface or it can be mounted. For wall mount, there are several options. The box has two  openings on the back side that can be attached to wall mount hooks. Alternatively if you don't feel like drilling into your wall, the box is light enough to mount via two sided mounting tape such as [this one](https://www.amazon.com/gp/product/B07LFRN1K8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1).
-
----
 
 # How to Assemble an Ambianic Box
 
@@ -60,3 +54,10 @@ Step by step slides are [availble here](https://docs.google.com/presentation/d/1
 <div class="responsive-google-slides">
   <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQcEWyjuR-oSnmyvGxoSlEYzFkivDdDd6EkhaJtHalm5lxHxOrjsywYNkmsz1IxLld3b2ig9Yy-7ytx/embed?start=false&loop=false&delayms=3000"></iframe>
 </div>
+
+---
+**Wall Mount Note**
+
+Ambianic Box can stand up on a flat surface or it can be mounted. For wall mount, there are several options. The box has two  openings on the back side that can be attached to wall mount hooks. Alternatively if you don't feel like drilling into your wall, the box is light enough to mount via two sided mounting tape such as [this one](https://www.amazon.com/gp/product/B07LFRN1K8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1).
+
+---
