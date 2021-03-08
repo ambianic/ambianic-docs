@@ -157,17 +157,21 @@
 
 <h1 id="quick-start-guide">Quick Start Guide</h1>
 <p>Ambianic is an <a href="https://blog.ambianic.ai/2020/11/05/awards.html">award winning</a> ambient intelligence platform. Ambianic's goal is to provide helpful and actionable suggestions in the context of home and business automation.</p>
+<p>Ambianic has two major software components: 
+- Ambianic UI (user front-end, Progressive Web App) and 
+- Ambianic Edge (ambient sensor engine)</p>
+<p>Ambianic UI is pre-deployed and readily available at <a href="https://ui.ambianic.ai">https://ui.ambianic.ai</a>. You can access it from any modern web browser and install it as a local mobile app.</p>
+<p>Ambianic Edge needs to be installed and run on a device located in the home or other physical area that it will monitor. We recommend installing and running Ambianic Edge as part of an Ambianic Box. However you can run Ambianic Edge on any major x86 or arm computing platform.</p>
 <h2 id="recommended-install">Recommended Install</h2>
 <p>The simplest way to get started is to follow these steps:</p>
 <ul>
-<li><a href="https://github.com/ambianic/ambianic-box">Assemble an Ambianic Box</a></li>
-<li><a href="https://github.com/ambianic/ambianic-rpi-image">Flash on SD Card the Ambianic OS Image</a></li>
-<li><a href="#ambianic-ui">Connect to the box via Ambianic UI</a>.</li>
+<li>Assemble an Ambianic Box ( <a href="https://docs.google.com/presentation/d/1c2Wt52JPmUs0BP-XSc2Seeb-17KDfzI1omAuMwRDAhU/edit#slide=id.p2">step by step slides</a>, video(coming soon), <a href="https://github.com/ambianic/ambianic-box">source code</a>)</li>
+<li>Connect the Ambianic Box to your local WiFi network (<a href="https://github.com/ambianic/ambianic-rpi-image#first-boot--network-setup">here is how</a>)</li>
+<li>From a device thats connected on your local WiFi network go to <a href="https://ui.ambianic.ai">https://ui.ambianic.ai</a> and follow the app install instructions.</li>
 </ul>
-<p>If you prefer an alternative hosting platform for Ambianic Edge, keep reading about the more advanced installation options.</p>
+<p>If you prefer an alternative hosting platform for your Ambianic Edge device, keep reading about more advanced installation options.</p>
 <h2 id="alternative-install-via-docker">Alternative install via Docker</h2>
-<p>Ambianic has two major components: Ambianic UI (user front-end) and Ambianic Edge (sensor device).</p>
-<p>Ambianic UI is pre-deployed and readily available at <a href="https://ui.ambianic.ai">https://ui.ambianic.ai</a>. If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes. Let's go step by step.</p>
+<p>If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes. Let's go step by step.</p>
 <h2 id="ambanic-edge">Ambanic Edge</h2>
 <p>Ambianic Edge is
 <a href="https://hub.docker.com/r/ambianic/ambianic-edge">available</a> as a docker image for ARM and x86 architectures so it can be deployed
@@ -231,7 +235,7 @@ timeline screenshot.</p>
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2020</p>
-            <p>Last update : 2021-02-14 20:40:05.155256+00:00</p>
+            <p>Last update : 2021-03-08 18:40:19.589283+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
