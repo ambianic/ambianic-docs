@@ -3,21 +3,28 @@
 
 Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence platform. Ambianic's goal is to provide helpful and actionable suggestions in the context of home and business automation.
 
+Ambianic has two major software components: 
+- Ambianic UI (user front-end, Progressive Web App) and 
+- Ambianic Edge (ambient sensor engine)
+
+Ambianic UI is pre-deployed and readily available at [https://ui.ambianic.ai](https://ui.ambianic.ai). You can access it from any modern web browser and install it as a local mobile app.
+
+Ambianic Edge needs to be installed and run on a device located in the home or other physical area that it will monitor. We recommend installing and running Ambianic Edge as part of an Ambianic Box. However you can run Ambianic Edge on any major x86 or arm computing platform.
+
 ## Recommended Install
 
 The simplest way to get started is to follow these steps:
 
-- [Assemble an Ambianic Box](https://github.com/ambianic/ambianic-box)
-- [Flash on SD Card the Ambianic OS Image](https://github.com/ambianic/ambianic-rpi-image)
-- [Connect to the box via Ambianic UI](#ambianic-ui).
+- Assemble an Ambianic Box ( [step by step slides](https://docs.google.com/presentation/d/1c2Wt52JPmUs0BP-XSc2Seeb-17KDfzI1omAuMwRDAhU/edit#slide=id.p2), video(coming soon), [source code](https://github.com/ambianic/ambianic-box))
+- Connect the Ambianic Box to your local WiFi network ([here is how](https://github.com/ambianic/ambianic-rpi-image#first-boot--network-setup))
+- From a device thats connected on your local WiFi network go to [https://ui.ambianic.ai](https://ui.ambianic.ai) and follow the app install instructions.
 
-If you prefer an alternative hosting platform for Ambianic Edge, keep reading about the more advanced installation options.
+
+If you prefer an alternative hosting platform for your Ambianic Edge device, keep reading about more advanced installation options.
 
 ## Alternative install via Docker
 
-Ambianic has two major components: Ambianic UI (user front-end) and Ambianic Edge (sensor device).
-
-Ambianic UI is pre-deployed and readily available at [https://ui.ambianic.ai](https://ui.ambianic.ai). If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes. Let's go step by step.
+If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes. Let's go step by step.
 
 ## Ambanic Edge
 
