@@ -31,11 +31,11 @@ If you don't have a 3D printer handy for the box enclosure, you can use an onlin
 
 # How to Assemble an Ambianic Box
 
-Instructional Video:
+## Instructional Video
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed//Tys3lW9tNAU' frameborder='0' allowfullscreen></iframe></div>
 
-Slides:
+## Slides
 
 <style>
   .responsive-google-slides {
@@ -57,6 +57,8 @@ Slides:
 <div class="responsive-google-slides">
   <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQcEWyjuR-oSnmyvGxoSlEYzFkivDdDd6EkhaJtHalm5lxHxOrjsywYNkmsz1IxLld3b2ig9Yy-7ytx/embed?start=false&loop=false&delayms=3000"></iframe>
 </div>
+
+
 
 ---
 **Wall Mount Note**
