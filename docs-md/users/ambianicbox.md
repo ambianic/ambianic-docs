@@ -67,4 +67,3 @@ Ambianic Box can stand up on a flat surface or it can be mounted. For wall mount
 
 ---
 
-The step by step slides are also [availble here](https://docs.google.com/presentation/d/1c2Wt52JPmUs0BP-XSc2Seeb-17KDfzI1omAuMwRDAhU/edit#slide=id.p2).
