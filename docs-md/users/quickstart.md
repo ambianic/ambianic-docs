@@ -1,15 +1,15 @@
 
 # Quick Start Guide
 
-Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence platform. Ambianic's goal is to provide helpful and actionable suggestions in the context of home and business automation.
+Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence platform. Ambianic's goal is to provide helpful and actionable observations in the context of home and business automation.
 
-Ambianic has two major software components: 
-- Ambianic UI (user front-end, Progressive Web App) and 
-- Ambianic Edge (ambient sensor engine)
+Ambianic has two major components: 
+- Ambianic Edge: an IoT device with camera (or other sensors) and a built-in AI engine for local inference
+- Ambianic UI app - a front-end Progressive Web App to manage Ambianic Edge device(s) and view timeline events reported by Ambianic Edge.
 
-Ambianic UI is pre-deployed and readily available at [https://ui.ambianic.ai](https://ui.ambianic.ai). You can access it from any modern web browser and install it as a local mobile app.
+Following is a high level diagram of a typical Ambianic deployment.
 
-Ambianic Edge needs to be installed and run on a device located in the home or other physical area that it will monitor. We recommend installing and running Ambianic Edge as part of an Ambianic Box. However you can run Ambianic Edge on any major x86 or arm computing platform.
+![Ambianic High Level Diagram](../assets/images/Ambianic-High-Level-Diagram.png)
 
 ## Recommended Install
 
@@ -20,7 +20,7 @@ The simplest way to get started is to follow these steps:
 
 If you prefer an alternative hosting platform for your Ambianic Edge device, keep reading about more advanced installation options.
 
-## Advanced install via Docker
+## Advanced Install
 
 If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes on almost any computer with x86 or ARM architecture. Follow the steps below:
 
