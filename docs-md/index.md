@@ -3,15 +3,6 @@
  &nbsp; 
  &nbsp; 
  
- [![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
- 
-<a href="https://landscape.lfai.foundation/format=card-mode&selected=ambianic">
-  <img src="https://github.com/lfai/artwork/raw/master/lfaidata-assets/lf-member/associate/lf_mem_asso.png"  height="200" style="display:inline;vertical-align:middle;padding:2%">   
-</a>
-<a href="https://twitter.com/TensorFlow/status/1291071490062983172?s=20">
-  <img src="https://pbs.twimg.com/profile_banners/1195860619284664320/1596827858/1500x500"  height="200" style="display:inline;vertical-align:middle;padding:2%">   
-</a>
-
 # Helpful AI for Home and Business Automation
 
 Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence project. Ambianic's mission is to make our homes and workspaces a little cozier by providing helpful and actionable suggestions. Ambianic is an Open Source Ambient Intelligence platform that puts local control and privacy first. It enables users to train and share custom AI models without compromising privacy.
@@ -19,6 +10,19 @@ Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) 
 [Try it Now](users/quickstart/)
 
 [View on Github](https://github.com/ambianic/ambianic-core)
+
+
+[![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
+ 
+
+<a href="https://landscape.lfai.foundation/format=card-mode&selected=ambianic">
+  <img src="https://github.com/lfai/artwork/raw/master/lfaidata-assets/lf-member/associate/lf_mem_asso.png"  height="200" style="display:inline;vertical-align:middle;padding:2%">   
+</a>
+<a href="https://twitter.com/TensorFlow/status/1291071490062983172?s=20">
+  <img src="https://pbs.twimg.com/profile_banners/1195860619284664320/1596827858/1500x500"  height="200" style="display:inline;vertical-align:middle;padding:2%">   
+</a>
+
+
 
 # Project background and motivation
 
