@@ -131,7 +131,7 @@
                     <a href="#recommended-install" class="nav-link">Recommended Install</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#advanced-install-via-docker" class="nav-link">Advanced install via Docker</a>
+                    <a href="#advanced-install" class="nav-link">Advanced Install</a>
                 </li>
                 <li class="nav-item">
                     <a href="#development" class="nav-link">Development</a>
@@ -148,12 +148,12 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="quick-start-guide">Quick Start Guide</h1>
-<p>Ambianic is an <a href="https://blog.ambianic.ai/2020/11/05/awards.html">award winning</a> ambient intelligence platform. Ambianic's goal is to provide helpful and actionable suggestions in the context of home and business automation.</p>
-<p>Ambianic has two major software components: 
-- Ambianic UI (user front-end, Progressive Web App) and 
-- Ambianic Edge (ambient sensor engine)</p>
-<p>Ambianic UI is pre-deployed and readily available at <a href="https://ui.ambianic.ai">https://ui.ambianic.ai</a>. You can access it from any modern web browser and install it as a local mobile app.</p>
-<p>Ambianic Edge needs to be installed and run on a device located in the home or other physical area that it will monitor. We recommend installing and running Ambianic Edge as part of an Ambianic Box. However you can run Ambianic Edge on any major x86 or arm computing platform.</p>
+<p>Ambianic is an <a href="https://blog.ambianic.ai/2020/11/05/awards.html">award winning</a> ambient intelligence platform. Ambianic's goal is to provide helpful and actionable observations in the context of home and business automation.</p>
+<p>Ambianic has two major components: 
+- Ambianic Edge: an IoT device with camera (or other sensors) and a built-in AI engine for local inference
+- Ambianic UI app - a front-end Progressive Web App to manage Ambianic Edge device(s) and view timeline events reported by Ambianic Edge.</p>
+<p>Following is a high level diagram of a typical Ambianic deployment.</p>
+<p><img alt="Ambianic High Level Diagram" src="../../assets/images/Ambianic-High-Level-Diagram.png" /></p>
 <h2 id="recommended-install">Recommended Install</h2>
 <p>The simplest way to get started is to follow these steps:</p>
 <ul>
@@ -161,7 +161,7 @@
 <li><a href="../installsoftware/">Install and run Ambianic software</a></li>
 </ul>
 <p>If you prefer an alternative hosting platform for your Ambianic Edge device, keep reading about more advanced installation options.</p>
-<h2 id="advanced-install-via-docker">Advanced install via Docker</h2>
+<h2 id="advanced-install">Advanced Install</h2>
 <p>If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes on almost any computer with x86 or ARM architecture. Follow the steps below:</p>
 <h3 id="ambanic-edge-docker-image">Ambanic Edge Docker image</h3>
 <p>Ambianic Edge is
@@ -225,7 +225,7 @@ timeline screenshot.</p>
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-03-12 16:33:45.899776+00:00</p>
+            <p>Last update : 2021-03-12 16:39:20.153678+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
