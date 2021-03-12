@@ -35,6 +35,6 @@ The following section provides detailed step by step instructions how to install
 </style>
 
 <div class="responsive-google-slides">
-  <iframe src="https://docs.google.com/presentation/d/1jooKT0wC1d_jBNtjjIPl8bBdvXDdRe-Vv_bdyaCQBdU?usp=sharing/embed?start=false&loop=false&delayms=3000#slide=id.p2"></iframe>
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTVhK310LxJ82VM2eqvcxc2bLyAoaseqWN2s3xr56LdVzEfdwGX2svyIqHgVDOXsh3C311kPSoAov9u/embed?start=false&loop=false&delayms=3000#slide=id.p2"></iframe>
 </div>
 
