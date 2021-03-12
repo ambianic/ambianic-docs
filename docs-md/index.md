@@ -16,9 +16,12 @@
 
 Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence project. Ambianic's mission is to make our homes and workspaces a little cozier by providing helpful and actionable suggestions. Ambianic is an Open Source Ambient Intelligence platform that puts local control and privacy first. It enables users to train and share custom AI models without compromising privacy.
 
+[Try it Now](users/quickstart/)
+
 [View on Github](https://github.com/ambianic/ambianic-core)
 
-Project background:
+# Project background and motivation
+
 * This blog post covers the initial use case and motivation behind the project: [Cut The Cloud Strings Attached to Plug-and-Play Surveillance Cameras](https://blog.ambianic.ai/2020/02/05/pnp.html)
 * This WebRTCHacks article goes deeper into the technical design decisions for the project: [Private Home Surveillance with the WebRTC DataChannel](https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/)
 
