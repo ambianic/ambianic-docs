@@ -55,7 +55,7 @@ If you don't have a 3D printer handy for the box enclosure, you can use an onlin
 </style>
 
 <div class="responsive-google-slides">
-  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQcEWyjuR-oSnmyvGxoSlEYzFkivDdDd6EkhaJtHalm5lxHxOrjsywYNkmsz1IxLld3b2ig9Yy-7ytx/embed?start=false&loop=false&delayms=3000"></iframe>
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQcEWyjuR-oSnmyvGxoSlEYzFkivDdDd6EkhaJtHalm5lxHxOrjsywYNkmsz1IxLld3b2ig9Yy-7ytx/embed?start=false&loop=false&delayms=3000#slide=id.p2"></iframe>
 </div>
 
 
