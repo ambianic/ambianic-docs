@@ -16,7 +16,7 @@ Ambianic Edge needs to be installed and run on a device located in the home or o
 The simplest way to get started is to follow these steps:
 
 - [Assemble Ambianic Box hardware](ambianicbox.md)
-- [Install Ambianic Edge software and Ambianic UI app](installsoftware.md)
+- [Install and run Ambianic software](installsoftware.md)
 
 If you prefer an alternative hosting platform for your Ambianic Edge device, keep reading about more advanced installation options.
 
