@@ -3,7 +3,20 @@
  &nbsp; 
  &nbsp; 
  
+# Helpful AI for Home and Business Automation
+
+Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence project. Ambianic's mission is to make our homes and workspaces a little cozier by providing helpful and actionable suggestions. For example, notify family and caregivers instantly if a loved one has fallen down.
+
+Ambianic is an Open Source Ambient Intelligence platform that puts user privacy and local control first. It enables users to share and train custom AI models without compromising privacy.
+
+[Try it Now](users/quickstart/)
+
+[View on Github](https://github.com/ambianic/ambianic-core)
+
+
+[![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
  
+
 <a href="https://landscape.lfai.foundation/format=card-mode&selected=ambianic">
   <img src="https://github.com/lfai/artwork/raw/master/lfaidata-assets/lf-member/associate/lf_mem_asso.png"  height="200" style="display:inline;vertical-align:middle;padding:2%">   
 </a>
@@ -11,13 +24,10 @@
   <img src="https://pbs.twimg.com/profile_banners/1195860619284664320/1596827858/1500x500"  height="200" style="display:inline;vertical-align:middle;padding:2%">   
 </a>
 
-# Helpful AI for Home and Business Automation
 
-Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence project. Ambianic's mission is to make our homes and workspaces a little cozier by providing helpful and actionable suggestions. Ambianic is an Open Source Ambient Intelligence platform that puts local control and privacy first. It enables users to train and share custom AI models without compromising privacy.
 
-[View on Github](https://github.com/ambianic/ambianic-core)
+# Project background and motivation
 
-Project background:
 * This blog post covers the initial use case and motivation behind the project: [Cut The Cloud Strings Attached to Plug-and-Play Surveillance Cameras](https://blog.ambianic.ai/2020/02/05/pnp.html)
 * This WebRTCHacks article goes deeper into the technical design decisions for the project: [Private Home Surveillance with the WebRTC DataChannel](https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/)
 
@@ -48,6 +58,7 @@ More user journeys will be added over time as the project evolves. Some of the
 candidate topics include:
 
 - **Home Automation**
+    - Assist with remote family home care by detecting falls.
     - Turn traditional door locks into smart locks with Face Recognition.
     - Alert parents if a crying toddler is left unattended for more than 15 minutes.
     - Raise an alert if a baby is seated near a car door without child lock enabled while in motion.
@@ -100,11 +111,10 @@ minimizing network routing overhead.
 
 Our goal is to build a product that is useful out of the box:
 
- - Less than 15 minutes setup time
- - Less than $75 in hardware costs
-   + Primary platform: Raspberry Pi 4 B, 4GB RAM, 32GB SDRAM
- - No coding required to get started
- - Decomposable and hackable for open source developers
+- [x] Less than $55 in hardware costs. Get [Ambianic Box](https://github.com/ambianic/ambianic-box).
+- [x] Less than 15 minutes setup time. Get [RPI Image](https://github.com/ambianic/ambianic-rpi-image).
+- [x] No coding required to get started. Just follow the [Quick Start Guide](https://docs.ambianic.ai/users/quickstart/).
+- [x] Decomposable and hackable for DYI and Open Source developers. [Setup Your Dev Environment](https://docs.ambianic.ai/developers/development-environment/)
 
 ## Quick Start
 

@@ -1,14 +1,30 @@
 
-# 5 Minute Quick Start
+# Quick Start Guide
 
-Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence project. Ambianic's goal is to provide helpful and actionable suggestions
-in the context of home and business automation.
+Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence platform. Ambianic's goal is to provide helpful and actionable observations in the context of home and business automation.
 
-Ambianic has two major components: Ambianic UI and Ambianic Edge.
+Ambianic has two major components: 
+- Ambianic Edge: an IoT device with camera (or other sensors) and a built-in AI engine for local inference
+- Ambianic UI app - a front-end Progressive Web App to manage Ambianic Edge device(s) and view timeline events reported by Ambianic Edge.
 
-Ambianic UI is pre-deployed and readily available at [https://ui.ambianic.ai](https://ui.ambianic.ai). If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes. Let's go step by step.
+Following is a high level diagram of a typical Ambianic deployment.
 
-## Ambanic Edge
+![Ambianic High Level Diagram](../assets/images/Ambianic-High-Level-Diagram.png)
+
+## Recommended Install
+
+The simplest way to get started is to follow these steps:
+
+- [Assemble Ambianic Box hardware](ambianicbox.md)
+- [Install and run Ambianic software](installsoftware.md)
+
+If you prefer an alternative hosting platform for your Ambianic Edge device, keep reading about more advanced installation options.
+
+## Advanced Install
+
+If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes on almost any computer with x86 or ARM architecture. Follow the steps below:
+
+### Ambanic Edge Docker image
 
 Ambianic Edge is
 [available](https://hub.docker.com/r/ambianic/ambianic-edge) as a docker image for ARM and x86 architectures so it can be deployed
@@ -24,7 +40,7 @@ To deploy on a Raspberry Pi 4, you will need a recent
 and [Docker Compose](https://docs.docker.com/compose/) on it. 
 You can install and run the image in the default pi user space on Raspbian.
 
-### Installer for Raspberry OS and Debian-like linux
+#### Installer for Raspberry OS and Debian-like linux
 
 We have a commodity script that will take care of installing and setting up your system. Run this line to setup 
 
@@ -36,9 +52,9 @@ After the setup you can find the installation under `/opt/ambianic` where you ca
 
 Ambianic Pipeline configuration will be under `/etc/ambianic`.
 
-### The Ambianic Edge CLI
+#### The Ambianic Edge CLI
 
-The installer will start the service for you. To manage the runtime you can use the `ambianic` command line. A few example
+The installer will start the service for you. To manage the runtime you can use the `ambianic` command line. A few examples:
 
 - Start, Stop or Restart with `ambianic [ start | stop | restart ]`
 - View the instance status with `ambianic status`
@@ -46,7 +62,7 @@ The installer will start the service for you. To manage the runtime you can use 
 - Open the UI (if you system has a GUI) with `ambianic ui`
 - Upgrade the installation with `ambianic upgrade`
 
-## Ambanic UI
+### Ambianic UI app
 
 [Ambianic UI](https://ui.ambianic.ai/) is a
 modern prorgressive web application (PWA) that provides Plug-and-Play pairing and remote access
@@ -58,7 +74,7 @@ timeline screenshot.
 
 ![Timeline](../assets/images/timeline-screen.png)
 
-## Pairing Ambanic UI with Ambianic Edge
+### Pairing Ambanic UI with Ambianic Edge
 
 You can easily pair up your Ambianic UI with Ambianic Edge. It works similar to Airdrop.
 
@@ -74,17 +90,20 @@ After a few moments, pairing will conclude and you will see the unique identifie
 
 ![Connected](../assets/images/connected-screen.png)
 
+IYou can now head to the Timeline view and you will be able to see an image of what is in front of the Ambianic Box. The box is pre-configured to detect people and over 20 kinds of objects. Detections will show in your timeline.
+
 Congratulations! Your Ambianic instance is now up and running!
 
-## Configuration
+The pairing information is persisted on your Ambianic UI client device and you can now access Ambianic Edge from anywhere remotely! The connection is direct and encrypted end-to-end.
 
-You are now ready to configure Ambianic: pipelines, input sources and AI models.
+When you are ready to explore more advanced capabilities, continue to the next section.
+
+### Configuration
+
+Ambianic provides flexible configuration options via a configuration YAML file. You can customize: pipelines, input sources, AI models, notification channels and more.
 
 Read on: [Configuring Ambianic Edge](configure.md).
 
-Once you configure Ambianic Edge and restart the docker image, you should be able to see timeline view like the one above.
-
-The pairing information is persisted on your Ambianic UI client device and you can now access Ambianic Edge from anywhere remotely! The connection is direct and encrypted end-to-end.
 
 ## Development
 
@@ -92,8 +111,9 @@ If you want to contribute to the code read how to [setup a development environme
 
 ## Troubleshooting
 
-If you experience problems with your initial setup and you can't find a good solution online, feel free to engage the team on [Twitter](https://twitter.com/ambianicai) or [open a github issue](https://github.com/ambianic).
+If you experience problems with your initial setup and you can't find a good solution online, feel free to engage the team on [Twitter](https://twitter.com/ambianicai), [Slack](https://ambianicai.slack.com/join/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ#/), or [Github discussion forums](https://github.com/ambianic/ambianic-ui/discussions).
 
 ## Supporting the project
 
 If you find value in this project, consider supporting its future success. See the [sustainability](https://docs.ambianic.ai/#sustainability) section.
+ 

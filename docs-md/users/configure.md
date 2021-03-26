@@ -51,7 +51,7 @@ Let's take an example `config.yaml` file and walk through it:
 ######################################
 #  Ambianic main configuration file  #
 ######################################
-version: '1.2.4'
+version: '2020.12.11'
 
 # path to the data directory
 # ./data is relative to the container runtime. Do not change it if you are unsure.
@@ -60,7 +60,20 @@ data_dir: ./data
 # Set logging level to one of DEBUG, INFO, WARNING, ERROR
 logging:
   file: ./data/ambianic-log.txt
-  level: DEBUG
+  level: INFO
+
+Notifications provider configuration
+# see https://github.com/caronc/apprise#popular-notification-services for syntax examples
+notifications:
+  catch_all_email:
+    include_attachments: true
+    providers:
+      - mailto://userid:pass@domain.com
+  alert_fall:
+    providers:
+      - mailto://userid:pass@domain.com
+      - json://hostname/a/path/to/post/to
+
 
 # Pipeline event timeline configuration
 timeline:
@@ -69,14 +82,9 @@ timeline:
 # Cameras and other input data sources
 # Using Home Assistant conventions to ease upcoming integration
 sources:
-  
-  # example for a local camera device (linux based)
-  webcam: 
-    uri: /dev/video0
-    type: video
-    live: true
 
-  picamera: 
+  # direct support for raspberry picamera
+  picamera:
     uri: picamera
     type: video
     live: true
@@ -84,50 +92,63 @@ sources:
   front_door_camera: 
     uri: <your camera>
     type: video
-    # live: is this a live source or a recording
-    # when live is True, the AVSource element will try to reconnect
-    # if the stream is interrupted due to network disruption or another reason.
     live: true
+
+  # local video device integration example
+  webcam:
+    uri: /dev/video0
+    type: video
+    live: true
+    
   # recorded front door cam feed for quick testing
-  # recorded_cam_feed:
-  #  uri: file:///workspace/tests/pipeline/avsource/test2-cam-person1.mkv
-  #  type: video
+  recorded_cam_feed:
+    uri: file:///workspace/tests/pipeline/avsource/test2-cam-person1.mkv
+    type: video
+    
+ai_models:
+  image_detection:
+    model:
+      tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
+      edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite
+    labels: /opt/ambianic-edge/ai_models/coco_labels.txt
+  face_detection:
+    model:
+      tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_face_quant_postprocess.tflite
+      edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_face_quant_postprocess_edgetpu.tflite
+    labels: /opt/ambianic-edge/ai_models/coco_labels.txt
+    top_k: 2
+  fall_detection:
+    model:
+      tflite: /opt/ambianic-edge/ai_models/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite
+      edgetpu: /opt/ambianic-edge/ai_models/posenet_mobilenet_v1_075_721_1281_quant_decoder_edgetpu.tflite
+    labels: /opt/ambianic-edge/ai_models/pose_labels.txt
 
-
-  ai_models:
-  #  image_classification:
-  #    tf_graph:
-  #    labels:
-    object_detection: 
-      model:
-        tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
-        edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite
-      labels: /opt/ambianic-edge/ai_models/coco_labels.txt
-    face_detection: 
-      model:
-        tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
-        edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_face_quant_postprocess_edgetpu.tflite
-      labels: /opt/ambianic-edge/ai_models/coco_labels.txt
-      top_k: 2
-
-  # A named pipeline defines an ordered sequence of operations
-  # such as reading from a data source, AI model inference, saving samples and others.
-  pipelines:
-    # sequence of piped operations for use in daytime front door watch
-    front_door_watch:
-      - source: front_door_camera
-      - detect_objects: # run ai inference on the input data
-         ai_model: object_detection
-         confidence_threshold: 0.8
-      - save_detections: # save samples from the inference results
-         positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence threshold
-         idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
-      - detect_faces: # run ai inference on the samples from the previous element output
-         ai_model: face_detection
-         confidence_threshold: 0.8
-      - save_detections: # save samples from the inference results
-         positive_interval: 2
-         idle_interval: 600
+# A named pipeline defines an ordered sequence of operations
+# such as reading from a data source, AI model inference, saving samples and others.
+pipelines:
+   # Pipeline names could be descriptive, e.g. front_door_watch or entry_room_watch.
+   area_watch:
+     - source: picamera
+     - detect_objects: # run ai inference on the input data
+        ai_model: image_detection
+        confidence_threshold: 0.6
+        # Watch for any of the labels listed below. The labels must be from the model trained label set.
+        # If no labels are listed, then watch for all model trained labels.
+        label_filter:
+          - person
+          - car
+     - save_detections: # save samples from the inference results
+        positive_interval: 300 # how often (in seconds) to save samples with ANY results above the confidence threshold
+        idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
+     - detect_falls: # look for falls
+        ai_model: fall_detection
+        confidence_threshold: 0.6
+     - save_detections: # save samples from the inference results
+        positive_interval: 10
+        idle_interval: 600000
+        notify: # notify a thirdy party service
+          providers:
+            - alert_fall        
 
 ```
 
@@ -167,7 +188,7 @@ Now save the file and restart the docker image. Within a few moments you should 
 
 You can reference the [Quick Start Guide](quickstart.md) for instructions on starting and stopping the Ambianic Edge docker image.
 
-## Cameras
+## Camera Configuration
 
 Cameras are some of the most common sources of input data for Ambianic.ai pipelines.
 
@@ -247,9 +268,77 @@ All you have to do to use a still image source from your camera is to locate the
 
 In the example above the URI points to a still jpg sample from the camera. Ambianic Edge will continuously poll this URI approximately once per second (1fps).
 
-### Other Ambianic Edge configuration settings
+## Sensitive config information
 
-The rest of the configuration settings are for developers and contributors. If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. Otherwise leave them as they are.
+Since camera URIs often contain credentials, we recommend that you store such values
+in `secrets.yaml`. Ambianic Edge will automatically look for and if available
+prepend `secrets.yaml` to `config.yaml`. That way you can share
+ `config.yaml` with others without compromising privacy sensitive parameters.
+
+You can use standard [YAML anchors and aliases](https://yaml.org/refcard.html) in `config.yaml` 
+to reference YAML variables defined in `secrets.yaml`. They will resolve after the files are merged into one.
+
+An example valid entry in `secrets.yaml` for a camera URI, would look like this:
+```yaml
+secret_uri_front_door_camera: &secret_uri_front_door_camera 'rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101'
+# add more secret entries as regular yaml mappings
+```
+
+It can be then referenced in `config.yaml` as follows:
+```yaml
+  front_door_camera: 
+    uri: *secret_uri_front_door_camera
+```
+
+## Notification settings
+
+Ambianic edge can be configured to instantly alerts users when a detection occurs. Notifications are a feature of the `save_detections` element. 
+Every time a timeline event is saved along with its contextual data, a notification can be fired to a number of supported channels such as email, sms, or a local 
+smart home hub.
+
+Notification providers are first configured at a system level using the following syntax:
+
+```
+notifications:
+  catch_all_email:
+    include_attachments: true
+    providers:
+      - mailto://userid:pass@domain.com
+  alert_fall:
+    providers:
+      - mailto://userid:pass@domain.com
+      - json://hostname/a/path/to/post/to
+```
+
+Notice that the `catch_all_email` provider template uses the `include_attachments` attribute. Email notifications to this provider will include timeline event attachments such as captured images. On the other hand the `alert_fall` does not use the `include_attachments` attribute. Notifications sent through this provider will include the essential event information, but no attachments. In order to include attachments via `alert_fall` , just add the `include_attachments: true` element.
+
+For a full list of supported providers and config syntax, take a look at the [official apprise documentation](https://github.com/caronc/apprise#popular-notification-services). Apprise is a great notifications library that ambianic edge uses and sponsors.
+
+Once the system level notification providers are configured, they can be referenced within `save_detection` elements as in the following example:
+
+```
+pipelines:
+   # Pipeline names could be descriptive, e.g. front_door_watch or entry_room_watch.
+   area_watch:
+     ...
+     - detect_falls: # look for falls
+     ...
+     - save_detections: # save samples from the inference results
+        positive_interval: 10
+        idle_interval: 600000
+        notify: # notify a thirdy party service
+          providers:
+            - alert_fall        
+```
+
+Each time a detection event is saved, a corresponding notification will be instantly fired.
+
+
+### Other configuration settings
+
+The rest of the configuration settings are for advanced developers. 
+If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. 
+Otherwise leave them as they are.
 
 ## Using AI Accelerator
 
@@ -268,43 +357,6 @@ It comfortably handles 3 simultaneous HD camera sourced pipelines with approxima
 An objects or person of interest would normally show up in one of your cameras for at least one second,
 which is enough time to be registered and processed by Ambianic Edge on a plain RPI4.
 
-## Local Deployment of Ambanic UI
+## Configuration Questions
 
-Ambianic UI is available for FREE at [ui.ambianic.ai](https://ai.ambianic.ui).
-Its designed to be easy to use with Plug-and-play connectivity to Ambianic Edge.
-Secured with end-to-end encryption. Your data stays only on your own devices.
-
-However if you would like to deploy Ambianic UI on your own machine, its a
-straightforward process:
-
-Ambianic UI is [hosted](https://github.com/ambianic/ambianic-ui) on github.
-It is also [distributed](https://www.npmjs.com/package/ambianic-ui) as a Node JS npm package.
-
-If you are familiar with Node JS, you can install and run ambianic-ui from its npm distribution.
-
-Otherwise, to build from source you can follow these steps:
-
-##### Clone source repository
-
-```
-git clone https://github.com/ambianic/ambianic-ui.git
-cd ambianic-ui
-```
-
-##### Install dependencies
-```
-npm install
-```
-
-##### Compiles and hot-reloads for development
-```
-npm run serve
-```
-After a few moments you should see a message in your terminal window similar to this:
-
-```sh
-App running at:
-- Local:   http://localhost:8080/
-- Network: http://192.168.86.246:8080/
-```
-Now you can access the app from your browser.
+If you are having difficulties with configuration settings, feel free to ask your question in the [community discussion forum](https://github.com/ambianic/ambianic-edge/discussions) or our [public slack channel](https://ambianicai.slack.com/join/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ#/).

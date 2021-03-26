@@ -43,10 +43,13 @@ The text of this license is available under the Creative Commons Attribution-Sha
 
 ## Code reviews
 
-All submissions, including submissions by project members, require review. We
-use GitHub pull requests for this purpose. Consult
-[GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
-information on using pull requests.
+All submissions, including submissions by project members, require review. We use GitHub pull requests for this purpose. Please follow these best practices:
+
+- To expedite the review process, please [keep PRs scoped down](https://www.netlify.com/blog/2020/03/31/how-to-scope-down-prs/)
+- [Link PRs to specific issues](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue) they intend to resolve.
+- Make sure that your PR improves [code coverage](https://en.wikipedia.org/wiki/Code_coverage#:~:text=In%20computer%20science%2C%20test%20coverage,a%20particular%20test%20suite%20runs.) in a meaningful way. PRs that decrease code coverage will not be allowed.
+- Consult [GitHub Help](https://help.github.com/articles/about-pull-requests/) for more information on using pull requests. 
+
 
 ## Semantic Releases
 
