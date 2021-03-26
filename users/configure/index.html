@@ -177,9 +177,6 @@
                     <a href="#using-ai-accelerator" class="nav-link">Using AI Accelerator</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#local-deployment-of-ambanic-ui" class="nav-link">Local Deployment of Ambanic UI</a>
-                </li>
-                <li class="nav-item">
                     <a href="#configuration-questions" class="nav-link">Configuration Questions</a>
                 </li>
         </ul>
@@ -232,6 +229,7 @@ and modify it to fit your environment. Read further about the parameters and for
 version: '2020.12.11'
 
 # path to the data directory
+# ./data is relative to the container runtime. Do not change it if you are unsure.
 data_dir: ./data
 
 # Set logging level to one of DEBUG, INFO, WARNING, ERROR
@@ -239,17 +237,17 @@ logging:
   file: ./data/ambianic-log.txt
   level: INFO
 
-# Notifications provider configuration
+Notifications provider configuration
 # see https://github.com/caronc/apprise#popular-notification-services for syntax examples
-# notifications:
-#   catch_all_email:
-#     include_attachments: true
-#     providers:
-#       - mailto://userid:pass@domain.com
-#   alert_fall:
-#     providers:
-#       - mailto://userid:pass@domain.com
-#       - json://hostname/a/path/to/post/to
+notifications:
+  catch_all_email:
+    include_attachments: true
+    providers:
+      - mailto://userid:pass@domain.com
+  alert_fall:
+    providers:
+      - mailto://userid:pass@domain.com
+      - json://hostname/a/path/to/post/to
 
 
 # Pipeline event timeline configuration
@@ -266,16 +264,21 @@ sources:
     type: video
     live: true
 
+  front_door_camera: 
+    uri: &lt;your camera&gt;
+    type: video
+    live: true
+
   # local video device integration example
   webcam:
     uri: /dev/video0
     type: video
     live: true
 
+  # recorded front door cam feed for quick testing
   recorded_cam_feed:
     uri: file:///workspace/tests/pipeline/avsource/test2-cam-person1.mkv
-#    type: video
-#    live: true
+    type: video
 
 ai_models:
   image_detection:
@@ -318,16 +321,16 @@ pipelines:
      - save_detections: # save samples from the inference results
         positive_interval: 10
         idle_interval: 600000
-#        notify: # notify a thirdy party service
-#          providers:
-#            - alert_fall        
+        notify: # notify a thirdy party service
+          providers:
+            - alert_fall        
 
 </code></pre>
 <p>The only parameter you have to change in order to see a populated timeline in the UI is the source uri. In the section below:</p>
 <pre><code class="language-yaml">  front_door_camera:
-    uri: *secret_uri_front_door_camera
+    uri: &lt;your camera&gt;
 </code></pre>
-<p>Replace <code>*secret_uri_front_door_camera</code> with your camera still image snapshot URI (recommended). For example:</p>
+<p>Replace <code>&lt;your camera&gt;</code> with your camera still image snapshot URI (recommended). For example:</p>
 <pre><code class="language-yaml">  front_door_camera:
     uri: http://192.168.86.29/cgi-bin/api.cgi?cmd=Snap&amp;channel=0&amp;rs=wuuPhkmUCeI9WG7C&amp;user=admin&amp;password=******
     type: image
@@ -348,8 +351,9 @@ pipelines:
 <h2 id="camera-configuration">Camera Configuration</h2>
 <p>Cameras are some of the most common sources of input data for Ambianic.ai pipelines.</p>
 <p>Ambianic.ai is typically connected to IP Network cameras, but you can also connect a local embedded web cam or USB connected camera.</p>
+<p>You can set <code>uri</code> to a local path such as <code>/dev/video0</code> to use a working usb webcam or <code>picamera</code> in case you have a picamera connected to Raspbery Pi connector.</p>
 <h3 id="connecting-a-local-web-usb-camera">Connecting a local Web USB camera</h3>
-<p>A laptop camera or USB camera on linux can be used just providing a working reference to the video device, eg. <code>/dev/video0</code></p>
+<p>A laptop camera or USB camera on linux or mac can be used just providing a working reference to the video device, eg. <code>/dev/video0</code></p>
 <h3 id="connecting-a-picamera">Connecting a Picamera</h3>
 <p>To use a Picamera connected to the camera connector on the Raspberry Pi (usually available in the middle of the board)</p>
 <p>Ensure also your setup have the camera enabled and provides enough GPU memory for processing frames. The following script will take care of it for you:</p>
@@ -393,18 +397,19 @@ gpu_mem=256
 </code></pre>
 <p>In the example above the URI points to a still jpg sample from the camera. Ambianic Edge will continuously poll this URI approximately once per second (1fps).</p>
 <h2 id="sensitive-config-information">Sensitive config information</h2>
-<p>In the configuration example, there are a few references to variables
-defined elsewhere in the YAML file. You can use standard <a href="https://yaml.org/refcard.html">YAML anchors and aliases</a> for that.</p>
-<p>Notice that <code>*src_front_door_cam</code> and
-<code>*src_entry_area_cam</code> are the YAML aliases(references) that do not appear elsewhere in config.yaml. 
-They are actually picked up from an optional file located in the same directory: <code>secrets.yaml</code>.</p>
 <p>Since camera URIs often contain credentials, we recommend that you store such values
 in <code>secrets.yaml</code>. Ambianic Edge will automatically look for and if available
 prepend <code>secrets.yaml</code> to <code>config.yaml</code>. That way you can share
  <code>config.yaml</code> with others without compromising privacy sensitive parameters.</p>
+<p>You can use standard <a href="https://yaml.org/refcard.html">YAML anchors and aliases</a> in <code>config.yaml</code> 
+to reference YAML variables defined in <code>secrets.yaml</code>. They will resolve after the files are merged into one.</p>
 <p>An example valid entry in <code>secrets.yaml</code> for a camera URI, would look like this:</p>
 <pre><code class="language-yaml">secret_uri_front_door_camera: &amp;secret_uri_front_door_camera 'rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101'
 # add more secret entries as regular yaml mappings
+</code></pre>
+<p>It can be then referenced in <code>config.yaml</code> as follows:</p>
+<pre><code class="language-yaml">  front_door_camera: 
+    uri: *secret_uri_front_door_camera
 </code></pre>
 <h2 id="notification-settings">Notification settings</h2>
 <p>Ambianic edge can be configured to instantly alerts users when a detection occurs. Notifications are a feature of the <code>save_detections</code> element. 
@@ -439,7 +444,9 @@ smart home hub.</p>
 </code></pre>
 <p>Each time a detection event is saved, a corresponding notification will be instantly fired.</p>
 <h3 id="other-configuration-settings">Other configuration settings</h3>
-<p>The rest of the configuration settings are for developers and contributors. If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. Otherwise leave them as they are.</p>
+<p>The rest of the configuration settings are for advanced developers. 
+If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. 
+Otherwise leave them as they are.</p>
 <h2 id="using-ai-accelerator">Using AI Accelerator</h2>
 <p>Ambianic Edge will use the <a href="https://coral.ai/">Google Coral TPU</a> accelerator if one is available on the system.</p>
 <p><em>Note: The default docker compose configuration for Ambianic Edge checks whether a USB attached Coral is running on <code>/dev/bus/usb</code>. You may need to adjust that if the TPU is attached to a different file system directory.</em></p>
@@ -452,32 +459,6 @@ pulling images from multiple cameras and processing these images with multiple i
 It comfortably handles 3 simultaneous HD camera sourced pipelines with approximately 1-2 frames per second (fps).
 An objects or person of interest would normally show up in one of your cameras for at least one second,
 which is enough time to be registered and processed by Ambianic Edge on a plain RPI4.</p>
-<h2 id="local-deployment-of-ambanic-ui">Local Deployment of Ambanic UI</h2>
-<p>Ambianic UI is available for FREE at <a href="https://ai.ambianic.ui">ui.ambianic.ai</a>.
-Its designed to be easy to use with Plug-and-play connectivity to Ambianic Edge.
-Secured with end-to-end encryption. Your data stays only on your own devices.</p>
-<p>However if you would like to deploy Ambianic UI on your own machine, its a
-straightforward process:</p>
-<p>Ambianic UI is <a href="https://github.com/ambianic/ambianic-ui">hosted</a> on github.
-It is also <a href="https://www.npmjs.com/package/ambianic-ui">distributed</a> as a Node JS npm package.</p>
-<p>If you are familiar with Node JS, you can install and run ambianic-ui from its npm distribution.</p>
-<p>Otherwise, to build from source you can follow these steps:</p>
-<h5 id="clone-source-repository">Clone source repository</h5>
-<pre><code>git clone https://github.com/ambianic/ambianic-ui.git
-cd ambianic-ui
-</code></pre>
-<h5 id="install-dependencies">Install dependencies</h5>
-<pre><code>npm install
-</code></pre>
-<h5 id="compiles-and-hot-reloads-for-development">Compiles and hot-reloads for development</h5>
-<pre><code>npm run serve
-</code></pre>
-<p>After a few moments you should see a message in your terminal window similar to this:</p>
-<pre><code class="language-sh">App running at:
-- Local:   http://localhost:8080/
-- Network: http://192.168.86.246:8080/
-</code></pre>
-<p>Now you can access the app from your browser.</p>
 <h2 id="configuration-questions">Configuration Questions</h2>
 <p>If you are having difficulties with configuration settings, feel free to ask your question in the <a href="https://github.com/ambianic/ambianic-edge/discussions">community discussion forum</a> or our <a href="https://ambianicai.slack.com/join/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ#/">public slack channel</a>.</p></div>
             </div>
@@ -486,7 +467,7 @@ cd ambianic-ui
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-03-26 18:13:56.865501+00:00</p>
+            <p>Last update : 2021-03-26 18:35:56.988388+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
