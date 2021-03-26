@@ -22,6 +22,15 @@ nav:
 #      - Writing PLugins: developers/writing-plugins-overview.md
 #      - Deployment Scenarios: developers/deployment.md
       - Contributing: legal/CONTRIBUTING.md
+      - Ambianic UI: https://github.com/ambianic/ambianic-ui
+      - Ambianic Edge: https://github.com/ambianic/ambianic-edge
+      - Ambianic Box: https://github.com/ambianic/ambianic-box
+      - Fall Detection: https://github.com/ambianic/fall-detection
+      - Peer to Peer Communication: 
+        - p2p architecture: https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/
+        - peerjs-python: https://github.com/ambianic/peerjs-python
+        - ambianic-pnp: https://github.com/ambianic/ambianic-pnp
+      
 theme:
     name: mkdocs
     custom_dir: custom_theme/
