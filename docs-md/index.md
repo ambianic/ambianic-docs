@@ -5,7 +5,9 @@
  
 # Helpful AI for Home and Business Automation
 
-Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence project. Ambianic's mission is to make our homes and workspaces a little cozier by providing helpful and actionable suggestions. Ambianic is an Open Source Ambient Intelligence platform that puts local control and privacy first. It enables users to train and share custom AI models without compromising privacy.
+Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence project. Ambianic's mission is to make our homes and workspaces a little cozier by providing helpful and actionable suggestions. For example, notify family and caregivers instantly if a loved one has fallen down.
+
+Ambianic is an Open Source Ambient Intelligence platform that puts user privacy and local control first. It enables users to share and train custom AI models without compromising privacy.
 
 [Try it Now](users/quickstart/)
 
