@@ -1,6 +1,6 @@
 # This is an overview of the connection flow between Ambianic UI and Ambianic Edge
 
-Upon starting the Ambianic Web UI, it will automatically start searching for an Ambianic Edge on your own local network. 
+Upon starting the Ambianic Web UI, it will automatically start searching for an Ambianic Edge device on your own local network. 
 
 ![home screen](../assets/images/home-screen.png)
 
