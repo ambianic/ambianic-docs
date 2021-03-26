@@ -126,19 +126,17 @@
 
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
-            <li class="nav-item main"><a href="#this-is-an-overview-of-the-connection-flow-between-ambianic-ui-and-ambianic-edge">This is an overview of the connection flow between Ambianic UI and Ambianic Edge</a></li>
+            <li class="nav-item main"><a href="#this-is-an-overview-of-the-initial-connection-pairing-flow-between-ambianic-ui-and-ambianic-edge">This is an overview of the initial connection (pairing) flow between Ambianic UI and Ambianic Edge</a></li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="this-is-an-overview-of-the-connection-flow-between-ambianic-ui-and-ambianic-edge">This is an overview of the connection flow between Ambianic UI and Ambianic Edge</h1>
-<p>Upon starting the Ambianic Web UI, it will automatically start searching for an Ambianic Edge device on your own local network. </p>
-<p><img alt="home screen" src="../../assets/images/home-screen.png" /></p>
-<p>Either press <code>VIEW TIMELINE</code> to see the data from your own Edge, or press <code>SETTINGS</code> if you wish to connect to someone else's Edge (remote connection) or see details about your own Edge. </p>
-<p>If you are not connected to a network, you will see a card showing that the UI is looking for an Edge on your local network.</p>
+<h1 id="this-is-an-overview-of-the-initial-connection-pairing-flow-between-ambianic-ui-and-ambianic-edge">This is an overview of the initial connection (pairing) flow between Ambianic UI and Ambianic Edge</h1>
+<p>Upon starting the Ambianic UI (Progressive Web App) for the first time, it will automatically start looking in the background for an Ambianic Edge device on your own local network. If there is an active Edge device on your local network, it will be discovered and the UI will pair with it within a few moments.</p>
+<p>If your UI app is <em>not</em> connected to the Internet, you will see an indication in the top Nav Bar indicating that.</p>
 <p><img alt="pairing screen" src="../../assets/images/pairing-screen.png" /></p>
-<p>Once connected, it will change to:</p>
+<p>Once the UI is connected to an Edge device, it will change to:</p>
 <p><img alt="connection details screen" src="../../assets/images/ambianic-connection-details.png" /></p>
 <p>If you want to connect to an Ambianic Edge device that's not on your local network, you can scroll down to <code>Pair with Remote Ambianic Edge device</code> and enter the PeerJS ID you get <em>from</em> someone who can connect to that device on <em>their</em> local network.</p>
 <p><img alt="remote access screen" src="../../assets/images/ambianic-remote-connect.png" /></p>
@@ -146,14 +144,15 @@
 <p>Once connected, click on the link <code>Timeline</code> to see the Edge Device settings.</p>
 <p>If you want to consequently connect to an Edge Device on <em>your</em> local network, go back to <code>Settings</code> and use <code>DISCOVER ON LOCAL NETWORK</code></p>
 <p><img alt="local connection screen" src="../../assets/images/ambianic-local-connection.png" /></p>
-<p>This will make sure you get disconnected from the remote Edge device and connect back to your own local network Edge device.</p></div>
+<p>This will make sure you get disconnected from the remote Edge device and connect back to your own local network Edge device.</p>
+<p>Once the UI app establishes an innitial connection with an Edge Device, the UI app (PWA) saves the Edge unique PeerID in the browser local (mobile or desktop) device storage. From that point forward, the UI can re-connect from any Internet location.</p></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-03-26 17:17:54.544802+00:00</p>
+            <p>Last update : 2021-03-26 17:30:09.496523+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
