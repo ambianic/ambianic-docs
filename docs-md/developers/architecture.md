@@ -1,5 +1,38 @@
+# User Personas
+
+There are two major types of user personas we see in our community:
+1. DYI folks and developers who love the ultimate control and flexibility of an Open Source privacy preserving surveillance solution.
+2. End users who love the concept of a no nonsense privacy preserving solution to help care for their household and remote family members.
+
+User group 1 (i.e. cohort) cares more about freedom to fork, hack and integrate the code any way they like with any other systems they want to. This group is about 2% of all people who have been involved in some capacity with Ambianic.ai.
+
+User group 2, doesn't have the skills, time or plain interest to get messy with integrating an AI component with an existing camera system. They would rather buy a new turn-key intelligent camera up to $200. If they had an old camera installed (presumably a $50-100 investment), they would rather return it and replace with the a new one or simply donate it to a charity. If the old camera has been used more than 6 months, then its a depreciated asset that served its purpose and can be now written off. $100 is generally a tolerable pain threshold as compared to spending hours on integration or hiring an expert to do the work, which would cost much more than a new drop-in replacement.
+
+Both user groups are important to the long term success of the project.
+
+User Group 1 is vital, because these are the kinds of folks who can thoroughly dissect the software and offer valuable constructive criticism, contribute code, docs and in the future help grow the core team.
+
+User Group 2, the remaining 98%, is obviously vital, because these are the majority of end users who we ultimately aim to provide value to. 
+
+Just to be clear, Ambianic.ai is primarily focused on adding tangible value to real users today. The fact that its open source does not contradict the primary goal in any way. Open Source is meant to enforce its validity of true value by removing proprietary layers of obscurity and superficial flashy claims. 
+
+As a high level roadmap decision, we are moving forward by acknowledging that both User Group 1 and 2 are important and the project should proceed in a way that doesn't lock out either one from participating.
+
+To that extend, Luca Capra (one of our new team members) summarized the way forward better than I could:
+
+> I am convinced that every niche expect and deserve a specific UX. I think the core could be flexible enough to support generic functionalities while delegating domain specific challenges to a vertical application. This could happen through different layers of integrations, eventually reusable. An example could be an object detection pipeline for training and execution, adapted to home care but also to security. Same functional perimeter but with different specializations based on user requirements
+
+Here is a high level architecture diagram of the Ambianic Edge component that we will use as a North Star reference.
+
+[![Ambianic ai Camera Integration Architecture](https://user-images.githubusercontent.com/2234901/112674989-9984e880-8e34-11eb-8871-e65908f4f006.png)
+)](https://drive.google.com/file/d/1taVlFu6r2jULWPpvdm1hO65WOxlNSw8R/view?usp=sharing)
+
+Following sections discuss further the high level architecture of the product.
 
 # Ambianic High Level Architecture
+
+[![Ambianic-High-Level-Architecture](https://user-images.githubusercontent.com/2234901/112674881-73f7df00-8e34-11eb-9447-71a5a358bee5.png)](https://drive.google.com/file/d/13vtPDpW_wmE73YJ0lnIXF3xyPqGOYE22/view?usp=sharing)
+
 
 1.  Pipelines
 2.  Pipe Elements
