@@ -54,6 +54,7 @@ Let's take an example `config.yaml` file and walk through it:
 version: '2020.12.11'
 
 # path to the data directory
+# ./data is relative to the container runtime. Do not change it if you are unsure.
 data_dir: ./data
 
 # Set logging level to one of DEBUG, INFO, WARNING, ERROR
@@ -61,17 +62,17 @@ logging:
   file: ./data/ambianic-log.txt
   level: INFO
 
-# Notifications provider configuration
+Notifications provider configuration
 # see https://github.com/caronc/apprise#popular-notification-services for syntax examples
-# notifications:
-#   catch_all_email:
-#     include_attachments: true
-#     providers:
-#       - mailto://userid:pass@domain.com
-#   alert_fall:
-#     providers:
-#       - mailto://userid:pass@domain.com
-#       - json://hostname/a/path/to/post/to
+notifications:
+  catch_all_email:
+    include_attachments: true
+    providers:
+      - mailto://userid:pass@domain.com
+  alert_fall:
+    providers:
+      - mailto://userid:pass@domain.com
+      - json://hostname/a/path/to/post/to
 
 
 # Pipeline event timeline configuration
@@ -87,18 +88,23 @@ sources:
     uri: picamera
     type: video
     live: true
+    
+  front_door_camera: 
+    uri: <your camera>
+    type: video
+    live: true
 
   # local video device integration example
   webcam:
     uri: /dev/video0
     type: video
     live: true
-
+    
+  # recorded front door cam feed for quick testing
   recorded_cam_feed:
     uri: file:///workspace/tests/pipeline/avsource/test2-cam-person1.mkv
-#    type: video
-#    live: true
-
+    type: video
+    
 ai_models:
   image_detection:
     model:
@@ -140,19 +146,19 @@ pipelines:
      - save_detections: # save samples from the inference results
         positive_interval: 10
         idle_interval: 600000
-#        notify: # notify a thirdy party service
-#          providers:
-#            - alert_fall        
+        notify: # notify a thirdy party service
+          providers:
+            - alert_fall        
 
 ```
 
 The only parameter you have to change in order to see a populated timeline in the UI is the source uri. In the section below:
 ```yaml
   front_door_camera:
-    uri: *secret_uri_front_door_camera
+    uri: <your camera>
 ```
  
- Replace `*secret_uri_front_door_camera` with your camera still image snapshot URI (recommended). For example:
+ Replace `<your camera>` with your camera still image snapshot URI (recommended). For example:
  
 ```yaml
   front_door_camera:
@@ -188,10 +194,11 @@ Cameras are some of the most common sources of input data for Ambianic.ai pipeli
 
 Ambianic.ai is typically connected to IP Network cameras, but you can also connect a local embedded web cam or USB connected camera.
 
+You can set `uri` to a local path such as `/dev/video0` to use a working usb webcam or `picamera` in case you have a picamera connected to Raspbery Pi connector.
+
 ### Connecting a local Web USB camera
 
-A laptop camera or USB camera on linux can be used just providing a working reference to the video device, eg. `/dev/video0`
-
+A laptop camera or USB camera on linux or mac can be used just providing a working reference to the video device, eg. `/dev/video0`
 
 ### Connecting a Picamera
 
@@ -263,22 +270,24 @@ In the example above the URI points to a still jpg sample from the camera. Ambia
 
 ## Sensitive config information
 
-In the configuration example, there are a few references to variables
-defined elsewhere in the YAML file. You can use standard [YAML anchors and aliases](https://yaml.org/refcard.html) for that.
-
-Notice that `*src_front_door_cam` and
-`*src_entry_area_cam` are the YAML aliases(references) that do not appear elsewhere in config.yaml. 
-They are actually picked up from an optional file located in the same directory: `secrets.yaml`.
-
 Since camera URIs often contain credentials, we recommend that you store such values
 in `secrets.yaml`. Ambianic Edge will automatically look for and if available
 prepend `secrets.yaml` to `config.yaml`. That way you can share
  `config.yaml` with others without compromising privacy sensitive parameters.
 
+You can use standard [YAML anchors and aliases](https://yaml.org/refcard.html) in `config.yaml` 
+to reference YAML variables defined in `secrets.yaml`. They will resolve after the files are merged into one.
+
 An example valid entry in `secrets.yaml` for a camera URI, would look like this:
 ```yaml
 secret_uri_front_door_camera: &secret_uri_front_door_camera 'rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101'
 # add more secret entries as regular yaml mappings
+```
+
+It can be then referenced in `config.yaml` as follows:
+```yaml
+  front_door_camera: 
+    uri: *secret_uri_front_door_camera
 ```
 
 ## Notification settings
@@ -327,7 +336,9 @@ Each time a detection event is saved, a corresponding notification will be insta
 
 ### Other configuration settings
 
-The rest of the configuration settings are for developers and contributors. If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. Otherwise leave them as they are.
+The rest of the configuration settings are for advanced developers. 
+If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. 
+Otherwise leave them as they are.
 
 ## Using AI Accelerator
 
@@ -345,49 +356,6 @@ If you don't have a Coral device available, no need to worry for now. Raspberry 
 It comfortably handles 3 simultaneous HD camera sourced pipelines with approximately 1-2 frames per second (fps).
 An objects or person of interest would normally show up in one of your cameras for at least one second,
 which is enough time to be registered and processed by Ambianic Edge on a plain RPI4.
-
-## Local Deployment of Ambanic UI
-
-Ambianic UI is available for FREE at [ui.ambianic.ai](https://ai.ambianic.ui).
-Its designed to be easy to use with Plug-and-play connectivity to Ambianic Edge.
-Secured with end-to-end encryption. Your data stays only on your own devices.
-
-However if you would like to deploy Ambianic UI on your own machine, its a
-straightforward process:
-
-Ambianic UI is [hosted](https://github.com/ambianic/ambianic-ui) on github.
-It is also [distributed](https://www.npmjs.com/package/ambianic-ui) as a Node JS npm package.
-
-If you are familiar with Node JS, you can install and run ambianic-ui from its npm distribution.
-
-Otherwise, to build from source you can follow these steps:
-
-##### Clone source repository
-
-```
-git clone https://github.com/ambianic/ambianic-ui.git
-cd ambianic-ui
-```
-
-##### Install dependencies
-```
-npm install
-```
-
-##### Compiles and hot-reloads for development
-```
-npm run serve
-```
-After a few moments you should see a message in your terminal window similar to this:
-
-```sh
-App running at:
-- Local:   http://localhost:8080/
-- Network: http://192.168.86.246:8080/
-```
-Now you can access the app from your browser.
-
-
 
 ## Configuration Questions
 
