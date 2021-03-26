@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.com/ambianic/ambianic-docs.svg?branch=master)](https://travis-ci.org/ambianic/ambianic-docs)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fambianic%2Fambianic-docs.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fambianic%2Fambianic-docs?ref=badge_shield)
+[![Docs Build](https://github.com/ambianic/ambianic-docs/actions/workflows/build-docs.yml/badge.svg?branch=master)](https://github.com/ambianic/ambianic-docs/actions/workflows/build-docs.yml)[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fambianic%2Fambianic-docs.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fambianic%2Fambianic-docs?ref=badge_shield)
 
 # ambianic-docs
 Ambianic Technical Documentation
