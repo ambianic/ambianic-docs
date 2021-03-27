@@ -23,15 +23,16 @@ nav:
       - Contributing: 
         - Guidelines: legal/CONTRIBUTING.md
         - Setting up Your Dev Environment: developers/development-environment.md
-      - Subprojects:
-          - Ambianic UI: https://github.com/ambianic/ambianic-ui
-          - Ambianic Edge: https://github.com/ambianic/ambianic-edge
-          - Ambianic Box: https://github.com/ambianic/ambianic-box
-          - Fall Detection: https://github.com/ambianic/fall-detection
-          - Peer to Peer Communication: 
-            - p2p architecture: https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/
-            - peerjs-python: https://github.com/ambianic/peerjs-python
-            - ambianic-pnp: https://github.com/ambianic/ambianic-pnp
+      - Ambianic UI: https://github.com/ambianic/ambianic-ui
+      - Ambianic Edge: 
+        - Python API Reference: https://ambianic.github.io/ambianic-edge/ambianic/
+        - Gtihub repo: https://github.com/ambianic/ambianic-edge
+      - Ambianic Box: https://github.com/ambianic/ambianic-box
+      - Fall Detection: https://github.com/ambianic/fall-detection
+      - Peer to Peer Communication: 
+        - p2p architecture: https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/
+        - peerjs-python: https://github.com/ambianic/peerjs-python
+        - ambianic-pnp: https://github.com/ambianic/ambianic-pnp
       
 theme:
     name: mkdocs
