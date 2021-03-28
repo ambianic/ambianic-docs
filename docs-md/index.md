@@ -9,13 +9,12 @@ Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) 
 
 Ambianic is an Open Source Ambient Intelligence platform that puts user privacy and local control first. It enables users to share and train custom AI models without compromising privacy.
 
-[Try it Now](users/quickstart/)
-
-[View on Github](https://github.com/ambianic/ambianic-core)
-
+[Try it Now](users/quickstart/)   |    [View on Github](https://github.com/ambianic/ambianic-core)
 
 [![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
  
+[Home](https://ambianic.ai/) | [Blog](https://blog.ambianic.ai/) | [Twitter](https://twitter.com/ambianicai) | [LinkedIn](https://www.linkedin.com/company/ambianicai/) | [YouTube](https://www.youtube.com/channel/UCetAPux5n6cI3s-cwzh9rTw)
+
 
 <a href="https://landscape.lfai.foundation/format=card-mode&selected=ambianic">
   <img src="https://github.com/lfai/artwork/raw/master/lfaidata-assets/lf-member/associate/lf_mem_asso.png"  height="200" style="display:inline;vertical-align:middle;padding:2%">   
