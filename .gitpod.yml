@@ -1,0 +1,7 @@
+tasks:
+  - init: |
+      echo "Intalling mkdocs"
+      pip3 install mkdocs
+    command: |
+      echo "Building docs"
+      bash ./build-docs.sh
