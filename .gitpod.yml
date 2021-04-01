@@ -8,3 +8,10 @@ tasks:
   - command: |
       echo "Open ambianic docs preview."
       gp await-port 8000 && gp preview $(gp url 8000)/
+
+ports:
+  - port: 8080
+
+github:
+  prebuilds:
+    addComment: true
