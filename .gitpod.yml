@@ -10,7 +10,7 @@ tasks:
       gp await-port 8000 && gp preview $(gp url 8000)/
 
 ports:
-  - port: 8080
+  - port: 8000
 
 github:
   prebuilds:
