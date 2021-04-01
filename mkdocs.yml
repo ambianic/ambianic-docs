@@ -33,6 +33,7 @@ nav:
         - p2p architecture: https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/
         - peerjs-python: https://github.com/ambianic/peerjs-python
         - ambianic-pnp: https://github.com/ambianic/ambianic-pnp
+      - Home Assistant Integration: developers/hass-integration.md
       
 theme:
     name: mkdocs
