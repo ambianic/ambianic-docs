@@ -16,8 +16,8 @@ Ambianic is an Open Source Ambient Intelligence platform that puts user privacy 
 [Home](https://ambianic.ai/) | [Blog](https://blog.ambianic.ai/) | [Twitter](https://twitter.com/ambianicai) | [LinkedIn](https://www.linkedin.com/company/ambianicai/) | [YouTube](https://www.youtube.com/channel/UCetAPux5n6cI3s-cwzh9rTw)
 
 
-<a href="https://landscape.lfai.foundation/format=card-mode&selected=ambianic">
-  <img src="https://github.com/lfai/artwork/raw/master/lfaidata-assets/lf-member/associate/lf_mem_asso.png"  height="200" style="display:inline;vertical-align:middle;padding:2%">   
+<a href="https://landscape.lfai.foundation/card-mode?selected=ambianic">
+  <img src="https://raw.githubusercontent.com/lfai/artwork/main/lfaidata-assets/lf-member/associate/lf_mem_asso.png"  height="200" style="display:inline;vertical-align:middle;padding:2%">   
 </a>
 <a href="https://twitter.com/TensorFlow/status/1291071490062983172?s=20">
   <img src="https://pbs.twimg.com/profile_banners/1195860619284664320/1596827858/1500x500"  height="200" style="display:inline;vertical-align:middle;padding:2%">   
