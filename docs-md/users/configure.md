@@ -69,6 +69,7 @@ notifications:
     include_attachments: true
     providers:
       - mailto://userid:pass@domain.com
+      - hassios://{host}/{access_token}
   alert_fall:
     providers:
       - mailto://userid:pass@domain.com
@@ -294,7 +295,7 @@ It can be then referenced in `config.yaml` as follows:
 
 Ambianic edge can be configured to instantly alerts users when a detection occurs. Notifications are a feature of the `save_detections` element. 
 Every time a timeline event is saved along with its contextual data, a notification can be fired to a number of supported channels such as email, sms, or a local 
-smart home hub.
+smart home hub such as [Home Assistant](https://github.com/caronc/apprise/wiki/Notify_homeassistant).
 
 Notification providers are first configured at a system level using the following syntax:
 
@@ -304,6 +305,7 @@ notifications:
     include_attachments: true
     providers:
       - mailto://userid:pass@domain.com
+      - hassios://{host}/{access_token}
   alert_fall:
     providers:
       - mailto://userid:pass@domain.com
