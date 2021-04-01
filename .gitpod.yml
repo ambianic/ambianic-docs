@@ -4,4 +4,7 @@ tasks:
       pip3 install mkdocs
     command: |
       echo "Building docs"
-      bash ./build-docs.sh
+      mkdocs serve
+  - command: |
+      echo "Open ambianic docs preview."
+      gp await-port 8000 && gp preview $(gp url 8000)/
