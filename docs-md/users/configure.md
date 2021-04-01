@@ -81,7 +81,6 @@ timeline:
   event_log: ./data/timeline-event-log.yaml
 
 # Cameras and other input data sources
-# Using Home Assistant conventions to ease upcoming integration
 sources:
 
   # direct support for raspberry picamera
@@ -295,7 +294,7 @@ It can be then referenced in `config.yaml` as follows:
 
 Ambianic edge can be configured to instantly alerts users when a detection occurs. Notifications are a feature of the `save_detections` element. 
 Every time a timeline event is saved along with its contextual data, a notification can be fired to a number of supported channels such as email, sms, or a local 
-smart home hub such as [Home Assistant](https://github.com/caronc/apprise/wiki/Notify_homeassistant).
+smart home hub such as [Home Assistant](https://github.com/caronc/apprise/wiki/Notify_homeassistant) (`hassios://{host}/{access_token}`).
 
 Notification providers are first configured at a system level using the following syntax:
 
