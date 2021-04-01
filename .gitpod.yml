@@ -1,3 +1,7 @@
 tasks:
-  - init: 'echo "TODO: Replace with init/build command"'
-    command: 'echo "TODO: Replace with command to start project"'
+  - init: |
+      echo "Intalling mkdocs"
+      pip3 install mkdocs
+    command: |
+      echo "Building docs"
+      bash ./build-docs.sh
