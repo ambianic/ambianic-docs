@@ -82,11 +82,11 @@ The following diagram illustrates the high level user - system interactions.
 
 The User Interface is centered around three main activities:
 
-1. Setup Ambianic Edge to communicate with smart home devices: sensors, cameras, microphones, lights, door locks, and others.
+1. Setup [Ambianic Edge](https://github.com/ambianic/ambianic-edge) to communicate with smart home devices: sensors, cameras, microphones, lights, door locks, and others.
 2. Design flows to automatically observe sensors and make helpful recommendations.
 3. Review event timeline, alerts and actionable recommendations.
 
-Ambianic UI is an Offline-First
+[Ambianic UI](https://github.com/ambianic/ambianic-ui) is an Offline-First
 [PWA](https://en.wikipedia.org/wiki/Progressive_web_applications)
 (Progressive Web Application).
 PWAs work in any browser, but "app-like" with features such as being
