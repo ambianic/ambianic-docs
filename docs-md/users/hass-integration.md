@@ -1,5 +1,7 @@
 
-# Home Assistant Integration 
+# Home Assistant Integration
+
+[Home Assistant](https://www.home-assistant.io/) is one of the most popular Open Source Home Automation hubs and it is a natural integration target for Ambianic. The integration enables users to implement new Home Automation automation flows based on Ambianic detection events. For example turn off all lights if no person has been detected in the house for over half an hour. Or instantly notify family and caregivers if an elderly loved one falls.
 
 ## Notifications
 
