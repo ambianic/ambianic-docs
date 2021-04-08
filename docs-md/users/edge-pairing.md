@@ -1,4 +1,4 @@
-# This is an overview of the initial connection (pairing) flow between Ambianic UI and Ambianic Edge
+# Establishing initial connection (pairing) between Ambianic UI and Ambianic Edge devices
 
 Upon starting the Ambianic UI (Progressive Web App) for the first time, it will automatically start looking in the background for an Ambianic Edge device on your own local network. If there is an active Edge device on your local network, it will be discovered and the UI will pair with it within a few moments.
 
