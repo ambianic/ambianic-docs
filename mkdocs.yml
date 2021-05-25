@@ -40,6 +40,9 @@ theme:
     custom_dir: custom_theme/
 copyright: Ambianic.ai &copy; 2019-2021
 docs_dir: docs-md
+
+markdown_extensions:
+  - admonition
 # extra_css:
 #  - assets/flowchart.css
 # extra_javascript:
