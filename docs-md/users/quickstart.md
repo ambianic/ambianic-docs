@@ -65,7 +65,7 @@ The installer will start the service for you. To manage the runtime you can use 
 ### Ambianic UI app
 
 [Ambianic UI](https://ui.ambianic.ai/) is a
-modern prorgressive web application (PWA) that provides Plug-and-Play pairing and remote access
+modern progressive web application (PWA) that provides Plug-and-Play pairing and remote access
 to an Ambianic Edge device.
 
 Ambianic UI shows a timeline view with
@@ -74,7 +74,14 @@ timeline screenshot.
 
 ![Timeline](../assets/images/timeline-screen.png)
 
-### Pairing Ambanic UI with Ambianic Edge
+### Ambianic Premium Services
+
+Ambianic provides premium value added services at a fixed price of $5 for users want to
+get extra pre-configured features from Ambianic in the quickest time possible.
+
+Read on: [Using Ambianic Premium Services](premium-services.md)
+
+### Pairing Ambianic UI with Ambianic Edge
 
 You can easily pair up your Ambianic UI with Ambianic Edge. It works similar to Airdrop.
 
