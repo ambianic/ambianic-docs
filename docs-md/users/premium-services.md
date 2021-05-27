@@ -1,15 +1,14 @@
 # Ambianic Premium Services
 
-Ambianic Premium Services provides you with more pre-configured value added services, such as the Premium Notification Service that automatically delivers notification to a user on each event detection. <br /> <br />
-These Premium Services can be accessed by creating a user account through the [Ambianic PWA](https://github.com/ambianic/ambianic-ui) and adding a subscription to your Ambianic account.
+Ambianic Premium Services provide added value and convenience, such as Premium Notifications that minimize the effort required to integrate with third party cloud services. <br /> <br />
+Ambianic Premium Services can be accessed by creating a user account through the [Ambianic PWA](https://github.com/ambianic/ambianic-ui) and selecting a paid subscription plan.
 <br />
 <br />
 
 ## User Management
-Premium services within Ambianic have been designed to reduce the manual configuration needed to get the best out of the Ambianic software. 
-Hence, the need to create a personal account. Through the [Ambianic PWA](https://github.com/ambianic/ambianic-ui), you can sign in to your Ambianic Account from any other device you own.
+You only need to create an Ambianic Premium Service account once through the [Ambianic PWA](https://github.com/ambianic/ambianic-ui), You can then sign in to your Ambianic account from any other client device you own..
 
-The following steps below highlight the process needed for creating an account with Ambianic;
+The following steps highlight the process for creating an Ambianic Premium Service account.
 
 - From the [Ambianic PWA](https://github.com/ambianic/ambianic-ui) NavBar, click the <b>UPGRADE TO PREMIUM</b> button to navigate to the authentication page where you provide your Name, Email and Password details to either create a new account or Sign in to an existing account. Existing Social accounts such as a [Google](https://www.google.com/), [Apple](https://www.apple.com/ng/), [Facebook](https://www.facebook.com/) and [GitHub](https://github.com/) can also be used to quickly create an Ambianic Account. 
                                                                                                                     
