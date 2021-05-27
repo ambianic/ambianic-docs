@@ -74,13 +74,6 @@ timeline screenshot.
 
 ![Timeline](../assets/images/timeline-screen.png)
 
-### Ambianic Premium Services
-
-Ambianic provides premium value added services at a fixed price of $5 for users want to
-get extra pre-configured features from Ambianic in the quickest time possible.
-
-Read on: [Using Ambianic Premium Services](premium-services.md)
-
 ### Pairing Ambianic UI with Ambianic Edge
 
 You can easily pair up your Ambianic UI with Ambianic Edge. It works similar to Airdrop.
@@ -104,6 +97,12 @@ Congratulations! Your Ambianic instance is now up and running!
 The pairing information is persisted on your Ambianic UI client device and you can now access Ambianic Edge from anywhere remotely! The connection is direct and encrypted end-to-end.
 
 When you are ready to explore more advanced capabilities, continue to the next section.
+
+### Ambianic Premium Services
+
+Ambianic provides premium value added services such as email notifications for users who prefer the convenience of automatic integration with third party cloud services.
+
+Read on: [Using Ambianic Premium Services](premium-services.md)
 
 ### Configuration
 
