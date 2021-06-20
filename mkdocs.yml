@@ -28,6 +28,7 @@ nav:
       - Ambianic Edge: 
         - Python API Reference: https://ambianic.github.io/ambianic-edge/ambianic/
         - Gtihub repo: https://github.com/ambianic/ambianic-edge
+      - Raspberry Pi OS Image: https://github.com/ambianic/ambianic-rpi-image
       - Ambianic Box: https://github.com/ambianic/ambianic-box
       - Fall Detection: https://github.com/ambianic/fall-detection
       - Peer to Peer Communication: 
