@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Quick Start - Ambianic Documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link href="../css/flowchart.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- flowchart js -->
+        <script src="../js/raphael.min.js"></script>
+        <script src="../js/flowchart.js"></script>
+        <script src="../js/jquery-plugin.js"></script>
+        <!-- end flowchart js -->
+        <!-- mermaid js -->
+        <script src="https://unpkg.com/mermaid@8.4.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+        <!-- end mermaid js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index.html">Ambianic Documentation</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="quickstart.html" class="dropdown-item active">Quick Start</a>
+</li>
+                                    
+<li>
+    <a href="ambianicbox.html" class="dropdown-item">Ambianic Box</a>
+</li>
+                                    
+<li>
+    <a href="configure.html" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="edge-pairing.html" class="dropdown-item">Local and Remote pairing</a>
+</li>
+                                    
+<li>
+    <a href="hass-integration.html" class="dropdown-item">Home Assistant Integration</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Developer Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../developers/architecture.html" class="dropdown-item">High Level System Architecture</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Contributing</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../legal/CONTRIBUTING.html" class="dropdown-item">Guidelines</a>
+</li>
+            
+<li>
+    <a href="../developers/development-environment.html" class="dropdown-item">Setting up Your Dev Environment</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="https://github.com/ambianic/ambianic-ui" class="dropdown-item">Ambianic UI</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ambianic Edge</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="https://ambianic.github.io/ambianic-edge/ambianic/" class="dropdown-item">Python API Reference</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/ambianic-edge" class="dropdown-item">Gtihub repo</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="https://github.com/ambianic/ambianic-rpi-image" class="dropdown-item">Raspberry Pi OS Image</a>
+</li>
+                                    
+<li>
+    <a href="https://github.com/ambianic/ambianic-box" class="dropdown-item">Ambianic Box</a>
+</li>
+                                    
+<li>
+    <a href="https://github.com/ambianic/fall-detection" class="dropdown-item">Fall Detection</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Peer to Peer Communication</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/" class="dropdown-item">p2p architecture</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/peerjs-python" class="dropdown-item">peerjs-python</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/ambianic-pnp" class="dropdown-item">ambianic-pnp</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../index.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="ambianicbox.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/users/quickstart.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column bs-sidenav">
+            <li class="nav-item main"><a href="#quick-start-guide">Quick Start Guide</a></li>
+                <li class="nav-item">
+                    <a href="#recommended-install" class="nav-link">Recommended Install</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#advanced-install" class="nav-link">Advanced Install</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#development" class="nav-link">Development</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#troubleshooting" class="nav-link">Troubleshooting</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#supporting-the-project" class="nav-link">Supporting the project</a>
+                </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="quick-start-guide">Quick Start Guide</h1>
+<p>Ambianic is an <a href="https://blog.ambianic.ai/2020/11/05/awards.html">award winning</a> ambient intelligence platform. Ambianic's goal is to provide helpful and actionable observations in the context of home and business automation.</p>
+<p>Ambianic has two major components: 
+- Ambianic Edge: an IoT device with camera (or other sensors) and a built-in AI engine for local inference
+- Ambianic UI app - a front-end Progressive Web App to manage Ambianic Edge device(s) and view timeline events reported by Ambianic Edge.</p>
+<p>Following is a high level diagram of a typical Ambianic deployment.</p>
+<p><img alt="Ambianic High Level Diagram" src="../assets/images/Ambianic-High-Level-Diagram.png" /></p>
+<h2 id="recommended-install">Recommended Install</h2>
+<p>The simplest way to get started is to follow these steps:</p>
+<ul>
+<li><a href="ambianicbox.html">Assemble Ambianic Box hardware</a></li>
+<li><a href="installsoftware.html">Install and run Ambianic software</a></li>
+</ul>
+<p>If you prefer an alternative hosting platform for your Ambianic Edge device, keep reading about more advanced installation options.</p>
+<h2 id="advanced-install">Advanced Install</h2>
+<p>If you are familiar with Docker you will be able to install Ambianic Edge in less than 5 minutes on almost any computer with x86 or ARM architecture. Follow the steps below:</p>
+<h3 id="ambanic-edge-docker-image">Ambanic Edge Docker image</h3>
+<p>Ambianic Edge is
+<a href="https://hub.docker.com/r/ambianic/ambianic-edge">available</a> as a docker image for ARM and x86 architectures so it can be deployed
+on most modern machines and operating systems.</p>
+<p>The reference test system is:
+<a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/">Raspberry Pi 4 with 4GB RAM and 32GB SD card</a>. 
+<em>Although docker images are <a href="https://hub.docker.com/r/ambianic/ambianic-edge/tags">available</a> for most common ARM and x86 machines.</em></p>
+<p>To deploy on a Raspberry Pi 4, you will need a recent
+<a href="https://www.raspberrypi.org/documentation/setup/">Raspbian install</a> with
+<a href="https://www.freecodecamp.org/news/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef/">Docker</a>
+and <a href="https://docs.docker.com/compose/">Docker Compose</a> on it. 
+You can install and run the image in the default pi user space on Raspbian.</p>
+<h4 id="installer-for-raspberry-os-and-debian-like-linux">Installer for Raspberry OS and Debian-like linux</h4>
+<p>We have a commodity script that will take care of installing and setting up your system. Run this line to setup </p>
+<pre><code class="language-sh">wget -qO - https://raw.githubusercontent.com/ambianic/ambianic-quickstart/master/installer.sh | sh
+</code></pre>
+<p>After the setup you can find the installation under <code>/opt/ambianic</code> where you can find the configuration files and the data directory (under <code>/opt/ambianic/data</code>).</p>
+<p>Ambianic Pipeline configuration will be under <code>/etc/ambianic</code>.</p>
+<h4 id="the-ambianic-edge-cli">The Ambianic Edge CLI</h4>
+<p>The installer will start the service for you. To manage the runtime you can use the <code>ambianic</code> command line. A few examples:</p>
+<ul>
+<li>Start, Stop or Restart with <code>ambianic [ start | stop | restart ]</code></li>
+<li>View the instance status with <code>ambianic status</code></li>
+<li>View logs with <code>ambianic logs</code></li>
+<li>Open the UI (if you system has a GUI) with <code>ambianic ui</code></li>
+<li>Upgrade the installation with <code>ambianic upgrade</code></li>
+</ul>
+<h3 id="ambianic-ui-app">Ambianic UI app</h3>
+<p><a href="https://ui.ambianic.ai/">Ambianic UI</a> is a
+modern prorgressive web application (PWA) that provides Plug-and-Play pairing and remote access
+to an Ambianic Edge device.</p>
+<p>Ambianic UI shows a timeline view with
+important events around your home organized chronologically. Below is an example
+timeline screenshot.</p>
+<p><img alt="Timeline" src="../assets/images/timeline-screen.png" /></p>
+<h3 id="pairing-ambanic-ui-with-ambianic-edge">Pairing Ambanic UI with Ambianic Edge</h3>
+<p>You can easily pair up your Ambianic UI with Ambianic Edge. It works similar to Airdrop.</p>
+<p>Make sure to open Ambianic UI on the same local network where Ambianic Edge runs. Ambianic UI will initially display a welcome screen.</p>
+<p><img alt="Home Screen" src="../assets/images/home-screen.png" /></p>
+<p>If you click on Settings, it will show  a pairing page like the one below:</p>
+<p><img alt="Pairing" src="../assets/images/pairing-screen.png" /></p>
+<p>After a few moments, pairing will conclude and you will see the unique identifier of your Ambianic Edge device.</p>
+<p><img alt="Connected" src="../assets/images/connected-screen.png" /></p>
+<p>IYou can now head to the Timeline view and you will be able to see an image of what is in front of the Ambianic Box. The box is pre-configured to detect people and over 20 kinds of objects. Detections will show in your timeline.</p>
+<p>Congratulations! Your Ambianic instance is now up and running!</p>
+<p>The pairing information is persisted on your Ambianic UI client device and you can now access Ambianic Edge from anywhere remotely! The connection is direct and encrypted end-to-end.</p>
+<p>When you are ready to explore more advanced capabilities, continue to the next section.</p>
+<h3 id="configuration">Configuration</h3>
+<p>Ambianic provides flexible configuration options via a configuration YAML file. You can customize: pipelines, input sources, AI models, notification channels and more.</p>
+<p>Read on: <a href="configure.html">Configuring Ambianic Edge</a>.</p>
+<h2 id="development">Development</h2>
+<p>If you want to contribute to the code read how to <a href="../developers/development-environment.html">setup a development environment</a></p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>If you experience problems with your initial setup and you can't find a good solution online, feel free to engage the team on <a href="https://twitter.com/ambianicai">Twitter</a>, <a href="https://ambianicai.slack.com/join/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ#/">Slack</a>, or <a href="https://github.com/ambianic/ambianic-ui/discussions">Github discussion forums</a>.</p>
+<h2 id="supporting-the-project">Supporting the project</h2>
+<p>If you find value in this project, consider supporting its future success. See the <a href="https://docs.ambianic.ai/#sustainability">sustainability</a> section.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Ambianic.ai &copy; 2019-2021</p>
+            <p>Last update : 2021-06-20 14:25:00.675409+00:00</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
