@@ -26,8 +26,8 @@ nav:
         - Setting up Your Dev Environment: developers/development-environment.md
       - Ambianic UI: https://github.com/ambianic/ambianic-ui
       - Ambianic Edge: 
-        - Edge Core: https://github.com/ambianic/ambianic-edge
-        - Edge Python API Reference: https://ambianic.github.io/ambianic-edge/ambianic/
+        - Core: https://github.com/ambianic/ambianic-edge
+        - Python API: https://ambianic.github.io/ambianic-edge/ambianic/
         - Fall Detection: https://github.com/ambianic/fall-detection
         - CLI: https://github.com/ambianic/ambianic-quickstart
         - OS: https://github.com/ambianic/ambianic-rpi-image
