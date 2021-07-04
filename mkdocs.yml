@@ -7,6 +7,7 @@ nav:
       - Quick Start: users/quickstart.md
       - Ambianic Box: users/ambianicbox.md
       - Configuration: users/configure.md
+      - Premium Services: users/premium-services.md
 #      - FAQ: users/faq.md
 #      - Web UI: users/webui.md
 #      - Mobile UI: users/mobileui.md
@@ -36,12 +37,18 @@ nav:
         - p2p architecture: https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/
         - peerjs-python: https://github.com/ambianic/peerjs-python
         - ambianic-pnp: https://github.com/ambianic/ambianic-pnp
-      
+      - Premium Service Cloud API:
+          - Cloud API Documentation: https://github.com/vickywane/ambianic-subscriptions.github.io/tree/main/openapi-docs#installation
+          - OpenAPI Documentation: https://ambianic.github.io/ambianic-subscriptions.github.io/
+
 theme:
     name: mkdocs
     custom_dir: custom_theme/
 copyright: Ambianic.ai &copy; 2019-2021
 docs_dir: docs-md
+
+markdown_extensions:
+  - admonition
 # extra_css:
 #  - assets/flowchart.css
 # extra_javascript:
