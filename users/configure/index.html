@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Configuration - Ambianic Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/flowchart.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <!-- flowchart js -->
+        <script src="../../js/raphael.min.js"></script>
+        <script src="../../js/flowchart.js"></script>
+        <script src="../../js/jquery-plugin.js"></script>
+        <!-- end flowchart js -->
+        <!-- mermaid js -->
+        <script src="https://unpkg.com/mermaid@8.4.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+        <!-- end mermaid js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Ambianic Documentation</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../quickstart/" class="dropdown-item">Quick Start</a>
+</li>
+                                    
+<li>
+    <a href="../ambianicbox/" class="dropdown-item">Ambianic Box</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../edge-pairing/" class="dropdown-item">Local and Remote pairing</a>
+</li>
+                                    
+<li>
+    <a href="../hass-integration/" class="dropdown-item">Home Assistant Integration</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Developer Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../developers/architecture/" class="dropdown-item">High Level System Architecture</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Contributing</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../legal/CONTRIBUTING/" class="dropdown-item">Guidelines</a>
+</li>
+            
+<li>
+    <a href="../../developers/development-environment/" class="dropdown-item">Setting up Your Dev Environment</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="https://github.com/ambianic/ambianic-ui" class="dropdown-item">Ambianic UI</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ambianic Edge</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="https://github.com/ambianic/ambianic-edge" class="dropdown-item">Core</a>
+</li>
+            
+<li>
+    <a href="https://ambianic.github.io/ambianic-edge/ambianic/" class="dropdown-item">Python API</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/fall-detection" class="dropdown-item">Fall Detection</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/ambianic-quickstart" class="dropdown-item">CLI</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/ambianic-rpi-image" class="dropdown-item">OS</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/ambianic-box" class="dropdown-item">Box</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Peer to Peer Communication</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/" class="dropdown-item">p2p architecture</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/peerjs-python" class="dropdown-item">peerjs-python</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/ambianic-pnp" class="dropdown-item">ambianic-pnp</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../ambianicbox/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../edge-pairing/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/users/configure.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column bs-sidenav">
+            <li class="nav-item main"><a href="#ambianic-configuration">Ambianic Configuration</a></li>
+                <li class="nav-item">
+                    <a href="#pipeline-configuration" class="nav-link">Pipeline Configuration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#camera-configuration" class="nav-link">Camera Configuration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sensitive-config-information" class="nav-link">Sensitive config information</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#notification-settings" class="nav-link">Notification settings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#using-ai-accelerator" class="nav-link">Using AI Accelerator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#configuration-questions" class="nav-link">Configuration Questions</a>
+                </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="ambianic-configuration">Ambianic Configuration</h1>
+<p>Ambianic Edge executes pipelines with input sources, AI inference models and
+output targets. Ambianic UI visualizes observations in a chronological timeline.</p>
+<p>Pipelines are configured in a <code>config.yaml</code> file which resides in the
+runtime directory of the Ambianic Edge docker image.</p>
+<p>The following diagram illustrates an example pipeline that takes as input a video stream
+ URI source such as a surveillance camera and
+outputs object detections to a local directory.</p>
+<div class="diagram">
+st=>start: Video Source
+op_obj=>operation: Object Detection AI
+op_sav1=>parallel: Storage Element
+io1=>inputoutput: save object detections to file
+op_face=>operation: Face Detection AI
+op_sav2=>parallel: Storage Element
+io2=>inputoutput: save face detections to file
+e=>end: Output to other pipelines
+
+st->op_obj
+op_obj(bottom)->op_sav1
+op_sav1(path1, bottom)->op_face
+op_sav1(path2, right)->io1
+op_face(bottom)->op_sav2
+op_sav2(path1, bottom)->e
+op_sav2(path2, right)->io2
+</div>
+
+<script>
+$(".diagram").flowchart();
+</script>
+
+<p><br/></p>
+<h2 id="pipeline-configuration">Pipeline Configuration</h2>
+<p>Create a <code>config.yaml</code> file in the workspace directory of the
+Ambianic Edge docker image.
+For example, the directory could be named <code>/opt/ambianid-edge.workspace</code>.</p>
+<p>You can <a href="https://raw.githubusercontent.com/ambianic/ambianic-quickstart/master/config.yaml">use this starting config.yaml template</a>
+and modify it to fit your environment. Read further about the parameters and format of the config file.</p>
+<p>Let's take an example <code>config.yaml</code> file and walk through it:</p>
+<pre><code class="language-YAML">######################################
+#  Ambianic main configuration file  #
+######################################
+version: '2020.12.11'
+
+# path to the data directory
+# ./data is relative to the container runtime. Do not change it if you are unsure.
+data_dir: ./data
+
+# Set logging level to one of DEBUG, INFO, WARNING, ERROR
+logging:
+  file: ./data/ambianic-log.txt
+  level: INFO
+
+Notifications provider configuration
+# see https://github.com/caronc/apprise#popular-notification-services for syntax examples
+notifications:
+  catch_all_email:
+    include_attachments: true
+    providers:
+      - mailto://userid:pass@domain.com
+      - hassios://{host}/{access_token}
+  alert_fall:
+    providers:
+      - mailto://userid:pass@domain.com
+      - json://hostname/a/path/to/post/to
+
+
+# Pipeline event timeline configuration
+timeline:
+  event_log: ./data/timeline-event-log.yaml
+
+# Cameras and other input data sources
+sources:
+
+  # direct support for raspberry picamera
+  picamera:
+    uri: picamera
+    type: video
+    live: true
+
+  front_door_camera: 
+    uri: &lt;your camera&gt;
+    type: video
+    live: true
+
+  # local video device integration example
+  webcam:
+    uri: /dev/video0
+    type: video
+    live: true
+
+  # recorded front door cam feed for quick testing
+  recorded_cam_feed:
+    uri: file:///workspace/tests/pipeline/avsource/test2-cam-person1.mkv
+    type: video
+
+ai_models:
+  image_detection:
+    model:
+      tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
+      edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite
+    labels: /opt/ambianic-edge/ai_models/coco_labels.txt
+  face_detection:
+    model:
+      tflite: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_face_quant_postprocess.tflite
+      edgetpu: /opt/ambianic-edge/ai_models/mobilenet_ssd_v2_face_quant_postprocess_edgetpu.tflite
+    labels: /opt/ambianic-edge/ai_models/coco_labels.txt
+    top_k: 2
+  fall_detection:
+    model:
+      tflite: /opt/ambianic-edge/ai_models/posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite
+      edgetpu: /opt/ambianic-edge/ai_models/posenet_mobilenet_v1_075_721_1281_quant_decoder_edgetpu.tflite
+    labels: /opt/ambianic-edge/ai_models/pose_labels.txt
+
+# A named pipeline defines an ordered sequence of operations
+# such as reading from a data source, AI model inference, saving samples and others.
+pipelines:
+   # Pipeline names could be descriptive, e.g. front_door_watch or entry_room_watch.
+   area_watch:
+     - source: picamera
+     - detect_objects: # run ai inference on the input data
+        ai_model: image_detection
+        confidence_threshold: 0.6
+        # Watch for any of the labels listed below. The labels must be from the model trained label set.
+        # If no labels are listed, then watch for all model trained labels.
+        label_filter:
+          - person
+          - car
+     - save_detections: # save samples from the inference results
+        positive_interval: 300 # how often (in seconds) to save samples with ANY results above the confidence threshold
+        idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
+     - detect_falls: # look for falls
+        ai_model: fall_detection
+        confidence_threshold: 0.6
+     - save_detections: # save samples from the inference results
+        positive_interval: 10
+        idle_interval: 600000
+        notify: # notify a thirdy party service
+          providers:
+            - alert_fall        
+
+</code></pre>
+<p>The only parameter you have to change in order to see a populated timeline in the UI is the source uri. In the section below:</p>
+<pre><code class="language-yaml">  front_door_camera:
+    uri: &lt;your camera&gt;
+</code></pre>
+<p>Replace <code>&lt;your camera&gt;</code> with your camera still image snapshot URI (recommended). For example:</p>
+<pre><code class="language-yaml">  front_door_camera:
+    uri: http://192.168.86.29/cgi-bin/api.cgi?cmd=Snap&amp;channel=0&amp;rs=wuuPhkmUCeI9WG7C&amp;user=admin&amp;password=******
+    type: image
+    live: true
+</code></pre>
+<p>Or you can alternatively plug-in the camera video streaming RTSP URI. For example:</p>
+<pre><code class="language-yaml">  front_door_camera:
+    uri: rtsp://admin:password@192.168.1.99/media/video1 
+    type: video
+    live: true
+</code></pre>
+<p>Only use RTSP if you run high end hardware and use AI inference in your pipelines that needs video and/or audio data instead of still images.</p>
+<p>Make sure that the HTTP URI points to a valid image. You can test by simply putting the URI in your web browser. You should see a current snapshot of live camera capture.</p>
+<p>If you choose to use an RTSP URI, then you can <a href="https://www.unifore.net/ip-video-surveillance/how-to-play-rtsp-video-stream-of-ip-cameras-on-vlc-player-quicktime-player.html">test that</a> with a tool like <a href="https://www.videolan.org/">VLC</a>.</p>
+<p>The parameter <code>live: true</code> indicates that this is a continuous stream without a predetermined end. Therefore Ambianic Edge should do whatever it can to continuously pull media and recover from interruptions caused by network or other glitches.</p>
+<p>Now save the file and restart the docker image. Within a few moments you should be able to see a populated timeline in the UI with fresh images from your camera and some object, people and face detections if there are any to detect.</p>
+<p>You can reference the <a href="../quickstart/">Quick Start Guide</a> for instructions on starting and stopping the Ambianic Edge docker image.</p>
+<h2 id="camera-configuration">Camera Configuration</h2>
+<p>Cameras are some of the most common sources of input data for Ambianic.ai pipelines.</p>
+<p>Ambianic.ai is typically connected to IP Network cameras, but you can also connect a local embedded web cam or USB connected camera.</p>
+<p>You can set <code>uri</code> to a local path such as <code>/dev/video0</code> to use a working usb webcam or <code>picamera</code> in case you have a picamera connected to Raspbery Pi connector.</p>
+<h3 id="connecting-a-local-web-usb-camera">Connecting a local Web USB camera</h3>
+<p>A laptop camera or USB camera on linux or mac can be used just providing a working reference to the video device, eg. <code>/dev/video0</code></p>
+<h3 id="connecting-a-picamera">Connecting a Picamera</h3>
+<p>To use a Picamera connected to the camera connector on the Raspberry Pi (usually available in the middle of the board)</p>
+<p>Ensure also your setup have the camera enabled and provides enough GPU memory for processing frames. The following script will take care of it for you:</p>
+<pre><code class="language-sh">
+# Enable camera
+sudo raspi-config nonint do_camera 1
+
+# Allocate GPU to camera:
+if ! grep -Fq &quot;gpu_mem=&quot; /boot/config.txt; then
+  echo &quot;gpu_mem=256&quot; | sudo tee -a /boot/config.txt
+fi
+</code></pre>
+<p>In a tipical setup your <code>/boot/config.txt</code> should contain something like this at the end</p>
+<pre><code class="language-ini">[all]
+start_x=1
+gpu_mem=256
+</code></pre>
+<p>Then update your configuration to point to the right source</p>
+<pre><code class="language-yaml">  picamera: 
+    uri: picamera
+    type: video
+    live: true
+</code></pre>
+<h3 id="connecting-over-http-or-rtsp">Connecting over HTTP or RTSP</h3>
+<p>Another option is to stream your local camera over HTTP or RTSP. VLC is one of the most popular and easy to use apps for that. 
+<a href="https://espressolive.com/blog/how-to-webcast-in-vlc-media-player/">Here is how</a> you can turn your local webcam into an IP streaming camera. The streaming URL shared by VLC is the input source URI for the Ambianic.ai configuration file.</p>
+<h3 id="how-to-find-the-uri-for-your-camera">How to find the URI for your camera</h3>
+<p>If you don't have experience configuring surveillance cameras, it can be tricky to find the URI. We are working on a camera Plug-and-Play feature in Ambianic to make it easier to discover and connect to your cameras. Keep an eye for release news. </p>
+<p>In the meanwhile, you have several options:</p>
+<p>First, check your camera manufacturer's documentation whether it supports still image URL over HTTP or video streaming over RTSP. Most IP cameras do, but not all. If your camera is ONVIF standard conformant, then you will have access to HTTP camera images and RTSP video stream. You can use the <a href="https://www.onvif.org/conformant-products/">ONVIF Search Tool</a> to check if your camera is listed as conformant.</p>
+<p>You can then use a tool such as ONVIF Device Manager to auto discover your IP camera and show you its RTSP and HTTP URI. Here is a <a href="http://help.angelcam.com/en/articles/372646-how-to-find-a-rtsp-address-for-an-onvif-compatible-camera-nvr-dvr">quick How-To</a>. A more detailed post on this tool is also <a href="https://learncctv.com/onvif-device-manager/">available here</a>.</p>
+<p>Your camera manufacturer will likely have an online resource describing how to determine its RTSP address. It would look something like <a href="https://reolink.com/wp-content/uploads/2017/01/Reolink-CGI-command-v1.61.pdf">this one</a>.</p>
+<p>There is also an <a href="https://security.world/rtsp/">online directory</a> where you can search for the RTSP URI of many camera brands.</p>
+<h3 id="using-still-image-source-instead-of-a-video-stream-for-your-camera-uri">Using still image source instead of a video stream for your camera URI</h3>
+<p>In many cases processing 1 frame per second is sufficient frequency to detect interesting events in your environment. It is usually more CPU and network resource efficient to use a still image source instead of live RTSP stream for 1fps. This approach allows Ambianic.ai Edge to pull from the camera another image snapshot when it is ready as opposed to streaming which pushes constantly media updates that Edge may or may not be ready to process.</p>
+<p>All you have to do to use a still image source from your camera is to locate the specific image URI as described above and plug it in the corresponding <code>source</code> section of the <code>config.yaml</code> file. Here is what it would look like:</p>
+<pre><code class="language-yaml">  front_door_camera: 
+    uri: http://192.168.86.29/cgi-bin/api.cgi?cmd=Snap&amp;channel=0&amp;rs=wuuPhkmUCeI9WG7C&amp;user=admin&amp;password=******
+    type: image
+    live: true
+</code></pre>
+<p>In the example above the URI points to a still jpg sample from the camera. Ambianic Edge will continuously poll this URI approximately once per second (1fps).</p>
+<h2 id="sensitive-config-information">Sensitive config information</h2>
+<p>Since camera URIs often contain credentials, we recommend that you store such values
+in <code>secrets.yaml</code>. Ambianic Edge will automatically look for and if available
+prepend <code>secrets.yaml</code> to <code>config.yaml</code>. That way you can share
+ <code>config.yaml</code> with others without compromising privacy sensitive parameters.</p>
+<p>You can use standard <a href="https://yaml.org/refcard.html">YAML anchors and aliases</a> in <code>config.yaml</code> 
+to reference YAML variables defined in <code>secrets.yaml</code>. They will resolve after the files are merged into one.</p>
+<p>An example valid entry in <code>secrets.yaml</code> for a camera URI, would look like this:</p>
+<pre><code class="language-yaml">secret_uri_front_door_camera: &amp;secret_uri_front_door_camera 'rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101'
+# add more secret entries as regular yaml mappings
+</code></pre>
+<p>It can be then referenced in <code>config.yaml</code> as follows:</p>
+<pre><code class="language-yaml">  front_door_camera: 
+    uri: *secret_uri_front_door_camera
+</code></pre>
+<h2 id="notification-settings">Notification settings</h2>
+<p>Ambianic edge can be configured to instantly alerts users when a detection occurs. Notifications are a feature of the <code>save_detections</code> element. 
+Every time a timeline event is saved along with its contextual data, a notification can be fired to a number of supported channels such as email, sms, or a local 
+smart home hub such as <a href="https://github.com/caronc/apprise/wiki/Notify_homeassistant">Home Assistant</a> (<code>hassios://{host}/{access_token}</code>).</p>
+<p>Notification providers are first configured at a system level using the following syntax:</p>
+<pre><code>notifications:
+  catch_all_email:
+    include_attachments: true
+    providers:
+      - mailto://userid:pass@domain.com
+      - hassios://{host}/{access_token}
+  alert_fall:
+    providers:
+      - mailto://userid:pass@domain.com
+      - json://hostname/a/path/to/post/to
+</code></pre>
+<p>Notice that the <code>catch_all_email</code> provider template uses the <code>include_attachments</code> attribute. Email notifications to this provider will include timeline event attachments such as captured images. On the other hand the <code>alert_fall</code> does not use the <code>include_attachments</code> attribute. Notifications sent through this provider will include the essential event information, but no attachments. In order to include attachments via <code>alert_fall</code> , just add the <code>include_attachments: true</code> element.</p>
+<p>For a full list of supported providers and config syntax, take a look at the <a href="https://github.com/caronc/apprise#popular-notification-services">official apprise documentation</a>. Apprise is a great notifications library that ambianic edge uses and sponsors.</p>
+<p>Once the system level notification providers are configured, they can be referenced within <code>save_detection</code> elements as in the following example:</p>
+<pre><code>pipelines:
+   # Pipeline names could be descriptive, e.g. front_door_watch or entry_room_watch.
+   area_watch:
+     ...
+     - detect_falls: # look for falls
+     ...
+     - save_detections: # save samples from the inference results
+        positive_interval: 10
+        idle_interval: 600000
+        notify: # notify a thirdy party service
+          providers:
+            - alert_fall        
+</code></pre>
+<p>Each time a detection event is saved, a corresponding notification will be instantly fired.</p>
+<h3 id="other-configuration-settings">Other configuration settings</h3>
+<p>The rest of the configuration settings are for advanced developers. 
+If you feel ready to dive into log files and code, you can experiement with different AI models and pipeline elements. 
+Otherwise leave them as they are.</p>
+<h2 id="using-ai-accelerator">Using AI Accelerator</h2>
+<p>Ambianic Edge will use the <a href="https://coral.ai/">Google Coral TPU</a> accelerator if one is available on the system.</p>
+<p><em>Note: The default docker compose configuration for Ambianic Edge checks whether a USB attached Coral is running on <code>/dev/bus/usb</code>. You may need to adjust that if the TPU is attached to a different file system directory.</em></p>
+<p>Coral is a powerful TPU that can speed up inference 5-10 times. However AI inference is only part of
+all the functions that execute in an Ambianic Edge pipeline. Video decoding and formatting
+also takes substantial amount of processing time. Overall we've seen Coral to improve
+performance 30-50% on a realistic Raspberry Pi 4 deployment with multiple simultaneous pipelines
+pulling images from multiple cameras and processing these images with multiple inference models.</p>
+<p>If you don't have a Coral device available, no need to worry for now. Raspberry Pi 4 is quite powerful.
+It comfortably handles 3 simultaneous HD camera sourced pipelines with approximately 1-2 frames per second (fps).
+An objects or person of interest would normally show up in one of your cameras for at least one second,
+which is enough time to be registered and processed by Ambianic Edge on a plain RPI4.</p>
+<h2 id="configuration-questions">Configuration Questions</h2>
+<p>If you are having difficulties with configuration settings, feel free to ask your question in the <a href="https://github.com/ambianic/ambianic-edge/discussions">community discussion forum</a> or our <a href="https://ambianicai.slack.com/join/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ#/">public slack channel</a>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Ambianic.ai &copy; 2019-2021</p>
+            <p>Last update : 2021-08-12 16:03:55.657117+00:00</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

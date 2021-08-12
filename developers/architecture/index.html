@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>High Level System Architecture - Ambianic Documentation</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/flowchart.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <!-- flowchart js -->
+        <script src="../../js/raphael.min.js"></script>
+        <script src="../../js/flowchart.js"></script>
+        <script src="../../js/jquery-plugin.js"></script>
+        <!-- end flowchart js -->
+        <!-- mermaid js -->
+        <script src="https://unpkg.com/mermaid@8.4.0/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+        <!-- end mermaid js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">Ambianic Documentation</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../users/quickstart/" class="dropdown-item">Quick Start</a>
+</li>
+                                    
+<li>
+    <a href="../../users/ambianicbox/" class="dropdown-item">Ambianic Box</a>
+</li>
+                                    
+<li>
+    <a href="../../users/configure/" class="dropdown-item">Configuration</a>
+</li>
+                                    
+<li>
+    <a href="../../users/edge-pairing/" class="dropdown-item">Local and Remote pairing</a>
+</li>
+                                    
+<li>
+    <a href="../../users/hass-integration/" class="dropdown-item">Home Assistant Integration</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Developer Guide <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">High Level System Architecture</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Contributing</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../legal/CONTRIBUTING/" class="dropdown-item">Guidelines</a>
+</li>
+            
+<li>
+    <a href="../development-environment/" class="dropdown-item">Setting up Your Dev Environment</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="https://github.com/ambianic/ambianic-ui" class="dropdown-item">Ambianic UI</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ambianic Edge</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="https://github.com/ambianic/ambianic-edge" class="dropdown-item">Core</a>
+</li>
+            
+<li>
+    <a href="https://ambianic.github.io/ambianic-edge/ambianic/" class="dropdown-item">Python API</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/fall-detection" class="dropdown-item">Fall Detection</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/ambianic-quickstart" class="dropdown-item">CLI</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/ambianic-rpi-image" class="dropdown-item">OS</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/ambianic-box" class="dropdown-item">Box</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Peer to Peer Communication</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/" class="dropdown-item">p2p architecture</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/peerjs-python" class="dropdown-item">peerjs-python</a>
+</li>
+            
+<li>
+    <a href="https://github.com/ambianic/ambianic-pnp" class="dropdown-item">ambianic-pnp</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../users/hass-integration/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../legal/CONTRIBUTING/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/developers/architecture.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column bs-sidenav">
+            <li class="nav-item main"><a href="#user-personas">User Personas</a></li>
+            <li class="nav-item main"><a href="#ambianic-high-level-architecture">Ambianic High Level Architecture</a></li>
+                <li class="nav-item">
+                    <a href="#configuration" class="nav-link">Configuration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#architectural-decomposition" class="nav-link">Architectural Decomposition</a>
+                </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="user-personas">User Personas</h1>
+<p>There are two major types of user personas we see in our community:
+1. DYI folks and developers who love the ultimate control and flexibility of an Open Source privacy preserving surveillance solution.
+2. End users who love the concept of a no nonsense privacy preserving solution to help care for their household and remote family members.</p>
+<p>User group 1 (i.e. cohort) cares more about freedom to fork, hack and integrate the code any way they like with any other systems they want to. This group is about 2% of all people who have been involved in some capacity with Ambianic.ai.</p>
+<p>User group 2, doesn't have the skills, time or plain interest to get messy with integrating an AI component with an existing camera system. They would rather buy a new turn-key intelligent camera up to $200. If they had an old camera installed (presumably a $50-100 investment), they would rather return it and replace with the a new one or simply donate it to a charity. If the old camera has been used more than 6 months, then its a depreciated asset that served its purpose and can be now written off. $100 is generally a tolerable pain threshold as compared to spending hours on integration or hiring an expert to do the work, which would cost much more than a new drop-in replacement.</p>
+<p>Both user groups are important to the long term success of the project.</p>
+<p>User Group 1 is vital, because these are the kinds of folks who can thoroughly dissect the software and offer valuable constructive criticism, contribute code, docs and in the future help grow the core team.</p>
+<p>User Group 2, the remaining 98%, is obviously vital, because these are the majority of end users who we ultimately aim to provide value to. </p>
+<p>Just to be clear, Ambianic.ai is primarily focused on adding tangible value to real users today. The fact that its open source does not contradict the primary goal in any way. Open Source is meant to enforce its validity of true value by removing proprietary layers of obscurity and superficial flashy claims. </p>
+<p>As a high level roadmap decision, we are moving forward by acknowledging that both User Group 1 and 2 are important and the project should proceed in a way that doesn't lock out either one from participating.</p>
+<p>To that extend, Luca Capra (one of our new team members) summarized the way forward better than I could:</p>
+<blockquote>
+<p>I am convinced that every niche expect and deserve a specific UX. I think the core could be flexible enough to support generic functionalities while delegating domain specific challenges to a vertical application. This could happen through different layers of integrations, eventually reusable. An example could be an object detection pipeline for training and execution, adapted to home care but also to security. Same functional perimeter but with different specializations based on user requirements</p>
+</blockquote>
+<p>Here is a high level architecture diagram of the Ambianic Edge component that we will use as a North Star reference.</p>
+<p><a href="https://drive.google.com/file/d/1taVlFu6r2jULWPpvdm1hO65WOxlNSw8R/view?usp=sharing"><img alt="Ambianic ai Camera Integration Architecture" src="https://user-images.githubusercontent.com/2234901/112674989-9984e880-8e34-11eb-8871-e65908f4f006.png" />
+)</a></p>
+<p>Following sections discuss further the high level architecture of the product.</p>
+<h1 id="ambianic-high-level-architecture">Ambianic High Level Architecture</h1>
+<p><a href="https://drive.google.com/file/d/13vtPDpW_wmE73YJ0lnIXF3xyPqGOYE22/view?usp=sharing"><img alt="Ambianic-High-Level-Architecture" src="https://user-images.githubusercontent.com/2234901/112674881-73f7df00-8e34-11eb-9447-71a5a358bee5.png" /></a></p>
+<ol>
+<li>Pipelines</li>
+<li>Pipe Elements</li>
+<li>Sources</li>
+<li>Outputs</li>
+<li>Connecting Pipelines</li>
+<li>Integrations</li>
+</ol>
+<p>Ambianic's main goal is to observe the environment and provide helpful
+suggestions in the context of home and business automation. The user has
+complete ownership and control of Ambianic's input sensors, AI inference flows
+and processed data storage. All logic executes on user's own edge devices and
+data is stored only on these devices with optional backup on
+ a user designated server.</p>
+<p>The main unit of work is the Ambianic pipeline which executes in the runtime of
+Ambianic Edge devices.
+The following diagram illustrates an example pipeline which takes as input
+a video stream URI source such as a surveillance camera and
+outputs object detections to a local directory.</p>
+<div class="diagram">
+st=>start: Video Source
+op_obj=>operation: Object Detection AI
+op_sav1=>parallel: Storage Element
+io1=>inputoutput: save object detections to file
+op_face=>operation: Face Detection AI
+op_sav2=>parallel: Storage Element
+io2=>inputoutput: save face detections to file
+e=>end: Output to other pipelines
+
+st->op_obj
+op_obj(bottom)->op_sav1
+op_sav1(path1, bottom)->op_face
+op_sav1(path2, right)->io1
+op_face(bottom)->op_sav2
+op_sav2(path1, bottom)->e
+op_sav2(path2, right)->io2
+</div>
+
+<script>
+$(".diagram").flowchart();
+</script>
+
+<p><br/></p>
+<h2 id="configuration">Configuration</h2>
+<p>Here is the corresponding configuration section for the pipeline above
+(normally located in <code>config.yaml</code>):</p>
+<pre><code class="language-yaml">pipelines:
+  daytime_front_door_watch:
+    - source: rtsp://user:pass@192.168.86.111:554/Streaming/Channels/101
+    - detect_objects: # run ai inference on the input data
+        model:
+          tflite: ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
+          edgetpu: ai_models/mobilenet_ssd_v2_coco_quant_postprocess_edgetpu.tflite
+        labels: ai_models/coco_labels.txt
+        confidence_threshold: 0.8
+    - save_detections: # save samples from the inference results
+        output_directory: ./data/detections/front-door/objects
+        positive_interval: 2 # how often (in seconds) to save samples with ANY results above the confidence threshold
+        idle_interval: 6000 # how often (in seconds) to save samples with NO results above the confidence threshold
+    - detect_faces: # run ai inference on the samples from the previous element output
+        model:
+          tflite: ai_models/mobilenet_ssd_v2_coco_quant_postprocess.tflite
+          edgetpu: ai_models/mobilenet_ssd_v2_face_quant_postprocess_edgetpu.tflite
+        labels: ai_models/coco_labels.txt
+        confidence_threshold: 0.8
+    - save_detections: # save samples from the inference results
+        output_directory: ./data/detections/front-door/faces
+        positive_interval: 2
+        idle_interval: 600
+</code></pre>
+<h2 id="architectural-decomposition">Architectural Decomposition</h2>
+<p>The <a href="https://docs.google.com/presentation/d/1VBDBpVR1ujHoi1g6NeFYiy7r9xflfYXNJ0jg6izEX7g/edit?usp=sharing">following slides</a> provide an alternative perspective on the Ambianic Edge architecture.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Ambianic.ai &copy; 2019-2021</p>
+            <p>Last update : 2021-08-12 16:03:55.634817+00:00</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
