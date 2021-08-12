@@ -8,6 +8,8 @@ Ambianic Box is the recommended enclosure for DIY (do-it-yourself) installations
 
 You can 3D Print an Ambianic Box at home ([here is the source](https://github.com/ambianic/ambianic-box)) or order a 3D print online through a service such as [craftcloud3d.com](https://craftcloud3d.com/configuration/c7faee7e-ec06-41ed-822c-4092bdf1d28d) or [makexyz.com](https://www.makexyz.com/).
 
+Alternatively, if you don't want to 3D print an enclosure, you can order a kit such as [this ony by Labists](https://labists.com/collections/all/products/labists-raspberry-pi-4g-ram-32gb-card) which includes a usable enclosure box and other components required to build an Ambianic Edge device.
+
 # Components
 
 To assemble a fully functional Ambianic Box, we recommend the following readily available off the shelf components, but you can use any viable alternatives available to you:
