@@ -27,7 +27,8 @@ nav:
       - Ambianic UI: https://github.com/ambianic/ambianic-ui
       - Ambianic Edge: 
         - Core: https://github.com/ambianic/ambianic-edge
-        - Python API: https://ambianic.github.io/ambianic-edge/ambianic/
+        - Python API: https://ambianic.github.io/ambianic-edge/pythonapi/ambianic/
+        - OpenAPI(REST): https://ambianic.github.io/ambianic-edge/openapi/ambianic-edge-openapi.html
         - Fall Detection: https://github.com/ambianic/fall-detection
         - CLI: https://github.com/ambianic/ambianic-quickstart
         - OS: https://github.com/ambianic/ambianic-rpi-image
