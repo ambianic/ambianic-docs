@@ -32,7 +32,7 @@ Alternatively if you do not want to rename your master/main branch, you can crea
 
 ## Gitpod Continuous Development Environment
 
-The easiest way to start a development environment for Ambianic Edge is to use the Gitpod Continuous Development Tool. [Gitpod](https://gitpod.io/) is an All-in-browser Continuous Development Environment with user experience similar to VS Code, but running in a virtual cloud container instead of your local machine. We maintain a Gitpod configuration preset for Ambianic Edge as part of the original git repository, which makes it as easy as a single click to launch a fully configured and ready to use dev environment. Gitpod offers [Free No Limits accounts to qualifying Professional Open Source projects maintainers](https://www.gitpod.io/docs/professional-open-source).
+The easiest way to start a development environment for Ambianic Edge or Ambianic UI is to use the Gitpod Continuous Development Environment. [Gitpod](https://gitpod.io/) is an All-in-browser Continuous Development Environment with user experience similar to VS Code, but running in a virtual cloud container instead of your local machine. We maintain a Gitpod configuration preset for Ambianic Edge as part of the original git repository, which makes it as easy as a single click to launch a fully configured and ready to use dev environment. Gitpod offers [Free No Limits accounts to qualifying Professional Open Source projects maintainers](https://www.gitpod.io/docs/professional-open-source).
 
 If you have not used Gitpod before, go ahead and [give it a try](https://www.gitpod.io/#get-started). 
 
