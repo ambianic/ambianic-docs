@@ -20,18 +20,40 @@ git clone https://github.com/<your username>/<project>.git
 
 or you can use any other git client.
 
+### Rename master/main branch to fork-master
+
+The steps in this section that follow are recommended if you intend to contribute back to the usptream repo. You can skip it if you do not intend to contribute back to upstream.
+
+If you keep your fork's master branch name unchanged, the github workflow CI will fail. That is because when you commit against your main branch, the CI will run and will also try to publish a release on success. This will fail, since your fork does not have the release publish keys.
+
+In order to take advantage of the CI workflow of the upstream repo on github, you will need to rename the `master`(or `main`) branch of your fork to `fork-master`(or `fork-main`). This will allow all steps of the CI to execute except for the release steps. In effect allowing you to ensure that your forked main branch passes all checks before submitting a pull request against the upstream repo. 
+
+Alternatively if you do not want to rename your master/main branch, you can create working branches and commit all changes to these branches. For example create branch `dev-feature-123` and submit pull requests from there to the upstream repo's master/main branch.
+
+## Gitpod Continuous Development Environment
+
+The easiest way to start a development environment for Ambianic Edge is to use the Gitpod Continuous Development Tool. [Gitpod](https://gitpod.io/) is an All-in-browser Continuous Development Environment with user experience similar to VS Code, but running in a virtual cloud container instead of your local machine. We maintain a Gitpod configuration preset for Ambianic Edge as part of the original git repository, which makes it as easy as a single click to launch a fully configured and ready to use dev environment. Gitpod offers [Free No Limits accounts to qualifying Professional Open Source projects maintainers](https://www.gitpod.io/docs/professional-open-source).
+
+If you have not used Gitpod before, go ahead and [give it a try](https://www.gitpod.io/#get-started). 
+
+When your gitpod space starts for your repo, in the background it will install all the required dependencies, pre-commit hooks and other environment settings required to build, run and test the project. You can focus on writing, testing and committing your new code. You can study the gitpod config file (`.gitpod.yml`) located at the root of your repo for details on the virtual dev environment setup steps.
 
 ## Ambianic Edge Development Environment
 
 ### Gitpod (recommended)
 
-The easiest way to start a development environment for Ambianic Edge is to use the Gitpod Continuous Development Tool. [Gitpod](https://gitpod.io/) is an All-in-browser Continuous Development Environment with user experience similar to VS Code, but running in a virtual cloud container instead of your local machine. We maintain a Gitpod configuration preset for Ambianic Edge as part of the original git repository, which makes it as easy as a single click to launch a fully configured and ready to use dev environment. Gitpod offers [Free No Limits accounts to qualifying Professional Open Source projects maintainers](https://www.gitpod.io/docs/professional-open-source).
+You can launch your gitpod space for Ambianic Edge in one of two ways:
 
-If you have not used Gitpod before, go ahead and [give it a try](https://www.gitpod.io/#get-started). Once you are familiar with Gitpod, you can launch your Ambianic Edge dev space:
-
-1. Either, prefix your fork URL with the gitpod web app like this: `https://gitpod.io/#https://github.com/MY_GITHUB_ACCOUNT/ambianic-edge`
-2. Or, using the [Gitpod browser extension](https://www.gitpod.io/docs/browser-extension/), just hit the green gitpod button on your fork's main page:
+1. Point your browser to an URL composed of the gitpod web app prefix and your forked repo URL. For example: `https://gitpod.io/#https://github.com/MY_GITHUB_ACCOUNT/ambianic-edge`
+2. Alternatively, using the [Gitpod browser extension](https://www.gitpod.io/docs/browser-extension/), just hit the green gitpod button on your fork's main page:
 ![Screen Shot 2021-09-07 at 10 40 45 AM](https://user-images.githubusercontent.com/2234901/132374456-438268ae-d546-4245-9f25-9377460de97e.png)
+
+Once launched, you will see several shell terminals automatically open and run the main modules that Ambinic Edge is composed of:
+1. Core sensor monitoring and inference engine.
+2. OpenAPI server (fastapi/uvicorn)
+3. Peer-to-peer proxy (HTTP over WebRTC)
+
+You will also see a terminal running the full testsuite to ensure that you environment is in good shape and ready for coding.
 
 ### Local worsktation (laptop, dekstop)
 
@@ -138,4 +160,44 @@ vscode offers a plugin  called [Remote - Containers](https://marketplace.visuals
 This is particularly handy when one needs to use the debugger to inspect the runtime. It can also be used to develop on the raspberry PI from your own PC.
 
 ## Ambianic UI Development Environment
-...TODO...
+
+### Gitpod (recommended)
+
+
+### Local workstation
+
+To build, test and debug Ambianic UI on a local laptop or desktop, you will need [node.js](https://nodejs.org/en/) and git installed.
+
+### Clone repository
+```
+git clone https://github.com/ambianic/ambianic-ui.git
+cd ambianic-ui
+```
+
+### Install dependencies
+```
+npm install
+```
+
+### Prepare dev environment
+
+Set up a git pre-commit hook for linting.
+
+```
+npm run prepare
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Runs all tests
+```
+npm run test
+```
