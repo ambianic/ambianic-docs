@@ -17,26 +17,25 @@ nav:
       - Home Assistant Integration: users/hass-integration.md
     - Developer Guide:
       - High Level System Architecture: developers/architecture.md
+      - Setting Up Development Environment: developers/development-environment.md
+      - Contributing Guidelines: legal/CONTRIBUTING.md
+      - Ambianic UI git repo: https://github.com/ambianic/ambianic-ui
+      - Ambianic Edge: 
+        - Core Git Repo: https://github.com/ambianic/ambianic-edge
+        - Python API: https://ambianic.github.io/ambianic-edge/pythonapi/ambianic/
+        - OpenAPI(REST): https://ambianic.github.io/ambianic-edge/openapi/ambianic-edge-openapi.html
+        - Fall Detection Model: https://github.com/ambianic/fall-detection
+        - Command Line Interface: https://github.com/ambianic/ambianic-quickstart
+        - Operating System: https://github.com/ambianic/ambianic-rpi-image
+        - Physical Enclosure: https://github.com/ambianic/ambianic-box
+      - Peer to Peer Communication: 
+        - p2p architecture: https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/
+        - peerjs-python git repo: https://github.com/ambianic/peerjs-python
+        - ambianic-pnp git repo: https://github.com/ambianic/ambianic-pnp
 #      - APIs: developers/api.md
 #      - Integrations: developers/integration.md
 #      - Writing PLugins: developers/writing-plugins-overview.md
 #      - Deployment Scenarios: developers/deployment.md
-      - Contributing: 
-        - Guidelines: legal/CONTRIBUTING.md
-        - Setting up Your Dev Environment: developers/development-environment.md
-      - Ambianic UI: https://github.com/ambianic/ambianic-ui
-      - Ambianic Edge: 
-        - Core: https://github.com/ambianic/ambianic-edge
-        - Python API: https://ambianic.github.io/ambianic-edge/pythonapi/ambianic/
-        - OpenAPI(REST): https://ambianic.github.io/ambianic-edge/openapi/ambianic-edge-openapi.html
-        - Fall Detection: https://github.com/ambianic/fall-detection
-        - CLI: https://github.com/ambianic/ambianic-quickstart
-        - OS: https://github.com/ambianic/ambianic-rpi-image
-        - Box: https://github.com/ambianic/ambianic-box
-      - Peer to Peer Communication: 
-        - p2p architecture: https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/
-        - peerjs-python: https://github.com/ambianic/peerjs-python
-        - ambianic-pnp: https://github.com/ambianic/ambianic-pnp
       
 theme:
     name: mkdocs
