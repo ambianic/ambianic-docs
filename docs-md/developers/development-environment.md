@@ -36,19 +36,21 @@ The easiest way to start a development environment for Ambianic Edge is to use t
 
 If you have not used Gitpod before, go ahead and [give it a try](https://www.gitpod.io/#get-started). 
 
-When your gitpod space starts for your repo, in the background it will install all the required dependencies, pre-commit hooks and other environment settings required to build, run and test the project. You can focus on writing, testing and committing your new code. You can study the gitpod config file (`.gitpod.yml`) located at the root of your repo for details on the virtual dev environment setup steps.
-
-## Ambianic Edge Development Environment
-
-### Gitpod (recommended)
-
-You can launch your gitpod space for Ambianic Edge in one of two ways:
+You can launch your gitpod space for your forked repo in one of two ways:
 
 1. Point your browser to an URL composed of the gitpod web app prefix and your forked repo URL. For example: `https://gitpod.io/#https://github.com/MY_GITHUB_ACCOUNT/ambianic-edge`
 2. Alternatively, using the [Gitpod browser extension](https://www.gitpod.io/docs/browser-extension/), just hit the green gitpod button on your fork's main page:
 ![Screen Shot 2021-09-07 at 10 40 45 AM](https://user-images.githubusercontent.com/2234901/132374456-438268ae-d546-4245-9f25-9377460de97e.png)
 
-Once launched, you will see several shell terminals automatically open and run the main modules that Ambinic Edge is composed of:
+When your gitpod space starts for your repo, in the background it will install all the required dependencies, pre-commit hooks and other environment settings required to build, run and test the project. You can focus on writing, testing and committing your new code. You can study the gitpod config file (`.gitpod.yml`) located at the root of your repo for details on the virtual dev environment setup steps.
+
+Once your gitpod space starts it will automatically open and run the main modules for the project. You will also see a terminal running the full testsuite to ensure that you environment is in good shape and ready for coding.
+
+## Ambianic Edge Development Environment
+
+### Gitpod (recommended)
+
+Once your gitpod space for your Ambianic Edge fork is launched, you will see several shell terminals automatically open and run the main modules that Ambinic Edge is composed of:
 1. Core sensor monitoring and inference engine.
 2. OpenAPI server (fastapi/uvicorn)
 3. Peer-to-peer proxy (HTTP over WebRTC)
@@ -163,23 +165,24 @@ This is particularly handy when one needs to use the debugger to inspect the run
 
 ### Gitpod (recommended)
 
+Once your gitpod space for your Ambianic UI fork is launched, you will see a shell terminal automatically open and run the Ambinic PWA nodejs service. Gitpod will prompt you to open a browser tab for the PWA. You will also see another shell terminal running the full testsuite to ensure that you environment is in good shape and ready for coding.
 
 ### Local workstation
 
 To build, test and debug Ambianic UI on a local laptop or desktop, you will need [node.js](https://nodejs.org/en/) and git installed.
 
-### Clone repository
+#### Clone repository
 ```
 git clone https://github.com/ambianic/ambianic-ui.git
 cd ambianic-ui
 ```
 
-### Install dependencies
+#### Install dependencies
 ```
 npm install
 ```
 
-### Prepare dev environment
+#### Prepare dev environment
 
 Set up a git pre-commit hook for linting.
 
@@ -187,17 +190,17 @@ Set up a git pre-commit hook for linting.
 npm run prepare
 ```
 
-### Compiles and hot-reloads for development
+#### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+#### Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Runs all tests
+#### Runs all tests
 ```
 npm run test
 ```
