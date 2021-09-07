@@ -223,16 +223,17 @@
 <h2 id="gitpod-continuous-development-environment">Gitpod Continuous Development Environment</h2>
 <p>The easiest way to start a development environment for Ambianic Edge is to use the Gitpod Continuous Development Tool. <a href="https://gitpod.io/">Gitpod</a> is an All-in-browser Continuous Development Environment with user experience similar to VS Code, but running in a virtual cloud container instead of your local machine. We maintain a Gitpod configuration preset for Ambianic Edge as part of the original git repository, which makes it as easy as a single click to launch a fully configured and ready to use dev environment. Gitpod offers <a href="https://www.gitpod.io/docs/professional-open-source">Free No Limits accounts to qualifying Professional Open Source projects maintainers</a>.</p>
 <p>If you have not used Gitpod before, go ahead and <a href="https://www.gitpod.io/#get-started">give it a try</a>. </p>
-<p>When your gitpod space starts for your repo, in the background it will install all the required dependencies, pre-commit hooks and other environment settings required to build, run and test the project. You can focus on writing, testing and committing your new code. You can study the gitpod config file (<code>.gitpod.yml</code>) located at the root of your repo for details on the virtual dev environment setup steps.</p>
-<h2 id="ambianic-edge-development-environment">Ambianic Edge Development Environment</h2>
-<h3 id="gitpod-recommended">Gitpod (recommended)</h3>
-<p>You can launch your gitpod space for Ambianic Edge in one of two ways:</p>
+<p>You can launch your gitpod space for your forked repo in one of two ways:</p>
 <ol>
 <li>Point your browser to an URL composed of the gitpod web app prefix and your forked repo URL. For example: <code>https://gitpod.io/#https://github.com/MY_GITHUB_ACCOUNT/ambianic-edge</code></li>
 <li>Alternatively, using the <a href="https://www.gitpod.io/docs/browser-extension/">Gitpod browser extension</a>, just hit the green gitpod button on your fork's main page:
 <img alt="Screen Shot 2021-09-07 at 10 40 45 AM" src="https://user-images.githubusercontent.com/2234901/132374456-438268ae-d546-4245-9f25-9377460de97e.png" /></li>
 </ol>
-<p>Once launched, you will see several shell terminals automatically open and run the main modules that Ambinic Edge is composed of:
+<p>When your gitpod space starts for your repo, in the background it will install all the required dependencies, pre-commit hooks and other environment settings required to build, run and test the project. You can focus on writing, testing and committing your new code. You can study the gitpod config file (<code>.gitpod.yml</code>) located at the root of your repo for details on the virtual dev environment setup steps.</p>
+<p>Once your gitpod space starts it will automatically open and run the main modules for the project. You will also see a terminal running the full testsuite to ensure that you environment is in good shape and ready for coding.</p>
+<h2 id="ambianic-edge-development-environment">Ambianic Edge Development Environment</h2>
+<h3 id="gitpod-recommended">Gitpod (recommended)</h3>
+<p>Once your gitpod space for your Ambianic Edge fork is launched, you will see several shell terminals automatically open and run the main modules that Ambinic Edge is composed of:
 1. Core sensor monitoring and inference engine.
 2. OpenAPI server (fastapi/uvicorn)
 3. Peer-to-peer proxy (HTTP over WebRTC)</p>
@@ -312,26 +313,27 @@ python3 -m pytest tests/ --log-cli-level DEBUG
 <p>This is particularly handy when one needs to use the debugger to inspect the runtime. It can also be used to develop on the raspberry PI from your own PC.</p>
 <h2 id="ambianic-ui-development-environment">Ambianic UI Development Environment</h2>
 <h3 id="gitpod-recommended_1">Gitpod (recommended)</h3>
+<p>Once your gitpod space for your Ambianic UI fork is launched, you will see a shell terminal automatically open and run the Ambinic PWA nodejs service. Gitpod will prompt you to open a browser tab for the PWA. You will also see another shell terminal running the full testsuite to ensure that you environment is in good shape and ready for coding.</p>
 <h3 id="local-workstation">Local workstation</h3>
 <p>To build, test and debug Ambianic UI on a local laptop or desktop, you will need <a href="https://nodejs.org/en/">node.js</a> and git installed.</p>
-<h3 id="clone-repository">Clone repository</h3>
+<h4 id="clone-repository">Clone repository</h4>
 <pre><code>git clone https://github.com/ambianic/ambianic-ui.git
 cd ambianic-ui
 </code></pre>
-<h3 id="install-dependencies">Install dependencies</h3>
+<h4 id="install-dependencies">Install dependencies</h4>
 <pre><code>npm install
 </code></pre>
-<h3 id="prepare-dev-environment">Prepare dev environment</h3>
+<h4 id="prepare-dev-environment">Prepare dev environment</h4>
 <p>Set up a git pre-commit hook for linting.</p>
 <pre><code>npm run prepare
 </code></pre>
-<h3 id="compiles-and-hot-reloads-for-development">Compiles and hot-reloads for development</h3>
+<h4 id="compiles-and-hot-reloads-for-development">Compiles and hot-reloads for development</h4>
 <pre><code>npm run serve
 </code></pre>
-<h3 id="compiles-and-minifies-for-production">Compiles and minifies for production</h3>
+<h4 id="compiles-and-minifies-for-production">Compiles and minifies for production</h4>
 <pre><code>npm run build
 </code></pre>
-<h3 id="runs-all-tests">Runs all tests</h3>
+<h4 id="runs-all-tests">Runs all tests</h4>
 <pre><code>npm run test
 </code></pre></div>
             </div>
@@ -340,7 +342,7 @@ cd ambianic-ui
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-09-07 21:07:49.606118+00:00</p>
+            <p>Last update : 2021-09-07 21:15:25.424602+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
