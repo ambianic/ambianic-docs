@@ -17,7 +17,7 @@ nav:
       - Home Assistant Integration: users/hass-integration.md
     - Developer Guide:
       - High Level System Architecture: developers/architecture.md
-      - Setting Up Development Environment: developers/development-environment.md
+      - Development Environment Setup: developers/development-environment.md
       - Contributing Guidelines: legal/CONTRIBUTING.md
       - Ambianic UI git repo: https://github.com/ambianic/ambianic-ui
       - Ambianic Edge: 
