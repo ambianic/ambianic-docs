@@ -119,18 +119,24 @@ Our goal is to build a product that is useful out of the box:
 
 If you would like to try the latest version, follow the steps in the [Quick Start Guide](users/quickstart.md).
 
+## Development Environment
+
+If you are interested in building the project modules from source and exploring or modifying code, take a look at this guide:
+[Development Environment Setup](https://docs.ambianic.ai/developers/development-environment/)
+
+## Contributing
+
+If you are interested in becoming a contributor to the project, please read the [Contributing Guidelines](legal/CONTRIBUTING.md). Looking forward to reviewing your first Pull Request!
+
 ## Community Support
 
 If you have questions, ideas or cool projects you'd like to share with the Ambianic team and community, please use the [Ambianic Twitter channel](https://twitter.com/ambianicai) or [join our public Slack space](https://ambianicai.slack.com/join/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ#/).
-
-## Contributors
-If you are interested in becoming a contributor to the project, please read the [Contributing](legal/CONTRIBUTING.md) page and follow the steps. Looking forward to hearing from you!
 
 ## Sustainability 🌱
 
 * Ambianic is 100% Open Source and funded by its user community.
 * 100% Open Source ensures full transparency, privacy and user data ownership.
-* By design, there are no other direct or indirect sources of funding that compromise the core values of the project.
+* By design, there are no other hidden or indirect sources of funding that compromise the core values of the project.
 * The project [roadmap is open](https://github.com/orgs/ambianic/projects/1) to community feedback and input. 
 * As we reach new levels of regular sponsors, we run a community survey to prioritize the next big roadmap feature.
 * If you are using the project on a daily basis at home, consider investing in its future success either with your time as a contributor or with a small coffee cup [donation](https://github.com/sponsors/ambianic). Thank you! 🙏
