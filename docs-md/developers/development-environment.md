@@ -86,7 +86,7 @@ You can use the [pytest "-k"](https://docs.pytest.org/en/6.2.x/example/markers.h
 
 See the official [pytest docs](https://docs.pytest.org/en/6.2.x/example/markers.html) for other ways to run selected tests.
 
-#@# Ambianic UI with Gitpod
+## Ambianic UI with Gitpod
 
 Once your gitpod space for your Ambianic UI fork is launched, you will see several shell terminals open and run:
 
