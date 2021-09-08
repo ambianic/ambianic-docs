@@ -123,6 +123,10 @@ Unit tests are located under `tests/unit`
 
 E2E tests are located under `cypress/integration/ambianic-tests`
 
+### End to End System testing
+
+If you'd like to manually test UI and Edge together as a whole system, while running in dev mode in conditions as close as possible to a real world deployment, 
+take a look at [this guide](e2e-manual-testing.md).
 ____________________
 ____________________
 
