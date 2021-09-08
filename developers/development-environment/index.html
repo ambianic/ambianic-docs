@@ -188,9 +188,6 @@
         <ul class="nav flex-column bs-sidenav">
             <li class="nav-item main"><a href="#development-environment">Development Environment</a></li>
                 <li class="nav-item">
-                    <a href="#about-forking" class="nav-link">About forking</a>
-                </li>
-                <li class="nav-item">
                     <a href="#gitpod-continuous-development-environment" class="nav-link">Gitpod Continuous Development Environment</a>
                 </li>
             <li class="nav-item main"><a href="#ambianic-ui-with-gitpod">@# Ambianic UI with Gitpod</a></li>
@@ -207,11 +204,8 @@
 
 <h1 id="development-environment">Development Environment</h1>
 <p>This page decribes how to setup a development environment for Ambianic.ai repos.</p>
-<h2 id="about-forking">About forking</h2>
 <p>If you plan to push your own code you should <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">fork</a> the original github repository and work from your local copy/fork.
 <img alt="Screen Shot 2021-09-07 at 10 40 45 AM" src="https://user-images.githubusercontent.com/2234901/132374705-2b3bdf7c-a08e-41aa-8f61-9594765e60e1.png" /></p>
-<h3 id="rename-mastermain-branch-to-fork-master">Rename master/main branch to fork-master</h3>
-<p>The steps in this section are recommended if you intend to contribute back to the usptream repo. You can skip this section if you do not intend to contribute back to upstream.</p>
 <p>In order to take advantage of the CI workflow of the upstream repo on github, you will need to rename the <code>master</code>(or <code>main</code>) branch of your fork to <code>fork-master</code>(or <code>fork-main</code>). This will allow all steps of the CI to execute except for the release steps. In effect allowing you to ensure that your forked main branch passes all checks before submitting a pull request against the upstream repo. </p>
 <p>If you keep your fork's master branch name unchanged, the github workflow CI will fail. That is because when you commit against your main branch, the CI will run and will also try to publish a release on success. This will fail, since your fork does not have the release publishing keys.</p>
 <p>Alternatively if you do not want to rename your master/main branch, you can create development branches, commit all changes and initiate Pull Requests from these branches. For example create branch <code>dev-feature-123</code> for a new feature you intend to contribute. Commit your changes to it and then submit pull requests from there to the upstream repo's master/main branch.</p>
@@ -391,7 +385,7 @@ cd ambianic-ui
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-09-08 00:11:44.933872+00:00</p>
+            <p>Last update : 2021-09-08 00:13:27.723046+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
