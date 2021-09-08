@@ -1,4 +1,4 @@
-# End to end manual testing
+# End to End Manual System Testing
 
 In addition to writing automated unit tests for each project module and integrated tests across modules, 
 we occasionally need to manually walk through the system to experience it the same way as an end user would.
