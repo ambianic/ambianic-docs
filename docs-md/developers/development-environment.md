@@ -92,7 +92,7 @@ You can use the [pytest "-k"](https://docs.pytest.org/en/6.2.x/example/markers.h
 
 See the official [pytest docs](https://docs.pytest.org/en/6.2.x/example/markers.html) for other ways to run selected tests.
 
-## Ambianic UI with Gitpod
+#@# Ambianic UI with Gitpod
 
 Once your gitpod space for your Ambianic UI fork is launched, you will see several shell terminals open and run:
 
@@ -133,7 +133,7 @@ ____________________
 ____________________
 
 
-## Setting Up Dev Environment on a Local Workstation (laptop, dekstop)
+## Local Development Environment
 
 Setting up a local dev environment tends to be more work as compared to Gitpod as it takes away compute resources from your workstation and it requires maintaining multiple virtual environments and containers along with developent tools for different language platforms. As the project evolves, it usually requires some local upkeep to make sure all local tools are up to date and in sync with the latest versions used for the current project build. If this is your preferred method, the following guidleninces are for you.
 
