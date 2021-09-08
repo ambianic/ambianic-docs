@@ -1,10 +1,10 @@
 # End to end manual testing
 
-In addition to executing automated unit tests for each project module and integrated tests across modules, 
-we occasionally need to manually walk through the end user experience with the system end to end. 
+In addition to writing automated unit tests for each project module and integrated tests across modules, 
+we occasionally need to manually walk through the system to experience it the same way as an end user would.
 Manual testing sometimes leads to discovering new issues that can be then covered with new automated tests.
 
-Following is the recommended way to manually test an Ambianic system end to end in development mode, but as close as possible to realistic conditions.
+Following is the recommended way to manually test an Ambianic system end to end in development mode, but as close as possible to realistic deployment conditions.
 
 First, start the Ambianic UI and Ambianic Edge gitpod environments. If you haven't done this before, then follow [these instructions](https://docs.ambianic.ai/developers/development-environment/).
 
@@ -23,7 +23,12 @@ Notice that this value is a randomly generated [UUID4](https://en.wikipedia.org/
 
 ![Screen Shot 2021-09-07 at 7 33 11 PM](https://user-images.githubusercontent.com/2234901/132426954-9a52ee0c-14ed-47bb-be57-227e3f6e16fd.png)
 
-Next, go to the Ambianic UI environment, open a browser window pointing to port 8080 of the gitpod environment serving the Ambianic PWA on nodejs in dev mode.
+Next, go to the Ambianic UI environment, and make sure that the Ambianic PWA is being served by nodejs. Your terminal window should look like the screenshot below.
+
+![Screen Shot 2021-09-07 at 8 21 17 PM](https://user-images.githubusercontent.com/2234901/132430594-5413f915-131f-4c69-ac67-64f9f1e2a44b.png)
+
+
+Open a browser window pointing to port 8080 of the gitpod environment serving the Ambianic PWA on nodejs in dev mode.
 
 ![Screen Shot 2021-09-07 at 4 48 19 PM](https://user-images.githubusercontent.com/2234901/132427845-0c74edae-22c1-405c-a9e9-2c56375773e7.png)
 
@@ -31,7 +36,7 @@ Click on _Begin Setup_ then on the next page click _Skip_ in the upper right cor
 
 ![Screen Shot 2021-09-07 at 7 38 33 PM](https://user-images.githubusercontent.com/2234901/132428090-464f5c71-52b9-4498-8779-d7f1911f631d.png)
 
-On the next page, select Main menu drop down in the Nav Bar and click Settings.
+On the next page, select the Main menu drop down in the Nav Bar and click Settings.
 
 ![Screen Shot 2021-09-07 at 7 41 22 PM](https://user-images.githubusercontent.com/2234901/132428307-817493bb-8f0a-47a5-b3e7-31521ad732be.png)
 
@@ -40,7 +45,7 @@ Then scroll down to the section titled "Pair with remote Ambianic Edge device".
 ![Screen Shot 2021-09-07 at 7 40 43 PM](https://user-images.githubusercontent.com/2234901/132428376-126ed1e2-a385-4548-88e4-21253ccf584e.png)
 
 Paste the peerjs key value that you copied from the Ambianic Edge CDE. Click on Pair Remotely. 
-In a few moments you will see snackbar status messages indicating that the UI is connecting to Ambianic Edge followed by a confirmation that connection was established.
+In a few moments you will see snackbar status messages indicating that the UI is connecting to Ambianic Edge followed by a confirmation that connection is established.
 
 ![Screen Shot 2021-09-07 at 7 41 08 PM](https://user-images.githubusercontent.com/2234901/132428700-e837f67d-5eaf-427d-80e2-518220de23b5.png)
 
@@ -54,6 +59,10 @@ This is exactly how the UI and Edge connect in a real world deployment.
 Instead of relying on access to public HTTP/S endpoints, the UI and Edge connect securely and directly via WebRTC DataChannel 
 (using [peerfetch](https://github.com/ambianic/peerfetch) - an HTTP over WebRTC proxy).
 
+![Screen Shot 2021-09-07 at 8 26 53 PM](https://user-images.githubusercontent.com/2234901/132431003-489131f6-9642-4819-9659-1e65985530db.png)
+
+
+
 If you now navigate to the Timeline page, you will see a timeline view. 
 
 ![Screen Shot 2021-09-07 at 8 09 16 PM](https://user-images.githubusercontent.com/2234901/132429564-2bc34837-33dc-41cc-a8f3-107c29e9a40a.png)
@@ -64,7 +73,7 @@ You can change the file with your own recorded video file for testing various de
 
 ![Screen Shot 2021-09-07 at 8 09 46 PM](https://user-images.githubusercontent.com/2234901/132429600-4f17fb59-4252-4962-b2cd-5fbc1071b55f.png)
 
-Notice how the `peerfetch` terminal shows a log of HTTP fetch requests and responses from the Ambianic UI instance.
+Notice how the `peerfetch` terminal shows a log of HTTP fetch requests and responses from the Ambianic UI instance. This is an indication that the UI and Edge are communicating. If you switch to the Fastapi terminal it will also show REST API requests served to the `peerfetch` proxy on behalf of the UI app (PWA).
 
 Now you have a fully setup live and realistic system that runs both Ambianic UI and Ambianic Edge in dev mode. 
 This setup represents as closely as possible the real world experience of an end user, while allowing you, dear developer, to test, experiment and commit code.
