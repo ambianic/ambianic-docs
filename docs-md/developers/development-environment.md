@@ -3,14 +3,8 @@
 
 This page decribes how to setup a development environment for Ambianic.ai repos.
 
-## About forking
-
 If you plan to push your own code you should [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) the original github repository and work from your local copy/fork.
 ![Screen Shot 2021-09-07 at 10 40 45 AM](https://user-images.githubusercontent.com/2234901/132374705-2b3bdf7c-a08e-41aa-8f61-9594765e60e1.png)
-
-### Rename master/main branch to fork-master
-
-The steps in this section are recommended if you intend to contribute back to the usptream repo. You can skip this section if you do not intend to contribute back to upstream.
 
 In order to take advantage of the CI workflow of the upstream repo on github, you will need to rename the `master`(or `main`) branch of your fork to `fork-master`(or `fork-main`). This will allow all steps of the CI to execute except for the release steps. In effect allowing you to ensure that your forked main branch passes all checks before submitting a pull request against the upstream repo. 
 
