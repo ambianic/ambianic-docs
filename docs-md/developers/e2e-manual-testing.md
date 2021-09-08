@@ -6,7 +6,7 @@ Manual testing sometimes leads to discovering new issues that can be then covere
 
 Following is the recommended way to manually test an Ambianic system end to end in development mode, but as close as possible to realistic deployment conditions.
 
-First, start the Ambianic UI and Ambianic Edge gitpod environments. If you haven't done this before, then follow [these instructions](https://docs.ambianic.ai/developers/development-environment/).
+First, start the Ambianic UI and Ambianic Edge gitpod environments. If you haven't done this before, then follow [these instructions](development-environment.md).
 
 Next, go to the Ambianic Edge dev environment and make sure that all main modules are running:
 1. Core Monitoring and Inference Engine
