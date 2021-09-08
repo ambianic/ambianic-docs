@@ -5,30 +5,18 @@ This page decribes how to setup a development environment for Ambianic.ai repos.
 
 ## About forking
 
-If you plan to push your code you can [fork the original github repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) and work from your local copy/fork.
+If you plan to push your own code you should [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) the original github repository and work from your local copy/fork.
 ![Screen Shot 2021-09-07 at 10 40 45 AM](https://user-images.githubusercontent.com/2234901/132374705-2b3bdf7c-a08e-41aa-8f61-9594765e60e1.png)
-
-For example, once you identify a project you want to contribute to, go to Github and hit the __Fork__ button. This will create a copy of the codebase under your account.
-
-Now go to the __Code__ button and copy the repository URI. 
-
-As an example using the git CLI you can run something like (change username and project name first!)
-
-```sh
-git clone https://github.com/<your username>/<project>.git
-```
-
-or you can use any other git client.
 
 ### Rename master/main branch to fork-master
 
-The steps in this section that follow are recommended if you intend to contribute back to the usptream repo. You can skip it if you do not intend to contribute back to upstream.
-
-If you keep your fork's master branch name unchanged, the github workflow CI will fail. That is because when you commit against your main branch, the CI will run and will also try to publish a release on success. This will fail, since your fork does not have the release publish keys.
+The steps in this section are recommended if you intend to contribute back to the usptream repo. You can skip this section if you do not intend to contribute back to upstream.
 
 In order to take advantage of the CI workflow of the upstream repo on github, you will need to rename the `master`(or `main`) branch of your fork to `fork-master`(or `fork-main`). This will allow all steps of the CI to execute except for the release steps. In effect allowing you to ensure that your forked main branch passes all checks before submitting a pull request against the upstream repo. 
 
-Alternatively if you do not want to rename your master/main branch, you can create working branches and commit all changes to these branches. For example create branch `dev-feature-123` and submit pull requests from there to the upstream repo's master/main branch.
+If you keep your fork's master branch name unchanged, the github workflow CI will fail. That is because when you commit against your main branch, the CI will run and will also try to publish a release on success. This will fail, since your fork does not have the release publishing keys.
+
+Alternatively if you do not want to rename your master/main branch, you can create development branches, commit all changes and initiate Pull Requests from these branches. For example create branch `dev-feature-123` for a new feature you intend to contribute. Commit your changes to it and then submit pull requests from there to the upstream repo's master/main branch.
 
 ## Gitpod Continuous Development Environment
 
@@ -73,6 +61,37 @@ _Gitpod terminal running fastapi/uvicorn serving the Ambianic Edge REST API (Ope
           
 _Gitpod terminal running WebRTC-HTTP Proxy which allows Ambianic UI to connect to this Ambianic Edge instance_
 
+#### Ambianic Edge Dev Configuration
+
+The Ambainic Edge instance running in your gitpod space is configured by the `dev-config.yaml` file located in the `dev` directory of your workspace.
+If you want to modify the dev config and test with custom settings, you should add `dev-config.yaml` to your `.gitignore` file to ensure that you will not commit it back to the upstream repo.
+
+Notice that the default `dev-config.yaml` file is setup to use a local video file as input source to the AI pipelines.
+```
+  recorded_cam_feed:
+    # location of the recorded video file in a gitpod (or local) dev environment
+    uri: file:///workspace/ambianic-edge/tests/pipeline/avsource/test2-cam-person1.mkv
+    type: video
+    # live: true when we want the pipeline to keep looping over the same video file.
+    # live: false when we want the pipeline to go through the video file once and stop.
+    live: false
+```
+
+This configuration allows you to simulate a realistic Ambianic Edge deployment without connecting to a live camera feed. You can change the source to use video file recordings of your choice.
+
+#### Unit Testing Ambianic Edge
+
+We use [`pytest`](https://docs.pytest.org/en/latest/contents.html) to drive the Ambianic Edge testsuite. To run the full testsuite, you can go to the terminal window that runs it on launch and manually repeate the command:
+```
+python3 -m pytest -v --log-cli-level=DEBUG --cov=ambianic --cov-report=term tests/
+```
+
+This runs all tests and prints a coverage report in the terminal. Also shows in the terminal all log messages logged by the tested code.
+
+You can use the [pytest "-k"](https://docs.pytest.org/en/6.2.x/example/markers.html#using-k-expr-to-select-tests-based-on-their-name) option to run selected tests. 
+
+See the official [pytest docs](https://docs.pytest.org/en/6.2.x/example/markers.html) for other ways to run selected tests.
+
 ## Ambianic UI with Gitpod
 
 Once your gitpod space for your Ambianic UI fork is launched, you will see several shell terminals open and run:
@@ -95,6 +114,23 @@ _Terminal window running the Ambianic PWA as a nodejs service in dev mode._
 
 _Terminal window running browser-sync._
 
+
+#### Unit testing Ambianic UI
+
+We use [Jest](https://jestjs.io/) for unit testing and [Cypress](https://www.cypress.io/) for e2e testing.
+
+To run tests, go to the terminal that runs all tests when the gitpod space launches. Then you can
+
+1. Run all tests with `npm run test`
+2. Run unit tests with `npm run test:unit`
+3. Run e2e tests with `npm run test:e2e`
+
+Unit tests are located under `tests/unit`
+
+E2E tests are located under `cypress/integration/ambianic-tests`
+
+____________________
+____________________
 
 
 ## Setting Up Dev Environment on a Local Workstation (laptop, dekstop)
