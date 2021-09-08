@@ -19,7 +19,7 @@ nav:
       - High Level System Architecture: developers/architecture.md
       - Development Environment Setup: developers/development-environment.md
       - End to End System Testing in Dev Mode: developers/e2e-manual-testing.md
-      - Contributing Guidelines: legal/CONTRIBUTING.md
+      - Contribution Guidelines: legal/CONTRIBUTING.md
       - Ambianic UI git repo: https://github.com/ambianic/ambianic-ui
       - Ambianic Edge: 
         - Core Git Repo: https://github.com/ambianic/ambianic-edge
