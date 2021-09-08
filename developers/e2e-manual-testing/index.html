@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Local and Remote pairing - Ambianic Documentation</title>
+        <title>End to end manual testing - Ambianic Documentation</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -51,28 +51,28 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../quickstart/" class="dropdown-item">Quick Start</a>
+    <a href="../../users/quickstart/" class="dropdown-item">Quick Start</a>
 </li>
                                     
 <li>
-    <a href="../ambianicbox/" class="dropdown-item">Ambianic Box</a>
+    <a href="../../users/ambianicbox/" class="dropdown-item">Ambianic Box</a>
 </li>
                                     
 <li>
-    <a href="../configure/" class="dropdown-item">Configuration</a>
+    <a href="../../users/configure/" class="dropdown-item">Configuration</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Local and Remote pairing</a>
+    <a href="../../users/edge-pairing/" class="dropdown-item">Local and Remote pairing</a>
 </li>
                                     
 <li>
-    <a href="../hass-integration/" class="dropdown-item">Home Assistant Integration</a>
+    <a href="../../users/hass-integration/" class="dropdown-item">Home Assistant Integration</a>
 </li>
                                 </ul>
                             </li>
@@ -81,11 +81,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../developers/architecture/" class="dropdown-item">High Level System Architecture</a>
+    <a href="../architecture/" class="dropdown-item">High Level System Architecture</a>
 </li>
                                     
 <li>
-    <a href="../../developers/development-environment/" class="dropdown-item">Development Environment Setup</a>
+    <a href="../development-environment/" class="dropdown-item">Development Environment Setup</a>
 </li>
                                     
 <li>
@@ -158,17 +158,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../configure/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../hass-integration/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/users/edge-pairing.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/developers/e2e-manual-testing.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -186,33 +176,61 @@
 
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
-            <li class="nav-item main"><a href="#establishing-initial-connection-pairing-between-ambianic-ui-and-ambianic-edge-devices">Establishing initial connection (pairing) between Ambianic UI and Ambianic Edge devices</a></li>
+            <li class="nav-item main"><a href="#end-to-end-manual-testing">End to end manual testing</a></li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="establishing-initial-connection-pairing-between-ambianic-ui-and-ambianic-edge-devices">Establishing initial connection (pairing) between Ambianic UI and Ambianic Edge devices</h1>
-<p>Upon starting the Ambianic UI (Progressive Web App) for the first time, it will automatically start looking in the background for an Ambianic Edge device on your own local network. If there is an active Edge device on your local network, it will be discovered and the UI will pair with it within a few moments.</p>
-<p>If your UI app is <em>not</em> connected to the Internet, you will see an indication in the top Nav Bar indicating that.</p>
-<p><img alt="pairing screen" src="../../assets/images/pairing-screen.png" /></p>
-<p>Once the UI is connected to an Edge device, it will change to:</p>
-<p><img alt="connection details screen" src="../../assets/images/ambianic-connection-details.png" /></p>
-<p>If you want to connect to an Ambianic Edge device that's not on your local network, you can scroll down to <code>Pair with Remote Ambianic Edge device</code> and enter the PeerJS ID you get <em>from</em> someone who can connect to that device on <em>their</em> local network.</p>
-<p><img alt="remote access screen" src="../../assets/images/ambianic-remote-connect.png" /></p>
-<p>Enter the Peer JS ID in the input field and press <code>PAIR REMOTELY</code>. </p>
-<p>Once connected, click on the link <code>Timeline</code> to see the Edge Device settings.</p>
-<p>If you want to consequently connect to an Edge Device on <em>your</em> local network, go back to <code>Settings</code> and use <code>DISCOVER ON LOCAL NETWORK</code></p>
-<p><img alt="local connection screen" src="../../assets/images/ambianic-local-connection.png" /></p>
-<p>This will make sure you get disconnected from the remote Edge device and connect back to your own local network Edge device.</p>
-<p>Once the UI app establishes an innitial connection with an Edge Device, the UI app (PWA) saves the Edge unique PeerID in the browser local (mobile or desktop) device storage. From that point forward, the UI can re-connect from any Internet location.</p></div>
+<h1 id="end-to-end-manual-testing">End to end manual testing</h1>
+<p>In addition to executing automated unit tests for each project module and integrated tests across modules, 
+we occasionally need to manually walk through the end user experience with the system end to end. 
+Manual testing sometimes leads to discovering new issues that can be then covered with new automated tests.</p>
+<p>Following is the recommended way to manually test an Ambianic system end to end in development mode, but as close as possible to realistic conditions.</p>
+<p>First, start the Ambianic UI and Ambianic Edge gitpod environments. If you haven't done this before, then follow <a href="https://docs.ambianic.ai/developers/development-environment/">these instructions</a>.</p>
+<p>Next, go to the Ambianic Edge dev environment and make sure that all main modules are running:
+1. Core Monitoring and Inference Engine
+1. REST API server (fastapi)
+1. WebRTC - HTTP proxy</p>
+<p>In your main workspace directory you should see a file named <code>.peerjsrc</code> with a contents similar to this:</p>
+<pre><code>{&quot;peerId&quot;: &quot;77d4b8b4-bc2a-451a-9bed-28f07c3e1abc&quot;}
+</code></pre>
+<p>Copy to the system clipboard the peerId value from this json formatted file. Just the <code>77d4b8b4-bc2a-451a-9bed-28f07c3e1abc</code> part. 
+Notice that this value is a randomly generated <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random)">UUID4</a> which will be unique for your environment.</p>
+<p><img alt="Screen Shot 2021-09-07 at 7 33 11 PM" src="https://user-images.githubusercontent.com/2234901/132426954-9a52ee0c-14ed-47bb-be57-227e3f6e16fd.png" /></p>
+<p>Next, go to the Ambianic UI environment, open a browser window pointing to port 8080 of the gitpod environment serving the Ambianic PWA on nodejs in dev mode.</p>
+<p><img alt="Screen Shot 2021-09-07 at 4 48 19 PM" src="https://user-images.githubusercontent.com/2234901/132427845-0c74edae-22c1-405c-a9e9-2c56375773e7.png" /></p>
+<p>Click on <em>Begin Setup</em> then on the next page click <em>Skip</em> in the upper right corner of the app.</p>
+<p><img alt="Screen Shot 2021-09-07 at 7 38 33 PM" src="https://user-images.githubusercontent.com/2234901/132428090-464f5c71-52b9-4498-8779-d7f1911f631d.png" /></p>
+<p>On the next page, select Main menu drop down in the Nav Bar and click Settings.</p>
+<p><img alt="Screen Shot 2021-09-07 at 7 41 22 PM" src="https://user-images.githubusercontent.com/2234901/132428307-817493bb-8f0a-47a5-b3e7-31521ad732be.png" /></p>
+<p>Then scroll down to the section titled "Pair with remote Ambianic Edge device".</p>
+<p><img alt="Screen Shot 2021-09-07 at 7 40 43 PM" src="https://user-images.githubusercontent.com/2234901/132428376-126ed1e2-a385-4548-88e4-21253ccf584e.png" /></p>
+<p>Paste the peerjs key value that you copied from the Ambianic Edge CDE. Click on Pair Remotely. 
+In a few moments you will see snackbar status messages indicating that the UI is connecting to Ambianic Edge followed by a confirmation that connection was established.</p>
+<p><img alt="Screen Shot 2021-09-07 at 7 41 08 PM" src="https://user-images.githubusercontent.com/2234901/132428700-e837f67d-5eaf-427d-80e2-518220de23b5.png" /></p>
+<p>If you now scroll up to the top of the Settings page you will see the Peer ID and Version of the Ambianic Edge device you are connected to. 
+This is in fact a connection to the gitpod CDE running Ambianic Edge in dev mode.</p>
+<p><img alt="Screen Shot 2021-09-07 at 7 59 18 PM" src="https://user-images.githubusercontent.com/2234901/132429510-38d74d36-3961-4e5a-a797-a9f1584d6b14.png" /></p>
+<p>Notice that we did not have to open any public HTTP/S ports on the Ambianic Edge CDE in order for the UI to access the virtual device. 
+This is exactly how the UI and Edge connect in a real world deployment. 
+Instead of relying on access to public HTTP/S endpoints, the UI and Edge connect securely and directly via WebRTC DataChannel 
+(using <a href="https://github.com/ambianic/peerfetch">peerfetch</a> - an HTTP over WebRTC proxy).</p>
+<p>If you now navigate to the Timeline page, you will see a timeline view. </p>
+<p><img alt="Screen Shot 2021-09-07 at 8 09 16 PM" src="https://user-images.githubusercontent.com/2234901/132429564-2bc34837-33dc-41cc-a8f3-107c29e9a40a.png" /></p>
+<p>The source for this view is populated from the video file configured in <code>dev-config.yaml</code> in the Ambianic Edge CDE. 
+You can change the file with your own recorded video file for testing various detection scenarios.</p>
+<p><img alt="Screen Shot 2021-09-07 at 8 09 46 PM" src="https://user-images.githubusercontent.com/2234901/132429600-4f17fb59-4252-4962-b2cd-5fbc1071b55f.png" /></p>
+<p>Notice how the <code>peerfetch</code> terminal shows a log of HTTP fetch requests and responses from the Ambianic UI instance.</p>
+<p>Now you have a fully setup live and realistic system that runs both Ambianic UI and Ambianic Edge in dev mode. 
+This setup represents as closely as possible the real world experience of an end user, while allowing you, dear developer, to test, experiment and commit code.</p></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-09-08 01:16:39.661630+00:00</p>
+            <p>Last update : 2021-09-08 01:16:39.638209+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
