@@ -190,8 +190,10 @@
 
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
-            <li class="nav-item main"><a href="#ambianic-high-level-architecture">Ambianic High Level Architecture</a></li>
-            <li class="nav-item main"><a href="#user-personas">User Personas</a></li>
+            <li class="nav-item main"><a href="#ambianic-high-level-flow-diagram">Ambianic High Level Flow Diagram</a></li>
+            <li class="nav-item main"><a href="#ambianic-system-level-architecture">Ambianic System Level Architecture</a></li>
+            <li class="nav-item main"><a href="#ambianic-user-personas">Ambianic User Personas</a></li>
+            <li class="nav-item main"><a href="#ambianic-edge-device">Ambianic Edge Device</a></li>
             <li class="nav-item main"><a href="#ambianic-edge-components">Ambianic Edge Components</a></li>
                 <li class="nav-item">
                     <a href="#configuration" class="nav-link">Configuration</a>
@@ -204,9 +206,11 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="ambianic-high-level-architecture">Ambianic High Level Architecture</h1>
+<h1 id="ambianic-high-level-flow-diagram">Ambianic High Level Flow Diagram</h1>
+<p><img alt="Screen Shot 2021-09-09 at 1 27 26 PM" src="https://user-images.githubusercontent.com/2234901/132743055-81d867b3-75e9-4433-a494-8e3a248a4f9c.png" /></p>
+<h1 id="ambianic-system-level-architecture">Ambianic System Level Architecture</h1>
 <p><a href="https://drive.google.com/file/d/13vtPDpW_wmE73YJ0lnIXF3xyPqGOYE22/view?usp=sharing"><img alt="Ambianic-High-Level-Architecture" src="https://user-images.githubusercontent.com/2234901/112674881-73f7df00-8e34-11eb-9447-71a5a358bee5.png" /></a></p>
-<h1 id="user-personas">User Personas</h1>
+<h1 id="ambianic-user-personas">Ambianic User Personas</h1>
 <p>There are two major types of user personas we see in our community:
 1. DYI folks and developers who love the ultimate control and flexibility of an Open Source privacy preserving surveillance solution.
 2. End users who love the concept of a no nonsense privacy preserving solution to help care for their household and remote family members.</p>
@@ -221,10 +225,12 @@
 <blockquote>
 <p>I am convinced that every niche expect and deserve a specific UX. I think the core could be flexible enough to support generic functionalities while delegating domain specific challenges to a vertical application. This could happen through different layers of integrations, eventually reusable. An example could be an object detection pipeline for training and execution, adapted to home care but also to security. Same functional perimeter but with different specializations based on user requirements</p>
 </blockquote>
-<p>Here is a high level architecture diagram of the Ambianic Edge component that we will use as a North Star reference.</p>
+<h1 id="ambianic-edge-device">Ambianic Edge Device</h1>
+<p>Here is a high level architecture diagram of an Ambianic Edge device.</p>
 <p><a href="https://drive.google.com/file/d/1taVlFu6r2jULWPpvdm1hO65WOxlNSw8R/view?usp=sharing"><img alt="Ambianic ai Camera Integration Architecture" src="https://user-images.githubusercontent.com/2234901/112674989-9984e880-8e34-11eb-8871-e65908f4f006.png" />
 )</a></p>
-<p>Following sections discuss further the high level architecture of the product.</p>
+<p>And here is a composition diagram showing APIs and layers of each Ambianic Edge component.</p>
+<p><img alt="Screen Shot 2021-09-09 at 1 28 36 PM" src="https://user-images.githubusercontent.com/2234901/132742878-946677bc-990e-4eaa-af35-aeba091607c1.png" /></p>
 <h1 id="ambianic-edge-components">Ambianic Edge Components</h1>
 <ol>
 <li>Pipelines</li>
@@ -304,7 +310,7 @@ $(".diagram").flowchart();
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-09-09 18:25:25.983424+00:00</p>
+            <p>Last update : 2021-09-09 18:33:59.467010+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
