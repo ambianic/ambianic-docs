@@ -1,8 +1,14 @@
-# Ambianic High Level Architecture
+# Ambianic High Level Flow Diagram
+
+![Screen Shot 2021-09-09 at 1 27 26 PM](https://user-images.githubusercontent.com/2234901/132743055-81d867b3-75e9-4433-a494-8e3a248a4f9c.png)
+
+
+
+# Ambianic System Level Architecture
 
 [![Ambianic-High-Level-Architecture](https://user-images.githubusercontent.com/2234901/112674881-73f7df00-8e34-11eb-9447-71a5a358bee5.png)](https://drive.google.com/file/d/13vtPDpW_wmE73YJ0lnIXF3xyPqGOYE22/view?usp=sharing)
 
-# User Personas
+# Ambianic User Personas
 
 There are two major types of user personas we see in our community:
 1. DYI folks and developers who love the ultimate control and flexibility of an Open Source privacy preserving surveillance solution.
@@ -26,12 +32,17 @@ To that extend, Luca Capra (one of our new team members) summarized the way forw
 
 > I am convinced that every niche expect and deserve a specific UX. I think the core could be flexible enough to support generic functionalities while delegating domain specific challenges to a vertical application. This could happen through different layers of integrations, eventually reusable. An example could be an object detection pipeline for training and execution, adapted to home care but also to security. Same functional perimeter but with different specializations based on user requirements
 
-Here is a high level architecture diagram of the Ambianic Edge component that we will use as a North Star reference.
+# Ambianic Edge Device
+
+Here is a high level architecture diagram of an Ambianic Edge device.
 
 [![Ambianic ai Camera Integration Architecture](https://user-images.githubusercontent.com/2234901/112674989-9984e880-8e34-11eb-8871-e65908f4f006.png)
 )](https://drive.google.com/file/d/1taVlFu6r2jULWPpvdm1hO65WOxlNSw8R/view?usp=sharing)
 
-Following sections discuss further the high level architecture of the product.
+And here is a composition diagram showing APIs and layers of each Ambianic Edge component.
+
+![Screen Shot 2021-09-09 at 1 28 36 PM](https://user-images.githubusercontent.com/2234901/132742878-946677bc-990e-4eaa-af35-aeba091607c1.png)
+
 
 # Ambianic Edge Components
 
