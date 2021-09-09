@@ -1,3 +1,7 @@
+# Ambianic High Level Architecture
+
+[![Ambianic-High-Level-Architecture](https://user-images.githubusercontent.com/2234901/112674881-73f7df00-8e34-11eb-9447-71a5a358bee5.png)](https://drive.google.com/file/d/13vtPDpW_wmE73YJ0lnIXF3xyPqGOYE22/view?usp=sharing)
+
 # User Personas
 
 There are two major types of user personas we see in our community:
@@ -29,10 +33,7 @@ Here is a high level architecture diagram of the Ambianic Edge component that we
 
 Following sections discuss further the high level architecture of the product.
 
-# Ambianic High Level Architecture
-
-[![Ambianic-High-Level-Architecture](https://user-images.githubusercontent.com/2234901/112674881-73f7df00-8e34-11eb-9447-71a5a358bee5.png)](https://drive.google.com/file/d/13vtPDpW_wmE73YJ0lnIXF3xyPqGOYE22/view?usp=sharing)
-
+# Ambianic Edge Components
 
 1.  Pipelines
 2.  Pipe Elements
