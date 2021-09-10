@@ -6,12 +6,6 @@ This page decribes how to setup a development environment for Ambianic.ai repos.
 If you plan to push your own code you should [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) the original github repository and work from your local copy/fork.
 ![Screen Shot 2021-09-07 at 10 40 45 AM](https://user-images.githubusercontent.com/2234901/132374705-2b3bdf7c-a08e-41aa-8f61-9594765e60e1.png)
 
-In order to take advantage of the CI workflow of the upstream repo on github, you will need to rename the `master`(or `main`) branch of your fork to `fork-master`(or `fork-main`). This will allow all steps of the CI to execute except for the release steps. In effect allowing you to ensure that your forked main branch passes all checks before submitting a pull request against the upstream repo. 
-
-If you keep your fork's master branch name unchanged, the github workflow CI will fail. That is because when you commit against your main branch, the CI will run and will also try to publish a release on success. This will fail, since your fork does not have the release publishing keys.
-
-Alternatively if you do not want to rename your master/main branch, you can create development branches, commit all changes and initiate Pull Requests from these branches. For example create branch `dev-feature-123` for a new feature you intend to contribute. Commit your changes to it and then submit pull requests from there to the upstream repo's master/main branch.
-
 ## Gitpod Continuous Development Environment
 
 The easiest way to start a development environment for Ambianic Edge and Ambianic UI is to use the Gitpod Continuous Development Environment. [Gitpod](https://gitpod.io/) is an All-in-browser Continuous Development Environment with user experience similar to VS Code, but running in a virtual cloud container instead of your local machine. We maintain a Gitpod configuration preset for Ambianic Edge and Ambianic UI as part of the upstream git repository, which makes it as easy as a single click to launch a fully configured and ready to use dev environment. Gitpod offers Free No Limits [Professional Open Source accounts](https://www.gitpod.io/docs/professional-open-source) to qualifying projects maintainers.
