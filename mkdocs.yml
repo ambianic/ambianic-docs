@@ -20,20 +20,19 @@ nav:
       - Development Environment Setup: developers/development-environment.md
       - End to End System Testing in Dev Mode: developers/e2e-manual-testing.md
       - Contribution Guidelines: legal/CONTRIBUTING.md
-      - Ambianic UI git repo: https://github.com/ambianic/ambianic-ui
-      - Ambianic Edge: 
+      - Ambianic UI PWA: https://github.com/ambianic/ambianic-ui
+      - Ambianic Edge device:
         - Core Git Repo: https://github.com/ambianic/ambianic-edge
         - Python API: https://ambianic.github.io/ambianic-edge/pythonapi/ambianic/
         - OpenAPI(REST): https://ambianic.github.io/ambianic-edge/openapi/ambianic-edge-openapi.html
         - Fall Detection Model: https://github.com/ambianic/fall-detection
         - Command Line Interface: https://github.com/ambianic/ambianic-quickstart
         - Operating System: https://github.com/ambianic/ambianic-rpi-image
-        - Physical Enclosure: https://github.com/ambianic/ambianic-box
+        - 3D Printable Model: https://github.com/ambianic/ambianic-box
       - Peer to Peer Communication: 
         - p2p architecture: https://webrtchacks.com/private-home-surveillance-with-the-webrtc-datachannel/
         - peerjs-python git repo: https://github.com/ambianic/peerjs-python
         - ambianic-pnp git repo: https://github.com/ambianic/ambianic-pnp
-#      - APIs: developers/api.md
 #      - Integrations: developers/integration.md
 #      - Writing PLugins: developers/writing-plugins-overview.md
 #      - Deployment Scenarios: developers/deployment.md
