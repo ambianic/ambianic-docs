@@ -1,5 +1,7 @@
 # Ambianic Edge  [![GitHub Repo stars](https://img.shields.io/github/stars/ambianic/ambianic-edge?style=social)](https://github.com/ambianic/ambianic-edge)
 
+[![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
+
 [Ambianic Edge](https://github.com/ambianic/ambianic-edge) turns your Raspberry Pi into a smart camera device.
 We recommend running Ambianic Edge on an [Ambianic Box](https://github.com/ambianic/ambianic-box) but you can also install and run it on most ARM on x86 computers.
 
@@ -22,7 +24,7 @@ Some configuration features are available in the UI but more advanced configurat
 If you are interested to try the development version, follow [this guide](https://docs.ambianic.ai/developers/development-environment/).
 
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/ambianic/ambianic-edge)
-[![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
+
 
 # Project Status and Stats
 
