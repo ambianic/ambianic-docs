@@ -1,9 +1,14 @@
-# Ambianic Box
+# Ambianic Box [![GitHub Repo stars](https://img.shields.io/github/stars/ambianic/ambianic-box?style=social)](https://github.com/ambianic/ambianic-box)
 
 [![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
 
-Ambianic Box is the recommended enclosure for DIY (do-it-yourself) installations of Ambianic Edge. It is (yet another) Open Source Smart Camera ecnlosure for Raspberry Pi 4B with a Raspberry Pi Camera.
+Ambianic Box is the recommended enclosure for DIY (do-it-yourself) installations of Ambianic Edge. It is a 3D enclosure for Raspberry Pi 4B with a Raspberry Pi Camera.
 
+<span aligh="left">
+  <img src="https://user-images.githubusercontent.com/2234901/99598679-87df9000-29bf-11eb-9d62-ddb1b402e803.jpeg" height="400"/>
+  <img src="https://user-images.githubusercontent.com/2234901/99598684-8910bd00-29bf-11eb-9b8c-be91dfa28021.jpeg" height="400"/>
+<span>
+ 
 # Why does Ambianic Box exist?
 
 Proprietary camera manufacturers don't make it easy to access their products via open APIs. RTSP is available in some models, but hard to figure out. ONVIF is partially supported and usually hidden behind several proprietary enablement steps. Turned off by defauly more often than not. It often requires installing custom, unsupported firmware in order to open RTSP or RTMP access. And there is no telling if and when that option may be discontinued. It depends on company policy.
