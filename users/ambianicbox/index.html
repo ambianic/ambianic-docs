@@ -191,6 +191,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
             <li class="nav-item main"><a href="#ambianic-box">Ambianic Box</a></li>
+            <li class="nav-item main"><a href="#why-does-ambianic-box-exist">Why does Ambianic Box exist?</a></li>
             <li class="nav-item main"><a href="#components">Components</a></li>
             <li class="nav-item main"><a href="#how-to-assemble-an-ambianic-box">How to Assemble an Ambianic Box</a></li>
                 <li class="nav-item">
@@ -199,6 +200,8 @@
                 <li class="nav-item">
                     <a href="#slides" class="nav-link">Slides</a>
                 </li>
+            <li class="nav-item main"><a href="#installing-ambianic-edge">Installing Ambianic Edge</a></li>
+            <li class="nav-item main"><a href="#other-raspbery-pi-camera-projects-and-3d-enclosures">Other Raspbery Pi Camera Projects and 3D enclosures</a></li>
         </ul>
     </div>
 </div></div>
@@ -206,7 +209,11 @@
 
 <h1 id="ambianic-box">Ambianic Box</h1>
 <p><a href="https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ"><img alt="Join the Slack chat room" src="https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue" /></a></p>
-<p>Ambianic Box is the recommended enclosure for DIY (do-it-yourself) installations of Ambianic Edge.</p>
+<p>Ambianic Box is the recommended enclosure for DIY (do-it-yourself) installations of Ambianic Edge. It is (yet another) Open Source Smart Camera ecnlosure for Raspberry Pi 4B with a Raspberry Pi Camera.</p>
+<h1 id="why-does-ambianic-box-exist">Why does Ambianic Box exist?</h1>
+<p>Proprietary camera manufacturers don't make it easy to access their products via open APIs. RTSP is available in some models, but hard to figure out. ONVIF is partially supported and usually hidden behind several proprietary enablement steps. Turned off by defauly more often than not. It often requires installing custom, unsupported firmware in order to open RTSP or RTMP access. And there is no telling if and when that option may be discontinued. It depends on company policy.</p>
+<p>Most camera manufacturers want you to use their own app for access to their cameras and integration into their own home automation platforms. They are protecting current and future revenue. Trying to please multiple masters with different demands: end users who want a great product and investors who want great ROI. That creates a trend to move towards centralized cloud subscription and data collection services which have been proven prone to hacks and massive user data leaks. It is hard to build trust with users without verifiable code transparency proving protection of user data privacy. </p>
+<p>So here we go. Let's build something that works for Open Source developers and DIY folks.</p>
 <p><img src="https://github.com/ambianic/ambianic-box/raw/main/ambianic_box_rendering.png" height="400"/></p>
 <p>You can 3D Print an Ambianic Box at home (<a href="https://github.com/ambianic/ambianic-box">here is the source</a>) or order a 3D print online through a service such as <a href="https://craftcloud3d.com/configuration/c7faee7e-ec06-41ed-822c-4092bdf1d28d">craftcloud3d.com</a> or <a href="https://www.makexyz.com/">makexyz.com</a>.</p>
 <p>Alternatively, if you don't want to 3D print an enclosure, you can order a kit such as <a href="https://labists.com/collections/all/products/labists-raspberry-pi-4g-ram-32gb-card">this ony by Labists</a> which includes a usable enclosure box and other components required to build an Ambianic Edge device.</p>
@@ -259,8 +266,13 @@
 <hr />
 <h1 id="how-to-assemble-an-ambianic-box">How to Assemble an Ambianic Box</h1>
 <h2 id="instructional-video">Instructional Video</h2>
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-<div class='embed-container'><iframe src='https://www.youtube.com/embed//Tys3lW9tNAU' frameborder='0' allowfullscreen></iframe></div>
+<style >
+  .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+</style>
+
+<div class='embed-container'>
+  <iframe src='https://www.youtube.com/embed//Tys3lW9tNAU' frameborder='0' allowfullscreen></iframe>
+</div>
 
 <h2 id="slides">Slides</h2>
 <style>
@@ -287,14 +299,33 @@
 <hr />
 <p><strong>Wall Mount Note</strong></p>
 <p>Ambianic Box can stand up on a flat surface or it can be mounted. For wall mount, there are several options. The box has two  openings on the back side that can be attached to wall mount hooks. Alternatively if you don't feel like drilling into your wall, the box is light enough to mount via two sided mounting tape such as <a href="https://www.amazon.com/gp/product/B07LFRN1K8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">this one</a>.</p>
-<hr /></div>
+<hr />
+<h1 id="installing-ambianic-edge">Installing Ambianic Edge</h1>
+<p>Ambianic Box comes to live once the <a href="https://github.com/ambianic/ambianic-edge">Ambianic Edge</a> software is installed. The simplest and recommended way to install and run Ambianic Edge is via the pre-built <a href="https://github.com/ambianic/ambianic-rpi-image">Ambianic OS Image</a>.</p>
+<p>To get a sense of the full user experience, take a look at the <a href="https://docs.ambianic.ai/users/quickstart/">Ambianic Quick Start Guide</a>.</p>
+<p>Since all layers of the system are Open Source, you can swap any of them out with your own.</p>
+<h1 id="other-raspbery-pi-camera-projects-and-3d-enclosures">Other Raspbery Pi Camera Projects and 3D enclosures</h1>
+<ul>
+<li><a href="https://github.com/ccrisan/motioneyeos">MotionEyeOS for Raspberry PI Zero</a></li>
+<li><a href="https://youtu.be/mZ9OWpSGRZU">Raspberry Pi Camera Case made in OpenSCAD</a></li>
+<li><a href="https://tinkererblog.wordpress.com/2015/07/28/how-i-designed-a-compact-weatherproof-raspberry-pi-case/">Compact Weatherproof Raspberry Pi Camera Case</a></li>
+<li><a href="https://grabcad.com/library/raspberry-pi-2-camera-case-1">RASPBERRY PI 2 and Camera Case</a></li>
+<li><a href="https://ameridroid.com/products/smoothcam-raspberry-pi-4-camera-case-3d-printed">Smoothcam Raspberry Pi 4 Camera Case</a></li>
+<li><a href="https://learn.adafruit.com/raspberry-pi-hq-camera-case/3d-printing">Raspberry Pi HQ Camera Case</a></li>
+<li><a href="https://www.thingiverse.com/thing:2825778">PiSec MKIII - Compact Edition</a></li>
+<li><a href="https://www.thingiverse.com/thing:3727587">IPi V2i</a></li>
+<li><a href="https://www.thingiverse.com/thing:3816376">Raspberry Pi Zero W Security Camera using NoIR Camera</a></li>
+<li><a href="https://cults3d.com/en/3d-model/various/raspberry-pi-and-camera-to-security-cam-enclosure-mount-source-files-included">RASPBERRY PI AND CAMERA TO SECURITY CAM</a></li>
+<li><a href="https://all3dp.com/9-things-you-need-for-a-3d-printed-raspberry-pi-security-camera/">Raspberry Pi Security Camera</a></li>
+<li><a href="https://tritek.pw/2013/11/01/raspberry-pi-hd-surveillance-camera/">Raspberry Pi HD surveillance camera</a></li>
+</ul></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-09-17 13:35:48.716359+00:00</p>
+            <p>Last update : 2021-10-25 15:21:43.547660+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
