@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Home Assistant Integration - Ambianic Documentation</title>
+        <title>Ambianicui - Ambianic Documentation</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -51,7 +51,7 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -80,7 +80,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Home Assistant Integration</a>
+    <a href="../hass-integration/" class="dropdown-item">Home Assistant Integration</a>
 </li>
                                 </ul>
                             </li>
@@ -170,17 +170,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../edge-pairing/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../../developers/architecture/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/users/hass-integration.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/users/ambianicui.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -198,35 +188,41 @@
 
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
-            <li class="nav-item main"><a href="#home-assistant-integration">Home Assistant Integration</a></li>
-                <li class="nav-item">
-                    <a href="#notifications" class="nav-link">Notifications</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#add-on" class="nav-link">Add-on</a>
-                </li>
+            <li class="nav-item main"><a href="#ambianic-ui-app">Ambianic UI app</a></li>
+            <li class="nav-item main"><a href="#connecting-to-an-ambianic-edge-device">Connecting to an Ambianic Edge device</a></li>
+            <li class="nav-item main"><a href="#configuration">Configuration</a></li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="home-assistant-integration">Home Assistant Integration</h1>
-<p><a href="https://www.home-assistant.io/">Home Assistant</a> is one of the most popular Open Source Home Automation hubs and it is a natural integration target for Ambianic. The integration enables users to implement new home automation flows based on Ambianic detection events. For example:
-* Turn on lights if a family member walks in the house and its night time.
-* Trigger the alarm if an unknown person is on private property for more than 1 minute.
-* Turn off the stove if no person has been detected in the house for over an hour; or
-* Instantly notify family and caregivers if an elderly loved one falls.</p>
-<h2 id="notifications">Notifications</h2>
-<p>The simplest way to integrate Ambianic with Home Assistant is via notifications. See <a href="https://docs.ambianic.ai/users/configure/#notification-settings">notifications config</a> guide for details.</p>
-<h2 id="add-on">Add-on</h2>
-<p>Ambianic can also be installed as a Home Assistant Add-on. See details <a href="https://github.com/dcmartin/addon-ambianic">here</a>.</p></div>
+<h3 id="ambianic-ui-app">Ambianic UI app <a href="https://github.com/ambianic/ambianic-ui"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ambianic/ambianic-ui?style=social" /></a></h3>
+<p><a href="https://ui.ambianic.ai/">Ambianic UI</a> is a
+modern prorgressive web application (PWA) that provides Plug-and-Play pairing and remote access
+to an Ambianic Edge device.</p>
+<p>Ambianic UI shows a timeline view with
+important events around your home organized chronologically. Below is an example
+timeline screenshot.</p>
+<p><img alt="Timeline" src="../../assets/images/timeline-screen.png" /></p>
+<h3 id="connecting-to-an-ambianic-edge-device">Connecting to an Ambianic Edge device</h3>
+<p>You can easily pair up your Ambianic UI with an Ambianic Box or any other device running Ambiniac Edge. It works similar to Airdrop.</p>
+<p>Make sure to open Ambianic UI on the same local WiFi network where Ambianic Edge runs. Ambianic UI will initially display a welcome screen.</p>
+<p>Go to Settings and follow the steps for adding a new device.</p>
+<p>After a few moments, pairing will conclude and you will see the unique identifier of your Ambianic Edge device. </p>
+<p>Give your device a unique friendly name such as Entry Area or Front Door.</p>
+<p>You can now head to the Timeline view and you will be able to see an image of what is in front of the Ambianic Box. The box is pre-configured to detect people and cars.</p>
+<p>The pairing information is persisted on your Ambianic UI client device and you can now access Ambianic Edge from anywhere remotely! The connection is direct and encrypted end-to-end.</p>
+<p>When you are ready to explore more advanced capabilities, continue to the next section.</p>
+<h3 id="configuration">Configuration</h3>
+<p>Ambianic provides flexible configuration options via a configuration YAML file. You can customize: pipelines, input sources, AI models, notification channels and more.</p>
+<p>Read on: <a href="../configure/">Configuring Ambianic Edge</a>.</p></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-10-25 16:43:57.646952+00:00</p>
+            <p>Last update : 2021-10-25 16:43:57.638763+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
