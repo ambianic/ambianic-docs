@@ -2,7 +2,15 @@
 
 [![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
 
-Ambianic Box is the recommended enclosure for DIY (do-it-yourself) installations of Ambianic Edge.
+Ambianic Box is the recommended enclosure for DIY (do-it-yourself) installations of Ambianic Edge. It is (yet another) Open Source Smart Camera ecnlosure for Raspberry Pi 4B with a Raspberry Pi Camera.
+
+# Why does Ambianic Box exist?
+
+Proprietary camera manufacturers don't make it easy to access their products via open APIs. RTSP is available in some models, but hard to figure out. ONVIF is partially supported and usually hidden behind several proprietary enablement steps. Turned off by defauly more often than not. It often requires installing custom, unsupported firmware in order to open RTSP or RTMP access. And there is no telling if and when that option may be discontinued. It depends on company policy.
+
+Most camera manufacturers want you to use their own app for access to their cameras and integration into their own home automation platforms. They are protecting current and future revenue. Trying to please multiple masters with different demands: end users who want a great product and investors who want great ROI. That creates a trend to move towards centralized cloud subscription and data collection services which have been proven prone to hacks and massive user data leaks. It is hard to build trust with users without verifiable code transparency proving protection of user data privacy. 
+
+So here we go. Let's build something that works for Open Source developers and DIY folks.
 
 <img src="https://github.com/ambianic/ambianic-box/raw/main/ambianic_box_rendering.png" height="400"/>
 
@@ -35,7 +43,13 @@ If you don't have a 3D printer handy for the box enclosure, you can use an onlin
 
 ## Instructional Video
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed//Tys3lW9tNAU' frameborder='0' allowfullscreen></iframe></div>
+<style >
+  .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+</style>
+
+<div class='embed-container'>
+  <iframe src='https://www.youtube.com/embed//Tys3lW9tNAU' frameborder='0' allowfullscreen></iframe>
+</div>
 
 ## Slides
 
@@ -69,3 +83,25 @@ Ambianic Box can stand up on a flat surface or it can be mounted. For wall mount
 
 ---
 
+# Installing Ambianic Edge
+
+Ambianic Box comes to live once the [Ambianic Edge](https://github.com/ambianic/ambianic-edge) software is installed. The simplest and recommended way to install and run Ambianic Edge is via the pre-built [Ambianic OS Image](https://github.com/ambianic/ambianic-rpi-image).
+
+To get a sense of the full user experience, take a look at the [Ambianic Quick Start Guide](https://docs.ambianic.ai/users/quickstart/).
+  
+Since all layers of the system are Open Source, you can swap any of them out with your own.
+
+# Other Raspbery Pi Camera Projects and 3D enclosures
+
+* [MotionEyeOS for Raspberry PI Zero](https://github.com/ccrisan/motioneyeos)
+* [Raspberry Pi Camera Case made in OpenSCAD](https://youtu.be/mZ9OWpSGRZU)
+* [Compact Weatherproof Raspberry Pi Camera Case](https://tinkererblog.wordpress.com/2015/07/28/how-i-designed-a-compact-weatherproof-raspberry-pi-case/)
+* [RASPBERRY PI 2 and Camera Case](https://grabcad.com/library/raspberry-pi-2-camera-case-1)
+* [Smoothcam Raspberry Pi 4 Camera Case](https://ameridroid.com/products/smoothcam-raspberry-pi-4-camera-case-3d-printed)
+* [Raspberry Pi HQ Camera Case](https://learn.adafruit.com/raspberry-pi-hq-camera-case/3d-printing)
+* [PiSec MKIII - Compact Edition](https://www.thingiverse.com/thing:2825778)
+* [IPi V2i](https://www.thingiverse.com/thing:3727587)
+* [Raspberry Pi Zero W Security Camera using NoIR Camera](https://www.thingiverse.com/thing:3816376)
+* [RASPBERRY PI AND CAMERA TO SECURITY CAM](https://cults3d.com/en/3d-model/various/raspberry-pi-and-camera-to-security-cam-enclosure-mount-source-files-included)
+* [Raspberry Pi Security Camera](https://all3dp.com/9-things-you-need-for-a-3d-printed-raspberry-pi-security-camera/)
+* [Raspberry Pi HD surveillance camera](https://tritek.pw/2013/11/01/raspberry-pi-hd-surveillance-camera/)
