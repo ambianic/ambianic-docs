@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Frontend JavaScript API - Ambianic Documentation</title>
+        <title>Ambianic OS - Ambianic Documentation</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -51,36 +51,36 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Guide <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../users/quickstart/" class="dropdown-item">Quick Start</a>
+    <a href="../quickstart/" class="dropdown-item">Quick Start</a>
 </li>
                                     
 <li>
-    <a href="../../users/ambianicbox/" class="dropdown-item">Ambianic Box</a>
+    <a href="../ambianicbox/" class="dropdown-item">Ambianic Box</a>
 </li>
                                     
 <li>
-    <a href="../../users/ambianicos/" class="dropdown-item">Ambianic OS</a>
+    <a href="./" class="dropdown-item active">Ambianic OS</a>
 </li>
                                     
 <li>
-    <a href="../../users/ambianicedge.md" class="dropdown-item">Ambianic Edge</a>
+    <a href="../ambianicedge.md" class="dropdown-item">Ambianic Edge</a>
 </li>
                                     
 <li>
-    <a href="../../users/configure/" class="dropdown-item">Configuration</a>
+    <a href="../configure/" class="dropdown-item">Configuration</a>
 </li>
                                     
 <li>
-    <a href="../../users/edge-pairing/" class="dropdown-item">Local and Remote pairing</a>
+    <a href="../edge-pairing/" class="dropdown-item">Local and Remote pairing</a>
 </li>
                                     
 <li>
-    <a href="../../users/hass-integration/" class="dropdown-item">Home Assistant Integration</a>
+    <a href="../hass-integration/" class="dropdown-item">Home Assistant Integration</a>
 </li>
                                 </ul>
                             </li>
@@ -89,15 +89,15 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../architecture/" class="dropdown-item">High Level System Architecture</a>
+    <a href="../../developers/architecture/" class="dropdown-item">High Level System Architecture</a>
 </li>
                                     
 <li>
-    <a href="../development-environment/" class="dropdown-item">Development Environment Setup</a>
+    <a href="../../developers/development-environment/" class="dropdown-item">Development Environment Setup</a>
 </li>
                                     
 <li>
-    <a href="../e2e-manual-testing/" class="dropdown-item">End to End System Testing in Dev Mode</a>
+    <a href="../../developers/e2e-manual-testing/" class="dropdown-item">End to End System Testing in Dev Mode</a>
 </li>
                                     
 <li>
@@ -170,7 +170,17 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/developers/js-api.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a rel="prev" href="../ambianicbox/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../configure/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/users/ambianicos.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -188,21 +198,97 @@
 
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
-            <li class="nav-item main"><a href="#frontend-javascript-api">Frontend JavaScript API</a></li>
+            <li class="nav-item main"><a href="#ambianic-os">Ambianic OS</a></li>
+            <li class="nav-item main"><a href="#ambianic-os_1">Ambianic OS</a></li>
+                <li class="nav-item">
+                    <a href="#flash-to-sd-card" class="nav-link">Flash to SD Card</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#first-boot-network-setup" class="nav-link">First Boot / Network Setup</a>
+                </li>
+            <li class="nav-item main"><a href="#other-notes">Other notes</a></li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="frontend-javascript-api">Frontend JavaScript API</h1>
-<p>TBD</p></div>
+<h1 id="ambianic-os">Ambianic OS</h1>
+<p><img alt="CI build" src="https://github.com/ambianic/ambianic-rpi-image/workflows/CI%20build/badge.svg?branch=main" />
+<a href="https://github.com/ambianic/ambianic-rpi-image/releases/latest"><img alt="GitHub release (latest by date)" src="https://badgen.net/github/release/ambianic/ambianic-rpi-image?label=Version" /></a></p>
+<h1 id="ambianic-os_1">Ambianic OS</h1>
+<p>Ambianic OS provides a convenient binary image for Raspberry Pi 4B with <a href="https://github.com/ambianic/ambianic-edge">Ambianic Edge</a> pre-installed. 
+The released image files are ready to be flashed on to an SD card and plugged into an rpi. 
+When the raspberry pi boots for the first time with the new image on its SD Card, it runs a WiFi captive portal that allows the user to connect to it and setup WiFi access for the rpi. 
+Once the rpi connects to the internet it is ready to be accessed and managed by the Ambianic UI PWA.</p>
+<ul>
+<li>Tested on Raspberry Pi 4 B</li>
+<li>Built on Raspberry Pi OS Lite via <a href="https://github.com/RPi-Distro/pi-gen">pi-gen</a>. </li>
+<li>Simple WiFi Setup via <a href="https://github.com/balena-io/wifi-connect">Balena Wifi Connect</a></li>
+<li>Visual configuration and management via <a href="https://github.com/ambianic/ambianic-ui">Ambianic UI</a></li>
+<li>Recommended enclosure: <a href="https://github.com/ambianic/ambianic-box">Ambianic Box</a></li>
+</ul>
+<p>This image automatically and continuously updates to the latest version of Ambianic Edge using <a href="https://github.com/containrrr/watchtower">docker watchtower</a>.</p>
+<p>Following are instructions how to install Ambianic OS on your Ambianic Box or another Raspberry Pi device.</p>
+<h2 id="flash-to-sd-card">Flash to SD Card</h2>
+<p>The easiest way to flash the <em>Ambianic Edge Raspberry Pi Image</em> to your SD card is to use <a href="https://www.balena.io/etcher/">Etcher</a>.</p>
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/3979615/74733445-789cac00-52a0-11ea-9167-05b42d6383ad.gif" width="600">
+</p>
+
+<ol>
+<li>Download and install the latest version of <a href="https://www.balena.io/etcher/">Etcher</a>.</li>
+<li>Open Etcher and select <em>Flash from URL</em> then point to the <a href="https://github.com/ambianic/ambianic-rpi-image/releases/latest/download/image_ambianic_edge-rpi.zip">latest Ambianic Edge Raspberry Pi image</a>. There is no need to download the image first.</li>
+<li>Choose the drive your SD card has been inserted into.</li>
+<li>Click Flash.</li>
+</ol>
+<h2 id="first-boot-network-setup">First Boot / Network Setup</h2>
+<p>Now that you have flashed your SD card, you can insert it into your Raspberry Pi.</p>
+<h3 id="wifi-setup">WiFi Setup</h3>
+<p><img alt="wifi-connect-setup" src="https://user-images.githubusercontent.com/3979615/75397237-7e525b80-594a-11ea-9be0-4f064b6a4178.png" /></p>
+<p>Follow these steps to connect your device to WiFi:</p>
+<ol>
+<li>Power on your device without an Ethernet cable attached.</li>
+<li>Wait 1-2 minutes</li>
+<li>Use your mobile phone to scan for new WiFi networks</li>
+<li>Connect to the hotspot named <strong>Ambianic Edge WiFi Setup</strong>. </li>
+<li>Wait a few moments until the captive portal opens, this portal will allow you to connect the Raspberry Pi to your local WiFi network.</li>
+</ol>
+<p>If you enter your WiFi credentials incorrectly the <strong>Ambianic Edge WiFi Setup</strong> hotspot will reappear allowing you to try again.</p>
+<p>You should see screens similar to the ones below.</p>
+<p align="left">
+    <img src="https://user-images.githubusercontent.com/2234901/99506621-f1bc5300-2947-11eb-89eb-952e8e582d3a.png" height="400">
+    <img src="https://user-images.githubusercontent.com/2234901/99506633-f41ead00-2947-11eb-9bba-a61f2b2724cf.png" height="400">
+</p>
+
+<h3 id="ambianic-ui-connection">Ambianic UI connection</h3>
+<p>Once the WiFi connection is established, the Raspberry Pi will pull the latest Ambianic Edge binaries. This may take 5-10 minutes based on your internet connection speed. By default the device is configured to use a Raspberry Pi Camera as input source and report person detection events.</p>
+<p>After the update process is completed, you can proceed to pair the edge device with your <a href="https://ui.ambianic.ai">Ambianic UI</a> app. The detailed steps to pair Ambianic UI to Ambianic Edge are <a href="https://docs.ambianic.ai/users/quickstart/#pairing-ambanic-ui-with-ambianic-edge">described here</a>.</p>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>Raspberry Pi is a DYI platform and it requires some technical skills to operate properly. If you don't have any prior experience with Raspberry Pi and picam, you should take some time to learn the basics.</p>
+<h4 id="power-supply">Power Supply</h4>
+<p>Raspberry Pi 4 requires a specific 5V 3A power supply, which is different from previous versions of the pi. If you use the wrong type, you may hurt your pi device.</p>
+<h4 id="picam">Picam</h4>
+<p>If your picamera is not properly connected to the Raspberry Pi you will have trouble using it with Ambianic. <a href="https://projects.raspberrypi.org/en/projects/getting-started-with-picamera">Here is a great introductory tutorial on connecting and testing picam</a>.</p>
+<h3 id="developing-and-debugging">Developing and Debugging</h3>
+<p>If you are looking to develop and debug Ambianic Edge code on Raspberry Pi, you can login to the newly booted device from this image via ssh. On your WiFi network, the device will show up with a host name of ambianic-edge. On most networks you should be able to</p>
+<p><code>ping ambianic-edge.lan</code></p>
+<p>If you have multiple Ambianic Edge devices running on the same local network, you should use their unique IP address to connect to each. After you login via ssh, you can change the host names to something unique: ambianic-edge1, ambianic-edge2, etc.</p>
+<p>You can login to a device via ssh with the <code>ambianic-edge</code> user name and an <em>initial and temporary</em> password <code>ChangeMeOnFirstLogin</code>.</p>
+<p><code>ssh ambianic-edge@ambianic-edge.lan</code></p>
+<p>Notice that you will use <code>ambianic-edge</code> as an user name instead of <code>pi</code>.</p>
+<p>You will find Ambianic Edge binaries and data files under <code>/opt/ambianic</code> and config files under <code>/etc/ambianic</code>.</p>
+<h1 id="other-notes">Other notes</h1>
+<p>The awesome <a href="https://github.com/homebridge/homebridge-raspbian-image">Homebridge</a> project provided inspiration and reference code for the method chosen to build the Ambianic Edge Raspberry Pi image.</p>
+<p>A new Ambianic Edge rpi image is released about once a year to keep up with underlying OS file dependencies. </p>
+<p>The Ambianic Edge rpi image <strong>is not</strong> updated each time a new version of the Ambianic Edge software is released. Instead the rpi image uses docker to run the ambianic-edge application software and it automatically updates the docker images using docker watchtower when they are released. This greatly reduces the need for manual maintenance of Ambianic Edge devices.</p>
+<p>The targeted lifespan of an Ambianic Edge image is 4-5 years. Once an Ambianic Edge device is up and running, it should not require manual intervention for software updates throughout its target lifespan of 4-5 years. </p></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-10-25 15:29:08.520746+00:00</p>
+            <p>Last update : 2021-10-25 15:29:08.539602+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
