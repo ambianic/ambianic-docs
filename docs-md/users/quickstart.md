@@ -1,7 +1,9 @@
 
 # Quick Start Guide
 
-Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence platform. Ambianic's goal is to provide helpful and actionable observations in the context of home and business automation.
+Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence platform. [![GitHub Org's stars](https://img.shields.io/github/stars/ambianic?style=social)](https://github.com/ambianic)
+
+Ambianic's goal is to provide helpful and actionable observations in the context of home and workspace automation.
 
 Ambianic has two major components: 
 - Ambianic Edge: an IoT device with camera (or other sensors) and a built-in AI engine for local inference
