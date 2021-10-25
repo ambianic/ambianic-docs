@@ -203,9 +203,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
             <li class="nav-item main"><a href="#ambianic-ui-app">Ambianic UI app</a></li>
-            <li class="nav-item main"><a href="#project-status">Project Status</a></li>
-            <li class="nav-item main"><a href="#cloud-deployment">Cloud deployment</a></li>
-            <li class="nav-item main"><a href="#development-environment">Development Environment</a></li>
+            <li class="nav-item main"><a href="#try-it-now">Try it now!</a></li>
             <li class="nav-item main"><a href="#connecting-to-an-ambianic-edge-device">Connecting to an Ambianic Edge device</a></li>
                 <li class="nav-item">
                     <a href="#local-discovery" class="nav-link">Local Discovery</a>
@@ -217,6 +215,9 @@
                     <a href="#steps" class="nav-link">Steps</a>
                 </li>
             <li class="nav-item main"><a href="#configuration">Configuration</a></li>
+            <li class="nav-item main"><a href="#cloud-deployment">Cloud deployment</a></li>
+            <li class="nav-item main"><a href="#development-environment">Development Environment</a></li>
+            <li class="nav-item main"><a href="#project-status-and-stats">Project Status and Stats</a></li>
             <li class="nav-item main"><a href="#community-support">Community Support</a></li>
             <li class="nav-item main"><a href="#acknowledgements">Acknowledgements</a></li>
         </ul>
@@ -225,17 +226,7 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="ambianic-ui-app">Ambianic UI app <a href="https://github.com/ambianic/ambianic-ui"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ambianic/ambianic-ui?style=social" /></a></h1>
-<p><a href="https://gitpod.io/#https://github.com/ambianic/ambianic-ui"><img alt="Gitpod ready-to-code" src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod" /></a>
-<a href="https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ"><img alt="Join the Slack chat room" src="https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue" /></a></p>
-<p><a href="https://www.npmjs.com/package/ambianic-ui"><img alt="npm downloads" src="https://img.shields.io/npm/dt/ambianic-ui" /></a>
-<img alt="CI for Ambianic UI" src="https://github.com/ambianic/ambianic-ui/workflows/CI%20for%20Ambianic%20UI/badge.svg" />
-<a href="https://badge.fury.io/js/ambianic-ui"><img alt="npm version" src="https://badge.fury.io/js/ambianic-ui.svg" /></a>
-<a href="https://app.netlify.com/sites/happy-franklin-69b6d4/deploys"><img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/70a4b25a-2765-4d6b-bbd8-a7e5dd6e98cb/deploy-status" /></a>
-<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fambianic%2Fambianic-ui?ref=badge_shield"><img alt="FOSSA Status" src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fambianic%2Fambianic-ui.svg?type=shield" /></a> 
-<a href="https://www.codefactor.io/repository/github/ambianic/ambianic-ui"><img alt="CodeFactor" src="https://www.codefactor.io/repository/github/ambianic/ambianic-ui/badge" /></a>
-<img alt="Lighthouse PWA CI" src="https://github.com/ambianic/ambianic-ui/workflows/Lighthouse%20CI/badge.svg" />
-<a href="https://codecov.io/gh/ambianic/ambianic-ui"><img alt="codecov" src="https://codecov.io/gh/ambianic/ambianic-ui/branch/master/graph/badge.svg?token=nVlrMWiZ4q" /></a>
-<a href="https://github.com/semantic-release/semantic-release"><img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" /></a></p>
+<p><a href="https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ"><img alt="Join the Slack chat room" src="https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue" /></a></p>
 <p><a href="https://ui.ambianic.ai/">Ambianic UI</a> is a
 modern prorgressive web application (PWA) that provides Plug-and-Play pairing and remote access
 to an Ambianic Edge device.</p>
@@ -251,18 +242,12 @@ to an Ambianic Edge device.</p>
 <li>User data remains 100% owned and controlled by the user at all times.</li>
 <li>No fine print. No obscure opt-in / opt-out pop-ups of any kind.</li>
 </ul>
-<h1 id="project-status">Project Status</h1>
+<h1 id="try-it-now">Try it now!</h1>
 <p>A hosted version of the app is now available to install here: <a href="https://ui.ambianic.ai/">https://ui.ambianic.ai/</a></p>
 <p>Example screenshots on mobile and desktop:</p>
 <p><img src="https://github.com/ambianic/ambianic-ui/raw/master/docs/img/ambianic-ui-mobile-screenshot.png" width="300" alt="ambianic UI mobile page example"></p>
 <p>&nbsp;</p>
 <p><img src="https://github.com/ambianic/ambianic-ui/raw/master/docs/img/ambianic-ui-dekstop-screenshot.png" width="600" alt="ambianic UI mobile page example"></p>
-<h1 id="cloud-deployment">Cloud deployment</h1>
-<p>This project is deployed on Netlify by default and is available at https://ui.ambianic.ai . 
-If you prefer to launch your own deployment from this repo, click the button below:</p>
-<p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/ambianic/ambianic-ui"><img alt="Deploy to Netlify" src="https://www.netlify.com/img/deploy/button.svg" /></a></p>
-<h1 id="development-environment">Development Environment</h1>
-<p>For instructions how to build, test and debug Ambianic UI via a virtual Continuous Dev Environment or a local dev environment, see <a href="https://docs.ambianic.ai/developers/development-environment/">this guide</a>.</p>
 <h1 id="connecting-to-an-ambianic-edge-device">Connecting to an Ambianic Edge device</h1>
 <h2 id="local-discovery">Local Discovery</h2>
 <p>You can easily discover and connect to an Ambianic Box that runs on your local WiFi network. It works similar to Airdrop.</p>
@@ -278,6 +263,22 @@ If you prefer to launch your own deployment from this repo, click the button bel
 <h1 id="configuration">Configuration</h1>
 <p>Ambianic provides flexible configuration options via a configuration YAML file. You can customize: pipelines, input sources, AI models, notification channels and more.</p>
 <p>Read on: <a href="../configure/">Configuring Ambianic Edge</a>.</p>
+<h1 id="cloud-deployment">Cloud deployment</h1>
+<p>This project is deployed on Netlify by default and is available at https://ui.ambianic.ai . 
+If you prefer to launch your own deployment from this repo, click the button below:</p>
+<p><a href="https://app.netlify.com/start/deploy?repository=https://github.com/ambianic/ambianic-ui"><img alt="Deploy to Netlify" src="https://www.netlify.com/img/deploy/button.svg" /></a></p>
+<h1 id="development-environment">Development Environment</h1>
+<p>For instructions how to build, test and debug Ambianic UI via a virtual Continuous Dev Environment or a local dev environment, see <a href="https://docs.ambianic.ai/developers/development-environment/">this guide</a>.</p>
+<h1 id="project-status-and-stats">Project Status and Stats</h1>
+<p><a href="https://www.npmjs.com/package/ambianic-ui"><img alt="npm downloads" src="https://img.shields.io/npm/dt/ambianic-ui" /></a>
+<img alt="CI for Ambianic UI" src="https://github.com/ambianic/ambianic-ui/workflows/CI%20for%20Ambianic%20UI/badge.svg" />
+<a href="https://badge.fury.io/js/ambianic-ui"><img alt="npm version" src="https://badge.fury.io/js/ambianic-ui.svg" /></a>
+<a href="https://app.netlify.com/sites/happy-franklin-69b6d4/deploys"><img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/70a4b25a-2765-4d6b-bbd8-a7e5dd6e98cb/deploy-status" /></a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fambianic%2Fambianic-ui?ref=badge_shield"><img alt="FOSSA Status" src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fambianic%2Fambianic-ui.svg?type=shield" /></a> 
+<a href="https://www.codefactor.io/repository/github/ambianic/ambianic-ui"><img alt="CodeFactor" src="https://www.codefactor.io/repository/github/ambianic/ambianic-ui/badge" /></a>
+<img alt="Lighthouse PWA CI" src="https://github.com/ambianic/ambianic-ui/workflows/Lighthouse%20CI/badge.svg" />
+<a href="https://codecov.io/gh/ambianic/ambianic-ui"><img alt="codecov" src="https://codecov.io/gh/ambianic/ambianic-ui/branch/master/graph/badge.svg?token=nVlrMWiZ4q" /></a>
+<a href="https://github.com/semantic-release/semantic-release"><img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" /></a></p>
 <h1 id="community-support">Community Support</h1>
 <p>If you have questions, ideas or cool projects you'd like to share with the Ambianic team and community, please use the <a href="https://twitter.com/ambianicai">Ambianic Twitter channel</a>.</p>
 <h1 id="acknowledgements">Acknowledgements</h1>
@@ -292,7 +293,7 @@ If you prefer to launch your own deployment from this repo, click the button bel
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-10-25 17:23:48.817011+00:00</p>
+            <p>Last update : 2021-10-25 17:29:36.133816+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
