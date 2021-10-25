@@ -3,7 +3,7 @@
 [Ambianic Edge](https://github.com/ambianic/ambianic-edge) turns your Raspberry Pi into a smart camera device.
 We recommend running Ambianic Edge on an [Ambianic Box](https://github.com/ambianic/ambianic-box) but you can also install and run it on most ARM on x86 computers.
 
-# Quick Install
+# Easy Install
 
 Step by step instructions for a quick install [available here](https://docs.ambianic.ai/users/installsoftware/).
 
