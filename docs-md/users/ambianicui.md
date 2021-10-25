@@ -20,7 +20,7 @@
 modern prorgressive web application (PWA) that provides Plug-and-Play pairing and remote access
 to an Ambianic Edge device.
 
-<img src="public/img/ambianic-pwa-badge.png" width="600">
+<img src="https://github.com/ambianic/ambianic-ui/raw/master/public/img/ambianic-pwa-badge.png" width="600">
 
 Below is an example screenshot timeline of events detected by a connected Ambianic Edge device.
 
@@ -42,11 +42,11 @@ A hosted version of the app is now available to install here: [https://ui.ambian
 
 Example screenshots on mobile and desktop:
  
-<img src="docs/img/ambianic-ui-mobile-screenshot.png" width="300" alt="ambianic UI mobile page example">
+<img src="https://github.com/ambianic/ambianic-ui/raw/master/docs/img/ambianic-ui-mobile-screenshot.png" width="300" alt="ambianic UI mobile page example">
 
 &nbsp;
 
-<img src="docs/img/ambianic-ui-dekstop-screenshot.png" width="600" alt="ambianic UI mobile page example">
+<img src="https://github.com/ambianic/ambianic-ui/raw/master/docs/img/ambianic-ui-dekstop-screenshot.png" width="600" alt="ambianic UI mobile page example">
 
 # Cloud deployment
 
