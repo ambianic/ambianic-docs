@@ -1,6 +1,8 @@
 
 # Ambianic OS [![GitHub Repo stars](https://img.shields.io/github/stars/ambianic/ambianic-rpi-image?style=social)](https://github.com/ambianic/ambianic-rpi-image)
 
+[![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
+
 Ambianic OS provides a convenient binary image for Raspberry Pi 4B with [Ambianic Edge](https://github.com/ambianic/ambianic-edge) pre-installed. 
 The released image files are ready to be flashed on to an SD card and plugged into an rpi. 
 When the raspberry pi boots for the first time with the new image on its SD Card, it runs a WiFi captive portal that allows the user to connect to it and setup WiFi access for the rpi. 
