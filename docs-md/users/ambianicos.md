@@ -1,5 +1,5 @@
 
-# Ambianic OS
+# Ambianic OS [![GitHub Repo stars](https://img.shields.io/github/stars/ambianic/ambianic-rpi-image?style=social)](https://github.com/ambianic/ambianic-rpi-image)
 
 ![CI build](https://github.com/ambianic/ambianic-rpi-image/workflows/CI%20build/badge.svg?branch=main)
 [![GitHub release (latest by date)](https://badgen.net/github/release/ambianic/ambianic-rpi-image?label=Version)](https://github.com/ambianic/ambianic-rpi-image/releases/latest)
