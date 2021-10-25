@@ -1,18 +1,6 @@
 
 # Quick Start Guide
 
-Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) ambient intelligence platform. [![GitHub Org's stars](https://img.shields.io/github/stars/ambianic?style=social)](https://github.com/ambianic)
-
-Ambianic's goal is to provide helpful and actionable observations in the context of home and workspace automation.
-
-Ambianic has two major components: 
-- Ambianic Edge: an IoT device with camera (or other sensors) and a built-in AI engine for local inference
-- Ambianic UI app - a front-end Progressive Web App to manage Ambianic Edge device(s) and view timeline events reported by Ambianic Edge.
-
-Following is a high level diagram of a typical Ambianic deployment.
-
-![Ambianic High Level Diagram](../assets/images/Ambianic-High-Level-Diagram.png)
-
 ## Recommended Install
 
 The simplest way to get started is to follow these steps:
