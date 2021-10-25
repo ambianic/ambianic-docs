@@ -5,8 +5,8 @@ Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) 
 
 Ambianic has two major components: 
 
-* [Ambianic Edge](ambianicedge.md): an IoT device with a camera and a built-in AI engine for on-device inference and training. Usually runs within an [Ambianic Box](ambianicbox.md) enclosure.
-* [Ambianic UI](ambianicui.md): a front-end Progressive Web App to manage Ambianic Edge devices.
+* [Ambianic Edge](users/ambianicedge): an IoT device with a camera and a built-in AI engine for on-device inference and training. Usually runs within an [Ambianic Box](users/ambianicbox) enclosure.
+* [Ambianic UI](users/ambianicui): a front-end Progressive Web App to manage Ambianic Edge devices.
 
 Following is a high level diagram of a typical Ambianic deployment.
 
