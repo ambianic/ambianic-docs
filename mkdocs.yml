@@ -6,6 +6,8 @@ nav:
     - User Guide:
       - Quick Start: users/quickstart.md
       - Ambianic Box: users/ambianicbox.md
+      - Ambianic OS: users/ambianicos.md
+      - Ambianic Edge: users/ambianicedge.md
       - Configuration: users/configure.md
 #      - FAQ: users/faq.md
 #      - Web UI: users/webui.md
