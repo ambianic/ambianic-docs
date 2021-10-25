@@ -1,5 +1,7 @@
 
-# Quick Start Guide
+# Quick Start Guide [![GitHub User's stars](https://img.shields.io/github/stars/ambianic?style=social)](https://github.com/ambianic)
+
+[![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
 
 ## Recommended Install
 
