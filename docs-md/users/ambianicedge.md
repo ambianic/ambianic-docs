@@ -2,12 +2,11 @@
 
 [![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
 
-[Ambianic Edge](https://github.com/ambianic/ambianic-edge) is an Open Source software project that turns your inexpensive home computer (Raspberry Pi or an old laptop) into a smart camera device.
-We recommend running Ambianic Edge on [Ambianic Box](https://docs.ambianic.ai/users/ambianicbox/) hardware but you can also install and run it on most ARM on x86 computers.
+[Ambianic Edge](https://github.com/ambianic/ambianic-edge) is an Open Source software project that turns your inexpensive home computer (Raspberry Pi or an old laptop) into a smart camera device. The recommended way to setup an Ambianic Edge device is to install the Ambianic Edge software on the [Ambianic Box](https://docs.ambianic.ai/users/ambianicbox/) reference hardware. However you can build your custom Ambanic Edge device and run it on any sufficiently powerful ARM or x86 computer.
 
 # Quick Setup
 
-We are meticulously focused on a simplified and streamlined DIY user experience from hardware assembly to mobile app. However we welcome advanced users to bring in their own components as needed.
+We are meticulously focused on a simplified and streamlined DIY user experience from hardware assembly to mobile app. This section covers the quick and easy steps for setting up an Ambianic Edge device.
 
 ## Hardware
 
@@ -20,6 +19,8 @@ Follow the step by step instructions for a quick software install [available her
 Once installed and running, you can connect to an Ambianic Edge via the [UI app](https://ui.ambianic.ai/) and see a timeline of detection events.
 
 # Advanced Setup
+
+If you are more adventurous and would like to dive deeper into the project, this section is for you.
 
 ## Hardware
 
