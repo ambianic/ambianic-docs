@@ -2,8 +2,8 @@
 
 [![Join the Slack chat room](https://img.shields.io/badge/Slack-Join%20the%20chat%20room-blue)](https://join.slack.com/t/ambianicai/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ)
 
-[Ambianic Edge](https://github.com/ambianic/ambianic-edge) turns your inexpensive home computer (Raspberry Pi or an old laptop) into a smart camera device.
-We recommend running Ambianic Edge on an [Ambianic Box](https://docs.ambianic.ai/users/ambianicbox/) but you can also install and run it on most ARM on x86 computers.
+[Ambianic Edge](https://github.com/ambianic/ambianic-edge) is an Open Source software project that turns your inexpensive home computer (Raspberry Pi or an old laptop) into a smart camera device.
+We recommend running Ambianic Edge on [Ambianic Box](https://docs.ambianic.ai/users/ambianicbox/) hardware but you can also install and run it on most ARM on x86 computers.
 
 # Quick Setup
 
