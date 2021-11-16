@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Installing and Running Ambianic - Ambianic Documentation</title>
+        <title>Ambianic Noficiations - Ambianic Documentation</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -174,7 +174,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/users/install.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/ambianic/ambianic-docs/edit/master/docs-md/users/notifications.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -192,24 +192,52 @@
 
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
-            <li class="nav-item main"><a href="#installing-and-running-ambianic">Installing and Running Ambianic</a></li>
+            <li class="nav-item main"><a href="#ambianic-noficiations">Ambianic Noficiations</a></li>
+                <li class="nav-item">
+                    <a href="#ui-notification-settings" class="nav-link">UI Notification Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#advanced-notification-settings" class="nav-link">Advanced Notification Settings</a>
+                </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="installing-and-running-ambianic">Installing and Running Ambianic</h1>
-<ol>
-<li>Quickstart reference</li>
-<li>Various install scenarios: CPU, OS matrix</li>
-</ol></div>
+<h1 id="ambianic-noficiations">Ambianic Noficiations</h1>
+<p>Ambianic Edge can be configured to send instant notifications to a broad range of services.</p>
+<h2 id="ui-notification-settings">UI Notification Settings</h2>
+<p>Instant notifications can be enabled via the Ambianic UI PWA. Follow the instructions below to setup and test your first notification message.</p>
+<h3 id="get-an-ifttt-webhook-api-key">Get an IFTTT Webhook API KEY</h3>
+<p><a href="https://ifttt.com">IFTTT</a> is a popular notification hub that provides a convenient way to create automation workflows for SMS, Email, 
+Mobile Push Notifications, Amazon Alexa, Google Home and thousands of other IoT, Home Automation and Web services.</p>
+<p>First, create an account with IFTTT and navigate to the Webhooks app settings. Find your Webhooks API Key. The IFTTT Webhook callback URL looks like this:
+<code>https://maker.ifttt.com/use/hdKFgtWRJqZDNFbDjudl92RK3LfDzd1tOZO9KRA15kJ</code></p>
+<p>The Webhooks API Key is just that last cryptic looking part: <code>hdKFgtWRJqZDNFbDjudl92RK3LfDzd1tOZO9KRA15kJ</code></p>
+<p>Copy this key and go to your <a href="https://ui.ambianic.ai/">Ambianic UI</a> app.</p>
+<h3 id="enter-and-test-ifttt-integration">Enter and Test IFTTT integration</h3>
+<p>Connect to the Ambianic Edge device you would like to configure to send notifications. 
+Then go to: <em>Settings &gt; Device Card &gt; Notifications</em>.</p>
+<p>Paste your key in the <em>IFTTT Webhooks API Key</em> input field and submit the change.</p>
+<p>Make sure to turn on the <em>Notifications On/Off</em> switch. It should read <em>Notifications On</em>.</p>
+<p>Next, click on the <em>Test</em> . If all is well, you should see a check mark indicating Success for a brief moment.</p>
+<p>Now go to your IFTTT dashboard and navigate to the <a href="https://ifttt.com/activity/service/maker_webhooks">Webhooks Activity Log</a>. You should see your test notification appear in the log.</p>
+<p>Notice that notifications sent by Ambianic Edge devices are marketd with the <code>ambianic</code> event tag. 
+This allows you to filter and route Ambianic notifications separately from other sources of IFTTT Webhook notifications.</p>
+<h3 id="compose-notification-and-automation-applets">Compose Notification and Automation Applets</h3>
+<p>You are now ready to create an IFTTT applet that receives <code>ambianic</code> events and forwards to your favorite notification channels or automation triggers.
+See the <a href="https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ">IFTTT Webhooks FAQ</a> for detailed instructions.</p>
+<p>If you experience any problems during this process, you can look for help in the 
+<a href="https://github.com/ambianic/ambianic-ui/discussions">Ambianic Community Discussions</a> or the <a href="https://ambianicai.slack.com/join/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ#/">Public Slack Channel</a>.</p>
+<h2 id="advanced-notification-settings">Advanced Notification Settings</h2>
+<p>For more advanced notification configuration options, see the <a href="../configure/#notification-settings">Notifications section</a> of the Ambianic Edge configuration guide.</p></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-11-16 17:38:33.141912+00:00</p>
+            <p>Last update : 2021-11-16 17:38:33.145468+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
