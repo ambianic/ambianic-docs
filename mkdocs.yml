@@ -9,6 +9,7 @@ nav:
       - Ambianic Box: users/ambianicbox.md
       - Ambianic Edge: users/ambianicedge.md
       - Ambianic OS: users/ambianicos.md
+      - Notifications: users/notifications.md
       - Configuration: users/configure.md
 #      - FAQ: users/faq.md
 #      - Web UI: users/webui.md
