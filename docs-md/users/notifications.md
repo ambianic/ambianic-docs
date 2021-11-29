@@ -1,5 +1,5 @@
 
-# Ambianic Noficiations
+# Ambianic Notifications
 
 Ambianic Edge can be configured to send instant notifications to a broad range of services.
 
