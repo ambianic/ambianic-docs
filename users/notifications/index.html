@@ -234,12 +234,12 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="ambianic-notifications">Ambianic Notifications</h1>
-<p>Ambianic Edge can be configured to send instant notifications to a broad range of services.</p>
-<p>Instant notifications can be enabled via the Ambianic UI PWA. Follow the instructions below to setup and test your first notification message.</p>
+<p>Each Ambianic Edge device can be configured to independently send instant notifications.</p>
+<p>The simplest way to configure an Ambianic Edge device to send FREE notifications is via the Ambianic UI PWA and IFTTT. Follow the instructions below to setup and test your first notification message via IFTTT integration.</p>
 <h2 id="get-an-ifttt-webhook-api-key">Get an IFTTT Webhook API KEY</h2>
 <p><a href="https://ifttt.com">IFTTT</a> is a popular notification hub that provides a convenient way to create automation workflows for SMS, Email, 
 Mobile Push Notifications, Amazon Alexa, Google Home and thousands of other IoT, Home Automation and Web services.</p>
-<p><img alt="Screen Shot 2021-12-06 at 3 16 37 PM" src="https://user-images.githubusercontent.com/2234901/144923949-7c5e3f97-fa13-404a-86d1-ac75c828daca.png" /></p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144923949-7c5e3f97-fa13-404a-86d1-ac75c828daca.png" width="400"/></p>
 <p>First, create an account with IFTTT and navigate to the Webhooks app settings. Find your Webhooks API Key in the plugin Documentation. The IFTTT Webhook callback URL looks like this:
 <code>https://maker.ifttt.com/use/hdKFgtWRJqZDNFbDjudl92RK3LfDzd1tOZO9KRA15kJ</code></p>
 <p>The Webhooks API Key is just that last cryptic looking part: <code>hdKFgtWRJqZDNFbDjudl92RK3LfDzd1tOZO9KRA15kJ</code></p>
@@ -247,32 +247,54 @@ Mobile Push Notifications, Amazon Alexa, Google Home and thousands of other IoT,
 <h2 id="test-ifttt-integration">Test IFTTT integration</h2>
 <p>Connect to the Ambianic Edge device you would like to configure to send notifications. 
 Then go to: <em>Settings &gt; Device Card &gt; Notifications</em>.</p>
-<p><img alt="Screen Shot 2021-12-06 at 3 19 55 PM" src="https://user-images.githubusercontent.com/2234901/144924453-c149b68a-66d1-4056-98f6-44e2ca067c81.png" /></p>
-<p><img alt="Screen Shot 2021-12-06 at 3 20 21 PM" src="https://user-images.githubusercontent.com/2234901/144924492-e4e795a4-de0c-4e71-9041-0c76e5eda5b6.png" /></p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144924453-c149b68a-66d1-4056-98f6-44e2ca067c81.png" width="400"/></p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144924492-e4e795a4-de0c-4e71-9041-0c76e5eda5b6.png" width="400"/></p>
 <p>Paste your key in the <em>IFTTT Webhooks API Key</em> input field and submit the change.</p>
 <p>Make sure to turn on the <em>Notifications On/Off</em> switch. It should read <em>Notifications On</em>.</p>
 <p>Next, click on the <em>Test</em> . If all is well, you should see a check mark indicating Success for a brief moment.</p>
 <p>Now go to your IFTTT dashboard and navigate to the <a href="https://ifttt.com/activity/service/maker_webhooks">Webhooks Activity Log</a>. You should see your test notification appear in the log.</p>
-<p><img alt="Screen Shot 2021-12-06 at 3 22 53 PM" src="https://user-images.githubusercontent.com/2234901/144924764-aa4418aa-4d01-498a-b3f7-41e5b5b756f2.png" /></p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144924764-aa4418aa-4d01-498a-b3f7-41e5b5b756f2.png" width="400"/></p>
 <p>Notice that notifications sent by Ambianic Edge devices are marketd with the <code>ambianic</code> event tag. 
 This allows you to filter and route Ambianic notifications separately from other sources of IFTTT Webhook notifications.</p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144926108-4f34dc8a-fe0c-415d-bd83-fbcd4be87f59.png" width="400"/></p>
 <h2 id="compose-notification-and-automation-applets">Compose Notification and Automation Applets</h2>
 <p>You are now ready to create an IFTTT applet that receives <code>ambianic</code> events and forwards to your favorite notification channels or automation triggers.
 See the <a href="https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ">IFTTT Webhooks FAQ</a> for detailed instructions.</p>
 <p>If you experience any problems during this process, you can look for help in the 
 <a href="https://github.com/ambianic/ambianic-ui/discussions">Ambianic Community Discussions</a> or the <a href="https://ambianicai.slack.com/join/shared_invite/zt-eosk4tv5-~GR3Sm7ccGbv1R7IEpk7OQ#/">Public Slack Channel</a>.</p>
 <h2 id="mobile-push-notifications">Mobile Push Notifications</h2>
+<p>IFTTT allows FREE mobile push notifications via Webhooks. 
+To receive rich push notifications on your mobile device, first <a href="https://ifttt.com/home">download the free IFTTT app</a> from your respective mobile app store. </p>
+<p>Next, create a new Applet triggered by the Webhooks plugin that sends a rich notification to your IFTTT app. It should look similar to the following screenshots:</p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144926035-7ad46211-8e07-4d62-8c72-5b3e22a32b5f.png" width="400"/></p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144926069-103cd17e-757d-4f64-bde8-b6ee2a2c2f99.png" width="400"/></p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144926145-d254a87c-3cb0-4a00-a0d2-2ef8bdc80d75.png" width="400"/></p>
+<p>Now you can go to your Ambianic UI app and send another Test notification. Within a few moments you will see an IFTTT alert on your mobile device.</p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144929539-ca7d4395-2b5a-4eec-8c1a-b3d7cf460ebf.png" width="400"/></p>
+<p>Now you can get in front of your Ambianic device camera to trigger a person detection. You will see more notifications on your mobile device.</p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144931241-b412ba33-94ea-4209-81e4-8410809ce0bd.png" width="400"/></p>
+<p>When you click on a notification, it will open a browser window that will load and display all the event details as they would normally appear on your device timeline.</p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144929874-f6406c9e-80ff-4f45-af6c-4723756667e1.png" width="400"/></p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144930022-9211115b-66e6-453f-8321-e548f13939fa.png" width="400"/></p>
+<p>Keep in mind that the URL of the event contains an encrypted version of the device Peer ID to protect your privacy. Only browsers that have previous knowledge of your device will be able to open the event. In other words if you have used the Ambianic PWA in the browser before and added the device there, the browser will be able to decrypt the event notification URL and fetch all details from the device.</p>
+<p>However if you use a different browser to open notifications, or if the URL accidentally ended up in the hands of an unintended user, the PWA will display an error message.</p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144930563-b2965755-1e9b-4cfb-87b0-b771dd02338a.png" width="400"/></p>
+<p>When that happens, you can verify that you are in the browser used to add the devices, by navigating to <em>Settings &lt; My Devices</em> You will likely see an emty list.</p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144931841-8a51a19d-73e0-43e8-bfa8-98bf50390a80.png" width="400"/></p>
+<p>You can either add the device to this browser or alternatively copy and paste the notification URL to the browser which you normally use for the Ambianic PWA and already has the alerting Ambianic Edge device saved.</p>
+<p><img src="https://user-images.githubusercontent.com/2234901/144932094-52d72fee-e139-40c0-86ba-7d7cf6794650.png" width="400"/></p>
 <h2 id="email-notifications">Email Notifications</h2>
 <h2 id="sms-notifications">SMS Notifications</h2>
 <h2 id="advanced-notification-settings">Advanced Notification Settings</h2>
-<p>For more advanced notification configuration options, see the <a href="../configure/#notification-settings">Notifications section</a> of the Ambianic Edge configuration guide.</p></div>
+<p>Ambianic Edge devices can be also configured to send notifications via <a href="https://github.com/caronc/apprise/wiki">many other services</a>. 
+See the <a href="../configure/#notification-settings">Advanced Notifications section</a> of the Ambianic Edge configuration guide for more details.</p></div>
             </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-12-06 21:26:26.662502+00:00</p>
+            <p>Last update : 2021-12-06 22:22:10.731820+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
