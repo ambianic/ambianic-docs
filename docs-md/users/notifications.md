@@ -120,7 +120,7 @@ When a notification is triggered, you can check the ClickSend dashboard to confi
 
 <img src="https://user-images.githubusercontent.com/2234901/144935503-659ce1bb-3b42-4788-b677-97cc87ffa47e.png" width="400"/>
 
-Sometimes telecom providers (MNOs) delay SMS messages sent via apps up to a few minutes and in some cases hours. Occasionally telecoms choose to drop messages sesnt via apps if they consider them spam. Unfortunately there is no Spam folder that you can check for dropped SMS messages. Your best bet is to try again or use an alternative SMS app.
+Sometimes telecom providers (MNOs) delay SMS messages sent via apps up to a few minutes and in some cases hours. Occasionally telecoms choose to drop messages sesnt via apps if they consider them spam. Unfortunately there is no Spam folder that you can check for dropped SMS messages. Your best bet is to try again, talk to ClickSend Support or use an alternative SMS app.
 
 ## Advanced Notification Settings
 
