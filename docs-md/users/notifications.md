@@ -110,7 +110,17 @@ Clicking on the URL has the same effect as opening a mobile push notification as
 
 ## SMS Notifications
 
+Setting up Email notifications is similar to setting up Mobile Push Notifications and Email Notifications. You will still use the Webhook plugin as a trigger. For delivery you can select from several SMS provider options. Following is the flow via the ClickSend SMS Action.
 
+<img src="https://user-images.githubusercontent.com/2234901/144935267-0326a2f3-13fe-4e6b-b433-85b1d71a9571.png" width="400"/>
+
+<img src="https://user-images.githubusercontent.com/2234901/144935290-52533ba3-26a8-4244-a123-d11a7ab4b1e9.png" width="400"/>
+
+When a notification is triggered, you can check the ClickSend dashboard to confirm. 
+
+<img src="https://user-images.githubusercontent.com/2234901/144935503-659ce1bb-3b42-4788-b677-97cc87ffa47e.png" width="400"/>
+
+Sometimes telecom providers (MNOs) delay SMS messages sent via apps up to a few minutes and in some cases hours. Occasionally telecoms choose to drop messages sesnt via apps if they consider them spam. Unfortunately there is no Spam folder that you can check for dropped SMS messages. Your best bet is to try again or use an alternative SMS app.
 
 ## Advanced Notification Settings
 
