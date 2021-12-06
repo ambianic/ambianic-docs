@@ -43,7 +43,7 @@ This allows you to filter and route Ambianic notifications separately from other
 
 <img src="https://user-images.githubusercontent.com/2234901/144926108-4f34dc8a-fe0c-415d-bd83-fbcd4be87f59.png" width="400"/>
 
-## Compose Notification and Automation Applets
+## Compose Notification Automations
 
 You are now ready to create an IFTTT applet that receives `ambianic` events and forwards to your favorite notification channels or automation triggers.
 See the [IFTTT Webhooks FAQ](https://help.ifttt.com/hc/en-us/articles/115010230347-Webhooks-service-FAQ) for detailed instructions.
