@@ -94,7 +94,23 @@ You can either add the device to this browser or alternatively copy and paste th
 
 ## Email Notifications
 
+Setting up Email notifications is similar to setting up Mobile Push Notifications. You will still use the Webhook plugin as a trigger. For delivery you can select from several options. IFTTT provides a basic Email Action as well as a more flexible GMail Action. The flow with GMail looks as follows:
+
+<img src="https://user-images.githubusercontent.com/2234901/144933066-49a3423f-0a52-4c47-be39-0c83d7936d53.png" width="400"/>
+
+<img src="https://user-images.githubusercontent.com/2234901/144933082-8d88d37f-d170-4b7f-bb64-a11debde1884.png" width="400"/>
+
+<img src="https://user-images.githubusercontent.com/2234901/144933700-bab5ccc7-474b-416c-84e3-bac1f8e0eb56.png" width="400"/>
+
+When an event is triggered for this flow, the result looks like this:
+
+<img src="https://user-images.githubusercontent.com/2234901/144933861-d9d7af55-92ce-4b06-86fc-6af442d33a49.png" width="400"/>
+
+Clicking on the URL has the same effect as opening a mobile push notification as explained in the previous section.
+
 ## SMS Notifications
+
+
 
 ## Advanced Notification Settings
 
