@@ -43,3 +43,11 @@ The device configuration page allows you to customize the device Friendly Name, 
 
 ![Screen Shot 2021-12-07 at 9 45 46 AM](https://user-images.githubusercontent.com/2234901/145061570-a262c30d-0a6c-4044-954b-4ad7ae3e2bd8.png)
 
+# Switching Devices
+
+Ambianic UI allows you to choose and interact with one Ambianic Edge device at a time. You can switch the current device by going to _Settings > My Devices > Switch_
+
+![Screen Shot 2021-12-07 at 10 02 45 AM](https://user-images.githubusercontent.com/2234901/145063626-cc2ce458-6d77-4490-8e6a-c711c6bceca9.png)
+
+The friendly device name of the currently selected device is shown in the app bar for your convenience.
+
