@@ -18,7 +18,6 @@ nav:
 #      - AI Apps: users/ai-apps.md
 #      - How To: users/howto.md
 #      - Support: users/support.md
-      - Local and Remote pairing: users/edge-pairing.md
       - Home Assistant Integration: users/hass-integration.md
     - Developer Guide:
       - High Level System Architecture: developers/architecture.md
