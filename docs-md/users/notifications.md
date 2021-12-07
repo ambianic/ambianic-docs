@@ -62,15 +62,15 @@ Next, create a new Applet triggered by the Webhooks plugin that sends a rich not
 
 <img src="https://user-images.githubusercontent.com/2234901/144926069-103cd17e-757d-4f64-bde8-b6ee2a2c2f99.png" width="400"/>
 
-<img src="https://user-images.githubusercontent.com/2234901/144926145-d254a87c-3cb0-4a00-a0d2-2ef8bdc80d75.png" width="400"/>
+<img src="https://user-images.githubusercontent.com/2234901/144969204-bf9061f7-85a0-4191-b287-84fb4745f1e8.png" width="400"/>
 
 Now you can go to your Ambianic UI app and send another Test notification. Within a few moments you will see an IFTTT alert on your mobile device.
 
 <img src="https://user-images.githubusercontent.com/2234901/144929539-ca7d4395-2b5a-4eec-8c1a-b3d7cf460ebf.png" width="400"/>
 
-Now you can get in front of your Ambianic device camera to trigger a person detection. You will see more notifications on your mobile device.
+To test that it works end to end, walk in front of your Ambianic smart camera device to trigger a person detection. You will see a notification on your mobile device like the one below.
 
-<img src="https://user-images.githubusercontent.com/2234901/144931241-b412ba33-94ea-4209-81e4-8410809ce0bd.png" width="400"/>
+<img src="https://user-images.githubusercontent.com/2234901/144969433-1300560a-4abf-4222-8c01-030188c0440f.png" width="400"/>
 
 When you click on a notification, it will open a browser window that will load and display all the event details as they would normally appear on your device timeline.
 
@@ -120,7 +120,11 @@ When a notification is triggered, you can check the ClickSend dashboard to confi
 
 <img src="https://user-images.githubusercontent.com/2234901/144935503-659ce1bb-3b42-4788-b677-97cc87ffa47e.png" width="400"/>
 
-Sometimes telecom providers (MNOs) delay SMS messages sent via apps up to a few minutes and in some cases hours. Occasionally telecoms choose to drop messages sesnt via apps if they consider them spam. Unfortunately there is no Spam folder that you can check for dropped SMS messages. Your best bet is to try again, talk to ClickSend Support or use an alternative SMS app.
+The resulting SMS on your mobile phone would look like the example below:
+
+<img src="https://user-images.githubusercontent.com/2234901/144969523-bf9e1462-1098-4f1b-8644-78fc6050b468.png" width="400"/>
+
+_Note_: Sometimes telecom providers (MNOs) delay SMS messages sent via apps up to a few minutes and in some cases hours. Occasionally telecoms choose to drop messages sesnt via apps if they consider them spam. Unfortunately there is no Spam folder that you can check for dropped SMS messages. Your best bet is to try again, talk to ClickSend Support or use an alternative SMS app.
 
 ## Advanced Notification Settings
 
