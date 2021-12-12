@@ -78,20 +78,6 @@ When you click on a notification, it will open a browser window that will load a
 
 <img src="https://user-images.githubusercontent.com/2234901/144930022-9211115b-66e6-453f-8321-e548f13939fa.png" width="400"/>
 
-Keep in mind that the URL of the event contains an encrypted version of the device Peer ID to protect your privacy. Only browsers that have previous knowledge of your device will be able to open the event. In other words if you have used the Ambianic PWA in the browser before and added the device there, the browser will be able to decrypt the event notification URL and fetch all details from the device.
-
-However if you use a different browser to open notifications, or if the URL accidentally ended up in the hands of an unintended user, the PWA will display an error message.
-
-<img src="https://user-images.githubusercontent.com/2234901/144930563-b2965755-1e9b-4cfb-87b0-b771dd02338a.png" width="400"/>
-
-When that happens, you can verify that you are in the browser used to add the devices, by navigating to _Settings < My Devices_ You will likely see an emty list.
-
-<img src="https://user-images.githubusercontent.com/2234901/144931841-8a51a19d-73e0-43e8-bfa8-98bf50390a80.png" width="400"/>
-
-You can either add the device to this browser or alternatively copy and paste the notification URL to the browser which you normally use for the Ambianic PWA and already has the alerting Ambianic Edge device saved.
-
-<img src="https://user-images.githubusercontent.com/2234901/144932094-52d72fee-e139-40c0-86ba-7d7cf6794650.png" width="400"/>
-
 ## Email Notifications
 
 Setting up Email notifications is similar to setting up Mobile Push Notifications. You will still use the Webhook plugin as a trigger. For delivery you can select from several options. IFTTT provides a basic Email Action as well as a more flexible GMail Action. The flow with GMail looks as follows:
@@ -125,6 +111,22 @@ The resulting SMS on your mobile phone would look like the example below:
 <img src="https://user-images.githubusercontent.com/2234901/144969523-bf9e1462-1098-4f1b-8644-78fc6050b468.png" width="400"/>
 
 _Note_: Sometimes telecom providers (MNOs) delay SMS messages sent via apps up to a few minutes and in some cases hours. Occasionally telecoms choose to drop messages sesnt via apps if they consider them spam. Unfortunately there is no Spam folder that you can check for dropped SMS messages. Your best bet is to try again, talk to ClickSend Support or use an alternative SMS app.
+
+## Troubleshooting
+
+Keep in mind that the URL of the event contains an encrypted version of the device Peer ID to protect your privacy. Only browsers that have previous knowledge of your device will be able to open the event. In other words if you have used the Ambianic PWA in the browser before and added the device there, the browser will be able to decrypt the event notification URL and fetch all details from the device.
+
+However if you use a different browser to open notifications, or if the URL accidentally ended up in the hands of an unintended user, the PWA will display an error message.
+
+<img src="https://user-images.githubusercontent.com/2234901/144930563-b2965755-1e9b-4cfb-87b0-b771dd02338a.png" width="400"/>
+
+When that happens, you can verify that you are in the browser used to add the devices, by navigating to _Settings < My Devices_ You will likely see an emty list.
+
+<img src="https://user-images.githubusercontent.com/2234901/144931841-8a51a19d-73e0-43e8-bfa8-98bf50390a80.png" width="400"/>
+
+You can either add the device to this browser or alternatively copy and paste the notification URL to the browser which you normally use for the Ambianic PWA and already has the alerting Ambianic Edge device saved.
+
+<img src="https://user-images.githubusercontent.com/2234901/144932094-52d72fee-e139-40c0-86ba-7d7cf6794650.png" width="400"/>
 
 ## Advanced Notification Settings
 
