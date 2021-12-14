@@ -11,7 +11,7 @@ nav:
       - Ambianic OS: users/ambianicos.md
       - Managing Devices: users/devicemanagement.md
       - Notifications: users/notifications.md
-      - Configuration: users/configure.md
+      - Advanced Configuration: users/configure.md
 #      - FAQ: users/faq.md
 #      - Web UI: users/webui.md
 #      - Mobile UI: users/mobileui.md
