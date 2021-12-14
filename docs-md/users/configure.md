@@ -1,5 +1,11 @@
 
-# Ambianic Configuration
+# Advanced Ambianic Edge Configuration
+
+Some of the most common Ambianic configuration options are available in the UI for convenience.
+However there are advanced config settings that require sysadmin skills and deeper understanding of the product design.
+This document covers advanced Ambianic Edge configuration via its on-device `config.yaml` file.
+
+## Design Overview
 
 Ambianic Edge executes pipelines with input sources, AI inference models and
 output targets. Ambianic UI visualizes observations in a chronological timeline.
