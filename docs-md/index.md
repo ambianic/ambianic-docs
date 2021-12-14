@@ -5,10 +5,12 @@
 
 Ambianic is an [award winning](https://blog.ambianic.ai/2020/11/05/awards.html) Open Source Smart Camera project optimized for Raspberry Pi 4B. It aims to make our homes and workspaces safer by providing helpful and actionable suggestions. For example, notify family members instantly if a loved one has fallen down.
 
-Ambianic has two major components: 
+Ambianic consists of the following main components: 
 
-* [Ambianic Edge](users/ambianicedge): an IoT device with a camera and a built-in AI engine for on-device inference and training. Usually runs within an [Ambianic Box](users/ambianicbox) enclosure.
+![Ambianic-Modules](https://user-images.githubusercontent.com/2234901/146073425-972f8470-52fc-4ec0-83d1-a1e601bacd81.png)
+
 * [Ambianic UI](users/ambianicui): a front-end Progressive Web App to manage Ambianic Edge devices.
+* [Ambianic Edge](users/ambianicedge): The core runtime of the smart camera IoT device. Includes a built-in AI engine for on-device inference and training. Typically deployed on an [Ambianic Box](users/ambianicbox).
 
 Following is a high level diagram of a typical Ambianic deployment.
 
