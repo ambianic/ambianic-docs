@@ -21,7 +21,23 @@ You can 3D Print an Ambianic Box at home ([here is the source](https://github.co
 
 Alternatively, if you don't want to 3D print an enclosure, you can order a kit such as [this ony by Labists](https://labists.com/collections/all/products/labists-raspberry-pi-4g-ram-32gb-card) which includes a usable enclosure box and other components required to build an Ambianic Edge device.
 
-For outdoor use, you can buy an inexpensive dummy camera enclosure like the ones listed in the _Alternative enclosures_ section below.
+For outdoor use, you can also buy an inexpensive dummy camera ($5-9) enclosure with enough room to accomodate a Raspberry Pi and a Pi camera module ([1](https://www.amazon.com/dp/B079GNVSTL), [2](https://www.amazon.com/dp/B08952NFRX), [3](https://www.amazon.com/dp/B08TM1D58H), [4](https://www.amazon.com/WALI-Surveillance-Security-Outdoor-Warning/dp/B019405SQM)).
+
+<a href="https://www.amazon.com/dp/B079GNVSTL">
+  <img src="https://user-images.githubusercontent.com/2234901/166242496-915adca4-e772-46db-b8ec-b98ff2e0072d.jpg" height="160"/>
+</a>
+<a href="https://www.amazon.com/WALI-Surveillance-Security-Outdoor-Warning/dp/B019405SQM">
+  <img src="https://user-images.githubusercontent.com/2234901/166243174-0e234604-3e11-4700-b5d8-81b589576d94.jpg" height="160"/>
+</a>
+<a href="https://www.amazon.com/SZYAN-Security-Surveillance-Simulated-Flashing/dp/B08TLTQ57Z">
+  <img src="https://user-images.githubusercontent.com/2234901/166242674-d43c25ac-50da-48ce-827f-aeb6b95ef087.jpg" height="160"/>
+</a>
+<a href="https://www.amazon.com/dp/B08TM1D58H">
+  <img src="https://user-images.githubusercontent.com/2234901/166242527-44bc8435-8386-4e6e-b1d4-7247c25ce47c.jpg" height="160"/>
+</a>
+<br/>
+<img src="https://user-images.githubusercontent.com/2234901/166242465-c728975e-4a12-4ca0-9d85-d7fb08f9af66.jpeg" height="200"/>
+
 
 # Components
 
@@ -88,17 +104,7 @@ Ambianic Box can stand up on a flat surface or it can be mounted. For wall mount
 
 ---
   
-# Alternative enclosures
-  
-If you prefer off-the-shelf security camera enclosures for outdoor or indoor use, there are a number of inexpensive dummy cameras ($5-9) with enough room to accomodate a Raspberry Pi and a Pi camera module ([1](https://www.amazon.com/dp/B01AJTR67G?ref=ppx_yo2ov_dt_b_product_details&th=1), [2](https://www.amazon.com/dp/B079GNVSTL/ref=sspa_dk_detail_0), [3](https://www.amazon.com/dp/B08952NFRX/ref=sspa_dk_detail_1), [4](https://www.amazon.com/dp/B08TM1D58H/ref=sspa_dk_detail_6), [5](https://www.amazon.com/WALI-Surveillance-Security-Outdoor-Warning/dp/B019405SQM)).
-
-<img src="https://user-images.githubusercontent.com/2234901/166242496-915adca4-e772-46db-b8ec-b98ff2e0072d.jpg" height="160"/>
-<img src="https://user-images.githubusercontent.com/2234901/166243174-0e234604-3e11-4700-b5d8-81b589576d94.jpg" height="160"/>
-<img src="https://user-images.githubusercontent.com/2234901/166242674-d43c25ac-50da-48ce-827f-aeb6b95ef087.jpg" height="160"/>
-<img src="https://user-images.githubusercontent.com/2234901/166242527-44bc8435-8386-4e6e-b1d4-7247c25ce47c.jpg" height="160"/>
-<br/>
-<img src="https://user-images.githubusercontent.com/2234901/166242465-c728975e-4a12-4ca0-9d85-d7fb08f9af66.jpeg" height="200"/>
-
+ 
 # Installing Ambianic Edge
 
 Ambianic Box comes to live once Ambianic Edge software is installed. Follow [this step by step install guide](https://docs.ambianic.ai/users/ambianicedge/).
