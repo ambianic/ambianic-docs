@@ -9,12 +9,14 @@ Ambianic Box is the recommended enclosure for DIY (do-it-yourself) installations
   <img src="https://user-images.githubusercontent.com/2234901/99598684-8910bd00-29bf-11eb-9b8c-be91dfa28021.jpeg" height="400"/>
 <span>
  
-# Why do I need Ambianic Box?
+# Why do I need a DIY camera?
 
-Proprietary camera manufacturers don't make it easy to access their products via open APIs. RTSP is available in some models, but hard to figure out. ONVIF is partially supported and usually hidden behind several proprietary enablement steps. Turned off by defauly more often than not. It often requires installing custom, unsupported firmware in order to open RTSP or RTMP access. And there is no telling if and when that option may be discontinued. It depends on company policy.
-
+Short answer: because you care about your family data privacy.
+ 
 Most camera manufacturers want you to use their own app for access to their cameras and integration into their own home automation platforms. They are protecting current and future revenue. Trying to please multiple masters with different demands: end users who want a great product and investors who want great ROI. That creates a trend to move towards centralized cloud subscription and data collection services which have been proven prone to hacks and massive user data leaks. It is hard to build trust with users without verifiable code transparency proving protection of user data privacy. 
 
+Furthermore proprietary camera manufacturers don't make it easy to access their products via open APIs. RTSP is available in some models, but hard to figure out. ONVIF is partially supported and usually hidden behind several proprietary enablement steps. Turned off by defauly more often than not. It often requires installing custom, unsupported firmware in order to open RTSP or RTMP access. And there is no telling if and when that option may be discontinued. It depends on company policy.
+  
 So here we go. Let's build something that works for Open Source developers and DIY folks.
 
 You can 3D Print an Ambianic Box at home ([here is the source](https://github.com/ambianic/ambianic-box)) or order a 3D print online through a service such as [craftcloud3d.com](https://craftcloud3d.com/configuration/c7faee7e-ec06-41ed-822c-4092bdf1d28d) or [makexyz.com](https://www.makexyz.com/).
