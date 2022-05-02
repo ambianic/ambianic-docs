@@ -9,7 +9,7 @@ Ambianic Box is the recommended enclosure for DIY (do-it-yourself) installations
   <img src="https://user-images.githubusercontent.com/2234901/99598684-8910bd00-29bf-11eb-9b8c-be91dfa28021.jpeg" height="400"/>
 <span>
  
-# Why does Ambianic Box exist?
+# Why do I need Ambianic Box?
 
 Proprietary camera manufacturers don't make it easy to access their products via open APIs. RTSP is available in some models, but hard to figure out. ONVIF is partially supported and usually hidden behind several proprietary enablement steps. Turned off by defauly more often than not. It often requires installing custom, unsupported firmware in order to open RTSP or RTMP access. And there is no telling if and when that option may be discontinued. It depends on company policy.
 
@@ -22,6 +22,8 @@ So here we go. Let's build something that works for Open Source developers and D
 You can 3D Print an Ambianic Box at home ([here is the source](https://github.com/ambianic/ambianic-box)) or order a 3D print online through a service such as [craftcloud3d.com](https://craftcloud3d.com/configuration/c7faee7e-ec06-41ed-822c-4092bdf1d28d) or [makexyz.com](https://www.makexyz.com/).
 
 Alternatively, if you don't want to 3D print an enclosure, you can order a kit such as [this ony by Labists](https://labists.com/collections/all/products/labists-raspberry-pi-4g-ram-32gb-card) which includes a usable enclosure box and other components required to build an Ambianic Edge device.
+
+For outdoor use, you can buy an inexpensive dummy camera enclosure like the ones listed in the _Alternative enclosures_ section below.
 
 # Components
 
@@ -87,6 +89,17 @@ If you don't have a 3D printer handy for the box enclosure, you can use an onlin
 Ambianic Box can stand up on a flat surface or it can be mounted. For wall mount, there are several options. The box has two  openings on the back side that can be attached to wall mount hooks. Alternatively if you don't feel like drilling into your wall, the box is light enough to mount via two sided mounting tape such as [this one](https://www.amazon.com/gp/product/B07LFRN1K8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1).
 
 ---
+  
+# Alternative enclosures
+  
+If you prefer off-the-shelf security camera enclosures for outdoor or indoor use, there are a number of inexpensive dummy cameras ($5-9) with enough room to accomodate a Raspberry Pi and a Pi camera module ([1](https://www.amazon.com/dp/B01AJTR67G?ref=ppx_yo2ov_dt_b_product_details&th=1), [2](https://www.amazon.com/dp/B079GNVSTL/ref=sspa_dk_detail_0), [3](https://www.amazon.com/dp/B08952NFRX/ref=sspa_dk_detail_1), [4](https://www.amazon.com/dp/B08TM1D58H/ref=sspa_dk_detail_6), [5](https://www.amazon.com/WALI-Surveillance-Security-Outdoor-Warning/dp/B019405SQM)).
+
+<img src="https://user-images.githubusercontent.com/2234901/166242496-915adca4-e772-46db-b8ec-b98ff2e0072d.jpg" height="160"/>
+<img src="https://user-images.githubusercontent.com/2234901/166243174-0e234604-3e11-4700-b5d8-81b589576d94.jpg" height="160"/>
+<img src="https://user-images.githubusercontent.com/2234901/166242674-d43c25ac-50da-48ce-827f-aeb6b95ef087.jpg" height="160"/>
+<img src="https://user-images.githubusercontent.com/2234901/166242527-44bc8435-8386-4e6e-b1d4-7247c25ce47c.jpg" height="160"/>
+<br/>
+<img src="https://user-images.githubusercontent.com/2234901/166242465-c728975e-4a12-4ca0-9d85-d7fb08f9af66.jpeg" height="200"/>
 
 # Installing Ambianic Edge
 
