@@ -207,7 +207,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column bs-sidenav">
             <li class="nav-item main"><a href="#ambianic-box">Ambianic Box</a></li>
-            <li class="nav-item main"><a href="#why-does-ambianic-box-exist">Why does Ambianic Box exist?</a></li>
+            <li class="nav-item main"><a href="#why-do-i-need-ambianic-box">Why do I need Ambianic Box?</a></li>
             <li class="nav-item main"><a href="#components">Components</a></li>
             <li class="nav-item main"><a href="#how-to-assemble-an-ambianic-box">How to Assemble an Ambianic Box</a></li>
                 <li class="nav-item">
@@ -216,6 +216,7 @@
                 <li class="nav-item">
                     <a href="#slides" class="nav-link">Slides</a>
                 </li>
+            <li class="nav-item main"><a href="#alternative-enclosures">Alternative enclosures</a></li>
             <li class="nav-item main"><a href="#installing-ambianic-edge">Installing Ambianic Edge</a></li>
         </ul>
     </div>
@@ -229,13 +230,14 @@
   <img src="https://user-images.githubusercontent.com/2234901/99598679-87df9000-29bf-11eb-9d62-ddb1b402e803.jpeg" height="400"/>
   <img src="https://user-images.githubusercontent.com/2234901/99598684-8910bd00-29bf-11eb-9b8c-be91dfa28021.jpeg" height="400"/>
 <span></p>
-<h1 id="why-does-ambianic-box-exist">Why does Ambianic Box exist?</h1>
+<h1 id="why-do-i-need-ambianic-box">Why do I need Ambianic Box?</h1>
 <p>Proprietary camera manufacturers don't make it easy to access their products via open APIs. RTSP is available in some models, but hard to figure out. ONVIF is partially supported and usually hidden behind several proprietary enablement steps. Turned off by defauly more often than not. It often requires installing custom, unsupported firmware in order to open RTSP or RTMP access. And there is no telling if and when that option may be discontinued. It depends on company policy.</p>
 <p>Most camera manufacturers want you to use their own app for access to their cameras and integration into their own home automation platforms. They are protecting current and future revenue. Trying to please multiple masters with different demands: end users who want a great product and investors who want great ROI. That creates a trend to move towards centralized cloud subscription and data collection services which have been proven prone to hacks and massive user data leaks. It is hard to build trust with users without verifiable code transparency proving protection of user data privacy. </p>
 <p>So here we go. Let's build something that works for Open Source developers and DIY folks.</p>
 <p><img src="https://github.com/ambianic/ambianic-box/raw/main/ambianic_box_rendering.png" height="400"/></p>
 <p>You can 3D Print an Ambianic Box at home (<a href="https://github.com/ambianic/ambianic-box">here is the source</a>) or order a 3D print online through a service such as <a href="https://craftcloud3d.com/configuration/c7faee7e-ec06-41ed-822c-4092bdf1d28d">craftcloud3d.com</a> or <a href="https://www.makexyz.com/">makexyz.com</a>.</p>
 <p>Alternatively, if you don't want to 3D print an enclosure, you can order a kit such as <a href="https://labists.com/collections/all/products/labists-raspberry-pi-4g-ram-32gb-card">this ony by Labists</a> which includes a usable enclosure box and other components required to build an Ambianic Edge device.</p>
+<p>For outdoor use, you can buy an inexpensive dummy camera enclosure like the ones listed in the <em>Alternative enclosures</em> section below.</p>
 <h1 id="components">Components</h1>
 <p>To assemble a fully functional Ambianic Box, we recommend the following readily available off the shelf components, but you can use any viable alternatives available to you:</p>
 <table>
@@ -319,6 +321,14 @@
 <p><strong>Wall Mount Note</strong></p>
 <p>Ambianic Box can stand up on a flat surface or it can be mounted. For wall mount, there are several options. The box has two  openings on the back side that can be attached to wall mount hooks. Alternatively if you don't feel like drilling into your wall, the box is light enough to mount via two sided mounting tape such as <a href="https://www.amazon.com/gp/product/B07LFRN1K8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&amp;psc=1">this one</a>.</p>
 <hr />
+<h1 id="alternative-enclosures">Alternative enclosures</h1>
+<p>If you prefer off-the-shelf security camera enclosures for outdoor or indoor use, there are a number of inexpensive dummy cameras ($5-9) with enough room to accomodate a Raspberry Pi and a Pi camera module (<a href="https://www.amazon.com/dp/B01AJTR67G?ref=ppx_yo2ov_dt_b_product_details&amp;th=1">1</a>, <a href="https://www.amazon.com/dp/B079GNVSTL/ref=sspa_dk_detail_0">2</a>, <a href="https://www.amazon.com/dp/B08952NFRX/ref=sspa_dk_detail_1">3</a>, <a href="https://www.amazon.com/dp/B08TM1D58H/ref=sspa_dk_detail_6">4</a>, <a href="https://www.amazon.com/WALI-Surveillance-Security-Outdoor-Warning/dp/B019405SQM">5</a>).</p>
+<p><img src="https://user-images.githubusercontent.com/2234901/166242496-915adca4-e772-46db-b8ec-b98ff2e0072d.jpg" height="160"/>
+<img src="https://user-images.githubusercontent.com/2234901/166243174-0e234604-3e11-4700-b5d8-81b589576d94.jpg" height="160"/>
+<img src="https://user-images.githubusercontent.com/2234901/166242674-d43c25ac-50da-48ce-827f-aeb6b95ef087.jpg" height="160"/>
+<img src="https://user-images.githubusercontent.com/2234901/166242527-44bc8435-8386-4e6e-b1d4-7247c25ce47c.jpg" height="160"/>
+<br/>
+<img src="https://user-images.githubusercontent.com/2234901/166242465-c728975e-4a12-4ca0-9d85-d7fb08f9af66.jpeg" height="200"/></p>
 <h1 id="installing-ambianic-edge">Installing Ambianic Edge</h1>
 <p>Ambianic Box comes to live once Ambianic Edge software is installed. Follow <a href="https://docs.ambianic.ai/users/ambianicedge/">this step by step install guide</a>.</p></div>
             </div>
@@ -327,7 +337,7 @@
         <footer class="col-md-12">
             <hr>
                 <p>Ambianic.ai &copy; 2019-2021</p>
-            <p>Last update : 2021-12-14 20:26:14.256801+00:00</p>
+            <p>Last update : 2022-05-02 13:45:29.611849+00:00</p>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
